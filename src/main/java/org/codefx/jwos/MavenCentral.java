@@ -116,11 +116,11 @@ public class MavenCentral {
 			this.dependencies = dependencies;
 		}
 
-		private Path path() {
+		public Path path() {
 			return path;
 		}
 
-		private ImmutableSet<Artifact> dependencies() {
+		public ImmutableSet<Artifact> dependencies() {
 			return dependencies;
 		}
 	}
