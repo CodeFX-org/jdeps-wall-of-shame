@@ -1,4 +1,4 @@
-package org.codefx.jwos;
+package org.codefx.jwos.maven;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
@@ -30,6 +30,7 @@ import org.eclipse.aether.util.graph.visitor.PreorderNodeListGenerator;
 import java.nio.file.Path;
 
 import static java.util.Collections.singletonList;
+import static java.util.Objects.requireNonNull;
 
 public class MavenCentral {
 
@@ -72,8 +73,8 @@ public class MavenCentral {
 		return session;
 	}
 
-	public MavenArtifact downloadMavenArtifact(Artifact artifact) throws RepositoryException {
-		return new MavenArtifact(
+	public ResolvedArtifact downloadMavenArtifact(Artifact artifact) throws RepositoryException {
+		return new ResolvedArtifact(
 				downloadArtifact(artifact),
 				getDependencies(artifact));
 	}
@@ -84,14 +85,14 @@ public class MavenCentral {
 		return artifactResult.getArtifact().getFile().toPath();
 	}
 
-	public ImmutableSet<Artifact> getDependencies(Artifact artifact) throws RepositoryException {
+	public ImmutableSet<ArtifactCoordinates> getDependencies(Artifact artifact) throws RepositoryException {
 		return ImmutableSet.copyOf(Iterables.concat(
 				getDependencies(artifact, "compile"),
 				getDependencies(artifact, "runtime")
 		));
 	}
 
-	private ImmutableSet<Artifact> getDependencies(Artifact artifact, String scope)
+	private ImmutableSet<ArtifactCoordinates> getDependencies(Artifact artifact, String scope)
 			throws DependencyCollectionException, DependencyResolutionException {
 		Dependency artifactAsDependency = new Dependency(artifact, scope);
 		CollectRequest collectRequest = new CollectRequest(artifactAsDependency, singletonList(mavenCentral));
@@ -103,26 +104,10 @@ public class MavenCentral {
 
 		PreorderNodeListGenerator dependencies = new PreorderNodeListGenerator();
 		dependencyRoot.getChildren().forEach(node -> node.accept(dependencies));
-		return ImmutableSet.copyOf(dependencies.getArtifacts(true));
-	}
 
-	public static class MavenArtifact {
-
-		private final Path path;
-		private final ImmutableSet<Artifact> dependencies;
-
-		public MavenArtifact(Path path, ImmutableSet<Artifact> dependencies) {
-			this.path = path;
-			this.dependencies = dependencies;
-		}
-
-		public Path path() {
-			return path;
-		}
-
-		public ImmutableSet<Artifact> dependencies() {
-			return dependencies;
-		}
+		ImmutableSet.Builder<ArtifactCoordinates> dependencyCoordinates = ImmutableSet.builder();
+		dependencies.getArtifacts(true).stream().map(ArtifactCoordinates::from).forEach(dependencyCoordinates::add);
+		return dependencyCoordinates.build();
 	}
 
 }
