@@ -1,5 +1,7 @@
 package org.codefx.jwos;
 
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Iterables;
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils;
 import org.eclipse.aether.DefaultRepositorySystemSession;
 import org.eclipse.aether.RepositoryException;
@@ -16,7 +18,6 @@ import org.eclipse.aether.repository.LocalRepository;
 import org.eclipse.aether.repository.RemoteRepository;
 import org.eclipse.aether.repository.RemoteRepository.Builder;
 import org.eclipse.aether.resolution.ArtifactRequest;
-import org.eclipse.aether.resolution.ArtifactResolutionException;
 import org.eclipse.aether.resolution.ArtifactResult;
 import org.eclipse.aether.resolution.DependencyRequest;
 import org.eclipse.aether.resolution.DependencyResolutionException;
@@ -27,12 +28,8 @@ import org.eclipse.aether.transport.http.HttpTransporterFactory;
 import org.eclipse.aether.util.graph.visitor.PreorderNodeListGenerator;
 
 import java.nio.file.Path;
-import java.util.Set;
-import java.util.stream.Stream;
 
 import static java.util.Collections.singletonList;
-import static java.util.stream.Collectors.toSet;
-import static java.util.stream.Stream.concat;
 
 public class MavenCentral {
 
@@ -78,7 +75,7 @@ public class MavenCentral {
 	public MavenArtifact downloadMavenArtifact(Artifact artifact) throws RepositoryException {
 		return new MavenArtifact(
 				downloadArtifact(artifact),
-				getDependenciesOnce(artifact).collect(toSet()));
+				getDependencies(artifact));
 	}
 
 	public Path downloadArtifact(Artifact artifact) throws RepositoryException {
@@ -87,11 +84,14 @@ public class MavenCentral {
 		return artifactResult.getArtifact().getFile().toPath();
 	}
 
-	public Stream<Artifact> getDependenciesOnce(Artifact artifact) throws RepositoryException {
-		return concat(getDependenciesOnce(artifact, "compile"), getDependenciesOnce(artifact, "runtime")).distinct();
+	public ImmutableSet<Artifact> getDependencies(Artifact artifact) throws RepositoryException {
+		return ImmutableSet.copyOf(Iterables.concat(
+				getDependencies(artifact, "compile"),
+				getDependencies(artifact, "runtime")
+		));
 	}
 
-	private Stream<Artifact> getDependenciesOnce(Artifact artifact, String scope)
+	private ImmutableSet<Artifact> getDependencies(Artifact artifact, String scope)
 			throws DependencyCollectionException, DependencyResolutionException {
 		Dependency artifactAsDependency = new Dependency(artifact, scope);
 		CollectRequest collectRequest = new CollectRequest(artifactAsDependency, singletonList(mavenCentral));
@@ -103,15 +103,15 @@ public class MavenCentral {
 
 		PreorderNodeListGenerator dependencies = new PreorderNodeListGenerator();
 		dependencyRoot.getChildren().forEach(node -> node.accept(dependencies));
-		return dependencies.getArtifacts(true).stream();
+		return ImmutableSet.copyOf(dependencies.getArtifacts(true));
 	}
 
 	public static class MavenArtifact {
 
 		private final Path path;
-		private final Set<Artifact> dependencies;
+		private final ImmutableSet<Artifact> dependencies;
 
-		public MavenArtifact(Path path, Set<Artifact> dependencies) {
+		public MavenArtifact(Path path, ImmutableSet<Artifact> dependencies) {
 			this.path = path;
 			this.dependencies = dependencies;
 		}
@@ -120,8 +120,8 @@ public class MavenCentral {
 			return path;
 		}
 
-		private Stream<Artifact> dependencies() {
-			return dependencies.stream();
+		private ImmutableSet<Artifact> dependencies() {
+			return dependencies;
 		}
 	}
 
