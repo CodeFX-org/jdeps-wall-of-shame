@@ -9,12 +9,14 @@ import org.codehaus.plexus.util.cli.CommandLineException;
 
 import java.nio.file.Path;
 
+import static java.util.Objects.requireNonNull;
+
 public class JDeps {
 
 	private final Path jdeps;
 
 	public JDeps(Path jdeps) {
-		this.jdeps = jdeps;
+		this.jdeps = requireNonNull(jdeps, "The argument 'jdeps' must not be null.");
 	}
 
 	public JDeps() {

@@ -7,7 +7,7 @@ import java.util.Objects;
 
 import static java.util.Objects.requireNonNull;
 
-public final class ArtifactCoordinates {
+public final class ArtifactCoordinates implements IdentifiesArtifact {
 
 	private final String groupId;
 	private final String artifactId;
@@ -31,16 +31,21 @@ public final class ArtifactCoordinates {
 		return new DefaultArtifact(groupId, artifactId, null, version);
 	}
 
-	private String groupId() {
+	public String groupId() {
 		return groupId;
 	}
 
-	private String artifactId() {
+	public String artifactId() {
 		return artifactId;
 	}
 
-	private String version() {
+	public String version() {
 		return version;
+	}
+
+	@Override
+	public ArtifactCoordinates artifact() {
+		return this;
 	}
 
 	@Override

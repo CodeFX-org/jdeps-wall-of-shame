@@ -40,15 +40,6 @@ public class MavenCentral {
 
 	private static final String NULL_CONTEXT = null;
 
-	public MavenCentral(
-			RepositorySystem repositorySystem,
-			RepositorySystemSession repositorySystemSession,
-			RemoteRepository mavenCentral) {
-		this.repositorySystem = repositorySystem;
-		this.repositorySystemSession = repositorySystemSession;
-		this.mavenCentral = mavenCentral;
-	}
-
 	public MavenCentral() {
 		repositorySystem = newRepositorySystem();
 		repositorySystemSession = newSession(repositorySystem);
@@ -75,6 +66,7 @@ public class MavenCentral {
 
 	public ResolvedArtifact downloadMavenArtifact(Artifact artifact) throws RepositoryException {
 		return new ResolvedArtifact(
+				ArtifactCoordinates.from(artifact),
 				downloadArtifact(artifact),
 				getDependencies(artifact));
 	}
