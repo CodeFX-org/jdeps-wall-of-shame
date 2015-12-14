@@ -42,12 +42,12 @@ public class AnalysisTest {
 
 	@Test
 	public void withDependency() throws Exception {
-		ArtifactCoordinates dependent = ArtifactCoordinates.from("g", "dt", "v");
-		ArtifactCoordinates dependee = ArtifactCoordinates.from("g", "de", "v");
+		ArtifactCoordinates dependent = ArtifactCoordinates.from("g", "dependant ->", "v");
+		ArtifactCoordinates dependee = ArtifactCoordinates.from("g", "-> dependee", "v");
 		analysis.toAnalyse(Stream.of(dependent));
 		analysis.retrieveForAnalysis();
 
-		// since it has a dependency, it is not yet deeply analyzed
+		// since dependent has a dependee, it is not yet deeply analyzed
 		AnalyzedArtifact analyzedArtifact =
 				new AnalyzedArtifact(dependent, ImmutableSet.of(), ImmutableSet.of(dependee));
 		ImmutableSet<DeeplyAnalyzedArtifact> analyzedArtifacts = analysis.analyzed(analyzedArtifact);
@@ -55,24 +55,12 @@ public class AnalysisTest {
 
 		// dependee can be retrieved for analysis
 		ImmutableSet<ArtifactCoordinates> artifacts = analysis.retrieveForAnalysis();
-		assertThat(artifacts).hasSize(1);
-		assertThat(artifacts.contains(dependee));
+		assertThat(artifacts).containsExactly(dependee);
 
 		// analyzing dependee must return both artifacts
 		analyzedArtifact = new AnalyzedArtifact(dependee, ImmutableSet.of(), ImmutableSet.of());
-		ImmutableSet<DeeplyAnalyzedArtifact> analyzedArtifacts = analysis.analyzed(analyzedArtifact);
-		assertThat(analyzedArtifacts).hasSize(1);
-
-
-//		DeeplyAnalyzedArtifact deeplyAnalyzedArtifact = analyzedArtifacts.iterator().next();
-//		assertThat(deeplyAnalyzedArtifact.artifact()).isSameAs(dependee);
-//		assertThat(deeplyAnalyzedArtifact.marker()).isSameAs(InternalDependencies.NONE);
-//		assertThat(deeplyAnalyzedArtifact.violations()).isEmpty();
-//		assertThat(deeplyAnalyzedArtifact.dependees()).isEmpty();
-
-
-
-
+		analyzedArtifacts = analysis.analyzed(analyzedArtifact);
+		assertThat(analyzedArtifacts).hasSize(2);
 	}
 
 }

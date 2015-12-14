@@ -34,5 +34,9 @@ public class AnalyzedArtifact implements IdentifiesArtifact {
 	public ImmutableSet<ArtifactCoordinates> dependees() {
 		return dependees;
 	}
-	
+
+	@Override
+	public String toString() {
+		return artifact.toString() + " (analyzed)";
+	}
 }

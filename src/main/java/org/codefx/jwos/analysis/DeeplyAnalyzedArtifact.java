@@ -42,4 +42,8 @@ public class DeeplyAnalyzedArtifact implements IdentifiesArtifact {
 		return dependees;
 	}
 
+	@Override
+	public String toString() {
+		return artifact.toString() + " (deeply analyzed)";
+	}
 }
