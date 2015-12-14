@@ -19,7 +19,7 @@ import static java.util.Objects.requireNonNull;
 import static java.util.stream.Stream.concat;
 import static java.util.stream.Stream.of;
 
-public class Analysis {
+class Analysis {
 
 	// Naming is hard:
 	// dependency: dependent -> dependee
@@ -30,12 +30,10 @@ public class Analysis {
 		store = new AnalysisStore();
 	}
 
-	public void toAnalyse(Stream<ArtifactCoordinates> artifacts) {
-		requireNonNull(artifacts, "The argument 'artifacts' must not be null.");
-		artifacts
-				.filter(store::isNotInAnalysis)
-				.filter(store::isNotAnalyzed)
-				.forEach(store::addToAnalyze);
+	public void toAnalyse(ArtifactCoordinates artifact) {
+		requireNonNull(artifact, "The argument 'artifact' must not be null.");
+		if (store.isNotToAnalyze(artifact) && store.isNotInAnalysis(artifact) && store.isNotAnalyzed(artifact))
+			store.addToAnalyze(artifact);
 	}
 
 	public ImmutableSet<ArtifactCoordinates> retrieveForAnalysis() {

@@ -21,7 +21,7 @@ public class AnalysisTest {
 	@Test
 	public void withSimpleArtifact() throws Exception {
 		ArtifactCoordinates artifact = ArtifactCoordinates.from("g", "a", "v");
-		analysis.toAnalyse(Stream.of(artifact));
+		analysis.toAnalyse(artifact);
 
 		// added artifact can be retrieved for analysis
 		ImmutableSet<ArtifactCoordinates> artifacts = analysis.retrieveForAnalysis();
@@ -44,7 +44,7 @@ public class AnalysisTest {
 	public void withDependency() throws Exception {
 		ArtifactCoordinates dependent = ArtifactCoordinates.from("g", "dependant ->", "v");
 		ArtifactCoordinates dependee = ArtifactCoordinates.from("g", "-> dependee", "v");
-		analysis.toAnalyse(Stream.of(dependent));
+		analysis.toAnalyse(dependent);
 		analysis.retrieveForAnalysis();
 
 		// since dependent has a dependee, it is not yet deeply analyzed
