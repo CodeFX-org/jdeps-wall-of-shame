@@ -30,7 +30,6 @@ import org.eclipse.aether.util.graph.visitor.PreorderNodeListGenerator;
 import java.nio.file.Path;
 
 import static java.util.Collections.singletonList;
-import static java.util.Objects.requireNonNull;
 
 public class MavenCentral {
 
@@ -64,11 +63,11 @@ public class MavenCentral {
 		return session;
 	}
 
-	public ResolvedArtifact downloadMavenArtifact(Artifact artifact) throws RepositoryException {
+	public ResolvedArtifact downloadMavenArtifact(ArtifactCoordinates artifactCoordinates) throws RepositoryException {
 		return new ResolvedArtifact(
-				ArtifactCoordinates.from(artifact),
-				downloadArtifact(artifact),
-				getDependencies(artifact));
+				artifactCoordinates,
+				downloadArtifact(artifactCoordinates.toArtifact()),
+				getDependencies(artifactCoordinates.toArtifact()));
 	}
 
 	public Path downloadArtifact(Artifact artifact) throws RepositoryException {
