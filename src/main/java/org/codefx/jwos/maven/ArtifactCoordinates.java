@@ -28,7 +28,7 @@ public final class ArtifactCoordinates implements IdentifiesArtifact {
 	}
 
 	public Artifact toArtifact() {
-		return new DefaultArtifact(groupId, artifactId, null, version);
+		return new DefaultArtifact(groupId, artifactId, "jar", version);
 	}
 
 	public String groupId() {
