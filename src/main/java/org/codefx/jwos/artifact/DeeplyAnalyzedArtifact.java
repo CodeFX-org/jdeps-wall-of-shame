@@ -1,23 +1,24 @@
-package org.codefx.jwos.analysis;
+package org.codefx.jwos.artifact;
 
 import com.google.common.collect.ImmutableSet;
 import org.codefx.jwos.jdeps.dependency.Violation;
-import org.codefx.jwos.maven.ArtifactCoordinates;
-import org.codefx.jwos.maven.IdentifiesArtifact;
 
 import static java.util.Objects.requireNonNull;
 
-public class AnalyzedArtifact implements IdentifiesArtifact {
+public class DeeplyAnalyzedArtifact implements IdentifiesArtifact {
 
 	private final ArtifactCoordinates artifact;
+	private final InternalDependencies marker;
 	private final ImmutableSet<Violation> violations;
-	private final ImmutableSet<ArtifactCoordinates> dependees;
+	private final ImmutableSet<DeeplyAnalyzedArtifact> dependees;
 
-	public AnalyzedArtifact(
+	public DeeplyAnalyzedArtifact(
 			ArtifactCoordinates artifact,
+			InternalDependencies marker,
 			ImmutableSet<Violation> violations,
-			ImmutableSet<ArtifactCoordinates> dependees) {
+			ImmutableSet<DeeplyAnalyzedArtifact> dependees) {
 		this.artifact = requireNonNull(artifact, "The argument 'artifact' must not be null.");
+		this.marker = requireNonNull(marker, "The argument 'marker' must not be null.");
 		this.violations = requireNonNull(violations, "The argument 'violations' must not be null.");
 		this.dependees = requireNonNull(dependees, "The argument 'dependees' must not be null.");
 	}
@@ -27,16 +28,20 @@ public class AnalyzedArtifact implements IdentifiesArtifact {
 		return artifact;
 	}
 
+	public InternalDependencies marker() {
+		return marker;
+	}
+
 	public ImmutableSet<Violation> violations() {
 		return violations;
 	}
 
-	public ImmutableSet<ArtifactCoordinates> dependees() {
+	public ImmutableSet<DeeplyAnalyzedArtifact> dependees() {
 		return dependees;
 	}
 
 	@Override
 	public String toString() {
-		return artifact.toString() + " (analyzed)";
+		return artifact.toString() + " (deeply analyzed)";
 	}
 }

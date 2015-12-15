@@ -2,8 +2,10 @@ package org.codefx.jwos;
 
 import com.google.common.collect.ImmutableList;
 import org.codefx.jwos.analysis.AnalysisFunctions;
-import org.codefx.jwos.analysis.AnalyzedArtifact;
-import org.codefx.jwos.analysis.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.AnalyzedArtifact;
+import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.connect.BlockingReceiver;
 import org.codefx.jwos.connect.BlockingSender;
 import org.codefx.jwos.connect.Sink;
@@ -11,9 +13,7 @@ import org.codefx.jwos.connect.Source;
 import org.codefx.jwos.connect.Transformer;
 import org.codefx.jwos.connect.TransformerToMany;
 import org.codefx.jwos.jdeps.JDeps;
-import org.codefx.jwos.maven.ArtifactCoordinates;
 import org.codefx.jwos.maven.MavenCentral;
-import org.codefx.jwos.maven.ResolvedArtifact;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

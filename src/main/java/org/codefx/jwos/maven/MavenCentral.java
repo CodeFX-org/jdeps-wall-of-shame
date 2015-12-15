@@ -3,6 +3,8 @@ package org.codefx.jwos.maven;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils;
+import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.eclipse.aether.DefaultRepositorySystemSession;
 import org.eclipse.aether.RepositoryException;
 import org.eclipse.aether.RepositorySystem;

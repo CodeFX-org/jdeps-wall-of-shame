@@ -1,4 +1,4 @@
-package org.codefx.jwos.maven;
+package org.codefx.jwos.artifact;
 
 public interface IdentifiesArtifact {
 

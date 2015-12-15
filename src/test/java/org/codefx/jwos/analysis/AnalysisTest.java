@@ -1,11 +1,12 @@
 package org.codefx.jwos.analysis;
 
 import com.google.common.collect.ImmutableSet;
-import org.codefx.jwos.maven.ArtifactCoordinates;
+import org.codefx.jwos.artifact.AnalyzedArtifact;
+import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.InternalDependencies;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -4,9 +4,12 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.ImmutableSet.Builder;
 import com.google.common.collect.SetMultimap;
+import org.codefx.jwos.artifact.AnalyzedArtifact;
+import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.IdentifiesArtifact;
+import org.codefx.jwos.artifact.InternalDependencies;
 import org.codefx.jwos.jdeps.dependency.Violation;
-import org.codefx.jwos.maven.ArtifactCoordinates;
-import org.codefx.jwos.maven.IdentifiesArtifact;
 
 import java.util.HashMap;
 import java.util.HashSet;

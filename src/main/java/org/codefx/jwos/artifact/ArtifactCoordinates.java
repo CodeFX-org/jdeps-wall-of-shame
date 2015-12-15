@@ -1,4 +1,4 @@
-package org.codefx.jwos.maven;
+package org.codefx.jwos.artifact;
 
 import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.artifact.DefaultArtifact;

@@ -1,4 +1,4 @@
-package org.codefx.jwos.maven;
+package org.codefx.jwos.artifact;
 
 import com.google.common.collect.ImmutableSet;
 
@@ -30,4 +30,10 @@ public class ResolvedArtifact implements IdentifiesArtifact {
 	public ImmutableSet<ArtifactCoordinates> dependencies() {
 		return dependencies;
 	}
+
+	@Override
+	public String toString() {
+		return artifact + " (resolved)";
+	}
+
 }

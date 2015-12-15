@@ -1,7 +1,9 @@
 package org.codefx.jwos.analysis;
 
+import org.codefx.jwos.artifact.AnalyzedArtifact;
+import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.connect.ThrowingFunction;
-import org.codefx.jwos.maven.ArtifactCoordinates;
 
 import java.util.Collection;
 

@@ -1,4 +1,4 @@
-package org.codefx.jwos.analysis;
+package org.codefx.jwos.artifact;
 
 public enum InternalDependencies {
 
