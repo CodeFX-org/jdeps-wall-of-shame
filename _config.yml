@@ -1,28 +1,35 @@
----
-
-port: 4000
-host: 0.0.0.0
-safe: false
-
-
 ### site serving configuration ###
 exclude: [CNAME, README.md, .gitignore]
 permalink: / ## disables post output
-timezone: null
+timezone: Europe/Berlin
 lsi: false
-markdown: kramdown
+markdown: redcarpet
+redcarpet:
+  extensions: [
+#   "autolink" # I don't like it since it promotes using bare links (which suck!)
+    "disable_indented_code_blocks", # fenced code blocks should be used instead as they allow to specify the language
+    "fenced_code_blocks", # so code blocks can start with three backticks and the language, e.g. ```java
+    "footnotes",
+#   "highlight", # because bold and italic should be enough for everyone
+    "no_intra_emphasis", # prevents <em> inside underscore_separated_words
+    "quote",
+    "smart", # see http://jekyllrb.com/docs/configuration/#redcarpet (turns on SmartyPants)
+    "strikethrough",
+    "superscript",
+    "space_after_headers", # because for every use of a hash without a space - #like so - Ganesha devours a kitten
+    "tables",
+#   "underlines", # because bold and italic should be enough for everyone
+]
 highlighter: pygments
 
-
 ### content configuration ###
-title:       "SinglePaged - Title: Edit me in _config.yml!"
-keywords:    "SinglePaged, jekyll, template, github, blog, single page"
-description: "A single-page template for Jekyll based blogs (like what you'd use on github pages!)"
-source_link: "https://github.com/t413/SinglePaged"
+title:       "JDeps Wall Of Shame"
+keywords:    "jdeps, maven, java9"
+description: "Who is using JDK internal API?"
+source_link: "https://github.com/CodeFX-org/jdeps-wall-of-shame"
 favicon:     #put a path like: "img/favicon.ico"
 touch_icon:  #put a path like: "img/apple-touch-icon.png"
 google_analytics_key: ## put YOUR key here to enable tracking! (blank to disable)
-
 
 ### template colors, used site-wide via css ###
 colors:
@@ -30,7 +37,7 @@ colors:
   white:     '#f8f8f8'
   blue:      '#49a7e9'
   green:     '#9bcf2f'
-  purple:    '#c869bf'
+  purple:    '#3d3075'
   orange:    '#fab125'
+  red:       '#fa4625'
   turquoise: '#0fbfcf'
-  
