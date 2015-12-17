@@ -141,6 +141,8 @@ class Analysis {
 						.flatMap(this::findFinishedDependentsRecursively));
 	}
 
+	// TODO provide a method to identify and remove circles
+
 	private static class AnalysisStore {
 
 		// Remember:

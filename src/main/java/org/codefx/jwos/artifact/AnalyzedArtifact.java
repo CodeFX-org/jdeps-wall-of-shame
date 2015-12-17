@@ -9,6 +9,8 @@ import static java.util.Objects.requireNonNull;
 
 public class AnalyzedArtifact implements IdentifiesArtifact {
 
+	// TODO there should be a possibility to mark a failed analysis
+
 	private final ArtifactCoordinates artifact;
 	private final ImmutableSet<Violation> violations;
 	private final ImmutableSet<ArtifactCoordinates> dependees;

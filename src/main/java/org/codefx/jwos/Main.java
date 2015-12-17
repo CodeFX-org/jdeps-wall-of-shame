@@ -29,11 +29,15 @@ import static org.codefx.jwos.connect.ThrowingConsumer.ignore;
 
 public class Main {
 
+	// TODO: observe the queues and create statistics
+
 	private final BlockingQueue<ArtifactCoordinates> mustAddToAnalyse;
 	private final BlockingQueue<ArtifactCoordinates> mustResolve;
 	private final BlockingQueue<ResolvedArtifact> mustAnalyze;
 	private final BlockingQueue<AnalyzedArtifact> mustDeeplyAnalyze;
 	private final BlockingQueue<DeeplyAnalyzedArtifact> mustFinish;
+
+	// TODO: create these connections in 'run'
 
 	private final Source<ArtifactCoordinates> fixedListOfArtifacts;
 	private final TransformerToMany<ArtifactCoordinates, ArtifactCoordinates> addToAnalyze;
