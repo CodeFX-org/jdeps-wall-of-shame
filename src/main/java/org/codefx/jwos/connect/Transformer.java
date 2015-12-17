@@ -1,7 +1,6 @@
 package org.codefx.jwos.connect;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static java.util.Objects.requireNonNull;
 
