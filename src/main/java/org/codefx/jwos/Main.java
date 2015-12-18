@@ -5,6 +5,7 @@ import org.codefx.jwos.analysis.AnalysisFunctions;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.connect.BlockingReceiver;
 import org.codefx.jwos.connect.BlockingSender;
@@ -12,78 +13,142 @@ import org.codefx.jwos.connect.Sink;
 import org.codefx.jwos.connect.Source;
 import org.codefx.jwos.connect.Transformer;
 import org.codefx.jwos.connect.TransformerToMany;
+import org.codefx.jwos.discovery.ProjectListFile;
 import org.codefx.jwos.jdeps.JDeps;
 import org.codefx.jwos.maven.MavenCentral;
+import org.eclipse.aether.version.Version;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Iterator;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Stream;
 
 import static org.codefx.jwos.connect.Log.log;
 import static org.codefx.jwos.connect.ThrowingConsumer.ignore;
 
 public class Main {
 
+	private static final String[] PROJECT_LIST_FILE_NAMES = {"top100JavaLibrariesByTakipi.txt"};
+	private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
+
 	// TODO: observe the queues and create statistics
 
+	private final BlockingQueue<ProjectCoordinates> mustDetectVersions;
 	private final BlockingQueue<ArtifactCoordinates> mustAddToAnalyse;
 	private final BlockingQueue<ArtifactCoordinates> mustResolve;
 	private final BlockingQueue<ResolvedArtifact> mustAnalyze;
 	private final BlockingQueue<AnalyzedArtifact> mustDeeplyAnalyze;
 	private final BlockingQueue<DeeplyAnalyzedArtifact> mustFinish;
 
-	// TODO: create these connections in 'run'
+	private final List<Source<ProjectCoordinates>> findProjects;
+	private final List<TransformerToMany<ProjectCoordinates, ArtifactCoordinates>> detectVersions;
+	private final List<TransformerToMany<ArtifactCoordinates, ArtifactCoordinates>> addToAnalyze;
+	private final List<Transformer<ArtifactCoordinates, ResolvedArtifact>> resolve;
+	private final List<Transformer<ResolvedArtifact, AnalyzedArtifact>> analyze;
+	private final List<TransformerToMany<AnalyzedArtifact, DeeplyAnalyzedArtifact>> deeplyAnalyze;
+	private final List<Sink<DeeplyAnalyzedArtifact>> finish;
 
-	private final Source<ArtifactCoordinates> fixedListOfArtifacts;
-	private final TransformerToMany<ArtifactCoordinates, ArtifactCoordinates> addToAnalyze;
-	private final Transformer<ArtifactCoordinates, ResolvedArtifact> resolve;
-	private final Transformer<ResolvedArtifact, AnalyzedArtifact> analyze;
-	private final TransformerToMany<AnalyzedArtifact, DeeplyAnalyzedArtifact> deeplyAnalyze;
-	private final Sink<DeeplyAnalyzedArtifact> print;
+	private final ExecutorService pool;
+	private final AnalysisFunctions analysis;
+	private final MavenCentral maven;
 
 	public Main() {
+		mustDetectVersions = new ArrayBlockingQueue<>(5);
 		mustAddToAnalyse = new ArrayBlockingQueue<>(5);
 		mustResolve = new ArrayBlockingQueue<>(5);
 		mustAnalyze = new ArrayBlockingQueue<>(5);
 		mustDeeplyAnalyze = new ArrayBlockingQueue<>(5);
 		mustFinish = new ArrayBlockingQueue<>(5);
 
-		AnalysisFunctions analysis = new AnalysisFunctions();
-		fixedListOfArtifacts = createFixedListOfArtifacts(mustAddToAnalyse::put);
-		addToAnalyze = createAddToAnalyze(mustAddToAnalyse::take, mustResolve::put, analysis);
-		resolve = createMavenResolver(mustResolve::take, mustAnalyze::put);
-		analyze = createJDepsAnalyzer(mustAnalyze::take, mustDeeplyAnalyze::put);
-		deeplyAnalyze = createDeepAnalyze(mustDeeplyAnalyze::take, mustFinish::put, analysis);
-		print = createLogPrinter(mustFinish::take);
+		findProjects = new ArrayList<>();
+		detectVersions = new ArrayList<>();
+		addToAnalyze = new ArrayList<>();
+		resolve = new ArrayList<>();
+		analyze = new ArrayList<>();
+		deeplyAnalyze = new ArrayList<>();
+		finish = new ArrayList<>();
+
+		pool = Executors.newFixedThreadPool(16);
+		analysis = new AnalysisFunctions();
+		maven = new MavenCentral();
 	}
 
 	public void run() {
-		ExecutorService pool = Executors.newFixedThreadPool(8);
-		pool.execute(fixedListOfArtifacts::supply);
-		pool.execute(addToAnalyze::transform);
-		pool.execute(resolve::transform);
-		pool.execute(analyze::transform);
-		pool.execute(deeplyAnalyze::transform);
-		pool.execute(print::consume);
+		createAllConnections();
+		activateAllConnections();
 	}
 
-	private static Source<ArtifactCoordinates> createFixedListOfArtifacts(BlockingReceiver<ArtifactCoordinates> out) {
-		Logger logger = LoggerFactory.getLogger("Fixed Artifact List");
-		Iterator<ArtifactCoordinates> artifacts = ImmutableList
-				.of(
-						ArtifactCoordinates.from("com.facebook.jcommon", "memory", "0.1.21"))
-				.iterator();
-		return new Source<>(
+	private void createAllConnections() {
+		createReadProjectFiles(mustDetectVersions::put).forEach(findProjects::add);
+		detectVersions.add(createDetectVersions(mustDetectVersions::take, mustAddToAnalyse::put, maven));
+		addToAnalyze.add(createAddToAnalyze(mustAddToAnalyse::take, mustResolve::put, analysis));
+		resolve.add(createMavenResolver(mustResolve::take, mustAnalyze::put, maven));
+		analyze.add(createJDepsAnalyzer(mustAnalyze::take, mustDeeplyAnalyze::put));
+		deeplyAnalyze.add(createDeepAnalyze(mustDeeplyAnalyze::take, mustFinish::put, analysis));
+		finish.add(createLogPrinter(mustFinish::take));
+	}
+
+	public void activateAllConnections() {
+		Stream
+				.<List<? extends Runnable>>of(
+						findProjects, detectVersions, addToAnalyze, resolve, analyze, deeplyAnalyze, finish)
+				.flatMap(List::stream)
+				.forEach(pool::execute);
+	}
+
+	private static Stream<Source<ProjectCoordinates>> createReadProjectFiles(
+			BlockingReceiver<ProjectCoordinates> out) {
+		return Arrays
+				.stream(PROJECT_LIST_FILE_NAMES)
+				.map(fileName -> createReadProjectFile(fileName, out))
+				.filter(Optional::isPresent)
+				.map(Optional::get);
+	}
+
+	private static Optional<Source<ProjectCoordinates>> createReadProjectFile(
+			String fileName, BlockingReceiver<ProjectCoordinates> out) {
+		try {
+			Logger logger = LoggerFactory.getLogger("Read Project List '" + fileName + "'");
+			Path file = Paths.get(Main.class.getClassLoader().getResource(fileName).getPath());
+			ProjectListFile listFile = new ProjectListFile(file).open();
+			Source<ProjectCoordinates> source = new Source<>(
+					log(
+							listFile::readNextProject,
+							"Fetched project %s from " + fileName,
+							logger),
+					out,
+					logger);
+			return Optional.of(source);
+		} catch (IOException ex) {
+			LOGGER.error("Opening '" + fileName + "' failed.", ex);
+			return Optional.empty();
+		}
+	}
+
+	private static TransformerToMany<ProjectCoordinates, ArtifactCoordinates> createDetectVersions(
+			BlockingSender<ProjectCoordinates> in,
+			BlockingReceiver<ArtifactCoordinates> out,
+			MavenCentral maven) {
+		Logger logger = LoggerFactory.getLogger("Add To Analyze");
+		return new TransformerToMany<>(
+				in,
 				log(
-						() -> artifacts.hasNext()
-								? Optional.of(artifacts.next())
-								: Optional.<ArtifactCoordinates>empty(),
-						"Fetched %s.",
+						"Detecting versions of %s.",
+						project -> {
+							ImmutableList<Version> versions = maven.detectAllVersionsOf(project);
+							return project.toArtifactsWithVersions(versions);
+						},
+						"Detected versions %s.",
 						logger),
 				out,
 				logger);
@@ -106,9 +171,8 @@ public class Main {
 	}
 
 	private static Transformer<ArtifactCoordinates, ResolvedArtifact> createMavenResolver(
-			BlockingSender<ArtifactCoordinates> in, BlockingReceiver<ResolvedArtifact> out) {
+			BlockingSender<ArtifactCoordinates> in, BlockingReceiver<ResolvedArtifact> out, MavenCentral maven) {
 		Logger logger = LoggerFactory.getLogger("Maven Resolve");
-		MavenCentral maven = new MavenCentral();
 		return new Transformer<>(
 				in,
 				log(
