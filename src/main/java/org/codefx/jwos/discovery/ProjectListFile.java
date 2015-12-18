@@ -12,17 +12,35 @@ import static java.util.Objects.requireNonNull;
 
 public class ProjectListFile {
 
+	/*
+	 * A project list file must be of the following structure:
+	 *
+	 * <comment lines>
+	 * <empty line>
+	 * <project lines>
+	 *
+	 * The empty line is crucial as it is used to determine where the projects start.
+	 */
+
 	private final Path file;
 	private Iterator<String> openedFile;
 
 	public ProjectListFile(Path file) {
+		this.file = requireNonNull(file, "The argument 'file' must not be null.");
 		if (!Files.isRegularFile(file))
 			throw new IllegalArgumentException();
-		this.file = requireNonNull(file, "The argument 'file' must not be null.");
 	}
 
-	public void open() throws IOException {
+	public ProjectListFile open() throws IOException {
 		openedFile = Files.lines(file).iterator();
+		fastForwardPastComments(openedFile);
+		return this;
+	}
+
+	private static void fastForwardPastComments(Iterator<String> openedFile) {
+		boolean foundEmptyLine = false;
+		while (!foundEmptyLine && openedFile.hasNext())
+			foundEmptyLine = openedFile.next().trim().isEmpty();
 	}
 
 	public Optional<ProjectCoordinates> readNextProject() {
