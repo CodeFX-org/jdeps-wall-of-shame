@@ -6,7 +6,7 @@ import java.util.Optional;
 
 import static java.util.Objects.requireNonNull;
 
-public class Source<O> {
+public class Source<O> implements Runnable {
 
 	private final ThrowingSupplier<Optional<O>> supplier;
 	private final BlockingReceiver<O> output;
@@ -16,6 +16,11 @@ public class Source<O> {
 		this.supplier = requireNonNull(supplier, "The argument 'supplier' must not be null.");
 		this.output = requireNonNull(output, "The argument 'output' must not be null.");
 		this.logger = requireNonNull(logger, "The argument 'logger' must not be null.");
+	}
+
+	@Override
+	public void run() {
+		supply();
 	}
 
 	public void supply() {

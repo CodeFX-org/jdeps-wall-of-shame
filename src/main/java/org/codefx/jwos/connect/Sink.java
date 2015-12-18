@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 
 import static java.util.Objects.requireNonNull;
 
-public class Sink<I> {
+public class Sink<I> implements Runnable {
 
 	private final BlockingSender<I> input;
 	private final ThrowingConsumer<I> consumer;
@@ -14,6 +14,11 @@ public class Sink<I> {
 		this.input = requireNonNull(input, "The argument 'input' must not be null.");
 		this.consumer = requireNonNull(consumer, "The consumer 'function' must not be null.");
 		this.logger = requireNonNull(logger, "The argument 'logger' must not be null.");
+	}
+
+	@Override
+	public void run() {
+		consume();
 	}
 
 	public void consume() {

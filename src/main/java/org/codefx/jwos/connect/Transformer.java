@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 
 import static java.util.Objects.requireNonNull;
 
-public class Transformer<I, O> {
+public class Transformer<I, O> implements Runnable {
 
 	private final BlockingSender<I> input;
 	private final ThrowingFunction<I, O> function;
@@ -17,6 +17,11 @@ public class Transformer<I, O> {
 		this.function = requireNonNull(function, "The argument 'function' must not be null.");
 		this.output = requireNonNull(output, "The argument 'output' must not be null.");
 		this.logger = requireNonNull(logger, "The argument 'logger' must not be null.");
+	}
+
+	@Override
+	public void run() {
+		transform();
 	}
 
 	public void transform() {
