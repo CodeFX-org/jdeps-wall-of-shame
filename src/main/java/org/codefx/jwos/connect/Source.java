@@ -24,11 +24,11 @@ public class Source<O> implements Runnable {
 	}
 
 	public void supply() {
-		boolean exhausted = false;
+		boolean hadNext = true;
 		boolean aborted = false;
-		while (!exhausted && !aborted)
+		while (!aborted && hadNext)
 			try {
-				exhausted = supplyNext();
+				hadNext = supplyNext();
 			} catch (InterruptedException ex) {
 				Thread.currentThread().interrupt();
 				logger.warn("Interruption while waiting to supply.", ex);

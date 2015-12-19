@@ -74,8 +74,8 @@ public class Main {
 		mustLogResult = new ArrayBlockingQueue<>(5);
 		mustWriteResultToFile = new ArrayBlockingQueue<>(5);
 		mustFinish = artifact -> {
-			mustLogResult.take();
-			mustWriteResultToFile.take();
+			mustLogResult.put(artifact);
+			mustWriteResultToFile.put(artifact);
 		};
 
 		findProjects = new ArrayList<>();
@@ -211,7 +211,10 @@ public class Main {
 				in,
 				log(
 						"Analyzing %s...",
-						art -> new AnalyzedArtifact(art.artifact(), jdeps.analyze(art.path()), art.dependencies()),
+						artifact -> new AnalyzedArtifact(
+								artifact.artifact(),
+								jdeps.analyze(artifact.path()),
+								artifact.dependencies()),
 						"Analyzed %s.",
 						logger),
 				out,

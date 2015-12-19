@@ -4,7 +4,6 @@ import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
-import org.eclipse.jgit.transport.PushResult;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 
 import java.io.IOException;
@@ -21,7 +20,7 @@ public class GitDirectory {
 
 	private GitDirectory(GitInformation information) throws IOException {
 		this.information = requireNonNull(information, "The argument 'information' must not be null.");
-		
+
 		Path gitWorkTree = information.directory();
 		if (!Files.isDirectory(gitWorkTree))
 			throw new IllegalArgumentException(format("Specified Git work tree '%s' is no directory.", gitWorkTree));
@@ -46,7 +45,7 @@ public class GitDirectory {
 				.setMessage(message)
 				.call();
 	}
-	
+
 	public void push() throws GitAPIException {
 		repository.push()
 				.setRemote(information.remoteUrl())

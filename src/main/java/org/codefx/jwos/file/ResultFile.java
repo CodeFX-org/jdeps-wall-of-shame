@@ -17,6 +17,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +28,6 @@ import java.util.TreeSet;
 
 import static java.util.Collections.singleton;
 import static java.util.Collections.unmodifiableSet;
-import static java.util.Comparator.comparingInt;
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.toSet;
@@ -83,7 +83,9 @@ public class ResultFile {
 
 	private static SortedSet<DeeplyAnalyzedArtifact> parsePreliminaryArtifacts(Path file) throws IOException {
 		SortedSet<DeeplyAnalyzedArtifact> preliminaryArtifacts =
-				new TreeSet<>(comparingInt(artifact -> artifact.dependees().size()));
+				new TreeSet<>(Comparator.<DeeplyAnalyzedArtifact>
+						comparingInt(artifact -> artifact.dependees().size())
+						.thenComparing(artifact -> artifact.artifact().toString()));
 
 		ArtifactCoordinates artifact = null;
 		InternalDependencies marker = null;
