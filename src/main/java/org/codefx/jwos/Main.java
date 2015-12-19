@@ -29,6 +29,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.stream.Stream;
@@ -41,8 +43,6 @@ public class Main {
 	private static final String[] PROJECT_LIST_FILE_NAMES = { "top100JavaLibrariesByTakipi.txt" };
 	private static final String RESULT_FILE_NAME = "results.txt";
 	private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
-
-	// TODO: observe the queues and create statistics
 
 	private final BlockingQueue<ProjectCoordinates> mustDetectVersions;
 	private final BlockingQueue<ArtifactCoordinates> mustAddToAnalyse;
@@ -100,6 +100,7 @@ public class Main {
 	}
 
 	public void run() {
+		startMonitoringQueues();
 		createAllConnections();
 		activateAllConnections();
 	}
@@ -235,19 +236,56 @@ public class Main {
 
 	private static Sink<DeeplyAnalyzedArtifact> createLogPrinter(BlockingSender<DeeplyAnalyzedArtifact> in) {
 		Logger logger = LoggerFactory.getLogger("Output");
-		return new Sink<>(in, artifact -> logger.info("Analyzed " + artifact.toLongString()), logger);
+		return new Sink<>(in, artifact -> logger.info("Analysis complete:\n" + artifact.toLongString()), logger);
 	}
 
 	private static Sink<DeeplyAnalyzedArtifact> createResultFileWriter(
 			BlockingSender<DeeplyAnalyzedArtifact> in,
 			ResultFile resultFile) {
 		Logger logger = LoggerFactory.getLogger("Result File");
-		return new Sink<>(in, log("Writing %s to result file.", resultFile::addArtifacts, logger), logger);
+		return new Sink<>(
+				in,
+				log("Writing %s to result file.",
+						artifact -> {
+							resultFile.addArtifacts(artifact);
+							resultFile.write();
+						},
+						logger),
+				logger);
+	}
+
+	private void startMonitoringQueues() {
+		new Timer("Queue Statistics").schedule(new QueueStatisticsTimerTask(), 0, 2500);
 	}
 
 	public static void main(String[] args) throws Exception {
 		Main main = new Main();
 		main.run();
+	}
+
+	private class QueueStatisticsTimerTask extends TimerTask {
+
+		private static final String STATISTIC_MESSAGE_FORMAT = "\t -> %s: %d\n";
+
+		@Override
+		public void run() {
+			int detectVersions = mustDetectVersions.size();
+			int toAnalyse = mustAddToAnalyse.size();
+			int resolve = mustResolve.size();
+			int analyze = mustAnalyze.size();
+			int deeplyAnalyze = mustDeeplyAnalyze.size();
+			int logResult = mustLogResult.size();
+			int writeResultToFile = mustWriteResultToFile.size();
+			String message = "Queue statistics:\n"
+					+ format(STATISTIC_MESSAGE_FORMAT, "detectVersions", detectVersions)
+					+ format(STATISTIC_MESSAGE_FORMAT, "toAnalyse", toAnalyse)
+					+ format(STATISTIC_MESSAGE_FORMAT, "resolve", resolve)
+					+ format(STATISTIC_MESSAGE_FORMAT, "analyze", analyze)
+					+ format(STATISTIC_MESSAGE_FORMAT, "deeplyAnalyze", deeplyAnalyze)
+					+ format(STATISTIC_MESSAGE_FORMAT, "logResult", logResult)
+					+ format(STATISTIC_MESSAGE_FORMAT, "writeResultToFile", writeResultToFile);
+			LOGGER.info(message);
+		}
 	}
 
 }

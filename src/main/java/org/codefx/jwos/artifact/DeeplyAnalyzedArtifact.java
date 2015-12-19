@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import org.codefx.jwos.jdeps.dependency.Violation;
 
 import java.util.Objects;
+import java.util.Optional;
 
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.joining;
@@ -64,13 +65,34 @@ public class DeeplyAnalyzedArtifact implements IdentifiesArtifact {
 	}
 
 	public String toLongString() {
-		return artifact.toString() + "\n"
-				+ "\tviolations: " + violations.stream()
-				.map(Violation::toString)
-				.collect(joining(", "))
-				+ "\tdependees: " + dependees.stream()
-				.map(DeeplyAnalyzedArtifact::artifact)
-				.map(ArtifactCoordinates::toString)
-				.collect(joining(", "));
+		return toLongString("\t");
 	}
+
+	public String toLongString(String indent) {
+		return indent + artifact.toString() + "\n"
+				+ indent + indent + "violations: " + violationsLongString().orElse("none") + "\n"
+				+ indent + indent + "dependees: " + dependeesAsString().orElse("none");
+	}
+
+	private Optional<String> violationsLongString() {
+		if (violations.isEmpty())
+			return Optional.empty();
+
+		return Optional.of(
+				violations.stream()
+						.map(Violation::toString)
+						.collect(joining(", ")));
+	}
+
+	private Optional<String> dependeesAsString() {
+		if (violations.isEmpty())
+			return Optional.empty();
+
+		return Optional.of(
+				dependees.stream()
+						.map(DeeplyAnalyzedArtifact::artifact)
+						.map(ArtifactCoordinates::toString)
+						.collect(joining(", ")));
+	}
+
 }
