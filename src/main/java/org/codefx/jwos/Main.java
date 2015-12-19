@@ -31,8 +31,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.stream.Stream;
 
 import static java.lang.String.format;
@@ -63,7 +61,6 @@ public class Main {
 	private final List<TransformerToMany<AnalyzedArtifact, DeeplyAnalyzedArtifact>> deeplyAnalyze;
 	private final List<Sink<DeeplyAnalyzedArtifact>> finish;
 
-	private final ExecutorService pool;
 	private final ResultFile resultFile;
 	private final AnalysisFunctions analysis;
 	private final MavenCentral maven;
@@ -89,7 +86,6 @@ public class Main {
 		deeplyAnalyze = new ArrayList<>();
 		finish = new ArrayList<>();
 
-		pool = Executors.newFixedThreadPool(16);
 		resultFile = ResultFile.read(getPathToResourceFile(RESULT_FILE_NAME));
 		analysis = new AnalysisFunctions(resultFile.analyzedArtifactsUnmodifiable());
 		maven = new MavenCentral();
@@ -124,7 +120,8 @@ public class Main {
 				.<List<? extends Runnable>>of(
 						findProjects, detectVersions, addToAnalyze, resolve, analyze, deeplyAnalyze, finish)
 				.flatMap(List::stream)
-				.forEach(pool::execute);
+				.map(Thread::new)
+				.forEach(Thread::start);
 	}
 
 	private static Stream<Source<ProjectCoordinates>> createReadProjectFiles(
