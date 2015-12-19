@@ -22,9 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.net.URL;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -40,8 +38,6 @@ import static org.codefx.jwos.connect.Log.log;
 
 public class Main {
 
-	private static final String[] PROJECT_LIST_FILE_NAMES = { "top100JavaLibrariesByTakipi.txt" };
-	private static final String RESULT_FILE_NAME = "results.txt";
 	private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
 
 	private final BlockingQueue<ProjectCoordinates> mustDetectVersions;
@@ -86,17 +82,9 @@ public class Main {
 		deeplyAnalyze = new ArrayList<>();
 		finish = new ArrayList<>();
 
-		resultFile = ResultFile.read(getPathToResourceFile(RESULT_FILE_NAME));
+		resultFile = ResultFile.read(Util.getPathToResourceFile(Util.RESULT_FILE_NAME));
 		analysis = new AnalysisFunctions(resultFile.analyzedArtifactsUnmodifiable());
 		maven = new MavenCentral();
-	}
-
-	private static Path getPathToResourceFile(String fileName) {
-		return Optional
-				.ofNullable(Main.class.getClassLoader().getResource(fileName))
-				.map(URL::getPath)
-				.map(Paths::get)
-				.orElseThrow(() -> new IllegalArgumentException(format("No resource file '%s' was found.", fileName)));
 	}
 
 	public void run() {
@@ -128,7 +116,7 @@ public class Main {
 	private static Stream<Source<ProjectCoordinates>> createReadProjectFiles(
 			BlockingReceiver<ProjectCoordinates> out) {
 		return Arrays
-				.stream(PROJECT_LIST_FILE_NAMES)
+				.stream(Util.PROJECT_LIST_FILE_NAMES)
 				.map(fileName -> createReadProjectFile(fileName, out))
 				.filter(Optional::isPresent)
 				.map(Optional::get);
@@ -138,7 +126,7 @@ public class Main {
 			String fileName, BlockingReceiver<ProjectCoordinates> out) {
 		try {
 			Logger logger = LoggerFactory.getLogger("Read Project List '" + fileName + "'");
-			Path file = getPathToResourceFile(fileName);
+			Path file = Util.getPathToResourceFile(fileName);
 			ProjectListFile listFile = new ProjectListFile(file).open();
 			Source<ProjectCoordinates> source = new Source<>(
 					log(
