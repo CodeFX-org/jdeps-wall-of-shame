@@ -17,7 +17,6 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +25,7 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import static java.lang.String.format;
 import static java.util.Collections.singleton;
 import static java.util.Collections.unmodifiableSet;
 import static java.util.Objects.requireNonNull;
@@ -76,23 +76,23 @@ public class ResultFile {
 	// READ
 
 	private static SortedSet<DeeplyAnalyzedArtifact> readFile(Path file) throws IOException {
-		SortedSet<DeeplyAnalyzedArtifact> preliminaryArtifacts = parsePreliminaryArtifacts(file);
+		Map<ArtifactCoordinates, DeeplyAnalyzedArtifact> preliminaryArtifacts = parsePreliminaryArtifacts(file);
 		Collection<DeeplyAnalyzedArtifact> artifacts = finalizeArtifacts(preliminaryArtifacts);
 		return sortArtifacts(artifacts);
 	}
 
-	private static SortedSet<DeeplyAnalyzedArtifact> parsePreliminaryArtifacts(Path file) throws IOException {
-		SortedSet<DeeplyAnalyzedArtifact> preliminaryArtifacts =
-				new TreeSet<>(Comparator.<DeeplyAnalyzedArtifact>
-						comparingInt(artifact -> artifact.dependees().size())
-						.thenComparing(artifact -> artifact.artifact().toString()));
+	private static Map<ArtifactCoordinates, DeeplyAnalyzedArtifact> parsePreliminaryArtifacts(Path file)
+			throws IOException {
+		Map<ArtifactCoordinates, DeeplyAnalyzedArtifact> preliminaryArtifacts = new HashMap<>();
 
 		ArtifactCoordinates artifact = null;
 		InternalDependencies marker = null;
 		List<Violation> violations = new ArrayList<>();
-		// TODO: this is a lie!
-		// these artifacts are not truly "deeply analyzed";
-		// on the contrary, these have no violations and dependencies on their own
+		// TODO: This is a lie!
+		// These artifacts are not truly "deeply analyzed". On the contrary, they have no violations and dependencies
+		// on their own and just the coordinates and marker remain. They are still used here because it is tedious to
+		// create a new type that is identical to 'DeeplyAnalyzedArtifact' except for the type argument of its
+		// 'dependee' list.
 		List<DeeplyAnalyzedArtifact> dependees = new ArrayList<>();
 
 		for (String line : (Iterable<String>) Files.lines(file)::iterator) {
@@ -102,7 +102,8 @@ public class ResultFile {
 				dependees.add(parseDependencyLine(line));
 			else {
 				// a new artifact begins here; add the former to the set ...
-				createArtifact(artifact, marker, violations, dependees).ifPresent(preliminaryArtifacts::add);
+				createArtifact(artifact, marker, violations, dependees)
+						.ifPresent(parsed -> preliminaryArtifacts.put(parsed.artifact(), parsed));
 				// ... and start a new one
 				artifact = parseArtifactString(line);
 				marker = parseMarkerString(line);
@@ -111,7 +112,8 @@ public class ResultFile {
 			}
 		}
 		// create the last artifact
-		createArtifact(artifact, marker, violations, dependees).ifPresent(preliminaryArtifacts::add);
+		createArtifact(artifact, marker, violations, dependees)
+				.ifPresent(parsed -> preliminaryArtifacts.put(parsed.artifact(), parsed));
 
 		return preliminaryArtifacts;
 	}
@@ -164,30 +166,47 @@ public class ResultFile {
 	}
 
 	private static Collection<DeeplyAnalyzedArtifact> finalizeArtifacts(
-			SortedSet<DeeplyAnalyzedArtifact> preliminaryArtifacts) {
+			Map<ArtifactCoordinates, DeeplyAnalyzedArtifact> preliminaryArtifacts) {
+		Map<ArtifactCoordinates, DeeplyAnalyzedArtifact> finalizedArtifacts = new HashMap<>();
+		preliminaryArtifacts
+				.keySet()
+				.forEach(
+						preliminaryArtifact -> finalizeArtifactRecursively(
+								preliminaryArtifact, preliminaryArtifacts, finalizedArtifacts));
+		return finalizedArtifacts.values();
+	}
 
-		// if the artifacts are sorted by the number of their dependees
-		// (and assuming that file contains a full entry for each artifact that is listed as a dependee),
-		// the final set of artifacts can be created by iterating over the preliminary set
-		// since then the each dependee's artifact was already finalized
-
-		Map<ArtifactCoordinates, DeeplyAnalyzedArtifact> artifacts = new HashMap<>();
-		for (DeeplyAnalyzedArtifact preliminaryArtifact : preliminaryArtifacts) {
-			ImmutableSet<DeeplyAnalyzedArtifact> dependees = preliminaryArtifact
+	private static DeeplyAnalyzedArtifact finalizeArtifactRecursively(
+			ArtifactCoordinates artifact,
+			Map<ArtifactCoordinates, DeeplyAnalyzedArtifact> preliminaryArtifacts,
+			Map<ArtifactCoordinates, DeeplyAnalyzedArtifact> finalizedArtifacts) {
+		boolean alreadyFinalized = finalizedArtifacts.containsKey(artifact);
+		if (!alreadyFinalized) {
+			DeeplyAnalyzedArtifact preliminaryArtifact = preliminaryArtifacts.get(artifact);
+			ImmutableSet<DeeplyAnalyzedArtifact> finalizedDependees = preliminaryArtifact
 					.dependees().stream()
 					.map(IdentifiesArtifact::artifact)
-					.map(artifacts::get)
+					.map(preliminary ->
+							finalizeArtifactRecursively(preliminary, preliminaryArtifacts, finalizedArtifacts))
 					.collect(collectingAndThen(toSet(), ImmutableSet::copyOf));
-			artifacts.put(
-					preliminaryArtifact.artifact(),
+			finalizedArtifacts.put(
+					artifact.artifact(),
 					new DeeplyAnalyzedArtifact(
-							preliminaryArtifact.artifact(),
+							artifact,
 							preliminaryArtifact.marker(),
 							preliminaryArtifact.violations(),
-							dependees));
+							finalizedDependees));
 		}
 
-		return artifacts.values();
+		return finalizedArtifacts.get(artifact);
+	}
+
+	private static DeeplyAnalyzedArtifact getArtifactForCoordinates(
+			Map<ArtifactCoordinates, DeeplyAnalyzedArtifact> artifacts, ArtifactCoordinates coordinates) {
+		return Optional
+				.ofNullable(artifacts.get(coordinates))
+				.orElseThrow(() -> new IllegalStateException(
+						format("There is no analysis result for %s.", coordinates)));
 	}
 
 	private static SortedSet<DeeplyAnalyzedArtifact> sortArtifacts(Collection<DeeplyAnalyzedArtifact> artifacts) {
