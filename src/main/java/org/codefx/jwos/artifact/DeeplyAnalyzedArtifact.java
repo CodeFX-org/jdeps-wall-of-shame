@@ -6,6 +6,7 @@ import org.codefx.jwos.jdeps.dependency.Violation;
 import java.util.Objects;
 
 import static java.util.Objects.requireNonNull;
+import static java.util.stream.Collectors.joining;
 
 public class DeeplyAnalyzedArtifact implements IdentifiesArtifact {
 
@@ -60,5 +61,16 @@ public class DeeplyAnalyzedArtifact implements IdentifiesArtifact {
 	@Override
 	public String toString() {
 		return artifact.toString() + " (deeply analyzed)";
+	}
+
+	public String toLongString() {
+		return artifact.toString() + "\n"
+				+ "\tviolations: " + violations.stream()
+				.map(Violation::toString)
+				.collect(joining(", "))
+				+ "\tdependees: " + dependees.stream()
+				.map(DeeplyAnalyzedArtifact::artifact)
+				.map(ArtifactCoordinates::toString)
+				.collect(joining(", "));
 	}
 }

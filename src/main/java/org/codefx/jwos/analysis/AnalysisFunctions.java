@@ -11,8 +11,8 @@ public class AnalysisFunctions {
 
 	private final Analysis analysis;
 
-	public AnalysisFunctions() {
-		analysis = new Analysis();
+	public AnalysisFunctions(Collection<DeeplyAnalyzedArtifact> formerlyAnalyzedArtifacts) {
+		analysis = new Analysis(formerlyAnalyzedArtifacts);
 	}
 
 	public ThrowingFunction<ArtifactCoordinates, Collection<ArtifactCoordinates>> addToAnalyzeAsFunction() {

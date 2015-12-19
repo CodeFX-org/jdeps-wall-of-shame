@@ -14,6 +14,7 @@ import org.codefx.jwos.connect.Source;
 import org.codefx.jwos.connect.Transformer;
 import org.codefx.jwos.connect.TransformerToMany;
 import org.codefx.jwos.discovery.ProjectListFile;
+import org.codefx.jwos.file.ResultFile;
 import org.codefx.jwos.jdeps.JDeps;
 import org.codefx.jwos.maven.MavenCentral;
 import org.eclipse.aether.version.Version;
@@ -21,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -33,12 +35,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Stream;
 
+import static java.lang.String.format;
 import static org.codefx.jwos.connect.Log.log;
-import static org.codefx.jwos.connect.ThrowingConsumer.ignore;
 
 public class Main {
 
-	private static final String[] PROJECT_LIST_FILE_NAMES = {"top100JavaLibrariesByTakipi.txt"};
+	private static final String[] PROJECT_LIST_FILE_NAMES = { "top100JavaLibrariesByTakipi.txt" };
+	private static final String RESULT_FILE_NAME = "results.txt";
 	private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
 
 	// TODO: observe the queues and create statistics
@@ -48,7 +51,9 @@ public class Main {
 	private final BlockingQueue<ArtifactCoordinates> mustResolve;
 	private final BlockingQueue<ResolvedArtifact> mustAnalyze;
 	private final BlockingQueue<AnalyzedArtifact> mustDeeplyAnalyze;
-	private final BlockingQueue<DeeplyAnalyzedArtifact> mustFinish;
+	private final BlockingReceiver<DeeplyAnalyzedArtifact> mustFinish;
+	private final BlockingQueue<DeeplyAnalyzedArtifact> mustLogResult;
+	private final BlockingQueue<DeeplyAnalyzedArtifact> mustWriteResultToFile;
 
 	private final List<Source<ProjectCoordinates>> findProjects;
 	private final List<TransformerToMany<ProjectCoordinates, ArtifactCoordinates>> detectVersions;
@@ -59,16 +64,22 @@ public class Main {
 	private final List<Sink<DeeplyAnalyzedArtifact>> finish;
 
 	private final ExecutorService pool;
+	private final ResultFile resultFile;
 	private final AnalysisFunctions analysis;
 	private final MavenCentral maven;
 
-	public Main() {
+	public Main() throws IOException {
 		mustDetectVersions = new ArrayBlockingQueue<>(5);
 		mustAddToAnalyse = new ArrayBlockingQueue<>(5);
 		mustResolve = new ArrayBlockingQueue<>(5);
 		mustAnalyze = new ArrayBlockingQueue<>(5);
 		mustDeeplyAnalyze = new ArrayBlockingQueue<>(5);
-		mustFinish = new ArrayBlockingQueue<>(5);
+		mustLogResult = new ArrayBlockingQueue<>(5);
+		mustWriteResultToFile = new ArrayBlockingQueue<>(5);
+		mustFinish = artifact -> {
+			mustLogResult.take();
+			mustWriteResultToFile.take();
+		};
 
 		findProjects = new ArrayList<>();
 		detectVersions = new ArrayList<>();
@@ -79,8 +90,17 @@ public class Main {
 		finish = new ArrayList<>();
 
 		pool = Executors.newFixedThreadPool(16);
-		analysis = new AnalysisFunctions();
+		resultFile = ResultFile.read(getPathToResourceFile(RESULT_FILE_NAME));
+		analysis = new AnalysisFunctions(resultFile.analyzedArtifactsUnmodifiable());
 		maven = new MavenCentral();
+	}
+
+	private static Path getPathToResourceFile(String fileName) {
+		return Optional
+				.ofNullable(Main.class.getClassLoader().getResource(fileName))
+				.map(URL::getPath)
+				.map(Paths::get)
+				.orElseThrow(() -> new IllegalArgumentException(format("No resource file '%s' was found.", fileName)));
 	}
 
 	public void run() {
@@ -94,8 +114,9 @@ public class Main {
 		addToAnalyze.add(createAddToAnalyze(mustAddToAnalyse::take, mustResolve::put, analysis));
 		resolve.add(createMavenResolver(mustResolve::take, mustAnalyze::put, maven));
 		analyze.add(createJDepsAnalyzer(mustAnalyze::take, mustDeeplyAnalyze::put));
-		deeplyAnalyze.add(createDeepAnalyze(mustDeeplyAnalyze::take, mustFinish::put, analysis));
-		finish.add(createLogPrinter(mustFinish::take));
+		deeplyAnalyze.add(createDeepAnalyze(mustDeeplyAnalyze::take, mustFinish, analysis));
+		finish.add(createLogPrinter(mustLogResult::take));
+		finish.add(createResultFileWriter(mustWriteResultToFile::take, resultFile));
 	}
 
 	public void activateAllConnections() {
@@ -119,7 +140,7 @@ public class Main {
 			String fileName, BlockingReceiver<ProjectCoordinates> out) {
 		try {
 			Logger logger = LoggerFactory.getLogger("Read Project List '" + fileName + "'");
-			Path file = Paths.get(Main.class.getClassLoader().getResource(fileName).getPath());
+			Path file = getPathToResourceFile(fileName);
 			ProjectListFile listFile = new ProjectListFile(file).open();
 			Source<ProjectCoordinates> source = new Source<>(
 					log(
@@ -217,7 +238,14 @@ public class Main {
 
 	private static Sink<DeeplyAnalyzedArtifact> createLogPrinter(BlockingSender<DeeplyAnalyzedArtifact> in) {
 		Logger logger = LoggerFactory.getLogger("Output");
-		return new Sink<>(in, log("Done with %s", ignore(), logger), logger);
+		return new Sink<>(in, artifact -> logger.info("Analyzed " + artifact.toLongString()), logger);
+	}
+
+	private static Sink<DeeplyAnalyzedArtifact> createResultFileWriter(
+			BlockingSender<DeeplyAnalyzedArtifact> in,
+			ResultFile resultFile) {
+		Logger logger = LoggerFactory.getLogger("Result File");
+		return new Sink<>(in, log("Writing %s to result file.", resultFile::addArtifacts, logger), logger);
 	}
 
 	public static void main(String[] args) throws Exception {

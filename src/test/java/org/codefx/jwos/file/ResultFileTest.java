@@ -106,7 +106,7 @@ public class ResultFileTest {
 	public void read_emptyFile_emptyResult() throws Exception {
 		ResultFile result = ResultFile.empty(resultFile);
 
-		assertThat(result.unmodifiableArtifacts()).isEmpty();
+		assertThat(result.analyzedArtifactsUnmodifiable()).isEmpty();
 	}
 
 	@Test
@@ -119,8 +119,8 @@ public class ResultFileTest {
 
 		ResultFile result = ResultFile.read(resultFile);
 
-		assertThat(result.unmodifiableArtifacts()).hasSize(1);
-		DeeplyAnalyzedArtifact parsedArtifact = result.unmodifiableArtifacts().iterator().next();
+		assertThat(result.analyzedArtifactsUnmodifiable()).hasSize(1);
+		DeeplyAnalyzedArtifact parsedArtifact = result.analyzedArtifactsUnmodifiable().iterator().next();
 		DeeplyAnalyzedArtifact expectedArtifact = new DeeplyAnalyzedArtifact(
 				ArtifactCoordinates.from("group.id", "art.id", "1.0"),
 				InternalDependencies.DIRECT,
@@ -144,7 +144,7 @@ public class ResultFileTest {
 
 		ResultFile result = ResultFile.read(resultFile);
 
-		assertThat(result.unmodifiableArtifacts()).hasSize(2);
+		assertThat(result.analyzedArtifactsUnmodifiable()).hasSize(2);
 		DeeplyAnalyzedArtifact expectedOne = new DeeplyAnalyzedArtifact(
 				ArtifactCoordinates.from("group.id", "art.id", "1.0"),
 				InternalDependencies.DIRECT,
@@ -160,7 +160,7 @@ public class ResultFileTest {
 				ImmutableSet.of(),
 				ImmutableSet.of(expectedOne)
 		);
-		Iterator<DeeplyAnalyzedArtifact> parsed = result.unmodifiableArtifacts().iterator();
+		Iterator<DeeplyAnalyzedArtifact> parsed = result.analyzedArtifactsUnmodifiable().iterator();
 		// because of alphabetical ordering, 'two' should come before 'one'
 		DeeplyAnalyzedArtifact parsedTwo = parsed.next();
 		DeeplyAnalyzedArtifact parsedOne = parsed.next();

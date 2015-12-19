@@ -8,6 +8,7 @@ import org.codefx.jwos.artifact.InternalDependencies;
 import org.junit.Before;
 import org.junit.Test;
 
+import static java.util.Collections.emptySet;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AnalysisTest {
@@ -16,7 +17,7 @@ public class AnalysisTest {
 
 	@Before
 	public void setUp() {
-		analysis = new Analysis();
+		analysis = new Analysis(emptySet());
 	}
 
 	@Test

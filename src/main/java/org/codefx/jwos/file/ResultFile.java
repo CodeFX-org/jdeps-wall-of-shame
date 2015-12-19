@@ -255,7 +255,7 @@ public class ResultFile {
 
 	// ACCESS
 
-	public Set<DeeplyAnalyzedArtifact> unmodifiableArtifacts() {
+	public Set<DeeplyAnalyzedArtifact> analyzedArtifactsUnmodifiable() {
 		return unmodifiableSet(artifacts);
 	}
 

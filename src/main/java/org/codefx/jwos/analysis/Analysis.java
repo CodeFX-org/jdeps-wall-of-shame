@@ -11,6 +11,7 @@ import org.codefx.jwos.artifact.IdentifiesArtifact;
 import org.codefx.jwos.artifact.InternalDependencies;
 import org.codefx.jwos.jdeps.dependency.Violation;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -19,6 +20,8 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 import static java.util.Objects.requireNonNull;
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.toMap;
 import static java.util.stream.Stream.concat;
 import static java.util.stream.Stream.of;
 
@@ -29,8 +32,8 @@ class Analysis {
 
 	private final AnalysisStore store;
 
-	public Analysis() {
-		store = new AnalysisStore();
+	public Analysis(Collection<DeeplyAnalyzedArtifact> formerlyAnalyzedArtifacts) {
+		store = new AnalysisStore(formerlyAnalyzedArtifacts);
 	}
 
 	public void toAnalyse(ArtifactCoordinates artifact) {
@@ -156,10 +159,10 @@ class Analysis {
 		 */
 		private final SetMultimap<ArtifactCoordinates, ArtifactCoordinates> waitingDependentsByDependee;
 
-		public AnalysisStore() {
+		public AnalysisStore(Collection<DeeplyAnalyzedArtifact> formerlyAnalyzedArtifacts) {
 			toAnalyze = new HashSet<>();
 			inAnalysis = new HashMap<>();
-			analyzed = new HashMap<>();
+			analyzed = formerlyAnalyzedArtifacts.stream().collect(toMap(DeeplyAnalyzedArtifact::artifact, identity()));
 			waitingDependentsByDependee = HashMultimap.create();
 		}
 
