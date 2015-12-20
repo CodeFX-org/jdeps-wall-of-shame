@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.Timer;
@@ -118,11 +119,19 @@ public class Main {
 	}
 
 	public void activateAllConnections() {
-		Stream
-				.<List<? extends Runnable>>of(
-						findProjects, detectVersions, startAnalysis, resolve, analyze, deeplyAnalyze, finish)
-				.flatMap(List::stream)
-				.map(Thread::new)
+		activateConnections(findProjects, "Finding Projects");
+		activateConnections(detectVersions, "Detecting Versions");
+		activateConnections(startAnalysis, "Starting Analysis");
+		activateConnections(startDependeeAnalysis, "Starting Dependee Analysis");
+		activateConnections(resolve, "Resolving");
+		activateConnections(analyze, "Analyzing");
+		activateConnections(deeplyAnalyze, "Deeply Analyzing");
+		activateConnections(finish, "Finishing");
+	}
+
+	private void activateConnections(Collection<? extends Runnable> connections, String threadName) {
+		connections.stream()
+				.map(connection -> new Thread(null, connection, threadName))
 				.forEach(Thread::start);
 	}
 
@@ -200,7 +209,7 @@ public class Main {
 				log(
 						"",
 						analysis.resolvedDependencies(),
-						"Starting to analyze %s.",
+						"Starting to analyze dependee %s.",
 						logger),
 				out,
 				logger);
@@ -287,20 +296,22 @@ public class Main {
 		@Override
 		public void run() {
 			int detectVersions = mustDetectVersions.size();
-			int toAnalyse = mustStartAnalysis.size();
+			int startAnalysis = mustStartAnalysis.size();
+			int startDependeeAnalysis = mustStartAnalysis.size();
 			int resolve = mustResolve.size();
 			int analyze = mustAnalyze.size();
 			int deeplyAnalyze = mustDeeplyAnalyze.size();
 			int logResult = mustLogResult.size();
 			int writeResultToFile = mustWriteResultToFile.size();
 			String message = "Queue statistics:\n"
-					+ format(STATISTIC_MESSAGE_FORMAT, "detectVersions", detectVersions)
-					+ format(STATISTIC_MESSAGE_FORMAT, "toAnalyse", toAnalyse)
-					+ format(STATISTIC_MESSAGE_FORMAT, "resolve", resolve)
-					+ format(STATISTIC_MESSAGE_FORMAT, "analyze", analyze)
-					+ format(STATISTIC_MESSAGE_FORMAT, "deeplyAnalyze", deeplyAnalyze)
-					+ format(STATISTIC_MESSAGE_FORMAT, "logResult", logResult)
-					+ format(STATISTIC_MESSAGE_FORMAT, "writeResultToFile", writeResultToFile);
+					+ format(STATISTIC_MESSAGE_FORMAT, "waiting to detect versions", detectVersions)
+					+ format(STATISTIC_MESSAGE_FORMAT, "waiting to start analysis", startAnalysis)
+					+ format(STATISTIC_MESSAGE_FORMAT, "waiting to start dependee analysis", startDependeeAnalysis)
+					+ format(STATISTIC_MESSAGE_FORMAT, "waiting to resolve", resolve)
+					+ format(STATISTIC_MESSAGE_FORMAT, "waiting to analyze", analyze)
+					+ format(STATISTIC_MESSAGE_FORMAT, "waiting to deeply analyze", deeplyAnalyze)
+					+ format(STATISTIC_MESSAGE_FORMAT, "waiting to log result", logResult)
+					+ format(STATISTIC_MESSAGE_FORMAT, "waiting to write result to file", writeResultToFile);
 			LOGGER.info(message);
 		}
 	}
