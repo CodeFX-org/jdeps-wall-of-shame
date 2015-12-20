@@ -13,15 +13,12 @@ public class AnalyzedArtifact implements IdentifiesArtifact {
 
 	private final ArtifactCoordinates artifact;
 	private final ImmutableSet<Violation> violations;
-	private final ImmutableSet<ArtifactCoordinates> dependees;
 
 	public AnalyzedArtifact(
 			ArtifactCoordinates artifact,
-			ImmutableSet<Violation> violations,
-			ImmutableSet<ArtifactCoordinates> dependees) {
+			ImmutableSet<Violation> violations) {
 		this.artifact = requireNonNull(artifact, "The argument 'artifact' must not be null.");
 		this.violations = requireNonNull(violations, "The argument 'violations' must not be null.");
-		this.dependees = requireNonNull(dependees, "The argument 'dependees' must not be null.");
 	}
 
 	@Override
@@ -31,10 +28,6 @@ public class AnalyzedArtifact implements IdentifiesArtifact {
 
 	public ImmutableSet<Violation> violations() {
 		return violations;
-	}
-
-	public ImmutableSet<ArtifactCoordinates> dependees() {
-		return dependees;
 	}
 
 	@Override

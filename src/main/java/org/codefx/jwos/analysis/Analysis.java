@@ -9,6 +9,7 @@ import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
 import org.codefx.jwos.artifact.InternalDependencies;
+import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.jdeps.dependency.Violation;
 
 import java.util.Collection;
@@ -19,9 +20,12 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Stream;
 
+import static java.lang.String.format;
 import static java.util.Objects.requireNonNull;
 import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.toMap;
+import static java.util.stream.Collectors.toSet;
 import static java.util.stream.Stream.concat;
 import static java.util.stream.Stream.of;
 
@@ -30,77 +34,83 @@ class Analysis {
 	// Naming is hard:
 	// dependency: dependent -> dependee
 
-	private final AnalysisStore store;
+	private final ArtifactStore store;
 
 	public Analysis(Collection<DeeplyAnalyzedArtifact> formerlyAnalyzedArtifacts) {
-		store = new AnalysisStore(formerlyAnalyzedArtifacts);
+		store = new ArtifactStore(formerlyAnalyzedArtifacts);
 	}
 
-	public void toAnalyse(ArtifactCoordinates artifact) {
+	/**
+	 * Informs this analysis that the specified artifacts needs to be analyzed.
+	 *
+	 * @param artifact
+	 * 		the artifact to analyze
+	 *
+	 * @return whether the artifact needs to be analyzed (if not, it was already analyzed);
+	 * if true, it is assumed that the artifact is queued for analysis
+	 */
+	public boolean startAnalysis(ArtifactCoordinates artifact) {
 		requireNonNull(artifact, "The argument 'artifact' must not be null.");
-		if (store.isNotToAnalyze(artifact) && store.isNotInAnalysis(artifact) && store.isNotAnalyzed(artifact))
-			store.addToAnalyze(artifact);
+		if (store.isNotInAnalysis(artifact) && store.isNotAnalyzed(artifact)) {
+			store.addInAnalysis(artifact);
+			return true;
+		} else
+			return false;
 	}
 
-	public ImmutableSet<ArtifactCoordinates> retrieveForAnalysis() {
-		ImmutableSet<ArtifactCoordinates> toAnalyze = store.getAllToAnalyze();
-		toAnalyze.forEach(this::startAnalysis);
-		return toAnalyze;
+	/**
+	 * Informs this analysis of the specified artifact's dependees.
+	 *
+	 * @param resolvedArtifact
+	 * 		the artifacts whose dependencies have been resolved
+	 *
+	 * @return the subset of the artifacts that need to be analyzed;
+	 * it is assumed that these artifacts ar queued for analysis
+	 */
+	public ImmutableSet<ArtifactCoordinates> resolved(ResolvedArtifact resolvedArtifact) {
+		requireNonNull(resolvedArtifact, "The argument 'resolvedArtifact' must not be null.");
+		store.getStateInAnalysis(resolvedArtifact).resolved(resolvedArtifact);
+		return dependeesToAnalyze(resolvedArtifact);
 	}
 
-	private void startAnalysis(ArtifactCoordinates artifactToAnalyze) {
-		store.removeToAnalyze(artifactToAnalyze);
-		store.addInAnalysis(artifactToAnalyze);
+	private ImmutableSet<ArtifactCoordinates> dependeesToAnalyze(ResolvedArtifact resolvedArtifact) {
+		return resolvedArtifact
+				.dependees().stream()
+				// filter dependees that are already in analysis or done
+				.filter(store::isNotInAnalysis)
+				.filter(store::isNotAnalyzed)
+				// tell the store that the dependee is added to analysis because of the resolved artifact
+				.peek(dependee -> store.waitsFor(resolvedArtifact.artifact(), dependee))
+				.peek(store::addInAnalysis)
+				// collect them in a set
+				.collect(collectingAndThen(toSet(), ImmutableSet::copyOf));
 	}
 
 	public ImmutableSet<DeeplyAnalyzedArtifact> analyzed(AnalyzedArtifact analyzedArtifact) {
 		requireNonNull(analyzedArtifact, "The argument 'analyzedArtifact' must not be null.");
-		updateArtifactsState(analyzedArtifact);
+		store.getStateInAnalysis(analyzedArtifact).analyzed(analyzedArtifact);
 		return deeplyAnalyzeArtifact(analyzedArtifact)
 				.map(this::findFinishedDependents)
 				.orElse(ImmutableSet.of());
 	}
 
-	private void updateArtifactsState(AnalyzedArtifact analyzedArtifact) {
-		AnalysisState state = store.getStateInAnalysis(analyzedArtifact.artifact());
-		if (state == null)
-			throw new IllegalStateException();
-		state.analysisDone(analyzedArtifact);
-	}
-
 	private Optional<DeeplyAnalyzedArtifact> deeplyAnalyzeArtifact(AnalyzedArtifact analyzedArtifact) {
-		boolean dependeesAlreadyDeeplyAnalyzed = enqueueAnalysisForAllDependees(analyzedArtifact);
-
-		if (dependeesAlreadyDeeplyAnalyzed) {
-			DeeplyAnalyzedArtifact deeplyAnalyzedArtifact = createDeeplyAnalyzedArtifact(
-					analyzedArtifact, analyzedArtifact.dependees(), analyzedArtifact.violations());
+		boolean areAllDependeesAnalyzed = store.getStateInAnalysis(analyzedArtifact).areAllDependeesAnalyzed();
+		if (areAllDependeesAnalyzed) {
+			DeeplyAnalyzedArtifact deeplyAnalyzedArtifact =
+					createDeeplyAnalyzedArtifact(analyzedArtifact, analyzedArtifact.violations());
 			markArtifactAsDeeplyAnalyzed(deeplyAnalyzedArtifact);
 			return Optional.of(deeplyAnalyzedArtifact);
 		} else
 			return Optional.empty();
 	}
 
-	private boolean enqueueAnalysisForAllDependees(AnalyzedArtifact analyzedArtifact) {
-		boolean allDependeesDeeplyAnalyzed = true;
-		for (ArtifactCoordinates dependee : analyzedArtifact.dependees()) {
-			if (store.isNotAnalyzed(dependee)) {
-				allDependeesDeeplyAnalyzed = false;
-				store.waitsFor(analyzedArtifact.artifact(), dependee);
-				if (store.isNotInAnalysis(dependee) && store.isNotToAnalyze(dependee))
-					// must be analyzed
-					store.addToAnalyze(dependee);
-			}
-		}
-		return allDependeesDeeplyAnalyzed;
-	}
-
 	private DeeplyAnalyzedArtifact createDeeplyAnalyzedArtifact(
 			IdentifiesArtifact analyzedArtifact,
-			Iterable<? extends IdentifiesArtifact> dependees,
 			ImmutableSet<Violation> violations) {
 		Builder<DeeplyAnalyzedArtifact> analyzedDependees = ImmutableSet.builder();
 		InternalDependencies internal = violations.isEmpty() ? InternalDependencies.NONE : InternalDependencies.DIRECT;
-		for (IdentifiesArtifact dependee : dependees) {
+		for (IdentifiesArtifact dependee : store.getStateInAnalysis(analyzedArtifact).analyzedDependees()) {
 			DeeplyAnalyzedArtifact analyzedDependee = store.getAnalysisResult(dependee.artifact());
 			analyzedDependees.add(analyzedDependee);
 			internal = internal.combineWithDependee(analyzedDependee.marker());
@@ -129,29 +139,28 @@ class Analysis {
 		ArtifactCoordinates deeplyAnalyzed = deeplyAnalyzedArtifact.artifact();
 		Set<ArtifactCoordinates> waitingDependents = store.stopWaitingFor(deeplyAnalyzed);
 		return concat(
-				// since the recursion uses flat map, the "root" for this call has to be present in the returned stream;
-				// otherwise finished dependencies get flat mapped to empty streams and are lost
+				// since the recursion uses flat map, the "root" for this call has to be present in the returned
+				// stream; otherwise finished dependencies get flat mapped to empty streams and are lost
 				of(deeplyAnalyzedArtifact),
 				waitingDependents.stream()
-						.peek(dependent -> store.getStateInAnalysis(dependent).dependeeAnalysisDone(deeplyAnalyzed))
+						// update the dependent's analysis state and check whether all dependees are analyzed
+						.peek(dependent -> store.getStateInAnalysis(dependent).dependeeAnalyzed(deeplyAnalyzed))
 						.filter(dependent -> store.getStateInAnalysis(dependent).areAllDependeesAnalyzed())
-						.map(dependent -> {
-							AnalysisState state = store.getStateInAnalysis(dependent);
-							return createDeeplyAnalyzedArtifact(
-									dependent, state.analyzedDependees(), state.result().violations());
-						})
+						// create and mark a new deeply analyzed artifact
+						.map(dependent -> createDeeplyAnalyzedArtifact(
+								dependent, store.getStateInAnalysis(dependent).result().violations()))
 						.peek(this::markArtifactAsDeeplyAnalyzed)
+						// recurse to find the artifacts that depend on the newly finished artifacts
 						.flatMap(this::findFinishedDependentsRecursively));
 	}
 
 	// TODO provide a method to identify and remove circles
 
-	private static class AnalysisStore {
+	private static class ArtifactStore {
 
 		// Remember:
 		// dependency: dependent -> dependee
 
-		private final Set<ArtifactCoordinates> toAnalyze;
 		private final Map<ArtifactCoordinates, AnalysisState> inAnalysis;
 		private final Map<ArtifactCoordinates, DeeplyAnalyzedArtifact> analyzed;
 		/**
@@ -159,30 +168,13 @@ class Analysis {
 		 */
 		private final SetMultimap<ArtifactCoordinates, ArtifactCoordinates> waitingDependentsByDependee;
 
-		public AnalysisStore(Collection<DeeplyAnalyzedArtifact> formerlyAnalyzedArtifacts) {
-			toAnalyze = new HashSet<>();
+		public ArtifactStore(Collection<DeeplyAnalyzedArtifact> formerlyAnalyzedArtifacts) {
 			inAnalysis = new HashMap<>();
 			analyzed = formerlyAnalyzedArtifacts.stream().collect(toMap(DeeplyAnalyzedArtifact::artifact, identity()));
 			waitingDependentsByDependee = HashMultimap.create();
 		}
 
-		// to analyze
-
-		public void addToAnalyze(ArtifactCoordinates artifact) {
-			toAnalyze.add(artifact);
-		}
-
-		public void removeToAnalyze(ArtifactCoordinates artifact) {
-			toAnalyze.remove(artifact);
-		}
-
-		public ImmutableSet<ArtifactCoordinates> getAllToAnalyze() {
-			return ImmutableSet.copyOf(this.toAnalyze);
-		}
-
-		public boolean isNotToAnalyze(ArtifactCoordinates artifact) {
-			return !this.inAnalysis.containsKey(artifact);
-		}
+		// all
 
 		// in analysis
 
@@ -194,8 +186,12 @@ class Analysis {
 			inAnalysis.remove(artifact);
 		}
 
-		public AnalysisState getStateInAnalysis(ArtifactCoordinates artifact) {
-			return inAnalysis.get(artifact);
+		public AnalysisState getStateInAnalysis(IdentifiesArtifact artifact) {
+			return Optional.of(artifact)
+					.map(IdentifiesArtifact::artifact)
+					.map(inAnalysis::get)
+					.orElseThrow(() ->
+							new IllegalStateException(format("No analysis state for artifact %s.", artifact)));
 		}
 
 		public boolean isNotInAnalysis(ArtifactCoordinates artifact) {
@@ -240,13 +236,17 @@ class Analysis {
 			this.analyzedDependees = new HashSet<>();
 		}
 
-		public void analysisDone(AnalyzedArtifact result) {
+		public void resolved(ResolvedArtifact result) {
 			requireNonNull(result, "The argument 'result' must not be null.");
-			this.result = Optional.of(result);
 			this.dependeesToAnalyse.addAll(result.dependees());
 		}
 
-		public void dependeeAnalysisDone(ArtifactCoordinates dependee) {
+		public void analyzed(AnalyzedArtifact result) {
+			requireNonNull(result, "The argument 'result' must not be null.");
+			this.result = Optional.of(result);
+		}
+
+		public void dependeeAnalyzed(ArtifactCoordinates dependee) {
 			requireNonNull(dependee, "The argument 'dependee' must not be null.");
 			if (!dependeesToAnalyse.contains(dependee))
 				throw new IllegalStateException();

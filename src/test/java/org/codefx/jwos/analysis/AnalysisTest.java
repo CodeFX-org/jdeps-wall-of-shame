@@ -5,8 +5,11 @@ import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.artifact.InternalDependencies;
+import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.nio.file.Paths;
 
 import static java.util.Collections.emptySet;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -23,15 +26,13 @@ public class AnalysisTest {
 	@Test
 	public void withSimpleArtifact() throws Exception {
 		ArtifactCoordinates artifact = ArtifactCoordinates.from("g", "a", "v");
-		analysis.toAnalyse(artifact);
 
-		// added artifact can be retrieved for analysis
-		ImmutableSet<ArtifactCoordinates> artifacts = analysis.retrieveForAnalysis();
-		assertThat(artifacts).hasSize(1);
-		assertThat(artifacts.contains(artifact));
+		// added artifact must be analyzed
+		boolean mustBeAnalyzed = analysis.startAnalysis(artifact);
+		assertThat(mustBeAnalyzed).isTrue();
 
 		// since it has no dependency, it is immediately deeply analyzed
-		AnalyzedArtifact analyzedArtifact = new AnalyzedArtifact(artifact, ImmutableSet.of(), ImmutableSet.of());
+		AnalyzedArtifact analyzedArtifact = new AnalyzedArtifact(artifact, ImmutableSet.of());
 		ImmutableSet<DeeplyAnalyzedArtifact> analyzedArtifacts = analysis.analyzed(analyzedArtifact);
 		assertThat(analyzedArtifacts).hasSize(1);
 
@@ -46,21 +47,18 @@ public class AnalysisTest {
 	public void withDependency() throws Exception {
 		ArtifactCoordinates dependent = ArtifactCoordinates.from("g", "dependant ->", "v");
 		ArtifactCoordinates dependee = ArtifactCoordinates.from("g", "-> dependee", "v");
-		analysis.toAnalyse(dependent);
-		analysis.retrieveForAnalysis();
+		analysis.startAnalysis(dependent);
+
+		// tell 'analysis' about the dependee
+		analysis.resolved(new ResolvedArtifact(dependent, Paths.get(""), ImmutableSet.of(dependee)));
 
 		// since dependent has a dependee, it is not yet deeply analyzed
-		AnalyzedArtifact analyzedArtifact =
-				new AnalyzedArtifact(dependent, ImmutableSet.of(), ImmutableSet.of(dependee));
+		AnalyzedArtifact analyzedArtifact = new AnalyzedArtifact(dependent, ImmutableSet.of());
 		ImmutableSet<DeeplyAnalyzedArtifact> analyzedArtifacts = analysis.analyzed(analyzedArtifact);
 		assertThat(analyzedArtifacts).hasSize(0);
 
-		// dependee can be retrieved for analysis
-		ImmutableSet<ArtifactCoordinates> artifacts = analysis.retrieveForAnalysis();
-		assertThat(artifacts).containsExactly(dependee);
-
 		// analyzing dependee must return both artifacts
-		analyzedArtifact = new AnalyzedArtifact(dependee, ImmutableSet.of(), ImmutableSet.of());
+		analyzedArtifact = new AnalyzedArtifact(dependee, ImmutableSet.of());
 		analyzedArtifacts = analysis.analyzed(analyzedArtifact);
 		assertThat(analyzedArtifacts).hasSize(2);
 	}

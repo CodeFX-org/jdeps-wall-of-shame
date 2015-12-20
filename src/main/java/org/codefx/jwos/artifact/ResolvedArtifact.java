@@ -10,12 +10,12 @@ public class ResolvedArtifact implements IdentifiesArtifact {
 
 	private final ArtifactCoordinates artifact;
 	private final Path path;
-	private final ImmutableSet<ArtifactCoordinates> dependencies;
+	private final ImmutableSet<ArtifactCoordinates> dependees;
 
-	public ResolvedArtifact(ArtifactCoordinates artifact, Path path, ImmutableSet<ArtifactCoordinates> dependencies) {
+	public ResolvedArtifact(ArtifactCoordinates artifact, Path path, ImmutableSet<ArtifactCoordinates> dependees) {
 		this.artifact = requireNonNull(artifact, "The argument 'artifact' must not be null.");
 		this.path = requireNonNull(path, "The argument 'path' must not be null.");
-		this.dependencies = requireNonNull(dependencies, "The argument 'dependencies' must not be null.");
+		this.dependees = requireNonNull(dependees, "The argument 'dependees' must not be null.");
 	}
 
 	@Override
@@ -27,8 +27,8 @@ public class ResolvedArtifact implements IdentifiesArtifact {
 		return path;
 	}
 
-	public ImmutableSet<ArtifactCoordinates> dependencies() {
-		return dependencies;
+	public ImmutableSet<ArtifactCoordinates> dependees() {
+		return dependees;
 	}
 
 	@Override
