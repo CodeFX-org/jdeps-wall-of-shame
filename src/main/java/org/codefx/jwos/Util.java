@@ -9,7 +9,7 @@ import static java.lang.String.format;
 
 class Util {
 
-	public static final String[] PROJECT_LIST_FILE_NAMES = { "top100JavaLibrariesByTakipi.txt" };
+	public static final String[] PROJECT_LIST_FILE_NAMES = { "top10JavaLibrariesByTakipi.txt" };
 	public static final String RESULT_FILE_NAME = "results.txt";
 
 	public static final Path PAGES_DIRECTORY = Paths.get("/home/nipa/code/JDepsWallOfShame-Pages");

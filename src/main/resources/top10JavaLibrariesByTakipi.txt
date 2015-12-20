@@ -1,0 +1,17 @@
+# Sources:
+# - http://blog.takipi.com/we-analyzed-60678-libraries-on-github-here-are-the-top-100/
+# - https://docs.google.com/spreadsheets/d/1MZid4nt8uK0MhRwlds54CKbdoYahVh0pstFWxqcAcGM
+# Shortened to 10 entries by me.
+#
+# (There must be exactly one empty line between comments and project list.)
+
+junit:junit
+org.slf4j:slf4j-api
+log4j:log4j
+com.google.guava:guava
+commons-io:commons-io
+org.slf4j:slf4j-log4j12
+org.mockito:mockito-all
+commons-lang:commons-lang
+javax.servlet:servlet-api
+ch.qos.logback:logback-classic
