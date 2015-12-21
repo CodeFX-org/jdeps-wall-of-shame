@@ -1,12 +1,12 @@
 package org.codefx.jwos.artifact;
 
-public enum InternalDependencies {
+public enum MarkInternalDependencies {
 
 	NONE,
 	INDIRECT,
 	DIRECT;
 
-	public InternalDependencies combineWithDependee(InternalDependencies other) {
+	public MarkInternalDependencies combineWithDependee(MarkInternalDependencies other) {
 		if (this == NONE) {
 			switch (other) {
 				case NONE:

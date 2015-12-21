@@ -7,6 +7,9 @@ import java.util.Objects;
 
 import static java.util.Objects.requireNonNull;
 
+/**
+ * Uniquely identifies an artifact.
+ */
 public final class ArtifactCoordinates implements IdentifiesArtifact {
 
 	private final String groupId;
@@ -27,7 +30,11 @@ public final class ArtifactCoordinates implements IdentifiesArtifact {
 		return new ArtifactCoordinates(artifact.getGroupId(), artifact.getArtifactId(), artifact.getVersion());
 	}
 
-	public Artifact toArtifact() {
+	public ProjectCoordinates project() {
+		return ProjectCoordinates.from(groupId, artifactId);
+	}
+
+	public Artifact toMavenArtifact() {
 		return new DefaultArtifact(groupId, artifactId, "jar", version);
 	}
 
@@ -44,7 +51,7 @@ public final class ArtifactCoordinates implements IdentifiesArtifact {
 	}
 
 	@Override
-	public ArtifactCoordinates artifact() {
+	public ArtifactCoordinates coordinates() {
 		return this;
 	}
 

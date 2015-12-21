@@ -70,7 +70,7 @@ public class WallOfShame {
 	private String createCommitMessage() {
 		return "Publish new results\n"
 				+ addedSinceLastCommit.stream()
-				.map(artifact -> artifact.artifact().toString() + ": " + artifact.marker())
+				.map(artifact -> artifact.coordinates().toString() + ": " + artifact.marker())
 				.collect(joining("\n * ", "\n * ", "\n"));
 	}
 

@@ -4,13 +4,13 @@ import java.util.Comparator;
 
 public interface IdentifiesArtifact {
 
-	ArtifactCoordinates artifact();
+	ArtifactCoordinates coordinates();
 
 	static Comparator<IdentifiesArtifact> alphabeticalOrder() {
 		return Comparator
-				.<IdentifiesArtifact, String>comparing(id -> id.artifact().groupId())
-				.thenComparing(id -> id.artifact().artifactId())
-				.thenComparing(id -> id.artifact().version());
+				.<IdentifiesArtifact, String>comparing(id -> id.coordinates().groupId())
+				.thenComparing(id -> id.coordinates().artifactId())
+				.thenComparing(id -> id.coordinates().version());
 	}
 
 }

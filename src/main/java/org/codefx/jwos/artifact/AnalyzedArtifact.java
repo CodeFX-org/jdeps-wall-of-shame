@@ -7,9 +7,10 @@ import java.util.Objects;
 
 import static java.util.Objects.requireNonNull;
 
-public class AnalyzedArtifact implements IdentifiesArtifact {
-
-	// TODO there should be a possibility to mark a failed analysis
+/**
+ * An artifact that has been analyzed by JDeps.
+ */
+public final class AnalyzedArtifact implements IdentifiesArtifact {
 
 	private final ArtifactCoordinates artifact;
 	private final ImmutableSet<Violation> violations;
@@ -22,7 +23,7 @@ public class AnalyzedArtifact implements IdentifiesArtifact {
 	}
 
 	@Override
-	public ArtifactCoordinates artifact() {
+	public ArtifactCoordinates coordinates() {
 		return artifact;
 	}
 

@@ -9,16 +9,19 @@ import java.util.Optional;
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.joining;
 
-public class DeeplyAnalyzedArtifact implements IdentifiesArtifact {
+/**
+ * An artifact that itself and all its children have been analyzed by JDeps.
+ */
+public final class DeeplyAnalyzedArtifact implements IdentifiesArtifact {
 
 	private final ArtifactCoordinates artifact;
-	private final InternalDependencies marker;
+	private final MarkInternalDependencies marker;
 	private final ImmutableSet<Violation> violations;
 	private final ImmutableSet<DeeplyAnalyzedArtifact> dependees;
 
 	public DeeplyAnalyzedArtifact(
 			ArtifactCoordinates artifact,
-			InternalDependencies marker,
+			MarkInternalDependencies marker,
 			ImmutableSet<Violation> violations,
 			ImmutableSet<DeeplyAnalyzedArtifact> dependees) {
 		this.artifact = requireNonNull(artifact, "The argument 'artifact' must not be null.");
@@ -28,11 +31,11 @@ public class DeeplyAnalyzedArtifact implements IdentifiesArtifact {
 	}
 
 	@Override
-	public ArtifactCoordinates artifact() {
+	public ArtifactCoordinates coordinates() {
 		return artifact;
 	}
 
-	public InternalDependencies marker() {
+	public MarkInternalDependencies marker() {
 		return marker;
 	}
 
@@ -90,7 +93,7 @@ public class DeeplyAnalyzedArtifact implements IdentifiesArtifact {
 
 		return Optional.of(
 				dependees.stream()
-						.map(DeeplyAnalyzedArtifact::artifact)
+						.map(DeeplyAnalyzedArtifact::coordinates)
 						.map(ArtifactCoordinates::toString)
 						.collect(joining(", ")));
 	}

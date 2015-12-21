@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
-import org.codefx.jwos.artifact.InternalDependencies;
+import org.codefx.jwos.artifact.MarkInternalDependencies;
 import org.codefx.jwos.jdeps.dependency.InternalType;
 import org.codefx.jwos.jdeps.dependency.Type;
 import org.codefx.jwos.jdeps.dependency.Violation;
@@ -25,7 +25,6 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import static java.lang.String.format;
 import static java.util.Collections.singleton;
 import static java.util.Collections.unmodifiableSet;
 import static java.util.Objects.requireNonNull;
@@ -86,7 +85,7 @@ public class ResultFile {
 		Map<ArtifactCoordinates, DeeplyAnalyzedArtifact> preliminaryArtifacts = new HashMap<>();
 
 		ArtifactCoordinates artifact = null;
-		InternalDependencies marker = null;
+		MarkInternalDependencies marker = null;
 		List<Violation> violations = new ArrayList<>();
 		// TODO: This is a lie!
 		// These artifacts are not truly "deeply analyzed". On the contrary, they have no violations and dependencies
@@ -103,7 +102,7 @@ public class ResultFile {
 			else {
 				// a new artifact begins here; add the former to the set ...
 				createArtifact(artifact, marker, violations, dependees)
-						.ifPresent(parsed -> preliminaryArtifacts.put(parsed.artifact(), parsed));
+						.ifPresent(parsed -> preliminaryArtifacts.put(parsed.coordinates(), parsed));
 				// ... and start a new one
 				artifact = parseArtifactString(line);
 				marker = parseMarkerString(line);
@@ -113,7 +112,7 @@ public class ResultFile {
 		}
 		// create the last artifact
 		createArtifact(artifact, marker, violations, dependees)
-				.ifPresent(parsed -> preliminaryArtifacts.put(parsed.artifact(), parsed));
+				.ifPresent(parsed -> preliminaryArtifacts.put(parsed.coordinates(), parsed));
 
 		return preliminaryArtifacts;
 	}
@@ -140,7 +139,7 @@ public class ResultFile {
 
 		ArtifactCoordinates dependee =
 				parseArtifactString(line.substring(DEPENDENCY_LINE_PREFIX.length(), line.length()));
-		InternalDependencies marker = parseMarkerString(line);
+		MarkInternalDependencies marker = parseMarkerString(line);
 		return new DeeplyAnalyzedArtifact(dependee, marker, ImmutableSet.of(), ImmutableSet.of());
 	}
 
@@ -150,13 +149,13 @@ public class ResultFile {
 		return ArtifactCoordinates.from(coordinates[0], coordinates[1], coordinates[2]);
 	}
 
-	private static InternalDependencies parseMarkerString(String line) {
+	private static MarkInternalDependencies parseMarkerString(String line) {
 		String[] artifactAndMarker = line.trim().split(SEPARATOR_ARTIFACT_MARKER);
-		return InternalDependencies.valueOf(artifactAndMarker[1]);
+		return MarkInternalDependencies.valueOf(artifactAndMarker[1]);
 	}
 
 	private static Optional<DeeplyAnalyzedArtifact> createArtifact(
-			ArtifactCoordinates artifact, InternalDependencies marker, List<Violation> violations,
+			ArtifactCoordinates artifact, MarkInternalDependencies marker, List<Violation> violations,
 			List<DeeplyAnalyzedArtifact> dependees) {
 		if (artifact == null)
 			return Optional.empty();
@@ -185,12 +184,12 @@ public class ResultFile {
 			DeeplyAnalyzedArtifact preliminaryArtifact = preliminaryArtifacts.get(artifact);
 			ImmutableSet<DeeplyAnalyzedArtifact> finalizedDependees = preliminaryArtifact
 					.dependees().stream()
-					.map(IdentifiesArtifact::artifact)
+					.map(IdentifiesArtifact::coordinates)
 					.map(preliminary ->
 							finalizeArtifactRecursively(preliminary, preliminaryArtifacts, finalizedArtifacts))
 					.collect(collectingAndThen(toSet(), ImmutableSet::copyOf));
 			finalizedArtifacts.put(
-					artifact.artifact(),
+					artifact.coordinates(),
 					new DeeplyAnalyzedArtifact(
 							artifact,
 							preliminaryArtifact.marker(),
@@ -247,7 +246,7 @@ public class ResultFile {
 			boolean indented, DeeplyAnalyzedArtifact artifact, BufferedWriter writer) throws IOException {
 		if (indented)
 			writer.append(DEPENDENCY_LINE_PREFIX);
-		writer.append(artifact.artifact().toString());
+		writer.append(artifact.coordinates().toString());
 		writer.append(SEPARATOR_ARTIFACT_MARKER);
 		writer.append(artifact.marker().toString());
 		writer.newLine();

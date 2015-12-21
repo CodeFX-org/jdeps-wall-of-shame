@@ -107,7 +107,7 @@ class Brick {
 
 	private static void writeArtifactLine(
 			DeeplyAnalyzedArtifact artifact, BufferedWriter writer) throws IOException {
-		writer.append(artifact.artifact().toString());
+		writer.append(artifact.coordinates().toString());
 		writer.newLine();
 	}
 

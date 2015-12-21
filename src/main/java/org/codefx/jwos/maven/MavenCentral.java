@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.eclipse.aether.DefaultRepositorySystemSession;
@@ -33,7 +34,6 @@ import org.eclipse.aether.spi.connector.transport.TransporterFactory;
 import org.eclipse.aether.transport.file.FileTransporterFactory;
 import org.eclipse.aether.transport.http.HttpTransporterFactory;
 import org.eclipse.aether.util.graph.visitor.PreorderNodeListGenerator;
-import org.eclipse.aether.version.Version;
 
 import java.nio.file.Path;
 
@@ -71,17 +71,26 @@ public class MavenCentral {
 		return session;
 	}
 
-	public ResolvedArtifact downloadMavenArtifact(ArtifactCoordinates artifactCoordinates) throws RepositoryException {
-		return new ResolvedArtifact(
-				artifactCoordinates,
-				downloadArtifact(artifactCoordinates.toArtifact()),
-				getDependencies(artifactCoordinates.toArtifact()));
+	public ImmutableList<ArtifactCoordinates> detectAllVersionsOf(ProjectCoordinates project) throws RepositoryException {
+		Artifact artifact = new DefaultArtifact(project.groupId(), project.artifactId(), "jar", "[0,)");
+		VersionRangeResult versionRange = repositorySystem.resolveVersionRange(
+				repositorySystemSession,
+				new VersionRangeRequest(artifact, singletonList(mavenCentral), NULL_CONTEXT));
+		return project.toArtifactsWithVersions(versionRange.getVersions());
+	}
+
+	public DownloadedArtifact downloadArtifact(ArtifactCoordinates artifact) throws RepositoryException {
+		return new DownloadedArtifact(artifact, downloadArtifact(artifact.toMavenArtifact()));
 	}
 
 	private Path downloadArtifact(Artifact artifact) throws RepositoryException {
 		ArtifactRequest artifactRequest = new ArtifactRequest(artifact, singletonList(mavenCentral), NULL_CONTEXT);
 		ArtifactResult artifactResult = repositorySystem.resolveArtifact(repositorySystemSession, artifactRequest);
 		return artifactResult.getArtifact().getFile().toPath();
+	}
+
+	public ResolvedArtifact resolveArtifact(ArtifactCoordinates artifact) throws RepositoryException {
+		return new ResolvedArtifact(artifact, getDependencies(artifact.toMavenArtifact()));
 	}
 
 	private ImmutableSet<ArtifactCoordinates> getDependencies(Artifact artifact) throws RepositoryException {
@@ -98,6 +107,8 @@ public class MavenCentral {
 		DependencyNode dependencyRoot =
 				repositorySystem.collectDependencies(repositorySystemSession, collectRequest).getRoot();
 
+		// TODO only collect direct dependencies
+
 		DependencyRequest dependencyRequest = new DependencyRequest(dependencyRoot, null);
 		repositorySystem.resolveDependencies(repositorySystemSession, dependencyRequest);
 
@@ -107,14 +118,6 @@ public class MavenCentral {
 		ImmutableSet.Builder<ArtifactCoordinates> dependencyCoordinates = ImmutableSet.builder();
 		dependencies.getArtifacts(true).stream().map(ArtifactCoordinates::from).forEach(dependencyCoordinates::add);
 		return dependencyCoordinates.build();
-	}
-
-	public ImmutableList<Version> detectAllVersionsOf(ProjectCoordinates project) throws RepositoryException {
-		Artifact artifact = new DefaultArtifact(project.groupId(), project.artifactId(), "jar", "[0,)");
-		VersionRangeResult versionRange = repositorySystem.resolveVersionRange(
-				repositorySystemSession,
-				new VersionRangeRequest(artifact, singletonList(mavenCentral), NULL_CONTEXT));
-		return ImmutableList.copyOf(versionRange.getVersions());
 	}
 
 }

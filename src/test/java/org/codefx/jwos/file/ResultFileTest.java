@@ -3,7 +3,7 @@ package org.codefx.jwos.file;
 import com.google.common.collect.ImmutableSet;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
-import org.codefx.jwos.artifact.InternalDependencies;
+import org.codefx.jwos.artifact.MarkInternalDependencies;
 import org.codefx.jwos.jdeps.dependency.InternalType;
 import org.codefx.jwos.jdeps.dependency.Type;
 import org.codefx.jwos.jdeps.dependency.Violation;
@@ -48,7 +48,7 @@ public class ResultFileTest {
 		ResultFile result = ResultFile.empty(resultFile);
 		DeeplyAnalyzedArtifact artifact = new DeeplyAnalyzedArtifact(
 				ArtifactCoordinates.from("group.id", "art.id", "1.0"),
-				InternalDependencies.DIRECT,
+				MarkInternalDependencies.DIRECT,
 				ImmutableSet.of(
 						Violation.buildFor(
 								Type.of("com.foo", "Bar"),
@@ -73,7 +73,7 @@ public class ResultFileTest {
 		ResultFile result = ResultFile.empty(resultFile);
 		DeeplyAnalyzedArtifact one = new DeeplyAnalyzedArtifact(
 				ArtifactCoordinates.from("group.id", "art.id", "1.0"),
-				InternalDependencies.DIRECT,
+				MarkInternalDependencies.DIRECT,
 				ImmutableSet.of(
 						Violation.buildFor(
 								Type.of("com.foo", "Bar"),
@@ -83,7 +83,7 @@ public class ResultFileTest {
 		);
 		DeeplyAnalyzedArtifact two = new DeeplyAnalyzedArtifact(
 				ArtifactCoordinates.from("gang.id", "garbage.id", "2.0"),
-				InternalDependencies.INDIRECT,
+				MarkInternalDependencies.INDIRECT,
 				ImmutableSet.of(),
 				ImmutableSet.of(one)
 		);
@@ -123,7 +123,7 @@ public class ResultFileTest {
 		DeeplyAnalyzedArtifact parsedArtifact = result.analyzedArtifactsUnmodifiable().iterator().next();
 		DeeplyAnalyzedArtifact expectedArtifact = new DeeplyAnalyzedArtifact(
 				ArtifactCoordinates.from("group.id", "art.id", "1.0"),
-				InternalDependencies.DIRECT,
+				MarkInternalDependencies.DIRECT,
 				ImmutableSet.of(
 						Violation.buildFor(
 								Type.of("com.foo", "Bar"),
@@ -147,7 +147,7 @@ public class ResultFileTest {
 		assertThat(result.analyzedArtifactsUnmodifiable()).hasSize(2);
 		DeeplyAnalyzedArtifact expectedOne = new DeeplyAnalyzedArtifact(
 				ArtifactCoordinates.from("group.id", "art.id", "1.0"),
-				InternalDependencies.DIRECT,
+				MarkInternalDependencies.DIRECT,
 				ImmutableSet.of(
 						Violation.buildFor(
 								Type.of("com.foo", "Bar"),
@@ -156,7 +156,7 @@ public class ResultFileTest {
 		);
 		DeeplyAnalyzedArtifact expectedTwo = new DeeplyAnalyzedArtifact(
 				ArtifactCoordinates.from("gang.id", "garbage.id", "2.0"),
-				InternalDependencies.INDIRECT,
+				MarkInternalDependencies.INDIRECT,
 				ImmutableSet.of(),
 				ImmutableSet.of(expectedOne)
 		);
@@ -170,11 +170,11 @@ public class ResultFileTest {
 	}
 
 	private static DeeplyAnalyzedArtifact simpleArtifact(ArtifactCoordinates coordinates) {
-		return simpleArtifact(coordinates, InternalDependencies.NONE);
+		return simpleArtifact(coordinates, MarkInternalDependencies.NONE);
 	}
 
 	private static DeeplyAnalyzedArtifact simpleArtifact(
-			ArtifactCoordinates coordinates, InternalDependencies marker) {
+			ArtifactCoordinates coordinates, MarkInternalDependencies marker) {
 		return new DeeplyAnalyzedArtifact(
 				coordinates,
 				marker,
@@ -183,7 +183,7 @@ public class ResultFileTest {
 	}
 
 	private void assertThatArtifactsEqual(DeeplyAnalyzedArtifact expected, DeeplyAnalyzedArtifact parsed) {
-		assertThat(parsed.artifact()).isEqualTo(expected.artifact());
+		assertThat(parsed.coordinates()).isEqualTo(expected.coordinates());
 		assertThat(parsed.marker()).isEqualTo(expected.marker());
 		assertThat(parsed.violations()).isEqualTo(expected.violations());
 		assertThat(parsed.dependees()).isEqualTo(expected.dependees());

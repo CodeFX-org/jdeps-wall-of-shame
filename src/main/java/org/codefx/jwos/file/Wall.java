@@ -1,7 +1,7 @@
 package org.codefx.jwos.file;
 
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
-import org.codefx.jwos.artifact.InternalDependencies;
+import org.codefx.jwos.artifact.MarkInternalDependencies;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -10,13 +10,13 @@ import java.util.Map;
 
 import static java.util.Collections.emptySet;
 import static java.util.Objects.requireNonNull;
-import static org.codefx.jwos.artifact.InternalDependencies.DIRECT;
-import static org.codefx.jwos.artifact.InternalDependencies.INDIRECT;
-import static org.codefx.jwos.artifact.InternalDependencies.NONE;
+import static org.codefx.jwos.artifact.MarkInternalDependencies.DIRECT;
+import static org.codefx.jwos.artifact.MarkInternalDependencies.INDIRECT;
+import static org.codefx.jwos.artifact.MarkInternalDependencies.NONE;
 
 class Wall {
 
-	private final Map<InternalDependencies, Brick> bricks;
+	private final Map<MarkInternalDependencies, Brick> bricks;
 
 	private Wall(Brick directDependencies, Brick indirectDependencies, Brick noDependencies) {
 		bricks = new HashMap<>();
