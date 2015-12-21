@@ -21,7 +21,7 @@ class Util {
 
 	public static Path getPathToResourceFile(String fileName) {
 		return Optional
-				.ofNullable(Main.class.getClassLoader().getResource(fileName))
+				.ofNullable(Util.class.getClassLoader().getResource(fileName))
 				.map(URL::getPath)
 				.map(Paths::get)
 				.orElseThrow(() -> new IllegalArgumentException(format("No resource file '%s' was found.", fileName)));
