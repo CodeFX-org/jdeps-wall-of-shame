@@ -1,7 +1,7 @@
 package org.codefx.jwos;
 
 import com.google.common.collect.ImmutableList;
-import org.codefx.jwos.analysis.AnalysisFunctions;
+import org.codefx.jwos.analysis.Analysis;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
@@ -36,6 +36,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.stream.Stream;
 
 import static java.lang.String.format;
+import static java.util.Collections.emptySet;
+import static java.util.Collections.singleton;
 import static org.codefx.jwos.connect.Log.log;
 
 public class Main {
@@ -44,10 +46,10 @@ public class Main {
 
 	private final BlockingQueue<ProjectCoordinates> mustDetectVersions;
 	private final BlockingQueue<ArtifactCoordinates> mustStartAnalysis;
-	private final BlockingQueue<ResolvedArtifact> mustStartDependeeAnalysis;
 	private final BlockingQueue<ArtifactCoordinates> mustResolve;
-	private final BlockingReceiver<ResolvedArtifact> mustAnalyzeArtifactAndStartAnalysingDependees;
+	private final BlockingReceiver<ResolvedArtifact> mustAnalyzeArtifactAndProcessDependees;
 	private final BlockingQueue<ResolvedArtifact> mustAnalyze;
+	private final BlockingQueue<ResolvedArtifact> mustProcessDependees;
 	private final BlockingQueue<AnalyzedArtifact> mustDeeplyAnalyze;
 	private final BlockingReceiver<DeeplyAnalyzedArtifact> mustFinish;
 	private final BlockingQueue<DeeplyAnalyzedArtifact> mustLogResult;
@@ -56,27 +58,27 @@ public class Main {
 	private final List<Source<ProjectCoordinates>> findProjects;
 	private final List<TransformerToMany<ProjectCoordinates, ArtifactCoordinates>> detectVersions;
 	private final List<TransformerToMany<ArtifactCoordinates, ArtifactCoordinates>> startAnalysis;
-	private final List<TransformerToMany<ResolvedArtifact, ArtifactCoordinates>> startDependeeAnalysis;
 	private final List<Transformer<ArtifactCoordinates, ResolvedArtifact>> resolve;
+	private final List<TransformerToMany<ResolvedArtifact, ArtifactCoordinates>> processDependees;
 	private final List<Transformer<ResolvedArtifact, AnalyzedArtifact>> analyze;
 	private final List<TransformerToMany<AnalyzedArtifact, DeeplyAnalyzedArtifact>> deeplyAnalyze;
 	private final List<Sink<DeeplyAnalyzedArtifact>> finish;
 
 	private final ResultFile resultFile;
-	private final AnalysisFunctions analysis;
+	private final Analysis analysis;
 	private final MavenCentral maven;
 
 	public Main() throws IOException {
 		mustDetectVersions = new ArrayBlockingQueue<>(5);
 		mustStartAnalysis = new ArrayBlockingQueue<>(5);
-		// this queue must be nominally unbound because it is part of a cycle, which can lead to deadlock;
-		// its size is still bound by the size of 'mustAnalyze' because both queue are added to at the same time
-		mustStartDependeeAnalysis = new LinkedBlockingQueue<>();
 		mustResolve = new ArrayBlockingQueue<>(5);
 		mustAnalyze = new ArrayBlockingQueue<>(5);
-		mustAnalyzeArtifactAndStartAnalysingDependees = artifact -> {
+		// this queue must be nominally unbound because it is part of a cycle, which can lead to deadlock;
+		// its size is still bound by the size of 'mustAnalyze' because both queue are added to at the same time
+		mustProcessDependees = new LinkedBlockingQueue<>();
+		mustAnalyzeArtifactAndProcessDependees = artifact -> {
 			mustAnalyze.put(artifact);
-			mustStartDependeeAnalysis.put(artifact);
+			mustProcessDependees.put(artifact);
 		};
 		mustDeeplyAnalyze = new ArrayBlockingQueue<>(5);
 		mustLogResult = new ArrayBlockingQueue<>(5);
@@ -89,14 +91,14 @@ public class Main {
 		findProjects = new ArrayList<>();
 		detectVersions = new ArrayList<>();
 		startAnalysis = new ArrayList<>();
-		startDependeeAnalysis = new ArrayList<>();
+		processDependees = new ArrayList<>();
 		resolve = new ArrayList<>();
 		analyze = new ArrayList<>();
 		deeplyAnalyze = new ArrayList<>();
 		finish = new ArrayList<>();
 
 		resultFile = ResultFile.read(Util.getPathToResourceFile(Util.RESULT_FILE_NAME));
-		analysis = new AnalysisFunctions(resultFile.analyzedArtifactsUnmodifiable());
+		analysis = new Analysis(resultFile.analyzedArtifactsUnmodifiable());
 		maven = new MavenCentral();
 	}
 
@@ -110,8 +112,9 @@ public class Main {
 		createReadProjectFiles(mustDetectVersions::put).forEach(findProjects::add);
 		detectVersions.add(createDetectVersions(mustDetectVersions::take, mustStartAnalysis::put, maven));
 		startAnalysis.add(createStartAnalysis(mustStartAnalysis::take, mustResolve::put, analysis));
-		startDependeeAnalysis.add(createStartDependeeAnalysis(mustStartDependeeAnalysis::take, mustResolve::put, analysis));
-		resolve.add(createMavenResolver(mustResolve::take, mustAnalyzeArtifactAndStartAnalysingDependees, maven));
+		processDependees.add(
+				createProcessDependees(mustProcessDependees::take, mustStartAnalysis::put, analysis));
+		resolve.add(createMavenResolver(mustResolve::take, mustAnalyzeArtifactAndProcessDependees, maven));
 		analyze.add(createJDepsAnalyzer(mustAnalyze::take, mustDeeplyAnalyze::put));
 		deeplyAnalyze.add(createDeepAnalyze(mustDeeplyAnalyze::take, mustFinish, analysis));
 		finish.add(createLogPrinter(mustLogResult::take));
@@ -122,7 +125,7 @@ public class Main {
 		activateConnections(findProjects, "Finding Projects");
 		activateConnections(detectVersions, "Detecting Versions");
 		activateConnections(startAnalysis, "Starting Analysis");
-		activateConnections(startDependeeAnalysis, "Starting Dependee Analysis");
+		activateConnections(processDependees, "Starting Dependee Analysis");
 		activateConnections(resolve, "Resolving");
 		activateConnections(analyze, "Analyzing");
 		activateConnections(deeplyAnalyze, "Deeply Analyzing");
@@ -165,9 +168,7 @@ public class Main {
 	}
 
 	private static TransformerToMany<ProjectCoordinates, ArtifactCoordinates> createDetectVersions(
-			BlockingSender<ProjectCoordinates> in,
-			BlockingReceiver<ArtifactCoordinates> out,
-			MavenCentral maven) {
+			BlockingSender<ProjectCoordinates> in, BlockingReceiver<ArtifactCoordinates> out, MavenCentral maven) {
 		Logger logger = LoggerFactory.getLogger("Detect Versions");
 		return new TransformerToMany<>(
 				in,
@@ -184,32 +185,35 @@ public class Main {
 	}
 
 	private static TransformerToMany<ArtifactCoordinates, ArtifactCoordinates> createStartAnalysis(
-			BlockingSender<ArtifactCoordinates> in,
-			BlockingReceiver<ArtifactCoordinates> out,
-			AnalysisFunctions analysis) {
+			BlockingSender<ArtifactCoordinates> in, BlockingReceiver<ArtifactCoordinates> out, Analysis analysis) {
 		Logger logger = LoggerFactory.getLogger("Start To Analyze");
 		return new TransformerToMany<>(
 				in,
 				log(
 						"",
-						analysis.startAnalysis(),
+						artifact -> {
+							boolean hasToBeAnalyzed = analysis.startAnalysis(artifact);
+							return hasToBeAnalyzed ? singleton(artifact) : emptySet();
+						},
 						"Starting to analyze %s.",
 						logger),
 				out,
 				logger);
 	}
 
-	private static TransformerToMany<ResolvedArtifact, ArtifactCoordinates> createStartDependeeAnalysis(
-			BlockingSender<ResolvedArtifact> in,
-			BlockingReceiver<ArtifactCoordinates> out,
-			AnalysisFunctions analysis) {
-		Logger logger = LoggerFactory.getLogger("Start To Analyze");
+	private static TransformerToMany<ResolvedArtifact, ArtifactCoordinates> createProcessDependees(
+			BlockingSender<ResolvedArtifact> in, BlockingReceiver<ArtifactCoordinates> out, Analysis analysis) {
+		Logger logger = LoggerFactory.getLogger("Process Dependees");
 		return new TransformerToMany<>(
 				in,
 				log(
-						"",
-						analysis.resolvedDependencies(),
-						"Starting to analyze dependee %s.",
+						"Processing dependees of %s.",
+						artifact -> {
+							analysis.resolved(artifact);
+							logger.info(format("Registered dependees of %s.", artifact));
+							return artifact.dependees();
+						},
+						"Added dependee %s to analysis queue.",
 						logger),
 				out,
 				logger);
@@ -221,9 +225,9 @@ public class Main {
 		return new Transformer<>(
 				in,
 				log(
-						"Downloading %s...",
+						"Resolving %s...",
 						maven::downloadMavenArtifact,
-						"Downloaded %s.",
+						"Resolved %s.",
 						logger),
 				out,
 				logger);
@@ -245,15 +249,13 @@ public class Main {
 	}
 
 	private static TransformerToMany<AnalyzedArtifact, DeeplyAnalyzedArtifact> createDeepAnalyze(
-			BlockingSender<AnalyzedArtifact> in,
-			BlockingReceiver<DeeplyAnalyzedArtifact> out,
-			AnalysisFunctions analysis) {
+			BlockingSender<AnalyzedArtifact> in, BlockingReceiver<DeeplyAnalyzedArtifact> out, Analysis analysis) {
 		Logger logger = LoggerFactory.getLogger("Deep Analysis");
 		return new TransformerToMany<>(
 				in,
 				log(
 						"Deeply analyzing %s...",
-						analysis.deepAnalysis(),
+						analysis::analyzed,
 						"Deeply analyzed %s.",
 						logger),
 				out,
