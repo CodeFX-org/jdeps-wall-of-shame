@@ -1,6 +1,7 @@
 package org.codefx.jwos;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import org.codefx.jwos.analysis.Analysis;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
@@ -74,7 +75,7 @@ public class Main {
 		mustResolve = new ArrayBlockingQueue<>(5);
 		mustAnalyze = new ArrayBlockingQueue<>(5);
 		// this queue must be nominally unbound because it is part of a cycle, which can lead to deadlock;
-		// its size is still bound by the size of 'mustAnalyze' because both queue are added to at the same time
+		// its size is still bound by the size of 'mustAnalyze' because both queues are added to at the same time
 		mustProcessDependees = new LinkedBlockingQueue<>();
 		mustAnalyzeArtifactAndProcessDependees = artifact -> {
 			mustAnalyze.put(artifact);
@@ -209,7 +210,7 @@ public class Main {
 				log(
 						"Processing dependees of %s.",
 						artifact -> {
-							analysis.resolved(artifact);
+							ImmutableSet<DeeplyAnalyzedArtifact> deeplyAnalyzed = analysis.resolved(artifact);
 							logger.info(format("Registered dependees of %s.", artifact));
 							return artifact.dependees();
 						},

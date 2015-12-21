@@ -58,11 +58,15 @@ public class Analysis {
 
 	/**
 	 * Informs this analysis of the specified artifact's dependees.
+	 *
+	 * @return the set of artifacts, which have been deeply analyzed (i.e. with all their transitive dependencies), by
+	 * resolving the specified artifact.
 	 */
-	public synchronized void resolved(ResolvedArtifact resolvedArtifact) {
+	public synchronized ImmutableSet<DeeplyAnalyzedArtifact> resolved(ResolvedArtifact resolvedArtifact) {
 		requireNonNull(resolvedArtifact, "The argument 'resolvedArtifact' must not be null.");
 		store.getStateInAnalysis(resolvedArtifact).resolved(resolvedArtifact);
 		markDependeesAsAnalyzedOrWaitedFor(resolvedArtifact);
+		return findDeeplyAnalyzedArtifacts(resolvedArtifact);
 	}
 
 	private void markDependeesAsAnalyzedOrWaitedFor(ResolvedArtifact resolvedArtifact) {
@@ -80,39 +84,44 @@ public class Analysis {
 	 * Informs this analysis that the specified artifact was analyzed.
 	 *
 	 * @return the set of artifacts, which have been deeply analyzed (i.e. with all their transitive dependencies), by
-	 * finishing the specified artifact.
+	 * analysing the specified artifact.
 	 */
 	public synchronized ImmutableSet<DeeplyAnalyzedArtifact> analyzed(AnalyzedArtifact analyzedArtifact) {
 		requireNonNull(analyzedArtifact, "The argument 'analyzedArtifact' must not be null.");
 		store.getStateInAnalysis(analyzedArtifact).analyzed(analyzedArtifact);
+		return findDeeplyAnalyzedArtifacts(analyzedArtifact);
+	}
+
+	private ImmutableSet<DeeplyAnalyzedArtifact> findDeeplyAnalyzedArtifacts(IdentifiesArtifact analyzedArtifact) {
 		return deeplyAnalyzeArtifact(analyzedArtifact)
 				.map(this::findFinishedDependents)
 				.orElse(ImmutableSet.of());
 	}
 
-	private Optional<DeeplyAnalyzedArtifact> deeplyAnalyzeArtifact(AnalyzedArtifact analyzedArtifact) {
-		boolean areAllDependeesAnalyzed = store.getStateInAnalysis(analyzedArtifact).areAllDependeesAnalyzed();
-		if (areAllDependeesAnalyzed) {
-			DeeplyAnalyzedArtifact deeplyAnalyzedArtifact =
-					createDeeplyAnalyzedArtifact(analyzedArtifact, analyzedArtifact.violations());
+	private Optional<DeeplyAnalyzedArtifact> deeplyAnalyzeArtifact(IdentifiesArtifact artifact) {
+		boolean isDeeplyAnalyzed = store.getStateInAnalysis(artifact).isDeeplyAnalyzed();
+		if (isDeeplyAnalyzed) {
+			DeeplyAnalyzedArtifact deeplyAnalyzedArtifact = createDeeplyAnalyzedArtifact(artifact);
 			markArtifactAsDeeplyAnalyzed(deeplyAnalyzedArtifact);
 			return Optional.of(deeplyAnalyzedArtifact);
 		} else
 			return Optional.empty();
 	}
 
-	private DeeplyAnalyzedArtifact createDeeplyAnalyzedArtifact(
-			IdentifiesArtifact analyzedArtifact,
-			ImmutableSet<Violation> violations) {
+	private DeeplyAnalyzedArtifact createDeeplyAnalyzedArtifact(IdentifiesArtifact artifact) {
 		Builder<DeeplyAnalyzedArtifact> analyzedDependees = ImmutableSet.builder();
+
+		AnalysisState state = store.getStateInAnalysis(artifact);
+		ImmutableSet<Violation> violations = state.violations();
+
 		InternalDependencies internal = violations.isEmpty() ? InternalDependencies.NONE : InternalDependencies.DIRECT;
-		for (IdentifiesArtifact dependee : store.getStateInAnalysis(analyzedArtifact).analyzedDependees()) {
+		for (IdentifiesArtifact dependee : state.analyzedDependees()) {
 			DeeplyAnalyzedArtifact analyzedDependee = store.getAnalysisResult(dependee.artifact());
 			analyzedDependees.add(analyzedDependee);
 			internal = internal.combineWithDependee(analyzedDependee.marker());
 		}
 		return new DeeplyAnalyzedArtifact(
-				analyzedArtifact.artifact(),
+				artifact.artifact(),
 				internal,
 				violations,
 				analyzedDependees.build());
@@ -141,10 +150,9 @@ public class Analysis {
 				waitingDependents.stream()
 						// update the dependent's analysis state and check whether all dependees are analyzed
 						.peek(dependent -> store.getStateInAnalysis(dependent).dependeeAnalyzed(deeplyAnalyzed))
-						.filter(dependent -> store.getStateInAnalysis(dependent).areAllDependeesAnalyzed())
+						.filter(dependent -> store.getStateInAnalysis(dependent).isDeeplyAnalyzed())
 						// create and mark a new deeply analyzed artifact
-						.map(dependent -> createDeeplyAnalyzedArtifact(
-								dependent, store.getStateInAnalysis(dependent).result().violations()))
+						.map(this::createDeeplyAnalyzedArtifact)
 						.peek(this::markArtifactAsDeeplyAnalyzed)
 						// recurse to find the artifacts that depend on the newly finished artifacts
 						.flatMap(this::findFinishedDependentsRecursively));
@@ -223,24 +231,36 @@ public class Analysis {
 
 	private static class AnalysisState {
 
-		private Optional<AnalyzedArtifact> result;
+		private boolean dependeesWereResolved;
 		private final Set<ArtifactCoordinates> dependeesToAnalyse;
 		private final Set<ArtifactCoordinates> analyzedDependees;
+		private boolean violationsWereAnalyzed;
+		private ImmutableSet<Violation> violations;
 
 		private AnalysisState() {
-			this.result = Optional.empty();
-			this.dependeesToAnalyse = new HashSet<>();
-			this.analyzedDependees = new HashSet<>();
+			dependeesWereResolved = false;
+			dependeesToAnalyse = new HashSet<>();
+			analyzedDependees = new HashSet<>();
+			violationsWereAnalyzed = false;
+			violations = ImmutableSet.of();
 		}
 
-		public void resolved(ResolvedArtifact result) {
-			requireNonNull(result, "The argument 'result' must not be null.");
-			this.dependeesToAnalyse.addAll(result.dependees());
+		public void resolved(ResolvedArtifact artifact) {
+			requireNonNull(artifact, "The argument 'artifact' must not be null.");
+			if (dependeesWereResolved)
+				throw new IllegalStateException();
+
+			dependeesToAnalyse.addAll(artifact.dependees());
+			dependeesWereResolved = true;
 		}
 
-		public void analyzed(AnalyzedArtifact result) {
-			requireNonNull(result, "The argument 'result' must not be null.");
-			this.result = Optional.of(result);
+		public void analyzed(AnalyzedArtifact artifact) {
+			requireNonNull(artifact, "The argument 'artifact' must not be null.");
+			if (violationsWereAnalyzed)
+				throw new IllegalStateException();
+
+			violations = artifact.violations();
+			violationsWereAnalyzed = true;
 		}
 
 		public void dependeeAnalyzed(ArtifactCoordinates dependee) {
@@ -251,16 +271,28 @@ public class Analysis {
 			analyzedDependees.add(dependee);
 		}
 
-		public boolean areAllDependeesAnalyzed() {
-			return dependeesToAnalyse.isEmpty();
+		public boolean isDeeplyAnalyzed() {
+			return areViolationsAnalyzed() && areAllDependeesAnalyzed();
 		}
 
-		public AnalyzedArtifact result() {
-			return result.orElseThrow(IllegalStateException::new);
+		private boolean areViolationsAnalyzed() {
+			return violationsWereAnalyzed;
+		}
+
+		private boolean areAllDependeesAnalyzed() {
+			return dependeesWereResolved && dependeesToAnalyse.isEmpty();
 		}
 
 		public ImmutableSet<ArtifactCoordinates> analyzedDependees() {
+			if (!areAllDependeesAnalyzed())
+				throw new IllegalStateException();
 			return ImmutableSet.copyOf(analyzedDependees);
+		}
+
+		public ImmutableSet<Violation> violations() {
+			if (!violationsWereAnalyzed)
+				throw new IllegalStateException();
+			return violations;
 		}
 
 	}

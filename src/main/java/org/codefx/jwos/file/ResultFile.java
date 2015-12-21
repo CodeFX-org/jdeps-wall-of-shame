@@ -201,14 +201,6 @@ public class ResultFile {
 		return finalizedArtifacts.get(artifact);
 	}
 
-	private static DeeplyAnalyzedArtifact getArtifactForCoordinates(
-			Map<ArtifactCoordinates, DeeplyAnalyzedArtifact> artifacts, ArtifactCoordinates coordinates) {
-		return Optional
-				.ofNullable(artifacts.get(coordinates))
-				.orElseThrow(() -> new IllegalStateException(
-						format("There is no analysis result for %s.", coordinates)));
-	}
-
 	private static SortedSet<DeeplyAnalyzedArtifact> sortArtifacts(Collection<DeeplyAnalyzedArtifact> artifacts) {
 		TreeSet<DeeplyAnalyzedArtifact> sortedArtifacts = new TreeSet<>(IdentifiesArtifact.alphabeticalOrder());
 		sortedArtifacts.addAll(artifacts);
