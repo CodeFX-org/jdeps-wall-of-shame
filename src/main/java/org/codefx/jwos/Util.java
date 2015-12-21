@@ -1,13 +1,18 @@
 package org.codefx.jwos;
 
+import com.google.common.collect.ImmutableSet;
+
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import static java.lang.String.format;
+import static java.util.stream.Collectors.toSet;
 
-class Util {
+public class Util {
 
 	public static final String[] PROJECT_LIST_FILE_NAMES = { "top10JavaLibrariesByTakipi.txt" };
 	public static final String RESULT_FILE_NAME = "results.txt";
@@ -27,4 +32,8 @@ class Util {
 				.orElseThrow(() -> new IllegalArgumentException(format("No resource file '%s' was found.", fileName)));
 	}
 
+	public static <T> Collector<T, ?, ImmutableSet<T>> toImmutableSet() {
+		// TODO create more performant implementation using the builder
+		return Collectors.collectingAndThen(toSet(), ImmutableSet::copyOf);
+	}
 }
