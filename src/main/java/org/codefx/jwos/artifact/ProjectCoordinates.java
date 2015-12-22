@@ -10,7 +10,10 @@ import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.toList;
 
-public final class ProjectCoordinates {
+/**
+ * Uniquely identifies a project.
+ */
+public final class ProjectCoordinates implements IdentifiesProject {
 
 	private final String groupId;
 	private final String artifactId;
@@ -28,6 +31,11 @@ public final class ProjectCoordinates {
 		return versions.stream()
 				.map(version -> ArtifactCoordinates.from(groupId, artifactId, version.toString()))
 				.collect(collectingAndThen(toList(), ImmutableList::copyOf));
+	}
+
+	@Override
+	public ProjectCoordinates coordinates() {
+		return this;
 	}
 
 	public String groupId() {
