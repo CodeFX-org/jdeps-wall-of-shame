@@ -11,24 +11,23 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
-import java.util.function.Function;
 
 import static java.lang.String.format;
 import static java.util.Objects.requireNonNull;
 
-class AnalysisGraphNode implements IdentifiesArtifact {
+class AnalysisNode implements IdentifiesArtifact {
 
 	// Naming is hard: dependent -> dependee (so dependents are parents, dependees are children)
 
 	private final ArtifactCoordinates artifact;
-	private final Set<AnalysisGraphNode> dependents;
+	private final Set<AnalysisNode> dependents;
 
 	private Optional<Path> jarFile;
 	private Optional<ImmutableSet<Violation>> violations;
-	private Optional<ImmutableSet<AnalysisGraphNode>> dependees;
+	private Optional<ImmutableSet<AnalysisNode>> dependees;
 	private Optional<MarkInternalDependencies> internalDependenciesMarker;
 
-	public AnalysisGraphNode(IdentifiesArtifact artifact) {
+	public AnalysisNode(IdentifiesArtifact artifact) {
 		this.artifact = requireNonNull(artifact, "The argument 'artifact' must not be null.").coordinates();
 		this.dependents = new HashSet<>();
 
@@ -43,7 +42,7 @@ class AnalysisGraphNode implements IdentifiesArtifact {
 		return artifact;
 	}
 
-	private void addAsDependent(AnalysisGraphNode dependent) {
+	private void addAsDependent(AnalysisNode dependent) {
 		dependents.add(dependent);
 	}
 
@@ -81,7 +80,7 @@ class AnalysisGraphNode implements IdentifiesArtifact {
 		return dependees.isPresent();
 	}
 
-	public void resolved(ImmutableSet<AnalysisGraphNode> dependees) {
+	public void resolved(ImmutableSet<AnalysisNode> dependees) {
 		requireNonNull(dependees, "The argument 'dependees' must not be null.");
 		throwIfPresent(this.dependees, "Dependencies for %s were already resolved: %s.");
 		this.dependees = Optional.of(dependees);
@@ -89,7 +88,7 @@ class AnalysisGraphNode implements IdentifiesArtifact {
 		dependees.forEach(dependee -> dependee.addAsDependent(this));
 	}
 
-	private ImmutableSet<AnalysisGraphNode> dependees() {
+	private ImmutableSet<AnalysisNode> dependees() {
 		throwIfNotPresent(this.violations, "Dependencies of %s were not yet resolved.");
 		return dependees.get();
 	}
@@ -111,7 +110,7 @@ class AnalysisGraphNode implements IdentifiesArtifact {
 			return true;
 		if (o == null || getClass() != o.getClass())
 			return false;
-		AnalysisGraphNode that = (AnalysisGraphNode) o;
+		AnalysisNode that = (AnalysisNode) o;
 		return Objects.equals(artifact, that.artifact);
 	}
 
