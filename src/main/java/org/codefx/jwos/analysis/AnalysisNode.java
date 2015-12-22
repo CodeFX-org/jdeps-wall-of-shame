@@ -1,6 +1,7 @@
 package org.codefx.jwos.analysis;
 
 import com.google.common.collect.ImmutableSet;
+import org.codefx.jwos.analysis.state.Computation;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
 import org.codefx.jwos.artifact.MarkInternalDependencies;
@@ -9,10 +10,8 @@ import org.codefx.jwos.jdeps.dependency.Violation;
 import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.Set;
 
-import static java.lang.String.format;
 import static java.util.Objects.requireNonNull;
 
 class AnalysisNode implements IdentifiesArtifact {
@@ -22,19 +21,19 @@ class AnalysisNode implements IdentifiesArtifact {
 	private final ArtifactCoordinates artifact;
 	private final Set<AnalysisNode> dependents;
 
-	private Optional<Path> jarFile;
-	private Optional<ImmutableSet<Violation>> violations;
-	private Optional<ImmutableSet<AnalysisNode>> dependees;
-	private Optional<MarkInternalDependencies> internalDependenciesMarker;
+	private final Computation<Path> jarFile;
+	private final Computation<ImmutableSet<Violation>> violations;
+	private final Computation<ImmutableSet<AnalysisNode>> dependees;
+	private final Computation<MarkInternalDependencies> marker;
 
 	public AnalysisNode(IdentifiesArtifact artifact) {
 		this.artifact = requireNonNull(artifact, "The argument 'artifact' must not be null.").coordinates();
 		this.dependents = new HashSet<>();
 
-		jarFile = Optional.empty();
-		violations = Optional.empty();
-		dependees = Optional.empty();
-		internalDependenciesMarker = Optional.empty();
+		jarFile = new Computation<>();
+		violations = new Computation<>();
+		dependees = new Computation<>();
+		marker = new Computation<>();
 	}
 
 	@Override
@@ -42,66 +41,24 @@ class AnalysisNode implements IdentifiesArtifact {
 		return artifact;
 	}
 
-	private void addAsDependent(AnalysisNode dependent) {
+	public void addAsDependent(AnalysisNode dependent) {
 		dependents.add(dependent);
 	}
 
-	public boolean wasDownloaded() {
-		return jarFile.isPresent();
-	}
-	
-	public void downloaded(Path jarFile) {
-		requireNonNull(jarFile, "The argument 'jarFile' must not be null.");
-		throwIfPresent(this.jarFile, "JAR for %s was already downloaded: %s.");
-		this.jarFile = Optional.of(jarFile);
-	}
-	
-	public Path jarFile() {
-		throwIfPresent(this.jarFile, "JAR for %s was not yet downloaded.");
-		return jarFile.get();
+	public Computation<Path> jarFile() {
+		return jarFile;
 	}
 
-	public boolean wasAnalyzed() {
-		return violations.isPresent();
+	public Computation<ImmutableSet<Violation>> violations() {
+		return violations;
 	}
 
-	public void analyzed(ImmutableSet<Violation> violations) {
-		requireNonNull(violations, "The argument 'violations' must not be null.");
-		throwIfPresent(this.violations, "Violations for %s were already analyzed: %s.");
-		this.violations = Optional.of(violations);
+	public Computation<ImmutableSet<AnalysisNode>> dependees() {
+		return dependees;
 	}
 
-	private ImmutableSet<Violation> violations() {
-		throwIfNotPresent(this.violations, "Violations for %s were not yet analyzed.");
-		return violations.get();
-	}
-
-	public boolean wasResolved() {
-		return dependees.isPresent();
-	}
-
-	public void resolved(ImmutableSet<AnalysisNode> dependees) {
-		requireNonNull(dependees, "The argument 'dependees' must not be null.");
-		throwIfPresent(this.dependees, "Dependencies for %s were already resolved: %s.");
-		this.dependees = Optional.of(dependees);
-
-		dependees.forEach(dependee -> dependee.addAsDependent(this));
-	}
-
-	private ImmutableSet<AnalysisNode> dependees() {
-		throwIfNotPresent(this.violations, "Dependencies of %s were not yet resolved.");
-		return dependees.get();
-	}
-
-	private void throwIfPresent(Optional<?> optional, String exceptionMessageFormat) {
-		optional.ifPresent(value -> {
-			throw new IllegalStateException(format(exceptionMessageFormat, artifact, value));
-		});
-	}
-
-	private void throwIfNotPresent(Optional<?> optional, String exceptionMessageFormat) {
-		if (!optional.isPresent())
-			throw new IllegalStateException(format(exceptionMessageFormat, artifact));
+	public Computation<MarkInternalDependencies> marker() {
+		return marker;
 	}
 
 	@Override

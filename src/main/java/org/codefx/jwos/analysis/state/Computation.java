@@ -2,8 +2,6 @@ package org.codefx.jwos.analysis.state;
 
 import java.time.LocalDateTime;
 
-import static java.util.Objects.requireNonNull;
-
 public class Computation<R> {
 
 	private ComputationState<R> state;
@@ -16,15 +14,15 @@ public class Computation<R> {
 		state = state.queued();
 	}
 
-	public void  started(LocalDateTime startTime) {
+	public void started(LocalDateTime startTime) {
 		state = state.started(startTime);
 	}
 
-	public void  failed(Exception exception) {
+	public void failed(Exception exception) {
 		state = state.failed(exception);
 	}
 
-	public void  succeeded(R result) {
+	public void succeeded(R result) {
 		state = state.succeeded(result);
 	}
 
