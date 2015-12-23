@@ -21,18 +21,18 @@ class AnalysisNode implements IdentifiesArtifact {
 	private final ArtifactCoordinates artifact;
 	private final Set<AnalysisNode> dependents;
 
-	private final Computation<Path> jarFile;
-	private final Computation<ImmutableSet<Violation>> violations;
-	private final Computation<ImmutableSet<AnalysisNode>> dependees;
+	private final Computation<Path> download;
+	private final Computation<ImmutableSet<Violation>> analysis;
+	private final Computation<ImmutableSet<AnalysisNode>> resolutionOfDependees;
 	private final Computation<MarkInternalDependencies> marker;
 
 	public AnalysisNode(IdentifiesArtifact artifact) {
 		this.artifact = requireNonNull(artifact, "The argument 'artifact' must not be null.").coordinates();
 		this.dependents = new HashSet<>();
 
-		jarFile = new Computation<>();
-		violations = new Computation<>();
-		dependees = new Computation<>();
+		download = new Computation<>();
+		analysis = new Computation<>();
+		resolutionOfDependees = new Computation<>();
 		marker = new Computation<>();
 	}
 
@@ -45,16 +45,16 @@ class AnalysisNode implements IdentifiesArtifact {
 		dependents.add(dependent);
 	}
 
-	public Computation<Path> jarFile() {
-		return jarFile;
+	public Computation<Path> download() {
+		return download;
 	}
 
-	public Computation<ImmutableSet<Violation>> violations() {
-		return violations;
+	public Computation<ImmutableSet<Violation>> analysis() {
+		return analysis;
 	}
 
-	public Computation<ImmutableSet<AnalysisNode>> dependees() {
-		return dependees;
+	public Computation<ImmutableSet<AnalysisNode>> resolution() {
+		return resolutionOfDependees;
 	}
 
 	public Computation<MarkInternalDependencies> marker() {

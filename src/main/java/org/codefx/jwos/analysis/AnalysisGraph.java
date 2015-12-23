@@ -13,7 +13,6 @@ import org.codefx.jwos.artifact.ResolvedProject;
 import org.codefx.jwos.jdeps.dependency.Violation;
 
 import java.nio.file.Path;
-import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,9 +23,11 @@ import static java.lang.String.format;
 import static java.util.Objects.requireNonNull;
 import static org.codefx.jwos.Util.toImmutableSet;
 
-public class AnalysisGraph {
+class AnalysisGraph {
 
-	/** The code relies on the set-semantic of (key,value)-pairs. */
+	/**
+	 * The code relies on the set-semantic of (key,value)-pairs.
+	 */
 	private final SetMultimap<ProjectCoordinates, AnalysisNode> projects;
 	private final Map<ArtifactCoordinates, AnalysisNode> nodes;
 
@@ -47,8 +48,8 @@ public class AnalysisGraph {
 			return;
 
 		AnalysisNode artifactNode = new AnalysisNode(artifact.coordinates());
-		artifactNode.violations().succeeded(artifact.violations());
-		artifactNode.dependees().succeeded(
+		artifactNode.analysis().succeeded(artifact.violations());
+		artifactNode.resolution().succeeded(
 				artifact
 						.dependees().stream()
 						// recursive call to add dependees as nodes so we can find them in the following 'map'
@@ -115,17 +116,17 @@ public class AnalysisGraph {
 		return nodes.values().stream();
 	}
 
-	public Computation<Path> download(IdentifiesArtifact artifact) {
-		return getExistingNodeForArtifact(artifact).jarFile();
+	public Computation<Path> downloadOf(IdentifiesArtifact artifact) {
+		return getExistingNodeForArtifact(artifact).download();
 	}
 
-	public Computation<ImmutableSet<Violation>> analysis(IdentifiesArtifact artifact) {
-		return getExistingNodeForArtifact(artifact).violations();
+	public Computation<ImmutableSet<Violation>> analysisOf(IdentifiesArtifact artifact) {
+		return getExistingNodeForArtifact(artifact).analysis();
 	}
 
-	public Computation<ImmutableSet<ArtifactCoordinates>> dependees(IdentifiesArtifact artifact) {
+	public Computation<ImmutableSet<ArtifactCoordinates>> resolutionOf(IdentifiesArtifact artifact) {
 		return new GraphUpdatingDependeeComputation(
-				artifact.coordinates(), getExistingNodeForArtifact(artifact).dependees());
+				artifact.coordinates(), getExistingNodeForArtifact(artifact).resolution());
 	}
 
 	/**
