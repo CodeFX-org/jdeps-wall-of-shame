@@ -1,16 +1,6 @@
 package org.codefx.jwos.analysis.state;
 
-import java.time.LocalDateTime;
-
-import static java.util.Objects.requireNonNull;
-
 class Started<R> implements ComputationState<R> {
-
-	final LocalDateTime startTime;
-
-	Started(LocalDateTime startTime) {
-		this.startTime = requireNonNull(startTime, "The argument 'started' must not be null.");
-	}
 
 	@Override
 	public ComputationStateIdentifier state() {
@@ -23,7 +13,7 @@ class Started<R> implements ComputationState<R> {
 	}
 
 	@Override
-	public ComputationState<R> started(LocalDateTime startTime) {
+	public ComputationState<R> started() {
 		throw new IllegalStateException("A started computation must not be started again.");
 	}
 

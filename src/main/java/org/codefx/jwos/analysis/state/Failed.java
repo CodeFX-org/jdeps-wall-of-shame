@@ -1,15 +1,17 @@
 package org.codefx.jwos.analysis.state;
 
-import java.time.LocalDateTime;
-
 import static java.util.Objects.requireNonNull;
 
 class Failed<R> implements ComputationState<R> {
 
-	final Exception exception;
+	private final Exception exception;
 
 	Failed(Exception exception) {
 		this.exception = requireNonNull(exception, "The argument 'exception' must not be null.");
+	}
+
+	public Exception error() {
+		return exception;
 	}
 
 	@Override
@@ -23,7 +25,7 @@ class Failed<R> implements ComputationState<R> {
 	}
 
 	@Override
-	public ComputationState<R> started(LocalDateTime startTime) {
+	public ComputationState<R> started() {
 		throw new IllegalStateException("A failed computation must be queued before it can be started again.");
 	}
 

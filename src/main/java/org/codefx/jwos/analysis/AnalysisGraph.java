@@ -149,8 +149,8 @@ public class AnalysisGraph {
 		}
 
 		@Override
-		public void started(LocalDateTime startTime) {
-			dependees.started(startTime);
+		public void started() {
+			dependees.started();
 		}
 
 		@Override
@@ -166,11 +166,6 @@ public class AnalysisGraph {
 					.peek(dependee -> dependee.addAsDependent(dependent))
 					.collect(toImmutableSet());
 			this.dependees.succeeded(dependees);
-		}
-
-		@Override
-		public LocalDateTime startTime() {
-			return dependees.startTime();
 		}
 
 		@Override

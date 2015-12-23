@@ -1,7 +1,5 @@
 package org.codefx.jwos.analysis.state;
 
-import java.time.LocalDateTime;
-
 interface ComputationState<R> {
 
 	// METHODS
@@ -10,7 +8,7 @@ interface ComputationState<R> {
 
 	ComputationState<R> queued();
 
-	ComputationState<R> started(LocalDateTime startTime);
+	ComputationState<R> started();
 
 	ComputationState<R> failed(Exception exception);
 

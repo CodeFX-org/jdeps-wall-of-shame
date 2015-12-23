@@ -1,15 +1,17 @@
 package org.codefx.jwos.analysis.state;
 
-import java.time.LocalDateTime;
-
 import static java.util.Objects.requireNonNull;
 
 class Succeeded<R> implements ComputationState<R> {
 
-	final R result;
+	private final R result;
 
 	Succeeded(R result) {
 		this.result = requireNonNull(result, "The argument 'result' must not be null.");
+	}
+
+	public R result() {
+		return result;
 	}
 
 	@Override
@@ -23,7 +25,7 @@ class Succeeded<R> implements ComputationState<R> {
 	}
 
 	@Override
-	public ComputationState<R> started(LocalDateTime startTime) {
+	public ComputationState<R> started() {
 		throw new IllegalStateException("A succeeded computation must be queued before it can be started again.");
 	}
 
