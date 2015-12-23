@@ -10,7 +10,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * An artifact that has been analyzed by JDeps.
  */
-public final class AnalyzedArtifact implements IdentifiesArtifact {
+public final class AnalyzedArtifact implements IdentifiesArtifactComputation<ImmutableSet<Violation>> {
 
 	private final ArtifactCoordinates artifact;
 	private final ImmutableSet<Violation> violations;
@@ -25,6 +25,11 @@ public final class AnalyzedArtifact implements IdentifiesArtifact {
 	@Override
 	public ArtifactCoordinates coordinates() {
 		return artifact;
+	}
+
+	@Override
+	public ImmutableSet<Violation> result() {
+		return violations;
 	}
 
 	public ImmutableSet<Violation> violations() {

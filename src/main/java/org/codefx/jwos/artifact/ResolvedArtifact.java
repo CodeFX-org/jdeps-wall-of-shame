@@ -2,14 +2,12 @@ package org.codefx.jwos.artifact;
 
 import com.google.common.collect.ImmutableSet;
 
-import java.nio.file.Path;
-
 import static java.util.Objects.requireNonNull;
 
 /**
  * An artifact whose dependencies are resolved.
  */
-public final class ResolvedArtifact implements IdentifiesArtifact {
+public final class ResolvedArtifact implements IdentifiesArtifactComputation<ImmutableSet<ArtifactCoordinates>> {
 
 	private final ArtifactCoordinates artifact;
 	private final ImmutableSet<ArtifactCoordinates> dependees;
@@ -22,6 +20,11 @@ public final class ResolvedArtifact implements IdentifiesArtifact {
 	@Override
 	public ArtifactCoordinates coordinates() {
 		return artifact;
+	}
+
+	@Override
+	public ImmutableSet<ArtifactCoordinates> result() {
+		return dependees;
 	}
 
 	public ImmutableSet<ArtifactCoordinates> dependees() {

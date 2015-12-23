@@ -7,7 +7,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * An artifact whose JAR has been downloaded.
  */
-public final class DownloadedArtifact implements IdentifiesArtifact {
+public final class DownloadedArtifact implements IdentifiesArtifactComputation<Path> {
 
 	private final ArtifactCoordinates artifact;
 	private final Path path;
@@ -20,6 +20,11 @@ public final class DownloadedArtifact implements IdentifiesArtifact {
 	@Override
 	public ArtifactCoordinates coordinates() {
 		return artifact;
+	}
+
+	@Override
+	public Path result() {
+		return path;
 	}
 
 	public Path path() {
