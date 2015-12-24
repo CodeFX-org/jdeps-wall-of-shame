@@ -7,9 +7,12 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.stream.Stream;
 
+import static java.util.Objects.requireNonNull;
 import static java.util.stream.StreamSupport.stream;
 
-class Channel<T, R, E> {
+class TaskChannel<T, R, E> {
+
+	private final String taskName;
 
 	private final BlockingQueue<T> tasks;
 	private final BlockingQueue<R> results;
@@ -18,7 +21,8 @@ class Channel<T, R, E> {
 	/**
 	 * Creates a new channel with the specified capacities for results and errors (where 0 means unbounded).
 	 */
-	public Channel(int resultCapacity, int errorCapacity) {
+	public TaskChannel(String taskName, int resultCapacity, int errorCapacity) {
+		this.taskName = requireNonNull(taskName, "The argument 'taskName' must not be null.");
 		tasks = new LinkedBlockingQueue<>();
 		results = createQueue(resultCapacity);
 		errors = createQueue(errorCapacity);
@@ -31,15 +35,20 @@ class Channel<T, R, E> {
 	/**
 	 * Creates a new channel with the specified capacity for results and errors, respectively.
 	 */
-	public Channel(int capacity) {
-		this(capacity, capacity);
+	public TaskChannel(String taskName, int capacity) {
+		this(taskName, capacity, capacity);
 	}
 
 	/**
 	 * Creates a new channel with unbounded capacities for results and errors.
+	 * @param taskName
 	 */
-	public Channel() {
-		this(0, 0);
+	public TaskChannel(String taskName) {
+		this(taskName, 0, 0);
+	}
+
+	public String taskName() {
+		return taskName;
 	}
 
 	public void sendTask(T task) {
