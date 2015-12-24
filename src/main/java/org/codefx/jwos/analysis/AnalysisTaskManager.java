@@ -21,14 +21,28 @@ public class AnalysisTaskManager {
 	private final Channel<ArtifactCoordinates, AnalyzedArtifact, FailedArtifact> analyze;
 	private final Channel<ArtifactCoordinates, ResolvedArtifact, FailedArtifact> resolve;
 
+	private final Bookkeeping bookkeeping;
+
 	public AnalysisTaskManager() {
 		state = new AnalysisGraph();
 		download = new Channel<>();
 		analyze = new Channel<>();
 		resolve = new Channel<>();
+		bookkeeping = new Bookkeeping();
 	}
 
-	public void queueTasks() {
+	/**
+	 * A blocking call which queues tasks and processes answers.
+	 */
+	public void manageQueues() {
+		bookkeeping.run();
+	}
+
+	public void stopManagingQueue() {
+		bookkeeping.abort();
+	}
+
+	private void queueTasks() {
 		state.artifactNodes().forEach(this::queueTasksForNode);
 	}
 
@@ -49,7 +63,7 @@ public class AnalysisTaskManager {
 		}
 	}
 
-	public void processAnswers() {
+	private void processAnswers() {
 		processAnswersFromChannel(download, state::downloadOf);
 		processAnswersFromChannel(analyze, state::analysisOf);
 		processAnswersFromChannel(resolve, state::resolutionOf);
@@ -106,6 +120,48 @@ public class AnalysisTaskManager {
 
 	public void resolutionFailed(FailedArtifact artifact) throws InterruptedException {
 		resolve.addError(artifact);
+	}
+
+	private class Bookkeeping {
+
+		private boolean running;
+		private boolean aborted;
+
+		public void run() {
+			startRunning();
+
+			while(!aborted) {
+				queueTasks();
+				processAnswers();
+				sleepAndAbortWhenInterrupted();
+			}
+
+			stopRunning();
+		}
+
+		private void startRunning() {
+			if (running)
+				throw new IllegalStateException("The bookkeeping thread is already running.");
+			running = true;
+		}
+
+		private void sleepAndAbortWhenInterrupted() {
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException ex) {
+				Thread.currentThread().interrupt();
+				aborted = true;
+			}
+		}
+
+		private void stopRunning() {
+			running = false;
+			aborted = false;
+		}
+
+		public void abort() {
+			aborted = true;
+		}
 	}
 
 }
