@@ -14,19 +14,19 @@ import java.util.Set;
 
 import static java.util.Objects.requireNonNull;
 
-class AnalysisNode implements IdentifiesArtifact {
+class ArtifactNode implements IdentifiesArtifact {
 
 	// Naming is hard: dependent -> dependee (so dependents are parents, dependees are children)
 
 	private final ArtifactCoordinates artifact;
-	private final Set<AnalysisNode> dependents;
+	private final Set<ArtifactNode> dependents;
 
 	private final Computation<Path> download;
 	private final Computation<ImmutableSet<Violation>> analysis;
-	private final Computation<ImmutableSet<AnalysisNode>> resolutionOfDependees;
+	private final Computation<ImmutableSet<ArtifactNode>> resolutionOfDependees;
 	private final Computation<MarkInternalDependencies> marker;
 
-	public AnalysisNode(IdentifiesArtifact artifact) {
+	public ArtifactNode(IdentifiesArtifact artifact) {
 		this.artifact = requireNonNull(artifact, "The argument 'artifact' must not be null.").coordinates();
 		this.dependents = new HashSet<>();
 
@@ -41,7 +41,7 @@ class AnalysisNode implements IdentifiesArtifact {
 		return artifact;
 	}
 
-	public void addAsDependent(AnalysisNode dependent) {
+	public void addAsDependent(ArtifactNode dependent) {
 		dependents.add(dependent);
 	}
 
@@ -53,7 +53,7 @@ class AnalysisNode implements IdentifiesArtifact {
 		return analysis;
 	}
 
-	public Computation<ImmutableSet<AnalysisNode>> resolution() {
+	public Computation<ImmutableSet<ArtifactNode>> resolution() {
 		return resolutionOfDependees;
 	}
 
@@ -67,7 +67,7 @@ class AnalysisNode implements IdentifiesArtifact {
 			return true;
 		if (o == null || getClass() != o.getClass())
 			return false;
-		AnalysisNode that = (AnalysisNode) o;
+		ArtifactNode that = (ArtifactNode) o;
 		return Objects.equals(artifact, that.artifact);
 	}
 
@@ -80,4 +80,5 @@ class AnalysisNode implements IdentifiesArtifact {
 	public String toString() {
 		return "Node: " + artifact;
 	}
+
 }

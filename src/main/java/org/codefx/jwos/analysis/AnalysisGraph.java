@@ -1,8 +1,6 @@
 package org.codefx.jwos.analysis;
 
-import com.google.common.collect.HashMultimap;
 import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.SetMultimap;
 import org.codefx.jwos.analysis.state.Computation;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
@@ -25,74 +23,97 @@ import static org.codefx.jwos.Util.toImmutableSet;
 
 class AnalysisGraph {
 
-	/**
-	 * The code relies on the set-semantic of (key,value)-pairs.
-	 */
-	private final SetMultimap<ProjectCoordinates, AnalysisNode> projects;
-	private final Map<ArtifactCoordinates, AnalysisNode> nodes;
+	private final Map<ProjectCoordinates, ProjectNode> projects;
+	private final Map<ArtifactCoordinates, ArtifactNode> artifacts;
 
 	// CREATE
 
 	public AnalysisGraph() {
-		projects = HashMultimap.create();
-		nodes = new HashMap<>();
+		projects = new HashMap<>();
+		artifacts = new HashMap<>();
 	}
 
-	public AnalysisGraph(Collection<DeeplyAnalyzedArtifact> analyzedArtifacts) {
+	public AnalysisGraph(
+			Collection<ProjectCoordinates> resolvedProjects, Collection<DeeplyAnalyzedArtifact> analyzedArtifacts) {
 		this();
 		analyzedArtifacts.forEach(this::addAnalyzedArtifact);
+		resolvedProjects.forEach(this::markProjectAsResolved);
 	}
 
 	private void addAnalyzedArtifact(DeeplyAnalyzedArtifact artifact) {
 		if (getNodeForArtifact(artifact).isPresent())
 			return;
 
-		AnalysisNode artifactNode = new AnalysisNode(artifact.coordinates());
+		ArtifactNode artifactNode = new ArtifactNode(artifact.coordinates());
 		artifactNode.analysis().succeeded(artifact.violations());
 		artifactNode.resolution().succeeded(
 				artifact
 						.dependees().stream()
-						// recursive call to add dependees as nodes so we can find them in the following 'map'
+						// recursive call to add computation as artifacts so we can find them in the following 'map'
 						.peek(this::addAnalyzedArtifact)
-						.<AnalysisNode>map(this::getExistingNodeForArtifact)
+						.<ArtifactNode>map(this::getExistingNodeForArtifact)
 						.collect(toImmutableSet()));
 
-		registerNodeForProject(artifact.coordinates().project(), artifactNode);
-		registerNodeInGraph(artifactNode);
+		registerArtifactForProject(artifact.coordinates().project(), artifactNode);
+		registerArtifactInGraph(artifactNode);
+	}
+
+	private void markProjectAsResolved(ProjectCoordinates projectCoordinates) {
+		ProjectNode node = getOrCreateNodeForProject(projectCoordinates);
+		ImmutableSet<ArtifactNode> versions = ImmutableSet.copyOf(node.versions());
+		node.resolution().succeeded(versions);
 	}
 
 	// GET & PUT
 
-	private Optional<AnalysisNode> getNodeForArtifact(IdentifiesArtifact artifact) {
+	private Optional<ArtifactNode> getNodeForArtifact(IdentifiesArtifact artifact) {
 		return Optional.of(artifact)
 				.map(IdentifiesArtifact::coordinates)
-				.map(nodes::get);
+				.map(artifacts::get);
 	}
 
-	private AnalysisNode getOrCreateNodeForArtifact(IdentifiesArtifact artifact) {
-		return getNodeForArtifact(artifact).orElseGet(() -> new AnalysisNode(artifact));
+	private ArtifactNode getOrCreateNodeForArtifact(IdentifiesArtifact artifact) {
+		return getNodeForArtifact(artifact).orElseGet(() -> new ArtifactNode(artifact));
 	}
 
-	private AnalysisNode getExistingNodeForArtifact(IdentifiesArtifact artifact) {
+	private ArtifactNode getExistingNodeForArtifact(IdentifiesArtifact artifact) {
 		return getNodeForArtifact(artifact)
 				.orElseThrow(() -> {
-					String message = "There is supposed to be a node for % but there isn't.";
+					String message = "There is supposed to be a node for artifact % but there isn't.";
 					return new IllegalStateException(format(message, artifact.coordinates()));
 				});
 	}
 
-	private void registerNodeForProject(IdentifiesProject project, AnalysisNode artifactNode) {
-		projects.put(project.coordinates(), artifactNode);
+	private Optional<ProjectNode> getNodeForProject(IdentifiesProject project) {
+		return Optional.of(project)
+				.map(IdentifiesProject::coordinates)
+				.map(projects::get);
 	}
 
-	private void registerNodeInGraph(AnalysisNode node) {
-		nodes.put(node.coordinates(), node);
+	private ProjectNode getOrCreateNodeForProject(IdentifiesProject project) {
+		return getNodeForProject(project).orElseGet(() -> new ProjectNode(project));
 	}
 
-	private AnalysisNode registerArtifact(ArtifactCoordinates artifact) {
-		AnalysisNode node = getOrCreateNodeForArtifact(artifact);
-		registerNodeForProject(artifact.project(), node);
-		registerNodeInGraph(node);
+	private ProjectNode getExistingNodeForProject(IdentifiesProject project) {
+		return getNodeForProject(project)
+				.orElseThrow(() -> {
+					String message = "There is supposed to be a node for project % but there isn't.";
+					return new IllegalStateException(format(message, project.coordinates()));
+				});
+	}
+
+	private void registerArtifactForProject(IdentifiesProject project, ArtifactNode artifactNode) {
+		getOrCreateNodeForProject(project).versions().add(artifactNode);
+	}
+
+	private void registerArtifactInGraph(ArtifactNode node) {
+		artifacts.put(node.coordinates(), node);
+	}
+
+	private ArtifactNode registerArtifact(ArtifactCoordinates artifact) {
+		ArtifactNode node = getOrCreateNodeForArtifact(artifact);
+		registerArtifactForProject(artifact.project(), node);
+		registerArtifactInGraph(node);
 		return node;
 	}
 
@@ -102,8 +123,8 @@ class AnalysisGraph {
 		project
 				.versions().stream()
 				.map(this::getOrCreateNodeForArtifact)
-				.peek(artifactNode -> registerNodeForProject(project, artifactNode))
-				.forEach(this::registerNodeInGraph);
+				.peek(artifactNode -> registerArtifactForProject(project, artifactNode))
+				.forEach(this::registerArtifactInGraph);
 	}
 
 	private void resolvedDepenencies(ArtifactCoordinates dependent, ImmutableSet<ArtifactCoordinates> dependees) {
@@ -112,8 +133,8 @@ class AnalysisGraph {
 
 	// QUERY
 
-	public Stream<AnalysisNode> artifactNodes() {
-		return nodes.values().stream();
+	public Stream<ArtifactNode> artifactNodes() {
+		return artifacts.values().stream();
 	}
 
 	public Computation<Path> downloadOf(IdentifiesArtifact artifact) {
@@ -125,61 +146,104 @@ class AnalysisGraph {
 	}
 
 	public Computation<ImmutableSet<ArtifactCoordinates>> resolutionOf(IdentifiesArtifact artifact) {
-		return new GraphUpdatingDependeeComputation(
-				artifact.coordinates(), getExistingNodeForArtifact(artifact).resolution());
+		return new GraphUpdatingArtifactDependeeComputation(getExistingNodeForArtifact(artifact));
+	}
+
+	public Stream<ProjectNode> projectNodes() {
+		return projects.values().stream();
+	}
+
+	public Computation<ImmutableSet<ArtifactCoordinates>> resolutionOf(IdentifiesProject project) {
+		return new GraphUpdatingProjectVersionComputation(getExistingNodeForProject(project));
 	}
 
 	/**
-	 * Presents {@link ArtifactCoordinates} instead of {@link AnalysisNode}s and updates the graph when dependees were
-	 * computed.
+	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s and updates the graph when the computation
+	 * succeeded.
 	 */
-	private class GraphUpdatingDependeeComputation extends Computation<ImmutableSet<ArtifactCoordinates>> {
+	private abstract class GraphUpdatingArtifactComputation extends Computation<ImmutableSet<ArtifactCoordinates>> {
 
-		private final ArtifactCoordinates artifact;
-		private final Computation<ImmutableSet<AnalysisNode>> dependees;
+		private final Computation<ImmutableSet<ArtifactNode>> computation;
 
-		private GraphUpdatingDependeeComputation(
-				ArtifactCoordinates artifact, Computation<ImmutableSet<AnalysisNode>> dependees) {
-			this.artifact = requireNonNull(artifact, "The argument 'artifact' must not be null.");
-			this.dependees = requireNonNull(dependees, "The argument 'dependees' must not be null.");
+		protected GraphUpdatingArtifactComputation(Computation<ImmutableSet<ArtifactNode>> computation) {
+			this.computation = requireNonNull(computation, "The argument 'computation' must not be null.");
 		}
 
 		@Override
 		public void queued() {
-			dependees.queued();
+			computation.queued();
 		}
 
 		@Override
 		public void started() {
-			dependees.started();
+			computation.started();
 		}
 
 		@Override
 		public void failed(Exception exception) {
-			dependees.failed(exception);
+			computation.failed(exception);
 		}
 
 		@Override
 		public void succeeded(ImmutableSet<ArtifactCoordinates> result) {
-			AnalysisNode dependent = getExistingNodeForArtifact(artifact);
-			ImmutableSet<AnalysisNode> dependees = result.stream()
+			ImmutableSet<ArtifactNode> dependees = result.stream()
 					.map(AnalysisGraph.this::registerArtifact)
-					.peek(dependee -> dependee.addAsDependent(dependent))
 					.collect(toImmutableSet());
-			this.dependees.succeeded(dependees);
+			updateGraph(dependees);
+			computation.succeeded(dependees);
 		}
+
+		protected abstract void updateGraph(ImmutableSet<ArtifactNode> artifacts);
 
 		@Override
 		public Exception error() {
-			return dependees.error();
+			return computation.error();
 		}
 
 		@Override
 		public ImmutableSet<ArtifactCoordinates> result() {
-			return dependees
+			return computation
 					.result().stream()
-					.map(AnalysisNode::coordinates)
+					.map(ArtifactNode::coordinates)
 					.collect(toImmutableSet());
+		}
+	}
+
+	/**
+	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s and updates the graph when computation were
+	 * computed.
+	 */
+	private class GraphUpdatingArtifactDependeeComputation extends GraphUpdatingArtifactComputation {
+
+		private final ArtifactNode artifactNode;
+
+		public GraphUpdatingArtifactDependeeComputation(ArtifactNode artifactNode) {
+			super(artifactNode.resolution());
+			this.artifactNode = artifactNode;
+		}
+
+		@Override
+		protected void updateGraph(ImmutableSet<ArtifactNode> dependees) {
+			dependees.forEach(dependee -> dependee.addAsDependent(artifactNode));
+		}
+	}
+
+	/**
+	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s and updates the graph when versions were
+	 * computed.
+	 */
+	private class GraphUpdatingProjectVersionComputation extends GraphUpdatingArtifactComputation {
+
+		private final ProjectNode projectNode;
+
+		public GraphUpdatingProjectVersionComputation(ProjectNode projectNode) {
+			super(projectNode.resolution());
+			this.projectNode = projectNode;
+		}
+
+		@Override
+		protected void updateGraph(ImmutableSet<ArtifactNode> versions) {
+			projectNode.versions().addAll(versions);
 		}
 	}
 

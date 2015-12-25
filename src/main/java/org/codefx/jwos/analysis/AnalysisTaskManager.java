@@ -51,15 +51,15 @@ public class AnalysisTaskManager {
 		state.artifactNodes().forEach(this::queueTasksForNode);
 	}
 
-	private void queueTasksForNode(AnalysisNode node) {
-		queueTaskForNode(node, AnalysisNode::download, download);
-		queueTaskForNode(node, AnalysisNode::analysis, analyze);
-		queueTaskForNode(node, AnalysisNode::resolution, resolve);
+	private void queueTasksForNode(ArtifactNode node) {
+		queueTaskForNode(node, ArtifactNode::download, download);
+		queueTaskForNode(node, ArtifactNode::analysis, analyze);
+		queueTaskForNode(node, ArtifactNode::resolution, resolve);
 	}
 
 	private static void queueTaskForNode(
-			AnalysisNode node,
-			Function<AnalysisNode, Computation<?>> getComputation,
+			ArtifactNode node,
+			Function<ArtifactNode, Computation<?>> getComputation,
 			TaskChannel<ArtifactCoordinates, ?, ?> channel) {
 		Computation<?> computation = getComputation.apply(node);
 		if (computation.state() == NOT_COMPUTED) {
