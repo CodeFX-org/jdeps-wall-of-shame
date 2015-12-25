@@ -3,17 +3,23 @@ package org.codefx.jwos.analysis;
 import org.codefx.jwos.analysis.state.Computation;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
+import org.codefx.jwos.artifact.FailedProject;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
 import org.codefx.jwos.artifact.IdentifiesArtifactComputation;
+import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
+import org.codefx.jwos.artifact.ResolvedProject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Collection;
 import java.util.function.Function;
 
 import static java.lang.String.format;
+import static java.util.Collections.emptySet;
 import static org.codefx.jwos.analysis.state.ComputationStateIdentifier.NOT_COMPUTED;
 
 public class AnalysisTaskManager {
@@ -22,18 +28,26 @@ public class AnalysisTaskManager {
 
 	private final AnalysisGraph state;
 
+	private final TaskChannel<ProjectCoordinates, ResolvedProject, FailedProject> resolveVersions;
 	private final TaskChannel<ArtifactCoordinates, DownloadedArtifact, FailedArtifact> download;
 	private final TaskChannel<ArtifactCoordinates, AnalyzedArtifact, FailedArtifact> analyze;
-	private final TaskChannel<ArtifactCoordinates, ResolvedArtifact, FailedArtifact> resolve;
+	private final TaskChannel<ArtifactCoordinates, ResolvedArtifact, FailedArtifact> resolveDependencies;
 
 	private final Bookkeeping bookkeeping;
 
-	public AnalysisTaskManager() {
-		state = new AnalysisGraph();
+	public AnalysisTaskManager(
+			Collection<ProjectCoordinates> resolvedProjects, Collection<DeeplyAnalyzedArtifact> analyzedArtifacts) {
+		state = new AnalysisGraph(resolvedProjects, analyzedArtifacts);
+
+		resolveVersions = new TaskChannel<>("version resolution");
 		download = new TaskChannel<>("download");
 		analyze = new TaskChannel<>("analysis");
-		resolve = new TaskChannel<>("dependency resolution");
+		resolveDependencies = new TaskChannel<>("dependency resolution");
 		bookkeeping = new Bookkeeping();
+	}
+
+	public AnalysisTaskManager() {
+		this(emptySet(), emptySet());
 	}
 
 	/**
@@ -48,16 +62,33 @@ public class AnalysisTaskManager {
 	}
 
 	private void queueTasks() {
-		state.artifactNodes().forEach(this::queueTasksForNode);
+		state.projectNodes().forEach(this::queueTasksForProjectNode);
+		state.artifactNodes().forEach(this::queueTasksForArtifactNode);
 	}
 
-	private void queueTasksForNode(ArtifactNode node) {
-		queueTaskForNode(node, ArtifactNode::download, download);
-		queueTaskForNode(node, ArtifactNode::analysis, analyze);
-		queueTaskForNode(node, ArtifactNode::resolution, resolve);
+	private void queueTasksForProjectNode(ProjectNode node) {
+		queueTaskForProjectNode(node, ProjectNode::resolution, resolveVersions);
 	}
 
-	private static void queueTaskForNode(
+	private static void queueTaskForProjectNode(
+			ProjectNode node,
+			Function<ProjectNode, Computation<?>> getComputation,
+			TaskChannel<ProjectCoordinates, ?, ?> channel) {
+		Computation<?> computation = getComputation.apply(node);
+		if (computation.state() == NOT_COMPUTED) {
+			LOGGER.info(format("Queuing %s for %s.", node.coordinates(), channel.taskName()));
+			computation.queued();
+			channel.sendTask(node.coordinates());
+		}
+	}
+
+	private void queueTasksForArtifactNode(ArtifactNode node) {
+		queueTaskForArtifactNode(node, ArtifactNode::download, download);
+		queueTaskForArtifactNode(node, ArtifactNode::analysis, analyze);
+		queueTaskForArtifactNode(node, ArtifactNode::resolution, resolveDependencies);
+	}
+
+	private static void queueTaskForArtifactNode(
 			ArtifactNode node,
 			Function<ArtifactNode, Computation<?>> getComputation,
 			TaskChannel<ArtifactCoordinates, ?, ?> channel) {
@@ -72,7 +103,7 @@ public class AnalysisTaskManager {
 	private void processAnswers() {
 		processAnswersFromChannel(download, state::downloadOf);
 		processAnswersFromChannel(analyze, state::analysisOf);
-		processAnswersFromChannel(resolve, state::resolutionOf);
+		processAnswersFromChannel(resolveDependencies, state::dependencyResolutionOf);
 	}
 
 	private static <R> void processAnswersFromChannel(
@@ -100,18 +131,33 @@ public class AnalysisTaskManager {
 
 	// QUERY & UPDATE
 
-	private static ArtifactCoordinates getTaskAndStart(
-			TaskChannel<ArtifactCoordinates, ?, ?> channel,
-			Function<ArtifactCoordinates, Computation<?>> getComputation)
+	private static <C> C getTaskAndStart(
+			TaskChannel<C, ?, ?> channel,
+			Function<C, Computation<?>> getComputation,
+			Function<C, Object> getCoordinates)
 			throws InterruptedException {
-		ArtifactCoordinates artifact = channel.getTask();
-		LOGGER.info(format("Starting %s for %s.", channel.taskName(), artifact.coordinates()));
-		getComputation.apply(artifact).started();
-		return artifact;
+		C task = channel.getTask();
+		LOGGER.info(format("Starting %s for %s.", channel.taskName(), getCoordinates.apply(task)));
+		getComputation.apply(task).started();
+		return task;
+	}
+
+	public ProjectCoordinates getNextToResolveVersions() throws InterruptedException {
+		return getTaskAndStart(resolveVersions, state::versionResolutionOf, ProjectCoordinates::coordinates);
+	}
+
+	public void resolvedDependencies(ResolvedProject project) throws InterruptedException {
+		LOGGER.info(format("Version resolution for %s succeeded: %s", project.coordinates(), project.versions()));
+		resolveVersions.addResult(project);
+	}
+
+	public void dependencyResolutionFailed(FailedProject project) throws InterruptedException {
+		LOGGER.info(format("Version resolution for %s failed: %s", project.coordinates(), project.error()));
+		resolveVersions.addError(project);
 	}
 
 	public ArtifactCoordinates getNextToDownload() throws InterruptedException {
-		return getTaskAndStart(download, state::downloadOf);
+		return getTaskAndStart(download, state::downloadOf, ArtifactCoordinates::coordinates);
 	}
 
 	public void downloaded(DownloadedArtifact artifact) throws InterruptedException {
@@ -125,7 +171,7 @@ public class AnalysisTaskManager {
 	}
 
 	public ArtifactCoordinates getNextToAnalyze() throws InterruptedException {
-		return getTaskAndStart(analyze, state::analysisOf);
+		return getTaskAndStart(analyze, state::analysisOf, ArtifactCoordinates::coordinates);
 	}
 
 	public void analyzed(AnalyzedArtifact artifact) throws InterruptedException {
@@ -138,18 +184,19 @@ public class AnalysisTaskManager {
 		analyze.addError(artifact);
 	}
 
-	public ArtifactCoordinates getNextToResolve() throws InterruptedException {
-		return getTaskAndStart(resolve, state::resolutionOf);
+	public ArtifactCoordinates getNextToResolveDependencies() throws InterruptedException {
+		return getTaskAndStart(resolveDependencies, state::dependencyResolutionOf, ArtifactCoordinates::coordinates);
 	}
 
-	public void resolved(ResolvedArtifact artifact) throws InterruptedException {
-		LOGGER.info(format("Dependency resolution for %s succeeded: %s", artifact.coordinates(), artifact.dependees()));
-		resolve.addResult(artifact);
+	public void resolvedDependencies(ResolvedArtifact artifact) throws InterruptedException {
+		LOGGER.info(format("Dependency resolution for %s succeeded: %s", artifact.coordinates(), artifact.dependees
+				()));
+		resolveDependencies.addResult(artifact);
 	}
 
-	public void resolutionFailed(FailedArtifact artifact) throws InterruptedException {
+	public void dependencyResolutionFailed(FailedArtifact artifact) throws InterruptedException {
 		LOGGER.info(format("Dependency resolution for %s failed: %s", artifact.coordinates(), artifact.error()));
-		resolve.addError(artifact);
+		resolveDependencies.addError(artifact);
 	}
 
 	private class Bookkeeping {
@@ -161,7 +208,7 @@ public class AnalysisTaskManager {
 			startRunning();
 			LOGGER.info("Start managing queues.");
 
-			while(!aborted) {
+			while (!aborted) {
 				queueTasks();
 				processAnswers();
 				sleepAndAbortWhenInterrupted();

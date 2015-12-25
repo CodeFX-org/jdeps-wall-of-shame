@@ -145,7 +145,7 @@ class AnalysisGraph {
 		return getExistingNodeForArtifact(artifact).analysis();
 	}
 
-	public Computation<ImmutableSet<ArtifactCoordinates>> resolutionOf(IdentifiesArtifact artifact) {
+	public Computation<ImmutableSet<ArtifactCoordinates>> dependencyResolutionOf(IdentifiesArtifact artifact) {
 		return new GraphUpdatingArtifactDependeeComputation(getExistingNodeForArtifact(artifact));
 	}
 
@@ -153,7 +153,7 @@ class AnalysisGraph {
 		return projects.values().stream();
 	}
 
-	public Computation<ImmutableSet<ArtifactCoordinates>> resolutionOf(IdentifiesProject project) {
+	public Computation<ImmutableSet<ArtifactCoordinates>> versionResolutionOf(IdentifiesProject project) {
 		return new GraphUpdatingProjectVersionComputation(getExistingNodeForProject(project));
 	}
 
