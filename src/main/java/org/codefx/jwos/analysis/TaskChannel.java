@@ -47,6 +47,10 @@ class TaskChannel<T, R, E> {
 		this(taskName, 0, 0);
 	}
 
+	public int nrOfWaitingTasks() {
+		return tasks.size();
+	}
+
 	public String taskName() {
 		return taskName;
 	}
