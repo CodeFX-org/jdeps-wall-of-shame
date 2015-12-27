@@ -7,7 +7,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * An artifact whose JAR has been downloaded.
  */
-public final class DownloadedArtifact implements IdentifiesArtifactComputation<Path> {
+public final class DownloadedArtifact implements IdentifiesArtifactTask<Path> {
 
 	private final ArtifactCoordinates artifact;
 	private final Path path;

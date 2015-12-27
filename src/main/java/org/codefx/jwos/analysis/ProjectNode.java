@@ -1,7 +1,7 @@
 package org.codefx.jwos.analysis;
 
 import com.google.common.collect.ImmutableSet;
-import org.codefx.jwos.analysis.state.Computation;
+import org.codefx.jwos.analysis.task.Task;
 import org.codefx.jwos.artifact.IdentifiesProject;
 import org.codefx.jwos.artifact.ProjectCoordinates;
 
@@ -16,13 +16,13 @@ class ProjectNode implements IdentifiesProject {
 	private final ProjectCoordinates project;
 	private final Set<ArtifactNode> versions;
 
-	private final Computation<ImmutableSet<ArtifactNode>> resolutionOfVersions;
+	private final Task<ImmutableSet<ArtifactNode>> resolutionOfVersions;
 
 	public ProjectNode(IdentifiesProject project) {
 		this.project = requireNonNull(project, "The argument 'project' must not be null.").coordinates();
 		this.versions = new HashSet<>();
 
-		resolutionOfVersions = new Computation<>();
+		resolutionOfVersions = new Task<>();
 	}
 
 	@Override
@@ -34,7 +34,7 @@ class ProjectNode implements IdentifiesProject {
 		return versions;
 	}
 
-	public Computation<ImmutableSet<ArtifactNode>> resolution() {
+	public Task<ImmutableSet<ArtifactNode>> resolution() {
 		return resolutionOfVersions;
 	}
 

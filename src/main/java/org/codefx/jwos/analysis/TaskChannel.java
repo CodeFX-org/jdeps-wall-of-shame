@@ -41,6 +41,7 @@ class TaskChannel<T, R, E> {
 
 	/**
 	 * Creates a new channel with unbounded capacities for results and errors.
+	 *
 	 * @param taskName
 	 */
 	public TaskChannel(String taskName) {

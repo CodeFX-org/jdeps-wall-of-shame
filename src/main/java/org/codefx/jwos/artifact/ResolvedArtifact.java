@@ -7,7 +7,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * An artifact whose dependencies are resolved.
  */
-public final class ResolvedArtifact implements IdentifiesArtifactComputation<ImmutableSet<ArtifactCoordinates>> {
+public final class ResolvedArtifact implements IdentifiesArtifactTask<ImmutableSet<ArtifactCoordinates>> {
 
 	private final ArtifactCoordinates artifact;
 	private final ImmutableSet<ArtifactCoordinates> dependees;

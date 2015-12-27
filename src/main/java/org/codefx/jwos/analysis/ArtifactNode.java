@@ -1,7 +1,7 @@
 package org.codefx.jwos.analysis;
 
 import com.google.common.collect.ImmutableSet;
-import org.codefx.jwos.analysis.state.Computation;
+import org.codefx.jwos.analysis.task.Task;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
 import org.codefx.jwos.artifact.MarkInternalDependencies;
@@ -21,19 +21,19 @@ class ArtifactNode implements IdentifiesArtifact {
 	private final ArtifactCoordinates artifact;
 	private final Set<ArtifactNode> dependents;
 
-	private final Computation<Path> download;
-	private final Computation<ImmutableSet<Violation>> analysis;
-	private final Computation<ImmutableSet<ArtifactNode>> resolutionOfDependees;
-	private final Computation<MarkInternalDependencies> marker;
+	private final Task<Path> download;
+	private final Task<ImmutableSet<Violation>> analysis;
+	private final Task<ImmutableSet<ArtifactNode>> resolutionOfDependees;
+	private final Task<MarkInternalDependencies> marker;
 
 	public ArtifactNode(IdentifiesArtifact artifact) {
 		this.artifact = requireNonNull(artifact, "The argument 'artifact' must not be null.").coordinates();
 		this.dependents = new HashSet<>();
 
-		download = new Computation<>();
-		analysis = new Computation<>();
-		resolutionOfDependees = new Computation<>();
-		marker = new Computation<>();
+		download = new Task<>();
+		analysis = new Task<>();
+		resolutionOfDependees = new Task<>();
+		marker = new Task<>();
 	}
 
 	@Override
@@ -45,19 +45,19 @@ class ArtifactNode implements IdentifiesArtifact {
 		dependents.add(dependent);
 	}
 
-	public Computation<Path> download() {
+	public Task<Path> download() {
 		return download;
 	}
 
-	public Computation<ImmutableSet<Violation>> analysis() {
+	public Task<ImmutableSet<Violation>> analysis() {
 		return analysis;
 	}
 
-	public Computation<ImmutableSet<ArtifactNode>> resolution() {
+	public Task<ImmutableSet<ArtifactNode>> resolution() {
 		return resolutionOfDependees;
 	}
 
-	public Computation<MarkInternalDependencies> marker() {
+	public Task<MarkInternalDependencies> marker() {
 		return marker;
 	}
 

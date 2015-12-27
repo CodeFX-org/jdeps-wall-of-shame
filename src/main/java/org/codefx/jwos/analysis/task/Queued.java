@@ -1,29 +1,29 @@
-package org.codefx.jwos.analysis.state;
+package org.codefx.jwos.analysis.task;
 
-class Queued<R> implements ComputationState<R> {
+class Queued<R> implements TaskState<R> {
 
 	@Override
-	public ComputationStateIdentifier state() {
-		return ComputationStateIdentifier.QUEUED;
+	public TaskStateIdentifier identifier() {
+		return TaskStateIdentifier.QUEUED;
 	}
 
 	@Override
-	public ComputationState<R> queued() {
+	public TaskState<R> queued() {
 		throw new IllegalStateException("A queued computation must not be queued again.");
 	}
 
 	@Override
-	public ComputationState<R> started() {
+	public TaskState<R> started() {
 		return new Started<>();
 	}
 
 	@Override
-	public ComputationState<R> failed(Exception exception) {
+	public TaskState<R> failed(Exception exception) {
 		throw new IllegalStateException("A queued computation must be started before it can fail.");
 	}
 
 	@Override
-	public ComputationState<R> succeeded(R result) {
+	public TaskState<R> succeeded(R result) {
 		throw new IllegalStateException("A queued computation must be started before it can succeed.");
 	}
 }

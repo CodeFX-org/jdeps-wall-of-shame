@@ -1,6 +1,6 @@
 package org.codefx.jwos.analysis;
 
-import org.codefx.jwos.analysis.state.Computation;
+import org.codefx.jwos.analysis.task.Task;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
@@ -8,7 +8,7 @@ import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
-import org.codefx.jwos.artifact.IdentifiesArtifactComputation;
+import org.codefx.jwos.artifact.IdentifiesArtifactTask;
 import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.artifact.ResolvedProject;
@@ -20,7 +20,7 @@ import java.util.function.Function;
 
 import static java.lang.String.format;
 import static java.util.Collections.emptySet;
-import static org.codefx.jwos.analysis.state.ComputationStateIdentifier.NOT_COMPUTED;
+import static org.codefx.jwos.analysis.task.TaskStateIdentifier.NOT_COMPUTED;
 
 public class AnalysisTaskManager {
 
@@ -74,12 +74,12 @@ public class AnalysisTaskManager {
 
 	private static void queueTaskForProjectNode(
 			ProjectNode node,
-			Function<ProjectNode, Computation<?>> getComputation,
+			Function<ProjectNode, Task<?>> getTask,
 			TaskChannel<ProjectCoordinates, ?, ?> channel) {
-		Computation<?> computation = getComputation.apply(node);
-		if (computation.state() == NOT_COMPUTED) {
+		Task<?> task = getTask.apply(node);
+		if (task.identifier() == NOT_COMPUTED) {
 			TASKS_LOGGER.info(format("Queuing %s for %s.", node.coordinates(), channel.taskName()));
-			computation.queued();
+			task.queued();
 			channel.sendTask(node.coordinates());
 		}
 	}
@@ -92,12 +92,12 @@ public class AnalysisTaskManager {
 
 	private static void queueTaskForArtifactNode(
 			ArtifactNode node,
-			Function<ArtifactNode, Computation<?>> getComputation,
+			Function<ArtifactNode, Task<?>> getTask,
 			TaskChannel<ArtifactCoordinates, ?, ?> channel) {
-		Computation<?> computation = getComputation.apply(node);
-		if (computation.state() == NOT_COMPUTED) {
+		Task<?> task = getTask.apply(node);
+		if (task.identifier() == NOT_COMPUTED) {
 			TASKS_LOGGER.info(format("Queuing %s for %s.", node.coordinates(), channel.taskName()));
-			computation.queued();
+			task.queued();
 			channel.sendTask(node.coordinates());
 		}
 	}
@@ -109,38 +109,38 @@ public class AnalysisTaskManager {
 	}
 
 	private static <R> void processAnswersFromChannel(
-			TaskChannel<?, ? extends IdentifiesArtifactComputation<R>, FailedArtifact> channel,
-			Function<IdentifiesArtifact, Computation<R>> getComputation) {
-		channel.drainResults().forEach(artifact -> processSuccessOfTask(artifact, getComputation, channel.taskName()));
-		channel.drainErrors().forEach(artifact -> processFailureOfTask(artifact, getComputation, channel.taskName()));
+			TaskChannel<?, ? extends IdentifiesArtifactTask<R>, FailedArtifact> channel,
+			Function<IdentifiesArtifact, Task<R>> getTask) {
+		channel.drainResults().forEach(artifact -> processSuccessOfTask(artifact, getTask, channel.taskName()));
+		channel.drainErrors().forEach(artifact -> processFailureOfTask(artifact, getTask, channel.taskName()));
 	}
 
 	private static <R> void processSuccessOfTask(
-			IdentifiesArtifactComputation<R> artifact,
-			Function<IdentifiesArtifact, Computation<R>> getComputation,
+			IdentifiesArtifactTask<R> artifact,
+			Function<IdentifiesArtifact, Task<R>> getTask,
 			String taskName) {
 		TASKS_LOGGER.info(format("Processing %s result for %s.", taskName, artifact.coordinates()));
-		getComputation.apply(artifact).succeeded(artifact.result());
+		getTask.apply(artifact).succeeded(artifact.result());
 	}
 
 	private static <R> void processFailureOfTask(
 			FailedArtifact artifact,
-			Function<IdentifiesArtifact, Computation<R>> getComputation,
+			Function<IdentifiesArtifact, Task<R>> getTask,
 			String taskName) {
 		TASKS_LOGGER.info(format("Processing %s failure for %s.", taskName, artifact.coordinates()));
-		getComputation.apply(artifact).failed(artifact.result());
+		getTask.apply(artifact).failed(artifact.result());
 	}
 
 	// QUERY & UPDATE
 
-	private static <C> C getTaskAndStart(
-			TaskChannel<C, ?, ?> channel,
-			Function<C, Computation<?>> getComputation,
-			Function<C, Object> getCoordinates)
+	private static <T> T getTaskAndStart(
+			TaskChannel<T, ?, ?> channel,
+			Function<T, Task<?>> getTask,
+			Function<T, Object> getCoordinates)
 			throws InterruptedException {
-		C task = channel.getTask();
+		T task = channel.getTask();
 		TASKS_LOGGER.info(format("Starting %s for %s.", channel.taskName(), getCoordinates.apply(task)));
-		getComputation.apply(task).started();
+		getTask.apply(task).started();
 		return task;
 	}
 
@@ -148,12 +148,13 @@ public class AnalysisTaskManager {
 		return getTaskAndStart(resolveVersions, state::versionResolutionOf, ProjectCoordinates::coordinates);
 	}
 
-	public void resolvedDependencies(ResolvedProject project) throws InterruptedException {
-		TASKS_LOGGER.info(format("Version resolution for %s succeeded: %s", project.coordinates(), project.versions()));
+	public void resolvedVersions(ResolvedProject project) throws InterruptedException {
+		TASKS_LOGGER.info(
+				format("Version resolution for %s succeeded: %s", project.coordinates(), project.versions()));
 		resolveVersions.addResult(project);
 	}
 
-	public void dependencyResolutionFailed(FailedProject project) throws InterruptedException {
+	public void versionResolutionFailed(FailedProject project) throws InterruptedException {
 		TASKS_LOGGER.info(format("Version resolution for %s failed: %s", project.coordinates(), project.error()));
 		resolveVersions.addError(project);
 	}
@@ -191,8 +192,8 @@ public class AnalysisTaskManager {
 	}
 
 	public void resolvedDependencies(ResolvedArtifact artifact) throws InterruptedException {
-		TASKS_LOGGER.info(format("Dependency resolution for %s succeeded: %s", artifact.coordinates(), artifact.dependees
-				()));
+		TASKS_LOGGER.info(
+				format("Dependency resolution for %s succeeded: %s", artifact.coordinates(), artifact.dependees()));
 		resolveDependencies.addResult(artifact);
 	}
 

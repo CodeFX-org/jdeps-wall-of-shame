@@ -5,7 +5,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * An artifact for which a computation failed.
  */
-public final class FailedArtifact implements IdentifiesArtifactComputation<Exception> {
+public final class FailedArtifact implements IdentifiesArtifactTask<Exception> {
 
 	private final ArtifactCoordinates artifact;
 	private final Exception error;

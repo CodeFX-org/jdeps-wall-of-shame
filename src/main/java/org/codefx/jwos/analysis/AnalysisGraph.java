@@ -1,7 +1,7 @@
 package org.codefx.jwos.analysis;
 
 import com.google.common.collect.ImmutableSet;
-import org.codefx.jwos.analysis.state.Computation;
+import org.codefx.jwos.analysis.task.Task;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
@@ -137,51 +137,51 @@ class AnalysisGraph {
 		return artifacts.values().stream();
 	}
 
-	public Computation<Path> downloadOf(IdentifiesArtifact artifact) {
+	public Task<Path> downloadOf(IdentifiesArtifact artifact) {
 		return getExistingNodeForArtifact(artifact).download();
 	}
 
-	public Computation<ImmutableSet<Violation>> analysisOf(IdentifiesArtifact artifact) {
+	public Task<ImmutableSet<Violation>> analysisOf(IdentifiesArtifact artifact) {
 		return getExistingNodeForArtifact(artifact).analysis();
 	}
 
-	public Computation<ImmutableSet<ArtifactCoordinates>> dependencyResolutionOf(IdentifiesArtifact artifact) {
-		return new GraphUpdatingArtifactDependeeComputation(getExistingNodeForArtifact(artifact));
+	public Task<ImmutableSet<ArtifactCoordinates>> dependencyResolutionOf(IdentifiesArtifact artifact) {
+		return new GraphUpdatingArtifactDependeeTask(getExistingNodeForArtifact(artifact));
 	}
 
 	public Stream<ProjectNode> projectNodes() {
 		return projects.values().stream();
 	}
 
-	public Computation<ImmutableSet<ArtifactCoordinates>> versionResolutionOf(IdentifiesProject project) {
-		return new GraphUpdatingProjectVersionComputation(getExistingNodeForProject(project));
+	public Task<ImmutableSet<ArtifactCoordinates>> versionResolutionOf(IdentifiesProject project) {
+		return new GraphUpdatingProjectVersionTask(getExistingNodeForProject(project));
 	}
 
 	/**
 	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s and updates the graph when the computation
 	 * succeeded.
 	 */
-	private abstract class GraphUpdatingArtifactComputation extends Computation<ImmutableSet<ArtifactCoordinates>> {
+	private abstract class GraphUpdatingArtifactTask extends Task<ImmutableSet<ArtifactCoordinates>> {
 
-		private final Computation<ImmutableSet<ArtifactNode>> computation;
+		private final Task<ImmutableSet<ArtifactNode>> task;
 
-		protected GraphUpdatingArtifactComputation(Computation<ImmutableSet<ArtifactNode>> computation) {
-			this.computation = requireNonNull(computation, "The argument 'computation' must not be null.");
+		protected GraphUpdatingArtifactTask(Task<ImmutableSet<ArtifactNode>> task) {
+			this.task = requireNonNull(task, "The argument 'task' must not be null.");
 		}
 
 		@Override
 		public void queued() {
-			computation.queued();
+			task.queued();
 		}
 
 		@Override
 		public void started() {
-			computation.started();
+			task.started();
 		}
 
 		@Override
 		public void failed(Exception exception) {
-			computation.failed(exception);
+			task.failed(exception);
 		}
 
 		@Override
@@ -190,19 +190,19 @@ class AnalysisGraph {
 					.map(AnalysisGraph.this::registerArtifact)
 					.collect(toImmutableSet());
 			updateGraph(dependees);
-			computation.succeeded(dependees);
+			task.succeeded(dependees);
 		}
 
 		protected abstract void updateGraph(ImmutableSet<ArtifactNode> artifacts);
 
 		@Override
 		public Exception error() {
-			return computation.error();
+			return task.error();
 		}
 
 		@Override
 		public ImmutableSet<ArtifactCoordinates> result() {
-			return computation
+			return task
 					.result().stream()
 					.map(ArtifactNode::coordinates)
 					.collect(toImmutableSet());
@@ -210,14 +210,15 @@ class AnalysisGraph {
 	}
 
 	/**
-	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s and updates the graph when computation were
+	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s and updates the graph when computation
+	 * were
 	 * computed.
 	 */
-	private class GraphUpdatingArtifactDependeeComputation extends GraphUpdatingArtifactComputation {
+	private class GraphUpdatingArtifactDependeeTask extends GraphUpdatingArtifactTask {
 
 		private final ArtifactNode artifactNode;
 
-		public GraphUpdatingArtifactDependeeComputation(ArtifactNode artifactNode) {
+		public GraphUpdatingArtifactDependeeTask(ArtifactNode artifactNode) {
 			super(artifactNode.resolution());
 			this.artifactNode = artifactNode;
 		}
@@ -232,11 +233,11 @@ class AnalysisGraph {
 	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s and updates the graph when versions were
 	 * computed.
 	 */
-	private class GraphUpdatingProjectVersionComputation extends GraphUpdatingArtifactComputation {
+	private class GraphUpdatingProjectVersionTask extends GraphUpdatingArtifactTask {
 
 		private final ProjectNode projectNode;
 
-		public GraphUpdatingProjectVersionComputation(ProjectNode projectNode) {
+		public GraphUpdatingProjectVersionTask(ProjectNode projectNode) {
 			super(projectNode.resolution());
 			this.projectNode = projectNode;
 		}

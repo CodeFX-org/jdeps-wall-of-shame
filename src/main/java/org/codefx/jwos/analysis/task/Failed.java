@@ -1,8 +1,8 @@
-package org.codefx.jwos.analysis.state;
+package org.codefx.jwos.analysis.task;
 
 import static java.util.Objects.requireNonNull;
 
-class Failed<R> implements ComputationState<R> {
+class Failed<R> implements TaskState<R> {
 
 	private final Exception exception;
 
@@ -15,28 +15,28 @@ class Failed<R> implements ComputationState<R> {
 	}
 
 	@Override
-	public ComputationStateIdentifier state() {
-		return ComputationStateIdentifier.FAILED;
+	public TaskStateIdentifier identifier() {
+		return TaskStateIdentifier.FAILED;
 	}
 
 	@Override
-	public ComputationState<R> queued() {
+	public TaskState<R> queued() {
 		return new Queued<>();
 	}
 
 	@Override
-	public ComputationState<R> started() {
+	public TaskState<R> started() {
 		throw new IllegalStateException("A failed computation must be queued before it can be started again.");
 	}
 
 	@Override
-	public ComputationState<R> failed(Exception exception) {
+	public TaskState<R> failed(Exception exception) {
 		throw new IllegalStateException(
 				"A failed computation must be queued and started before it can fail again.");
 	}
 
 	@Override
-	public ComputationState<R> succeeded(R result) {
+	public TaskState<R> succeeded(R result) {
 		throw new IllegalStateException("A failed computation must be queued and started before it can succeed.");
 	}
 }

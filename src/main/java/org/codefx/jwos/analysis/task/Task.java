@@ -1,10 +1,10 @@
-package org.codefx.jwos.analysis.state;
+package org.codefx.jwos.analysis.task;
 
-public class Computation<R> {
+public class Task<R> {
 
-	private ComputationState<R> state;
+	private TaskState<R> state;
 
-	public Computation() {
+	public Task() {
 		state = new NotComputed<>();
 	}
 
@@ -36,8 +36,8 @@ public class Computation<R> {
 		return ((Succeeded<R>) state).result();
 	}
 
-	public ComputationStateIdentifier state() {
-		return state.state();
+	public TaskStateIdentifier identifier() {
+		return state.identifier();
 	}
 
 }
