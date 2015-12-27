@@ -6,8 +6,7 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 import static java.util.Objects.requireNonNull;
-import static java.util.stream.Collectors.collectingAndThen;
-import static java.util.stream.Collectors.toSet;
+import static org.codefx.jwos.Util.toImmutableSet;
 
 /**
  * Uniquely identifies a project.
@@ -29,7 +28,7 @@ public final class ProjectCoordinates implements IdentifiesProject {
 	public ImmutableSet<ArtifactCoordinates> toArtifactsWithVersions(Stream<String> versions) {
 		return versions
 				.map(version -> ArtifactCoordinates.from(groupId, artifactId, version))
-				.collect(collectingAndThen(toSet(), ImmutableSet::copyOf));
+				.collect(toImmutableSet());
 	}
 
 	@Override

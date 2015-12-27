@@ -28,8 +28,7 @@ import java.util.TreeSet;
 import static java.util.Collections.singleton;
 import static java.util.Collections.unmodifiableSet;
 import static java.util.Objects.requireNonNull;
-import static java.util.stream.Collectors.collectingAndThen;
-import static java.util.stream.Collectors.toSet;
+import static org.codefx.jwos.Util.toImmutableSet;
 
 public class ResultFile {
 
@@ -187,7 +186,7 @@ public class ResultFile {
 					.map(IdentifiesArtifact::coordinates)
 					.map(preliminary ->
 							finalizeArtifactRecursively(preliminary, preliminaryArtifacts, finalizedArtifacts))
-					.collect(collectingAndThen(toSet(), ImmutableSet::copyOf));
+					.collect(toImmutableSet());
 			finalizedArtifacts.put(
 					artifact.coordinates(),
 					new DeeplyAnalyzedArtifact(
