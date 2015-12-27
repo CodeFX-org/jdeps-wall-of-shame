@@ -149,6 +149,10 @@ class AnalysisGraph {
 		return new GraphUpdatingArtifactDependeeTask(getExistingNodeForArtifact(artifact));
 	}
 
+	public Task<Void> outputOf(IdentifiesArtifact artifact) {
+		return getExistingNodeForArtifact(artifact).output();
+	}
+
 	public Stream<ProjectNode> projectNodes() {
 		return projects.values().stream();
 	}

@@ -1,5 +1,6 @@
 package org.codefx.jwos.analysis;
 
+import com.google.common.collect.ImmutableSet;
 import org.codefx.jwos.analysis.task.Task;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
@@ -9,9 +10,11 @@ import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
 import org.codefx.jwos.artifact.IdentifiesArtifactTask;
+import org.codefx.jwos.artifact.MarkInternalDependencies;
 import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.artifact.ResolvedProject;
+import org.codefx.jwos.jdeps.dependency.Violation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +24,7 @@ import java.util.function.Function;
 
 import static java.lang.String.format;
 import static java.util.Collections.emptySet;
+import static org.codefx.jwos.Util.toImmutableSet;
 import static org.codefx.jwos.analysis.task.TaskStateIdentifier.NOT_COMPUTED;
 import static org.codefx.jwos.analysis.task.TaskStateIdentifier.SUCCEEDED;
 
@@ -36,6 +40,7 @@ public class AnalysisTaskManager {
 	private final TaskChannel<ArtifactCoordinates, DownloadedArtifact, FailedArtifact> download;
 	private final TaskChannel<DownloadedArtifact, AnalyzedArtifact, FailedArtifact> analyze;
 	private final TaskChannel<ArtifactCoordinates, ResolvedArtifact, FailedArtifact> resolveDependencies;
+	private final TaskChannel<DeeplyAnalyzedArtifact, Void, Void> outputResults;
 
 	private final Bookkeeping bookkeeping;
 
@@ -47,6 +52,8 @@ public class AnalysisTaskManager {
 		download = new TaskChannel<>("download");
 		analyze = new TaskChannel<>("analysis");
 		resolveDependencies = new TaskChannel<>("dependency resolution");
+		outputResults = new TaskChannel<>("output");
+
 		bookkeeping = new Bookkeeping();
 	}
 
@@ -63,6 +70,12 @@ public class AnalysisTaskManager {
 
 	public void stopManagingQueue() {
 		bookkeeping.abort();
+	}
+
+	private void updateState() {
+		queueTasks();
+		processAnswers();
+		queueFinishedArtifacts();
 	}
 
 	private void queueTasks() {
@@ -144,6 +157,48 @@ public class AnalysisTaskManager {
 		getTask.apply(artifact).failed(artifact.result());
 	}
 
+	private void queueFinishedArtifacts() {
+		state.artifactNodes()
+				.filter(AnalysisTaskManager::readyToFinish)
+				.map(AnalysisTaskManager::finishArtifactRecursively)
+				.forEach(outputResults::sendTask);
+	}
+
+	private static DeeplyAnalyzedArtifact finishArtifactRecursively(ArtifactNode node) {
+		if (node.deepAnalysis().identifier() == SUCCEEDED)
+			return node.deepAnalysis().result();
+
+		ImmutableSet<Violation> violations = node.analysis().result();
+		ImmutableSet<DeeplyAnalyzedArtifact> dependees = node
+				.resolution()
+				.result().stream()
+				.map(AnalysisTaskManager::finishArtifactRecursively)
+				.collect(toImmutableSet());
+		MarkInternalDependencies marker =
+				getMarkerForInternalDependencies(violations, dependees);
+		DeeplyAnalyzedArtifact deeplyAnalyzedArtifact =
+				new DeeplyAnalyzedArtifact(node.coordinates(), marker, violations, dependees);
+
+		node.deepAnalysis().succeeded(deeplyAnalyzedArtifact);
+		return deeplyAnalyzedArtifact;
+	}
+
+	private static MarkInternalDependencies getMarkerForInternalDependencies(
+			ImmutableSet<Violation> violations, ImmutableSet<DeeplyAnalyzedArtifact> dependees) {
+		if (violations.isEmpty())
+			return dependees.stream()
+					.map(DeeplyAnalyzedArtifact::marker)
+					.reduce(MarkInternalDependencies.NONE, MarkInternalDependencies::combineWithDependee);
+		else
+			return MarkInternalDependencies.DIRECT;
+	}
+
+	private static boolean readyToFinish(ArtifactNode node) {
+		return node.analysis().identifier() == SUCCEEDED
+				&& node.resolution().identifier() == SUCCEEDED
+				&& node.deepAnalysis().identifier() != SUCCEEDED;
+	}
+
 	// QUERY & UPDATE
 
 	private static <T> T getTaskAndStart(
@@ -155,6 +210,13 @@ public class AnalysisTaskManager {
 		TASKS_LOGGER.info(format("Starting %s for %s.", channel.taskName(), getCoordinates.apply(task)));
 		getTask.apply(task).started();
 		return task;
+	}
+
+	private static <T extends IdentifiesArtifact> T getArtifactTaskAndStart(
+			TaskChannel<T, ?, ?> channel,
+			Function<T, Task<?>> getTask)
+			throws InterruptedException {
+		return getTaskAndStart(channel, getTask, IdentifiesArtifact::coordinates);
 	}
 
 	public ProjectCoordinates getNextToResolveVersions() throws InterruptedException {
@@ -173,7 +235,7 @@ public class AnalysisTaskManager {
 	}
 
 	public ArtifactCoordinates getNextToDownload() throws InterruptedException {
-		return getTaskAndStart(download, state::downloadOf, ArtifactCoordinates::coordinates);
+		return getArtifactTaskAndStart(download, state::downloadOf);
 	}
 
 	public void downloaded(DownloadedArtifact artifact) throws InterruptedException {
@@ -187,7 +249,7 @@ public class AnalysisTaskManager {
 	}
 
 	public DownloadedArtifact getNextToAnalyze() throws InterruptedException {
-		return getTaskAndStart(analyze, state::downloadOf, DownloadedArtifact::coordinates);
+		return getArtifactTaskAndStart(analyze, state::analysisOf);
 	}
 
 	public void analyzed(AnalyzedArtifact artifact) throws InterruptedException {
@@ -201,7 +263,7 @@ public class AnalysisTaskManager {
 	}
 
 	public ArtifactCoordinates getNextToResolveDependencies() throws InterruptedException {
-		return getTaskAndStart(resolveDependencies, state::dependencyResolutionOf, ArtifactCoordinates::coordinates);
+		return getArtifactTaskAndStart(resolveDependencies, state::dependencyResolutionOf);
 	}
 
 	public void resolvedDependencies(ResolvedArtifact artifact) throws InterruptedException {
@@ -215,6 +277,10 @@ public class AnalysisTaskManager {
 		resolveDependencies.addError(artifact);
 	}
 
+	public DeeplyAnalyzedArtifact getNextToOutput() throws InterruptedException {
+		return getArtifactTaskAndStart(outputResults, state::outputOf);
+	}
+
 	private class Bookkeeping {
 
 		private boolean running;
@@ -225,8 +291,7 @@ public class AnalysisTaskManager {
 			THREAD_LOGGER.info("Start managing queues.");
 
 			while (!aborted) {
-				queueTasks();
-				processAnswers();
+				updateState();
 				logQueueSizes();
 				sleepAndAbortWhenInterrupted();
 			}
@@ -246,7 +311,8 @@ public class AnalysisTaskManager {
 					+ logQueueSize(resolveVersions)
 					+ logQueueSize(download)
 					+ logQueueSize(analyze)
-					+ logQueueSize(resolveDependencies);
+					+ logQueueSize(resolveDependencies)
+					+ logQueueSize(outputResults);
 			THREAD_LOGGER.info(message);
 		}
 
@@ -274,6 +340,7 @@ public class AnalysisTaskManager {
 			THREAD_LOGGER.info("Stopping queue management...");
 			aborted = true;
 		}
+
 	}
 
 }
