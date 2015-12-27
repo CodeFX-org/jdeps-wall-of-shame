@@ -15,12 +15,14 @@ import org.codefx.jwos.artifact.ResolvedProject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.nio.file.Path;
 import java.util.Collection;
 import java.util.function.Function;
 
 import static java.lang.String.format;
 import static java.util.Collections.emptySet;
 import static org.codefx.jwos.analysis.task.TaskStateIdentifier.NOT_COMPUTED;
+import static org.codefx.jwos.analysis.task.TaskStateIdentifier.SUCCEEDED;
 
 public class AnalysisTaskManager {
 
@@ -32,7 +34,7 @@ public class AnalysisTaskManager {
 
 	private final TaskChannel<ProjectCoordinates, ResolvedProject, FailedProject> resolveVersions;
 	private final TaskChannel<ArtifactCoordinates, DownloadedArtifact, FailedArtifact> download;
-	private final TaskChannel<ArtifactCoordinates, AnalyzedArtifact, FailedArtifact> analyze;
+	private final TaskChannel<DownloadedArtifact, AnalyzedArtifact, FailedArtifact> analyze;
 	private final TaskChannel<ArtifactCoordinates, ResolvedArtifact, FailedArtifact> resolveDependencies;
 
 	private final Bookkeeping bookkeeping;
@@ -86,7 +88,7 @@ public class AnalysisTaskManager {
 
 	private void queueTasksForArtifactNode(ArtifactNode node) {
 		queueTaskForArtifactNode(node, ArtifactNode::download, download);
-		queueTaskForArtifactNode(node, ArtifactNode::analysis, analyze);
+		queueDownloadTaskForArtifactNode(node, analyze);
 		queueTaskForArtifactNode(node, ArtifactNode::resolution, resolveDependencies);
 	}
 
@@ -99,6 +101,17 @@ public class AnalysisTaskManager {
 			TASKS_LOGGER.info(format("Queuing %s for %s.", node.coordinates(), channel.taskName()));
 			task.queued();
 			channel.sendTask(node.coordinates());
+		}
+	}
+
+	private static void queueDownloadTaskForArtifactNode(
+			ArtifactNode node, TaskChannel<DownloadedArtifact, AnalyzedArtifact, FailedArtifact> channel) {
+		Task<Path> downloadTask = node.download();
+		Task<?> analysisTask = node.analysis();
+		if (downloadTask.identifier() == SUCCEEDED && analysisTask.identifier() == NOT_COMPUTED) {
+			TASKS_LOGGER.info(format("Queuing %s for %s.", node.coordinates(), channel.taskName()));
+			analysisTask.queued();
+			channel.sendTask(new DownloadedArtifact(node.coordinates(), downloadTask.result()));
 		}
 	}
 
@@ -173,8 +186,8 @@ public class AnalysisTaskManager {
 		download.addError(artifact);
 	}
 
-	public ArtifactCoordinates getNextToAnalyze() throws InterruptedException {
-		return getTaskAndStart(analyze, state::analysisOf, ArtifactCoordinates::coordinates);
+	public DownloadedArtifact getNextToAnalyze() throws InterruptedException {
+		return getTaskAndStart(analyze, state::downloadOf, DownloadedArtifact::coordinates);
 	}
 
 	public void analyzed(AnalyzedArtifact artifact) throws InterruptedException {

@@ -1,6 +1,5 @@
 package org.codefx.jwos.maven;
 
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils;
@@ -8,6 +7,7 @@ import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
+import org.codefx.jwos.artifact.ResolvedProject;
 import org.eclipse.aether.DefaultRepositorySystemSession;
 import org.eclipse.aether.RepositoryException;
 import org.eclipse.aether.RepositorySystem;
@@ -28,14 +28,15 @@ import org.eclipse.aether.resolution.ArtifactResult;
 import org.eclipse.aether.resolution.DependencyRequest;
 import org.eclipse.aether.resolution.DependencyResolutionException;
 import org.eclipse.aether.resolution.VersionRangeRequest;
-import org.eclipse.aether.resolution.VersionRangeResult;
 import org.eclipse.aether.spi.connector.RepositoryConnectorFactory;
 import org.eclipse.aether.spi.connector.transport.TransporterFactory;
 import org.eclipse.aether.transport.file.FileTransporterFactory;
 import org.eclipse.aether.transport.http.HttpTransporterFactory;
 import org.eclipse.aether.util.graph.visitor.PreorderNodeListGenerator;
+import org.eclipse.aether.version.Version;
 
 import java.nio.file.Path;
+import java.util.stream.Stream;
 
 import static java.util.Collections.singletonList;
 
@@ -71,12 +72,15 @@ public class MavenCentral {
 		return session;
 	}
 
-	public ImmutableList<ArtifactCoordinates> detectAllVersionsOf(ProjectCoordinates project) throws RepositoryException {
+	public ResolvedProject detectAllVersionsOf(ProjectCoordinates project) throws RepositoryException {
 		Artifact artifact = new DefaultArtifact(project.groupId(), project.artifactId(), "jar", "[0,)");
-		VersionRangeResult versionRange = repositorySystem.resolveVersionRange(
-				repositorySystemSession,
-				new VersionRangeRequest(artifact, singletonList(mavenCentral), NULL_CONTEXT));
-		return project.toArtifactsWithVersions(versionRange.getVersions());
+		Stream<String> versions = repositorySystem
+				.resolveVersionRange(
+						repositorySystemSession,
+						new VersionRangeRequest(artifact, singletonList(mavenCentral), NULL_CONTEXT))
+				.getVersions().stream()
+				.map(Version::toString);
+		return new ResolvedProject(project, project.toArtifactsWithVersions(versions));
 	}
 
 	public DownloadedArtifact downloadArtifact(ArtifactCoordinates artifact) throws RepositoryException {

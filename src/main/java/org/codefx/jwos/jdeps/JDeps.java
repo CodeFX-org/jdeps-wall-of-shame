@@ -1,6 +1,8 @@
 package org.codefx.jwos.jdeps;
 
 import com.google.common.collect.ImmutableSet;
+import org.codefx.jwos.artifact.AnalyzedArtifact;
+import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.jdeps.dependency.Violation;
 import org.codefx.jwos.jdeps.exec.JdkInternalsExecutor;
 import org.codefx.jwos.jdeps.parse.ViolationParser;
@@ -29,12 +31,12 @@ public class JDeps {
 				.orElseThrow(() -> new IllegalStateException("Could not find JDeps executable."));
 	}
 
-	public ImmutableSet<Violation> analyze(Path artifact) throws CommandLineException {
+	public AnalyzedArtifact analyze(DownloadedArtifact artifact) throws CommandLineException {
 		ImmutableSet.Builder<Violation> violations = ImmutableSet.builder();
 		ViolationParser violationParser = new ViolationParser(violations::add);
-		new JdkInternalsExecutor(jdeps, artifact, violationParser::parseLine).execute();
+		new JdkInternalsExecutor(jdeps, artifact.path(), violationParser::parseLine).execute();
 		violationParser.finish();
-		return violations.build();
+		return new AnalyzedArtifact(artifact.coordinates(), violations.build());
 	}
 
 }

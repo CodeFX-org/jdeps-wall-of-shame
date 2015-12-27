@@ -1,14 +1,13 @@
 package org.codefx.jwos.artifact;
 
-import com.google.common.collect.ImmutableList;
-import org.eclipse.aether.version.Version;
+import com.google.common.collect.ImmutableSet;
 
-import java.util.Collection;
 import java.util.Objects;
+import java.util.stream.Stream;
 
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.collectingAndThen;
-import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
 
 /**
  * Uniquely identifies a project.
@@ -27,10 +26,10 @@ public final class ProjectCoordinates implements IdentifiesProject {
 		return new ProjectCoordinates(groupId, artifactId);
 	}
 
-	public ImmutableList<ArtifactCoordinates> toArtifactsWithVersions(Collection<Version> versions) {
-		return versions.stream()
-				.map(version -> ArtifactCoordinates.from(groupId, artifactId, version.toString()))
-				.collect(collectingAndThen(toList(), ImmutableList::copyOf));
+	public ImmutableSet<ArtifactCoordinates> toArtifactsWithVersions(Stream<String> versions) {
+		return versions
+				.map(version -> ArtifactCoordinates.from(groupId, artifactId, version))
+				.collect(collectingAndThen(toSet(), ImmutableSet::copyOf));
 	}
 
 	@Override
