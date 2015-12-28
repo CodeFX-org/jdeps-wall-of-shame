@@ -228,11 +228,11 @@ public class AnalysisTaskManager {
 	}
 
 	public void addProject(ProjectCoordinates project) throws InterruptedException {
-		addProject.addResult(project);
+		addProject.sendResult(project);
 	}
 
 	public void findingProjectFailed(Exception error) throws InterruptedException {
-		addProject.addError(error);
+		addProject.sendError(error);
 	}
 
 	public ProjectCoordinates getNextToResolveVersions() throws InterruptedException {
@@ -242,12 +242,12 @@ public class AnalysisTaskManager {
 	public void resolvedVersions(ResolvedProject project) throws InterruptedException {
 		TASKS_LOGGER.info(
 				format("Version resolution for %s succeeded: %s", project.coordinates(), project.versions()));
-		resolveVersions.addResult(project);
+		resolveVersions.sendResult(project);
 	}
 
 	public void versionResolutionFailed(FailedProject project) throws InterruptedException {
 		TASKS_LOGGER.info(format("Version resolution for %s failed: %s", project.coordinates(), project.error()));
-		resolveVersions.addError(project);
+		resolveVersions.sendError(project);
 	}
 
 	public ArtifactCoordinates getNextToDownload() throws InterruptedException {
@@ -256,12 +256,12 @@ public class AnalysisTaskManager {
 
 	public void downloaded(DownloadedArtifact artifact) throws InterruptedException {
 		TASKS_LOGGER.info(format("Download for %s succeeded: %s", artifact.coordinates(), artifact.path()));
-		download.addResult(artifact);
+		download.sendResult(artifact);
 	}
 
 	public void downloadFailed(FailedArtifact artifact) throws InterruptedException {
 		TASKS_LOGGER.info(format("Download for %s failed: %s", artifact.coordinates(), artifact.error()));
-		download.addError(artifact);
+		download.sendError(artifact);
 	}
 
 	public DownloadedArtifact getNextToAnalyze() throws InterruptedException {
@@ -270,12 +270,12 @@ public class AnalysisTaskManager {
 
 	public void analyzed(AnalyzedArtifact artifact) throws InterruptedException {
 		TASKS_LOGGER.info(format("Analysis for %s succeeded: %s", artifact.coordinates(), artifact.violations()));
-		analyze.addResult(artifact);
+		analyze.sendResult(artifact);
 	}
 
 	public void analysisFailed(FailedArtifact artifact) throws InterruptedException {
 		TASKS_LOGGER.info(format("Analysis for %s failed: %s", artifact.coordinates(), artifact.error()));
-		analyze.addError(artifact);
+		analyze.sendError(artifact);
 	}
 
 	public ArtifactCoordinates getNextToResolveDependencies() throws InterruptedException {
@@ -285,12 +285,12 @@ public class AnalysisTaskManager {
 	public void resolvedDependencies(ResolvedArtifact artifact) throws InterruptedException {
 		TASKS_LOGGER.info(
 				format("Dependency resolution for %s succeeded: %s", artifact.coordinates(), artifact.dependees()));
-		resolveDependencies.addResult(artifact);
+		resolveDependencies.sendResult(artifact);
 	}
 
 	public void dependencyResolutionFailed(FailedArtifact artifact) throws InterruptedException {
 		TASKS_LOGGER.info(format("Dependency resolution for %s failed: %s", artifact.coordinates(), artifact.error()));
-		resolveDependencies.addError(artifact);
+		resolveDependencies.sendError(artifact);
 	}
 
 	public DeeplyAnalyzedArtifact getNextToOutput() throws InterruptedException {

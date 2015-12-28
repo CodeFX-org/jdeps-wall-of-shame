@@ -64,7 +64,7 @@ class TaskChannel<T, R, E> {
 		return tasks.take();
 	}
 
-	public void addResult(R result) throws InterruptedException {
+	public void sendResult(R result) throws InterruptedException {
 		results.add(result);
 	}
 
@@ -72,7 +72,7 @@ class TaskChannel<T, R, E> {
 		return stream(Iterables.consumingIterable(results).spliterator(), false);
 	}
 
-	public void addError(E error) throws InterruptedException {
+	public void sendError(E error) throws InterruptedException {
 		errors.add(error);
 	}
 
