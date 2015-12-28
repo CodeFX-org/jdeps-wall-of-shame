@@ -36,6 +36,7 @@ public class AnalysisTaskManager {
 
 	private final AnalysisGraph state;
 
+	private final TaskChannel<Void, ProjectCoordinates, Exception> addProject;
 	private final TaskChannel<ProjectCoordinates, ResolvedProject, FailedProject> resolveVersions;
 	private final TaskChannel<ArtifactCoordinates, DownloadedArtifact, FailedArtifact> download;
 	private final TaskChannel<DownloadedArtifact, AnalyzedArtifact, FailedArtifact> analyze;
@@ -48,6 +49,7 @@ public class AnalysisTaskManager {
 			Collection<ProjectCoordinates> resolvedProjects, Collection<DeeplyAnalyzedArtifact> analyzedArtifacts) {
 		state = new AnalysisGraph(resolvedProjects, analyzedArtifacts);
 
+		addProject = new TaskChannel<>("add project");
 		resolveVersions = new TaskChannel<>("version resolution");
 		download = new TaskChannel<>("download");
 		analyze = new TaskChannel<>("analysis");
@@ -129,9 +131,15 @@ public class AnalysisTaskManager {
 	}
 
 	private void processAnswers() {
+		processAnswersFromNewProjects();
 		processAnswersFromChannel(download, state::downloadOf);
 		processAnswersFromChannel(analyze, state::analysisOf);
 		processAnswersFromChannel(resolveDependencies, state::dependencyResolutionOf);
+	}
+
+	private void processAnswersFromNewProjects() {
+		addProject.drainResults().forEach(state::addProject);
+		addProject.drainErrors().forEach(error -> TASKS_LOGGER.warn("Error while finding projects.", error));
 	}
 
 	private static <R> void processAnswersFromChannel(
@@ -217,6 +225,14 @@ public class AnalysisTaskManager {
 			Function<T, Task<?>> getTask)
 			throws InterruptedException {
 		return getTaskAndStart(channel, getTask, IdentifiesArtifact::coordinates);
+	}
+
+	public void addProject(ProjectCoordinates project) throws InterruptedException {
+		addProject.addResult(project);
+	}
+
+	public void findingProjectFailed(Exception error) throws InterruptedException {
+		addProject.addError(error);
 	}
 
 	public ProjectCoordinates getNextToResolveVersions() throws InterruptedException {

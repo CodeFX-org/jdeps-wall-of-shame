@@ -117,9 +117,13 @@ class AnalysisGraph {
 		return node;
 	}
 
-	// UPDATE
+	// PROJECTS
 
-	public void resolvedVersions(ResolvedProject project) {
+	public void addProject(ProjectCoordinates project) {
+		projects.putIfAbsent(project, new ProjectNode(project));
+	}
+
+	public void resolvedProjectVersions(ResolvedProject project) {
 		project
 				.versions().stream()
 				.map(this::getOrCreateNodeForArtifact)
@@ -127,11 +131,7 @@ class AnalysisGraph {
 				.forEach(this::registerArtifactInGraph);
 	}
 
-	private void resolvedDepenencies(ArtifactCoordinates dependent, ImmutableSet<ArtifactCoordinates> dependees) {
-		dependees.forEach(this::registerArtifact);
-	}
-
-	// QUERY
+	// ARTIFACT TASKS
 
 	public Stream<ArtifactNode> artifactNodes() {
 		return artifacts.values().stream();
