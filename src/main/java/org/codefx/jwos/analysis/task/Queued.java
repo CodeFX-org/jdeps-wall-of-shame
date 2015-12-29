@@ -26,4 +26,9 @@ class Queued<R> implements TaskState<R> {
 	public TaskState<R> succeeded(R result) {
 		throw new IllegalStateException("A queued computation must be started before it can succeed.");
 	}
+
+	@Override
+	public String toString() {
+		return "Queued...";
+	}
 }

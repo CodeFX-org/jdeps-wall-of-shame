@@ -39,4 +39,9 @@ class Succeeded<R> implements TaskState<R> {
 		throw new IllegalStateException(
 				"A succeeded computation must be queued and started before it can succeed again.");
 	}
+
+	@Override
+	public String toString() {
+		return "Succeeded: " + result;
+	}
 }

@@ -26,4 +26,9 @@ class Started<R> implements TaskState<R> {
 	public TaskState<R> succeeded(R result) {
 		return new Succeeded<>(result);
 	}
+
+	@Override
+	public String toString() {
+		return "Started...";
+	}
 }

@@ -39,4 +39,9 @@ class Failed<R> implements TaskState<R> {
 	public TaskState<R> succeeded(R result) {
 		throw new IllegalStateException("A failed computation must be queued and started before it can succeed.");
 	}
+
+	@Override
+	public String toString() {
+		return "Failed: " + exception;
+	}
 }

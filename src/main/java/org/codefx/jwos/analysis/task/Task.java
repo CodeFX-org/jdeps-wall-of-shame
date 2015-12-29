@@ -40,4 +40,8 @@ public class Task<R> {
 		return state.identifier();
 	}
 
+	@Override
+	public String toString() {
+		return state.toString();
+	}
 }
