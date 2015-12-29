@@ -1,7 +1,7 @@
 package org.codefx.jwos.artifact;
 
-public interface IdentifiesArtifactTask<R> extends IdentifiesArtifact {
+public interface IdentifiesArtifactTask<R> extends IdentifiesArtifact, IdentifiesTask<R> {
 
-	R result();
+	// no additional methods
 
 }

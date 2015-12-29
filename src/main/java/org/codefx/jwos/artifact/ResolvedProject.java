@@ -7,7 +7,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * A project whose versions are resolved.
  */
-public final class ResolvedProject implements IdentifiesProject {
+public final class ResolvedProject implements IdentifiesProjectTask<ImmutableSet<ArtifactCoordinates>> {
 
 	private final ProjectCoordinates project;
 	private final ImmutableSet<ArtifactCoordinates> versions;
@@ -20,6 +20,11 @@ public final class ResolvedProject implements IdentifiesProject {
 	@Override
 	public ProjectCoordinates coordinates() {
 		return project;
+	}
+
+	@Override
+	public ImmutableSet<ArtifactCoordinates> result() {
+		return versions;
 	}
 
 	public ImmutableSet<ArtifactCoordinates> versions() {

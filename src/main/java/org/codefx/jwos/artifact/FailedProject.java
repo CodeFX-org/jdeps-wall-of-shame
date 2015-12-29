@@ -5,7 +5,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * A project for which a computation failed.
  */
-public final class FailedProject implements IdentifiesProject {
+public final class FailedProject implements IdentifiesProjectTask<Exception> {
 
 	private final ProjectCoordinates project;
 	private final Exception error;
@@ -18,6 +18,11 @@ public final class FailedProject implements IdentifiesProject {
 	@Override
 	public ProjectCoordinates coordinates() {
 		return project;
+	}
+
+	@Override
+	public Exception result() {
+		return error;
 	}
 
 	public Exception error() {
