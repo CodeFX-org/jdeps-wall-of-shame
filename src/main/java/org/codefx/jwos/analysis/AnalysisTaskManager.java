@@ -132,6 +132,7 @@ public class AnalysisTaskManager {
 
 	private void processAnswers() {
 		processAnswersFromNewProjects();
+		processAnswersFromResolvedProjects();
 		processAnswersFromChannel(download, state::downloadOf);
 		processAnswersFromChannel(analyze, state::analysisOf);
 		processAnswersFromChannel(resolveDependencies, state::dependencyResolutionOf);
@@ -140,6 +141,21 @@ public class AnalysisTaskManager {
 	private void processAnswersFromNewProjects() {
 		addProject.drainResults().forEach(state::addProject);
 		addProject.drainErrors().forEach(error -> TASKS_LOGGER.warn("Error while finding projects.", error));
+	}
+
+	private void processAnswersFromResolvedProjects() {
+		resolveVersions.drainResults().forEach(this::processSuccessOfVersionResolution);
+		resolveVersions.drainErrors().forEach(this::processFailureOfVersionResolution);
+	}
+
+	private void processSuccessOfVersionResolution(ResolvedProject project) {
+		TASKS_LOGGER.debug("Storing %s result for %s.", resolveVersions.taskName(), project.coordinates());
+		state.versionResolutionOf(project).succeeded(project.result());
+	}
+
+	private void processFailureOfVersionResolution(FailedProject project) {
+		TASKS_LOGGER.debug("Storing %s failure for %s.", resolveVersions.taskName(), project.coordinates());
+		state.versionResolutionOf(project).failed(project.error());
 	}
 
 	private static <R> void processAnswersFromChannel(
@@ -172,6 +188,19 @@ public class AnalysisTaskManager {
 				.forEach(outputResults::sendTask);
 	}
 
+	private static boolean readyToFinish(ArtifactNode node) {
+		return node.analysis().identifier() == SUCCEEDED
+				&& node.resolution().identifier() == SUCCEEDED
+				&& node.deepAnalysis().identifier() != SUCCEEDED
+				&& node.resolution().result().stream().allMatch(AnalysisTaskManager::finishedOrReadyToFinish);
+	}
+
+	private static boolean finishedOrReadyToFinish(ArtifactNode node) {
+		return node.analysis().identifier() == SUCCEEDED
+				&& node.resolution().identifier() == SUCCEEDED
+				&& node.resolution().result().stream().allMatch(AnalysisTaskManager::finishedOrReadyToFinish);
+	}
+
 	private static DeeplyAnalyzedArtifact finishArtifactRecursively(ArtifactNode node) {
 		if (node.deepAnalysis().identifier() == SUCCEEDED)
 			return node.deepAnalysis().result();
@@ -199,12 +228,6 @@ public class AnalysisTaskManager {
 					.reduce(MarkInternalDependencies.NONE, MarkInternalDependencies::combineWithDependee);
 		else
 			return MarkInternalDependencies.DIRECT;
-	}
-
-	private static boolean readyToFinish(ArtifactNode node) {
-		return node.analysis().identifier() == SUCCEEDED
-				&& node.resolution().identifier() == SUCCEEDED
-				&& node.deepAnalysis().identifier() != SUCCEEDED;
 	}
 
 	// QUERY & UPDATE
