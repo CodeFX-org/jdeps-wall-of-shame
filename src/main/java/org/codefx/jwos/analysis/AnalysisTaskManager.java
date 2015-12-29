@@ -32,7 +32,7 @@ public class AnalysisTaskManager {
 
 	private static final Logger TASKS_LOGGER = LoggerFactory.getLogger("Analysis Tasks");
 	private static final Logger THREAD_LOGGER = LoggerFactory.getLogger("Analysis Thread");
-	private static final String CHANNEL_STATUS_MESSAGE_FORMAT = " - %d are waiting for %s";
+	private static final String CHANNEL_STATUS_MESSAGE_FORMAT = " - %3d are waiting for %s";
 
 	private final AnalysisGraph state;
 
@@ -95,7 +95,7 @@ public class AnalysisTaskManager {
 			TaskChannel<ProjectCoordinates, ?, ?> channel) {
 		Task<?> task = getTask.apply(node);
 		if (task.identifier() == NOT_COMPUTED) {
-			TASKS_LOGGER.info(format("Queuing %s for %s.", node.coordinates(), channel.taskName()));
+			TASKS_LOGGER.debug("Queuing {} for {}.", node.coordinates(), channel.taskName());
 			task.queued();
 			channel.sendTask(node.coordinates());
 		}
@@ -113,7 +113,7 @@ public class AnalysisTaskManager {
 			TaskChannel<ArtifactCoordinates, ?, ?> channel) {
 		Task<?> task = getTask.apply(node);
 		if (task.identifier() == NOT_COMPUTED) {
-			TASKS_LOGGER.info(format("Queuing %s for %s.", node.coordinates(), channel.taskName()));
+			TASKS_LOGGER.debug("Queuing {} for {}.", node.coordinates(), channel.taskName());
 			task.queued();
 			channel.sendTask(node.coordinates());
 		}
@@ -124,7 +124,7 @@ public class AnalysisTaskManager {
 		Task<Path> downloadTask = node.download();
 		Task<?> analysisTask = node.analysis();
 		if (downloadTask.identifier() == SUCCEEDED && analysisTask.identifier() == NOT_COMPUTED) {
-			TASKS_LOGGER.info(format("Queuing %s for %s.", node.coordinates(), channel.taskName()));
+			TASKS_LOGGER.debug("Queuing {} for {}.", node.coordinates(), channel.taskName());
 			analysisTask.queued();
 			channel.sendTask(new DownloadedArtifact(node.coordinates(), downloadTask.result()));
 		}
@@ -149,12 +149,12 @@ public class AnalysisTaskManager {
 	}
 
 	private void processSuccessOfVersionResolution(ResolvedProject project) {
-		TASKS_LOGGER.debug("Storing %s result for %s.", resolveVersions.taskName(), project.coordinates());
+		TASKS_LOGGER.debug("Storing {} result for {}.", resolveVersions.taskName(), project.coordinates());
 		state.versionResolutionOf(project).succeeded(project.result());
 	}
 
 	private void processFailureOfVersionResolution(FailedProject project) {
-		TASKS_LOGGER.debug("Storing %s failure for %s.", resolveVersions.taskName(), project.coordinates());
+		TASKS_LOGGER.debug("Storing {} failure for {}.", resolveVersions.taskName(), project.coordinates());
 		state.versionResolutionOf(project).failed(project.error());
 	}
 
@@ -169,7 +169,7 @@ public class AnalysisTaskManager {
 			IdentifiesArtifactTask<R> artifact,
 			Function<IdentifiesArtifact, Task<R>> getTask,
 			String taskName) {
-		TASKS_LOGGER.info(format("Processing %s result for %s.", taskName, artifact.coordinates()));
+		TASKS_LOGGER.debug("Storing {} result for {}.", taskName, artifact.coordinates());
 		getTask.apply(artifact).succeeded(artifact.result());
 	}
 
@@ -177,7 +177,7 @@ public class AnalysisTaskManager {
 			FailedArtifact artifact,
 			Function<IdentifiesArtifact, Task<R>> getTask,
 			String taskName) {
-		TASKS_LOGGER.info(format("Processing %s failure for %s.", taskName, artifact.coordinates()));
+		TASKS_LOGGER.debug("Storing {} failure for {}.", taskName, artifact.coordinates());
 		getTask.apply(artifact).failed(artifact.result());
 	}
 
@@ -238,7 +238,7 @@ public class AnalysisTaskManager {
 			Function<T, Object> getCoordinates)
 			throws InterruptedException {
 		T task = channel.getTask();
-		TASKS_LOGGER.info(format("Starting %s for %s.", channel.taskName(), getCoordinates.apply(task)));
+		TASKS_LOGGER.debug("Starting {} for {}.", channel.taskName(), getCoordinates.apply(task));
 		getTask.apply(task).started();
 		return task;
 	}
@@ -263,13 +263,12 @@ public class AnalysisTaskManager {
 	}
 
 	public void resolvedVersions(ResolvedProject project) throws InterruptedException {
-		TASKS_LOGGER.info(
-				format("Version resolution for %s succeeded: %s", project.coordinates(), project.versions()));
+		TASKS_LOGGER.debug("Version resolution for {} succeeded: {}", project.coordinates(), project.versions());
 		resolveVersions.sendResult(project);
 	}
 
 	public void versionResolutionFailed(FailedProject project) throws InterruptedException {
-		TASKS_LOGGER.info(format("Version resolution for %s failed: %s", project.coordinates(), project.error()));
+		TASKS_LOGGER.warn("Version resolution for {} failed: {}", project.coordinates(), project.error().toString());
 		resolveVersions.sendError(project);
 	}
 
@@ -278,12 +277,12 @@ public class AnalysisTaskManager {
 	}
 
 	public void downloaded(DownloadedArtifact artifact) throws InterruptedException {
-		TASKS_LOGGER.info(format("Download for %s succeeded: %s", artifact.coordinates(), artifact.path()));
+		TASKS_LOGGER.debug("Download for {} succeeded: {}", artifact.coordinates(), artifact.path());
 		download.sendResult(artifact);
 	}
 
 	public void downloadFailed(FailedArtifact artifact) throws InterruptedException {
-		TASKS_LOGGER.info(format("Download for %s failed: %s", artifact.coordinates(), artifact.error()));
+		TASKS_LOGGER.warn("Download for {} failed: {}", artifact.coordinates(), artifact.error().toString());
 		download.sendError(artifact);
 	}
 
@@ -292,12 +291,12 @@ public class AnalysisTaskManager {
 	}
 
 	public void analyzed(AnalyzedArtifact artifact) throws InterruptedException {
-		TASKS_LOGGER.info(format("Analysis for %s succeeded: %s", artifact.coordinates(), artifact.violations()));
+		TASKS_LOGGER.debug("Analysis for {} succeeded: {}", artifact.coordinates(), artifact.violations());
 		analyze.sendResult(artifact);
 	}
 
 	public void analysisFailed(FailedArtifact artifact) throws InterruptedException {
-		TASKS_LOGGER.info(format("Analysis for %s failed: %s", artifact.coordinates(), artifact.error()));
+		TASKS_LOGGER.warn("Analysis for {} failed: {}", artifact.coordinates(), artifact.error().toString());
 		analyze.sendError(artifact);
 	}
 
@@ -306,13 +305,13 @@ public class AnalysisTaskManager {
 	}
 
 	public void resolvedDependencies(ResolvedArtifact artifact) throws InterruptedException {
-		TASKS_LOGGER.info(
-				format("Dependency resolution for %s succeeded: %s", artifact.coordinates(), artifact.dependees()));
+		TASKS_LOGGER.debug("Dependency resolution for {} succeeded: {}", artifact.coordinates(), artifact.dependees());
 		resolveDependencies.sendResult(artifact);
 	}
 
 	public void dependencyResolutionFailed(FailedArtifact artifact) throws InterruptedException {
-		TASKS_LOGGER.info(format("Dependency resolution for %s failed: %s", artifact.coordinates(), artifact.error()));
+		TASKS_LOGGER
+				.warn("Dependency resolution for {} failed: {}", artifact.coordinates(), artifact.error().toString());
 		resolveDependencies.sendError(artifact);
 	}
 
@@ -321,6 +320,11 @@ public class AnalysisTaskManager {
 	}
 
 	private class Bookkeeping {
+
+		private static final int QUEUE_SIZE_LOG_INTERVAL = 20;
+		private static final long SLEEP_TIME_IN_MS = 50;
+
+		private int runsToNextLog;
 
 		private boolean running;
 		private boolean aborted;
@@ -331,7 +335,7 @@ public class AnalysisTaskManager {
 
 			while (!aborted) {
 				updateState();
-				logQueueSizes();
+				maybeLogQueueSizes();
 				sleepAndAbortWhenInterrupted();
 			}
 
@@ -343,16 +347,23 @@ public class AnalysisTaskManager {
 			if (running)
 				throw new IllegalStateException("The bookkeeping thread is already running.");
 			running = true;
+			runsToNextLog = QUEUE_SIZE_LOG_INTERVAL;
 		}
 
-		private void logQueueSizes() {
+		private void maybeLogQueueSizes() {
+			runsToNextLog--;
+			if (runsToNextLog > 0)
+				return;
+
 			String message = "Waiting tasks:\n"
+					+ logQueueSize(addProject)
 					+ logQueueSize(resolveVersions)
 					+ logQueueSize(download)
 					+ logQueueSize(analyze)
 					+ logQueueSize(resolveDependencies)
 					+ logQueueSize(outputResults);
 			THREAD_LOGGER.info(message);
+			runsToNextLog = QUEUE_SIZE_LOG_INTERVAL;
 		}
 
 		private String logQueueSize(TaskChannel<?, ?, ?> channel) {
@@ -360,9 +371,9 @@ public class AnalysisTaskManager {
 		}
 
 		private void sleepAndAbortWhenInterrupted() {
-			THREAD_LOGGER.info("Done. Sleeping for a while...");
+			THREAD_LOGGER.debug("Done. Sleeping for a while...");
 			try {
-				Thread.sleep(100);
+				Thread.sleep(SLEEP_TIME_IN_MS);
 			} catch (InterruptedException ex) {
 				THREAD_LOGGER.warn("Who woke me? Stopping queue management...");
 				Thread.currentThread().interrupt();
