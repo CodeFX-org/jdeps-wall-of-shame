@@ -23,6 +23,7 @@ import org.eclipse.aether.impl.DefaultServiceLocator;
 import org.eclipse.aether.repository.LocalRepository;
 import org.eclipse.aether.repository.RemoteRepository;
 import org.eclipse.aether.repository.RemoteRepository.Builder;
+import org.eclipse.aether.resolution.ArtifactDescriptorRequest;
 import org.eclipse.aether.resolution.ArtifactRequest;
 import org.eclipse.aether.resolution.ArtifactResult;
 import org.eclipse.aether.resolution.DependencyRequest;
@@ -36,9 +37,11 @@ import org.eclipse.aether.util.graph.visitor.PreorderNodeListGenerator;
 import org.eclipse.aether.version.Version;
 
 import java.nio.file.Path;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 import static java.util.Collections.singletonList;
+import static org.codefx.jwos.Util.toImmutableSet;
 
 public class MavenCentral {
 
@@ -94,24 +97,22 @@ public class MavenCentral {
 	}
 
 	public ResolvedArtifact resolveArtifact(ArtifactCoordinates artifact) throws RepositoryException {
-		return new ResolvedArtifact(artifact, getDependencies(artifact.toMavenArtifact()));
+		return new ResolvedArtifact(artifact, getDirectDependencies(artifact.toMavenArtifact()));
 	}
 
-	private ImmutableSet<ArtifactCoordinates> getDependencies(Artifact artifact) throws RepositoryException {
+	private ImmutableSet<ArtifactCoordinates> getAllDependencies(Artifact artifact) throws RepositoryException {
 		return ImmutableSet.copyOf(Iterables.concat(
-				getDependencies(artifact, "compile"),
-				getDependencies(artifact, "runtime")
+				getAllDependencies(artifact, "compile"),
+				getAllDependencies(artifact, "runtime")
 		));
 	}
 
-	private ImmutableSet<ArtifactCoordinates> getDependencies(Artifact artifact, String scope)
+	private ImmutableSet<ArtifactCoordinates> getAllDependencies(Artifact artifact, String scope)
 			throws DependencyCollectionException, DependencyResolutionException {
 		Dependency artifactAsDependency = new Dependency(artifact, scope);
 		CollectRequest collectRequest = new CollectRequest(artifactAsDependency, singletonList(mavenCentral));
 		DependencyNode dependencyRoot =
 				repositorySystem.collectDependencies(repositorySystemSession, collectRequest).getRoot();
-
-		// TODO only collect direct dependencies
 
 		DependencyRequest dependencyRequest = new DependencyRequest(dependencyRoot, null);
 		repositorySystem.resolveDependencies(repositorySystemSession, dependencyRequest);
@@ -122,6 +123,22 @@ public class MavenCentral {
 		ImmutableSet.Builder<ArtifactCoordinates> dependencyCoordinates = ImmutableSet.builder();
 		dependencies.getArtifacts(true).stream().map(ArtifactCoordinates::from).forEach(dependencyCoordinates::add);
 		return dependencyCoordinates.build();
+	}
+
+	private ImmutableSet<ArtifactCoordinates> getDirectDependencies(Artifact artifact) throws RepositoryException {
+		ArtifactDescriptorRequest descriptorRequest =
+				new ArtifactDescriptorRequest(artifact, singletonList(mavenCentral), null);
+		return repositorySystem
+				.readArtifactDescriptor(repositorySystemSession, descriptorRequest)
+				.getDependencies().stream()
+				.filter(this::noTestDependency)
+				.map(Dependency::getArtifact)
+				.map(ArtifactCoordinates::from)
+				.collect(toImmutableSet());
+	}
+
+	private boolean noTestDependency(Dependency dependency) {
+		return !Objects.equals(dependency.getScope(), "test");
 	}
 
 }
