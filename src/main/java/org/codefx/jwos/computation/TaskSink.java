@@ -2,6 +2,15 @@ package org.codefx.jwos.computation;
 
 import static java.util.Objects.requireNonNull;
 
+/**
+ * Computes a task along these steps:
+ * <ol>
+ *     <li>{@link ReceiveTask receive} a new task (e.g. an analysed artifact to output)
+ *     <li>try to {@link ComputeTask perform} the task (e.g. write the artifact to a file)
+ * </ol>
+ *
+ * @param <T> the type of the task to perform
+ */
 public class TaskSink<T> implements Computation {
 
 	private final ReceiveTask<T> receive;

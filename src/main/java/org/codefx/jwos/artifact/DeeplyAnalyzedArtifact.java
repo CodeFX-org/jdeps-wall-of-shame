@@ -10,7 +10,7 @@ import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.joining;
 
 /**
- * An artifact that itself and all its children have been analyzed by JDeps.
+ * An artifact that itself and all its dependees have been analyzed by JDeps.
  */
 public final class DeeplyAnalyzedArtifact implements IdentifiesArtifact {
 

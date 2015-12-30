@@ -10,6 +10,15 @@ import java.util.stream.Stream;
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.StreamSupport.stream;
 
+/**
+ * A channel handles communication of a single type of tasks.
+ * <p>
+ * It consists of three blocking queue, one to send out tasks and two to receive results or failures, respectively.
+ * 
+ * @param <T> the type of tasks
+ * @param <R> the type of the tasks' successful result 
+ * @param <E> the type of the tasks' error
+ */
 class TaskChannel<T, R, E> {
 
 	private final String taskName;
@@ -33,7 +42,7 @@ class TaskChannel<T, R, E> {
 	}
 
 	/**
-	 * Creates a new channel with the specified capacity for results and errors, respectively.
+	 * Creates a new channel with the specified capacity for results and errors, respectively (where 0 means unbounded).
 	 */
 	public TaskChannel(String taskName, int capacity) {
 		this(taskName, capacity, capacity);
@@ -41,8 +50,6 @@ class TaskChannel<T, R, E> {
 
 	/**
 	 * Creates a new channel with unbounded capacities for results and errors.
-	 *
-	 * @param taskName
 	 */
 	public TaskChannel(String taskName) {
 		this(taskName, 0, 0);

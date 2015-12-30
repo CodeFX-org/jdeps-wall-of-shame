@@ -15,9 +15,24 @@ import java.util.stream.Stream;
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.joining;
 
+/**
+ * The actual Wall Of Shame, which writes results in a human-readable way to files and commits them with Git.
+ * <p>
+ * Artifacts can be {@link #addArtifact(DeeplyAnalyzedArtifact) added} and the files can be {@link #write() written},
+ * {@link #commit() commited}, and {@link #push() pushed}.
+ * <p>
+ * This class is not thread-safe.
+ */
 public class WallOfShame {
 
+	/**
+	 * Handles the writing.
+	 */
 	private final Wall wall;
+
+	/**
+	 * Commits and pushes the files.
+	 */
 	private final GitDirectory git;
 
 	private final List<DeeplyAnalyzedArtifact> addedSinceLastCommit;

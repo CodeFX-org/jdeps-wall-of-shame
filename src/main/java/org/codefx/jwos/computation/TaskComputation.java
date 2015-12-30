@@ -2,6 +2,17 @@ package org.codefx.jwos.computation;
 
 import static java.util.Objects.requireNonNull;
 
+/**
+ * Computes a task along these steps:
+ * <ol>
+ *     <li>{@link ReceiveTask receive} a new task (e.g. an artifact to download)
+ *     <li>try to {@link ComputeTask perform} the task (e.g. download the JAR)
+ *     <li>send the {@link SendResult result} or {@link SendError error} (e.g. path to file or exception)
+ * </ol>
+ * 
+ * @param <T> the type of the task to perform
+ * @param <R> the type of the task's result if successful
+ */
 public class TaskComputation<T, R> implements Computation {
 
 	private final ReceiveTask<T> receive;

@@ -18,6 +18,11 @@ import java.util.TreeSet;
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.toList;
 
+/**
+ * An individual file of the Wall.
+ * <p>
+ * Artifacts can be {@link #addArtifact(DeeplyAnalyzedArtifact) added} and the file can be {@link #write() written}.
+ */
 class Brick {
 
 	private static final String SEPARATOR_IN_VIOLATION = " -> ";
@@ -25,19 +30,19 @@ class Brick {
 
 	private final List<String> frontMatter;
 
-	private final Path postFile;
-	private final Path tempPostFile;
+	private final Path file;
+	private final Path tempFile;
 
-	private Brick(SortedSet<DeeplyAnalyzedArtifact> artifacts, List<String> frontMatter, Path postFile, Path tempPostFile) {
+	private Brick(SortedSet<DeeplyAnalyzedArtifact> artifacts, List<String> frontMatter, Path file, Path tempFile) {
 		this.artifacts = artifacts;
 		this.frontMatter = frontMatter;
-		this.postFile = postFile;
-		this.tempPostFile = tempPostFile;
+		this.file = file;
+		this.tempFile = tempFile;
 	}
 
 	public static Brick of(Path frontMatterFile, Path postFile) throws IOException {
 		requireNonNull(frontMatterFile, "The argument 'frontMatterFile' must not be null.");
-		requireNonNull(postFile, "The argument 'postFile' must not be null.");
+		requireNonNull(postFile, "The argument 'file' must not be null.");
 		return new Brick(
 				new TreeSet<>(IdentifiesArtifact.alphabeticalOrder()),
 				Files.lines(frontMatterFile).collect(toList()),
@@ -57,11 +62,11 @@ class Brick {
 	}
 
 	private void deleteTempFileIfExists() throws IOException {
-		Files.deleteIfExists(tempPostFile);
+		Files.deleteIfExists(tempFile);
 	}
 
 	private void writeTempFile() throws IOException {
-		try (BufferedWriter writer = Files.newBufferedWriter(tempPostFile)) {
+		try (BufferedWriter writer = Files.newBufferedWriter(tempFile)) {
 			writeFrontMatterToWriter(writer);
 			writeArtifactsToWriter(writer);
 		}
@@ -120,7 +125,7 @@ class Brick {
 	}
 
 	private void replaceFileWithTempFile() throws IOException {
-		Files.move(tempPostFile, postFile, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
+		Files.move(tempFile, file, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
 	}
 
 }

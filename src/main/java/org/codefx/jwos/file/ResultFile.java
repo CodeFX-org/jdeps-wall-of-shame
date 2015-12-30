@@ -30,6 +30,20 @@ import static java.util.Collections.unmodifiableSet;
 import static java.util.Objects.requireNonNull;
 import static org.codefx.jwos.Util.toImmutableSet;
 
+/**
+ * A result file contains the analysis and dependency resolution results of a previous JWOS run.
+ * <p>
+ * It can be used to load those results on program start (to prevent repeated computations) and to write them while
+ * the program is running (to have persistent results). The file format is an implementation detail and only barely
+ * human-readable.
+ * <p>
+ * It is created with {@link #read(Path)}, {@link #empty(Path)}, or {@link #readOrEmpty(Path)} upon which it
+ * immediately reads the file's content. The results are exposed with {@link #analyzedArtifactsUnmodifiable()}. New
+ * results can be added with {@link #addArtifacts(DeeplyAnalyzedArtifact...) addArtifacts} and are written to file with
+ * {@link #write()}.
+ * <p>
+ * This class is not thread-safe.
+ */
 public class ResultFile {
 
 	private static final String SEPARATOR_ARTIFACT_MARKER = " <> ";

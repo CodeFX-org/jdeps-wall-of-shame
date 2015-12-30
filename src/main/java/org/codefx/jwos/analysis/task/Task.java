@@ -1,5 +1,11 @@
 package org.codefx.jwos.analysis.task;
 
+/**
+ * A task can be in a variety of states and this class handles the transitions from one to the other.
+ *
+ * @param <R> the task's result if it succeeded
+ * @see TaskState
+ */
 public class Task<R> {
 
 	private TaskState<R> state;
@@ -8,6 +14,9 @@ public class Task<R> {
 		state = new NotComputed<>();
 	}
 
+	/**
+	 * The task was queued but not yet taken out of the queue.
+	 */
 	public void queued() {
 		state = state.queued();
 	}

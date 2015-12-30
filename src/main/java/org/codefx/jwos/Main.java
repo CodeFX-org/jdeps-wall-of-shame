@@ -33,6 +33,20 @@ import java.util.stream.Stream;
 
 import static java.util.function.Function.identity;
 
+/**
+ * Puts the pieces together:
+ * <ul>
+ *     <li>projects are read from a {@link ProjectListFile}
+ *     <li>project versions identified with {@link MavenCentral} and used to create artifact coordinates
+ *     <li>artifacts are downloaded (with {@code MavenCentral}) and analysed (with {@link JDeps})
+ *     <li>an artifact's dependees (the artifacts on which it depends) are resolved (with {@code MavenCentral})
+ *     so they (and all other versions of the same project) can be analysed as well
+ *     <li>results are written to a {@link ResultFile} and the {@link WallOfShame}
+ * </ul>
+ * All of these steps are called tasks and centrally managed by the {@link AnalysisTaskManager}. All that is needed
+ * here is to get the tasks, hand them to the classes mentioned above, and send results and errors back to the task
+ * manager. 
+ */
 public class Main {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger("Main");
@@ -67,12 +81,6 @@ public class Main {
 				.map(Optional::get);
 	}
 
-	private static Stream<Computation> createComputationsTo(Computation computation, int threads) {
-		return IntStream
-				.range(0, threads)
-				.mapToObj(any -> computation);
-	}
-
 	private static Optional<Computation> createComputationToReadProjectFile(
 			String fileName,
 			AnalysisTaskManager taskManager) {
@@ -88,6 +96,12 @@ public class Main {
 			LOGGER.error("Failed to read project file '" + fileName + "'.", ex);
 			return Optional.empty();
 		}
+	}
+
+	private static Stream<Computation> createComputationsTo(Computation computation, int threads) {
+		return IntStream
+				.range(0, threads)
+				.mapToObj(any -> computation);
 	}
 
 	private static TaskComputation<ProjectCoordinates, ResolvedProject> resolveProjectVersions(

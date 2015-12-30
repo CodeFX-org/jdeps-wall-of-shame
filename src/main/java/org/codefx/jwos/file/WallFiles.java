@@ -5,6 +5,9 @@ import java.nio.file.Paths;
 
 import static java.util.Objects.requireNonNull;
 
+/**
+ * Holds paths to the files used to create the {@link WallOfShame}.
+ */
 public class WallFiles {
 
 	private static final Path DEFAULT_DIRECT_DEPENDENCIES_FRONT_MATTER = Paths.get("_includes/direct-dependencies.md");

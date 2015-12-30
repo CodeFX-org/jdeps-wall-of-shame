@@ -7,7 +7,6 @@ import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
 import org.codefx.jwos.artifact.IdentifiesProject;
 import org.codefx.jwos.artifact.ProjectCoordinates;
-import org.codefx.jwos.artifact.ResolvedProject;
 import org.codefx.jwos.jdeps.dependency.Violation;
 
 import java.nio.file.Path;
@@ -21,6 +20,16 @@ import static java.lang.String.format;
 import static java.util.Objects.requireNonNull;
 import static org.codefx.jwos.Util.toImmutableSet;
 
+/**
+ * The graph of projects, artifacts, and their dependencies.
+ * <p>
+ * The graph's nodes not only encapsulate an artifact or project but also all the tasks that have to be completed for
+ * them. Nodes should only be accessed directly (via {@link #artifactNodes()} or {@link #projectNodes()}) to identify
+ * open tasks. Otherwise tasks should be accessed via methods like {@link #downloadOf(IdentifiesArtifact)}.
+ * <p>
+ * This class is highly mutable and thread-unsafe. It serves as a data structure for {@link AnalysisTaskManager} and
+ * 
+ */
 class AnalysisGraph {
 
 	private final Map<ProjectCoordinates, ProjectNode> projects;
@@ -123,14 +132,6 @@ class AnalysisGraph {
 		projects.putIfAbsent(project, new ProjectNode(project));
 	}
 
-	public void resolvedProjectVersions(ResolvedProject project) {
-		project
-				.versions().stream()
-				.map(this::getOrCreateNodeForArtifact)
-				.peek(artifactNode -> registerArtifactForProject(project, artifactNode))
-				.forEach(this::registerArtifactInGraph);
-	}
-
 	// ARTIFACT TASKS
 
 	public Stream<ArtifactNode> artifactNodes() {
@@ -214,9 +215,8 @@ class AnalysisGraph {
 	}
 
 	/**
-	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s and updates the graph when computation
-	 * were
-	 * computed.
+	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s and updates the graph when dependees
+	 * were resolved.
 	 */
 	private class GraphUpdatingArtifactDependeeTask extends GraphUpdatingArtifactTask {
 
@@ -235,7 +235,7 @@ class AnalysisGraph {
 
 	/**
 	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s and updates the graph when versions were
-	 * computed.
+	 * resolved.
 	 */
 	private class GraphUpdatingProjectVersionTask extends GraphUpdatingArtifactTask {
 

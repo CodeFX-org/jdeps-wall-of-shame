@@ -13,6 +13,13 @@ import java.nio.file.Path;
 import static java.lang.String.format;
 import static java.util.Objects.requireNonNull;
 
+/**
+ * Internal API for communication with Git.
+ * <p>
+ * Can be created for a Git working directory and allows to commit and push changes.
+ * <p>
+ * This class is not thread-safe.
+ */
 public class GitDirectory {
 
 	private final GitInformation information;

@@ -28,6 +28,16 @@ import static org.codefx.jwos.Util.toImmutableSet;
 import static org.codefx.jwos.analysis.task.TaskStateIdentifier.NOT_COMPUTED;
 import static org.codefx.jwos.analysis.task.TaskStateIdentifier.SUCCEEDED;
 
+/**
+ * Manages the tasks that have to be performed in order to analyse projects and artifacts.
+ * <p>
+ * Tasks can consist of resolving a project's version, downloading an artifact, or running JDeps on it.
+ * Tasks can be received from methods like {@link #getNextToAnalyze()} and upon completion (success or failure)
+ * returned with, e.g., {@link #analyzed(AnalyzedArtifact)} or {@link #analysisFailed(FailedArtifact)}. These methods
+ * might block if there is currently no task or the queue of completed tasks is full.
+ * <p>
+ * This task manager is thread safe.
+ */
 public class AnalysisTaskManager {
 
 	private static final Logger TASKS_LOGGER = LoggerFactory.getLogger("Analysis Tasks");
@@ -65,6 +75,8 @@ public class AnalysisTaskManager {
 
 	/**
 	 * A blocking call which queues tasks and processes answers.
+	 * 
+	 * @see Bookkeeping
 	 */
 	public void manageQueues() {
 		bookkeeping.run();
@@ -73,12 +85,19 @@ public class AnalysisTaskManager {
 	public void stopManagingQueue() {
 		bookkeeping.abort();
 	}
+	
+	// UPDATE STATE
 
+	/**
+	 * Queues new tasks and processes results and failures by updating {@link #state}.
+	 */
 	private void updateState() {
 		queueTasks();
 		processAnswers();
 		queueFinishedArtifacts();
 	}
+	
+	// - SEND OUT
 
 	private void queueTasks() {
 		state.projectNodes().forEach(this::queueTasksForProjectNode);
@@ -130,6 +149,8 @@ public class AnalysisTaskManager {
 		}
 	}
 
+	// - RECEIVE
+	
 	private void processAnswers() {
 		processAnswersFromNewProjects();
 		processAnswersFromResolvedProjects();
@@ -180,6 +201,8 @@ public class AnalysisTaskManager {
 		TASKS_LOGGER.debug("Storing {} failure for {}.", taskName, artifact.coordinates());
 		getTask.apply(artifact).failed(artifact.result());
 	}
+	
+	// - OUTPUT FINISHED
 
 	private void queueFinishedArtifacts() {
 		state.artifactNodes()
@@ -231,6 +254,9 @@ public class AnalysisTaskManager {
 	}
 
 	// QUERY & UPDATE
+	
+	// all of this could be replaced by creating an outward facing front for channels and exposing them;
+	// I like this better
 
 	private static <T> T getTaskAndStart(
 			TaskChannel<T, ?, ?> channel,
@@ -319,6 +345,9 @@ public class AnalysisTaskManager {
 		return getArtifactTaskAndStart(outputResults, state::outputOf);
 	}
 
+	/**
+	 * Calls {@link #updateState()} and logs queue sizes. 
+	 */
 	private class Bookkeeping {
 
 		private static final int QUEUE_SIZE_LOG_INTERVAL = 20;
@@ -329,6 +358,9 @@ public class AnalysisTaskManager {
 		private boolean running;
 		private boolean aborted;
 
+		/**
+		 * Executes bookkeeping; does not return so it should be called in a separate thread.
+		 */
 		public void run() {
 			startRunning();
 			THREAD_LOGGER.info("Start managing queues.");

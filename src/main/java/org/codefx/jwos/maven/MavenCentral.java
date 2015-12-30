@@ -43,6 +43,13 @@ import java.util.stream.Stream;
 import static java.util.Collections.singletonList;
 import static org.codefx.jwos.Util.toImmutableSet;
 
+/**
+ * Internal API for communication with Maven.
+ * <p>
+ * Can resolve project versions and artifact dependencies and download individual artifacts to a local repository.
+ * <p>
+ * This class is as thread-safe as Aether, which seems to be handling concurrent requests well.
+ */
 public class MavenCentral {
 
 	private final RepositorySystem repositorySystem;

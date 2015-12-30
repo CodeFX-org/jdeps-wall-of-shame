@@ -13,6 +13,13 @@ import java.nio.file.Path;
 
 import static java.util.Objects.requireNonNull;
 
+/**
+ * Internal API for communication with JDeps.
+ * <p>
+ * Can analyze individual artifacts and return the parsed results.
+ * <p>
+ * This class is thread-safe and when used concurrently will start a separate JDeps run for each artifact.
+ */
 public class JDeps {
 
 	private final Path jdeps;

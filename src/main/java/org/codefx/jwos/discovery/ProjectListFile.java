@@ -10,17 +10,18 @@ import java.util.Optional;
 
 import static java.util.Objects.requireNonNull;
 
+/**
+ * A plain text file containing project coordinates.
+ * <p>
+ * A project list file must be of the following structure:
+ *
+ * <comment lines>
+ * <empty line>
+ * <project lines in the form "groupId:artifactId">
+ *
+ * The empty line is crucial as it is used to determine where the projects start.
+ */
 public class ProjectListFile {
-
-	/*
-	 * A project list file must be of the following structure:
-	 *
-	 * <comment lines>
-	 * <empty line>
-	 * <project lines>
-	 *
-	 * The empty line is crucial as it is used to determine where the projects start.
-	 */
 
 	private final Path file;
 	private Iterator<String> openedFile;

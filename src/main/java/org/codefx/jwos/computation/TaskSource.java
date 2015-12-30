@@ -4,6 +4,15 @@ import java.util.Optional;
 
 import static java.util.Objects.requireNonNull;
 
+/**
+ * Computes a task along these steps:
+ * <ol>
+ *     <li>try to {@link ComputeTask perform} a new task (e.g. read a new project form a web service)
+ *     <li>send the {@link SendResult result} or {@link SendError error} (e.g. the project coordinates or exception)
+ * </ol>
+ *
+ * @param <R> the type of the task's result if successful
+ */
 public class TaskSource<R> implements Computation {
 
 	private final ComputeTask<Void, Optional<R>> compute;
@@ -22,6 +31,7 @@ public class TaskSource<R> implements Computation {
 		if (result.isPresent())
 			sendResult.send(result.get());
 		else
+			// the source is exhausted 
 			throw new InterruptedException("This is a hack to report an exhausted source.");
 	}
 

@@ -14,6 +14,14 @@ import static org.codefx.jwos.artifact.MarkInternalDependencies.DIRECT;
 import static org.codefx.jwos.artifact.MarkInternalDependencies.INDIRECT;
 import static org.codefx.jwos.artifact.MarkInternalDependencies.NONE;
 
+/**
+ * The wall contains a {@link Brick} (a single file) for each type of
+ * {@link MarkInternalDependencies internal dependency}.
+ * <p>
+ * Artifacts can be {@link #addArtifact(DeeplyAnalyzedArtifact) added} and the files can be {@link #write() written}.
+ * <p>
+ * This class is not thread-safe.
+ */
 class Wall {
 
 	private final Map<MarkInternalDependencies, Brick> bricks;
