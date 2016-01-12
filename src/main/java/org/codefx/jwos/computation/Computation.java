@@ -8,6 +8,8 @@ package org.codefx.jwos.computation;
  */
 public interface Computation {
 
+	String name();
+
 	void compute() throws InterruptedException;
 
 }

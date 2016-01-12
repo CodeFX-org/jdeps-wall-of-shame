@@ -2,12 +2,13 @@ package org.codefx.jwos.computation;
 
 import static java.util.Objects.requireNonNull;
 
-public class ComputationRunnable implements Runnable {
+public class ComputationThread extends Thread {
 
 	private final Computation computation;
 	private boolean aborted;
 
-	public ComputationRunnable(Computation computation) {
+	public ComputationThread(Computation computation) {
+		super(computation.name());
 		this.computation = requireNonNull(computation, "The argument 'computation' must not be null.");
 		this.aborted = false;
 	}

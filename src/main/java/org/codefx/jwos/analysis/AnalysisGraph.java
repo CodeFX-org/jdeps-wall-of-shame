@@ -27,7 +27,7 @@ import static org.codefx.jwos.Util.toImmutableSet;
  * them. Nodes should only be accessed directly (via {@link #artifactNodes()} or {@link #projectNodes()}) to identify
  * open tasks. Otherwise tasks should be accessed via methods like {@link #downloadOf(IdentifiesArtifact)}.
  * <p>
- * This class is highly mutable and thread-unsafe. It serves as a data structure for {@link AnalysisTaskManager} and
+ * This class is highly mutable and thread-unsafe. It serves as a data structure for {@link AnalysisTaskManager}.
  * 
  */
 class AnalysisGraph {
@@ -43,7 +43,8 @@ class AnalysisGraph {
 	}
 
 	public AnalysisGraph(
-			Collection<ProjectCoordinates> resolvedProjects, Collection<DeeplyAnalyzedArtifact> analyzedArtifacts) {
+			Collection<ProjectCoordinates> resolvedProjects,
+			Collection<DeeplyAnalyzedArtifact> analyzedArtifacts) {
 		this();
 		analyzedArtifacts.forEach(this::addAnalyzedArtifact);
 		resolvedProjects.forEach(this::markProjectAsResolved);
@@ -68,6 +69,9 @@ class AnalysisGraph {
 	}
 
 	private void markProjectAsResolved(ProjectCoordinates projectCoordinates) {
+		// the project is understood to be resolved when version resolution succeeded;
+		// so to mark it as resolved, it suffices to set the currently known versions (from a previous run) as the
+		// resolved versions
 		ProjectNode node = getOrCreateNodeForProject(projectCoordinates);
 		ImmutableSet<ArtifactNode> versions = ImmutableSet.copyOf(node.versions());
 		node.resolution().succeeded(versions);
@@ -88,7 +92,7 @@ class AnalysisGraph {
 	private ArtifactNode getExistingNodeForArtifact(IdentifiesArtifact artifact) {
 		return getNodeForArtifact(artifact)
 				.orElseThrow(() -> {
-					String message = "There is supposed to be a node for artifact % but there isn't.";
+					String message = "There is supposed to be a node for artifact %s but there isn't.";
 					return new IllegalStateException(format(message, artifact.coordinates()));
 				});
 	}
@@ -106,7 +110,7 @@ class AnalysisGraph {
 	private ProjectNode getExistingNodeForProject(IdentifiesProject project) {
 		return getNodeForProject(project)
 				.orElseThrow(() -> {
-					String message = "There is supposed to be a node for project % but there isn't.";
+					String message = "There is supposed to be a node for project %s but there isn't.";
 					return new IllegalStateException(format(message, project.coordinates()));
 				});
 	}
@@ -132,6 +136,14 @@ class AnalysisGraph {
 		projects.putIfAbsent(project, new ProjectNode(project));
 	}
 
+	public Stream<ProjectNode> projectNodes() {
+		return projects.values().stream();
+	}
+
+	public Task<ImmutableSet<ArtifactCoordinates>> versionResolutionOf(IdentifiesProject project) {
+		return new GraphUpdatingProjectVersionTask(getExistingNodeForProject(project));
+	}
+
 	// ARTIFACT TASKS
 
 	public Stream<ArtifactNode> artifactNodes() {
@@ -154,17 +166,11 @@ class AnalysisGraph {
 		return getExistingNodeForArtifact(artifact).output();
 	}
 
-	public Stream<ProjectNode> projectNodes() {
-		return projects.values().stream();
-	}
-
-	public Task<ImmutableSet<ArtifactCoordinates>> versionResolutionOf(IdentifiesProject project) {
-		return new GraphUpdatingProjectVersionTask(getExistingNodeForProject(project));
-	}
-
 	/**
-	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s and updates the graph when the computation
-	 * succeeded.
+	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s.
+	 * <p>
+	 * Updates the graph when the computation succeeded by {@link #registerArtifact(ArtifactCoordinates) registering}
+	 * the new artifacts.
 	 */
 	private abstract class GraphUpdatingArtifactTask extends Task<ImmutableSet<ArtifactCoordinates>> {
 
@@ -217,6 +223,10 @@ class AnalysisGraph {
 	/**
 	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s and updates the graph when dependees
 	 * were resolved.
+	 * <p>
+	 * In addition to the update performed by {@link GraphUpdatingArtifactTask} it will add the node specified
+	 * during construction {@link ArtifactNode#addAsDependent(ArtifactNode) as a dependent} for the newly resolved
+	 * dependees.
 	 */
 	private class GraphUpdatingArtifactDependeeTask extends GraphUpdatingArtifactTask {
 
@@ -236,6 +246,9 @@ class AnalysisGraph {
 	/**
 	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s and updates the graph when versions were
 	 * resolved.
+	 * <p>
+	 * In addition to the update performed by {@link GraphUpdatingArtifactTask} it will add the newly resolved
+	 * artifact versions to {@link ProjectNode#versions}.
 	 */
 	private class GraphUpdatingProjectVersionTask extends GraphUpdatingArtifactTask {
 

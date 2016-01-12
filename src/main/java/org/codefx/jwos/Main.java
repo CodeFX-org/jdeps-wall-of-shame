@@ -11,7 +11,7 @@ import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.artifact.ResolvedProject;
 import org.codefx.jwos.computation.Computation;
-import org.codefx.jwos.computation.ComputationRunnable;
+import org.codefx.jwos.computation.ComputationThread;
 import org.codefx.jwos.computation.SendError;
 import org.codefx.jwos.computation.SendResult;
 import org.codefx.jwos.computation.TaskComputation;
@@ -45,7 +45,7 @@ import static java.util.function.Function.identity;
  * </ul>
  * All of these steps are called tasks and centrally managed by the {@link AnalysisTaskManager}. All that is needed
  * here is to get the tasks, hand them to the classes mentioned above, and send results and errors back to the task
- * manager. 
+ * manager.
  */
 public class Main {
 
@@ -67,8 +67,7 @@ public class Main {
 						createComputationsTo(resolveArtifactDependees(taskManager, maven), 3),
 						createComputationsTo(outputResults(taskManager, resultFile), 1))
 				.flatMap(identity())
-				.map(ComputationRunnable::new)
-				.map(Thread::new)
+				.map(ComputationThread::new)
 				.forEach(Thread::start);
 		new Thread(taskManager::manageQueues).run();
 	}
@@ -88,6 +87,7 @@ public class Main {
 			Path file = Util.getPathToResourceFile(fileName);
 			ProjectListFile listFile = new ProjectListFile(file).open();
 			Computation computation = new TaskSource<>(
+					"Read Project File",
 					ignored -> listFile.readNextProject(),
 					taskManager::addProject,
 					(ignored, error) -> taskManager.findingProjectFailed(error));
@@ -107,6 +107,7 @@ public class Main {
 	private static TaskComputation<ProjectCoordinates, ResolvedProject> resolveProjectVersions(
 			AnalysisTaskManager taskManager, MavenCentral maven) {
 		return new TaskComputation<>(
+				"Resolve Project Versions",
 				taskManager::getNextToResolveVersions,
 				maven::detectAllVersionsOf,
 				taskManager::resolvedVersions,
@@ -116,6 +117,7 @@ public class Main {
 	private static TaskComputation<ArtifactCoordinates, DownloadedArtifact> downloadArtifact(
 			AnalysisTaskManager taskManager, MavenCentral maven) {
 		return new TaskComputation<>(
+				"Download Artifact",
 				taskManager::getNextToDownload,
 				maven::downloadArtifact,
 				taskManager::downloaded,
@@ -125,6 +127,7 @@ public class Main {
 	private static TaskComputation<DownloadedArtifact, AnalyzedArtifact> analyzeArtifact(
 			AnalysisTaskManager taskManager, JDeps jdeps) {
 		return new TaskComputation<>(
+				"Analyze Artifact",
 				taskManager::getNextToAnalyze,
 				jdeps::analyze,
 				taskManager::analyzed,
@@ -135,6 +138,7 @@ public class Main {
 	private static TaskComputation<ArtifactCoordinates, ResolvedArtifact> resolveArtifactDependees(
 			AnalysisTaskManager taskManager, MavenCentral maven) {
 		return new TaskComputation<>(
+				"Resolve Artifact Dependencies",
 				taskManager::getNextToResolveDependencies,
 				maven::resolveArtifact,
 				taskManager::resolvedDependencies,
@@ -144,6 +148,7 @@ public class Main {
 	private static TaskSink<DeeplyAnalyzedArtifact> outputResults(
 			AnalysisTaskManager taskManager, ResultFile resultFile) {
 		return new TaskSink<>(
+				"Output Results",
 				taskManager::getNextToOutput,
 				artifact -> {
 					resultFile.addArtifacts(artifact);

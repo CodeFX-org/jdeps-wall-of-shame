@@ -15,14 +15,21 @@ import static java.util.Objects.requireNonNull;
  */
 public class TaskSource<R> implements Computation {
 
+	private final String name;
 	private final ComputeTask<Void, Optional<R>> compute;
 	private final SendResult<R> sendResult;
 	private final SendError<Void> sendError;
 
-	public TaskSource(ComputeTask<Void, Optional<R>> compute, SendResult<R> sendResult, SendError<Void> sendError) {
+	public TaskSource(String name, ComputeTask<Void, Optional<R>> compute, SendResult<R> sendResult, SendError<Void> sendError) {
+		this.name = requireNonNull(name, "The argument 'name' must not be null.");
 		this.compute = requireNonNull(compute, "The argument 'compute' must not be null.");
 		this.sendResult = requireNonNull(sendResult, "The argument 'sendResult' must not be null.");
 		this.sendError = requireNonNull(sendError, "The argument 'sendError' must not be null.");
+	}
+
+	@Override
+	public String name() {
+		return name;
 	}
 
 	@Override

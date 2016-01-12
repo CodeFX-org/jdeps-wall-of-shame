@@ -14,8 +14,19 @@ import static java.util.Objects.requireNonNull;
 class ProjectNode implements IdentifiesProject {
 
 	private final ProjectCoordinates project;
-	private final Set<ArtifactNode> versions;
 
+	/*
+	 * The fields 'versions' and 'resolutionOfVersions' might seem redundant.
+	 *
+	 * The former holds the versions that came up at run time by scanning artifact dependencies.
+	 * A project that is discovered at run time will initially only have one and later maybe more such artifacts.
+	 * The latter holds the versions as reported by Maven.
+	 *
+	 * If other artifacts do not depend on versions that are not reported by Maven, both sets will eventually contain
+	 * the same elements.
+	 */
+
+	private final Set<ArtifactNode> versions;
 	private final Task<ImmutableSet<ArtifactNode>> resolutionOfVersions;
 
 	public ProjectNode(IdentifiesProject project) {

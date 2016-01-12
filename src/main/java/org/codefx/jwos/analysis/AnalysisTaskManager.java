@@ -42,7 +42,8 @@ public class AnalysisTaskManager {
 
 	private static final Logger TASKS_LOGGER = LoggerFactory.getLogger("Analysis Tasks");
 	private static final Logger THREAD_LOGGER = LoggerFactory.getLogger("Analysis Thread");
-	private static final String CHANNEL_STATUS_MESSAGE_FORMAT = " - %3d are waiting for %s";
+	private static final String GRAPH_STATUS_MESSAGE_FORMAT = " - %4d %s";
+	private static final String CHANNEL_STATUS_MESSAGE_FORMAT = " - %4d are waiting for %s";
 
 	private final AnalysisGraph state;
 
@@ -75,7 +76,7 @@ public class AnalysisTaskManager {
 
 	/**
 	 * A blocking call which queues tasks and processes answers.
-	 * 
+	 *
 	 * @see Bookkeeping
 	 */
 	public void manageQueues() {
@@ -85,7 +86,7 @@ public class AnalysisTaskManager {
 	public void stopManagingQueue() {
 		bookkeeping.abort();
 	}
-	
+
 	// UPDATE STATE
 
 	/**
@@ -122,7 +123,7 @@ public class AnalysisTaskManager {
 
 	private void queueTasksForArtifactNode(ArtifactNode node) {
 		queueTaskForArtifactNode(node, ArtifactNode::download, download);
-		queueDownloadTaskForArtifactNode(node, analyze);
+		queueAnalysisTaskForArtifactNode(node, analyze);
 		queueTaskForArtifactNode(node, ArtifactNode::resolution, resolveDependencies);
 	}
 
@@ -138,7 +139,7 @@ public class AnalysisTaskManager {
 		}
 	}
 
-	private static void queueDownloadTaskForArtifactNode(
+	private static void queueAnalysisTaskForArtifactNode(
 			ArtifactNode node, TaskChannel<DownloadedArtifact, AnalyzedArtifact, FailedArtifact> channel) {
 		Task<Path> downloadTask = node.download();
 		Task<?> analysisTask = node.analysis();
@@ -150,7 +151,7 @@ public class AnalysisTaskManager {
 	}
 
 	// - RECEIVE
-	
+
 	private void processAnswers() {
 		processAnswersFromNewProjects();
 		processAnswersFromResolvedProjects();
@@ -160,8 +161,17 @@ public class AnalysisTaskManager {
 	}
 
 	private void processAnswersFromNewProjects() {
-		addProject.drainResults().forEach(state::addProject);
-		addProject.drainErrors().forEach(error -> TASKS_LOGGER.warn("Error while finding projects.", error));
+		addProject.drainResults().forEach(this::processSuccessOfProjectDiscovery);
+		addProject.drainErrors().forEach(this::processFailureOfProjectDiscovery);
+	}
+
+	private void processSuccessOfProjectDiscovery(ProjectCoordinates project) {
+		TASKS_LOGGER.debug("Discovered project {}.", project.coordinates());
+		state.addProject(project);
+	}
+
+	private void processFailureOfProjectDiscovery(Exception error) {
+		TASKS_LOGGER.warn("Error while finding projects.", error);
 	}
 
 	private void processAnswersFromResolvedProjects() {
@@ -201,7 +211,7 @@ public class AnalysisTaskManager {
 		TASKS_LOGGER.debug("Storing {} failure for {}.", taskName, artifact.coordinates());
 		getTask.apply(artifact).failed(artifact.result());
 	}
-	
+
 	// - OUTPUT FINISHED
 
 	private void queueFinishedArtifacts() {
@@ -254,7 +264,7 @@ public class AnalysisTaskManager {
 	}
 
 	// QUERY & UPDATE
-	
+
 	// all of this could be replaced by creating an outward facing front for channels and exposing them;
 	// I like this better
 
@@ -346,7 +356,7 @@ public class AnalysisTaskManager {
 	}
 
 	/**
-	 * Calls {@link #updateState()} and logs queue sizes. 
+	 * Calls {@link #updateState()} and logs graph and queue sizes.
 	 */
 	private class Bookkeeping {
 
@@ -367,7 +377,7 @@ public class AnalysisTaskManager {
 
 			while (!aborted) {
 				updateState();
-				maybeLogQueueSizes();
+				maybeLogGraphAndQueueSizes();
 				sleepAndAbortWhenInterrupted();
 			}
 
@@ -382,12 +392,15 @@ public class AnalysisTaskManager {
 			runsToNextLog = QUEUE_SIZE_LOG_INTERVAL;
 		}
 
-		private void maybeLogQueueSizes() {
+		private void maybeLogGraphAndQueueSizes() {
 			runsToNextLog--;
 			if (runsToNextLog > 0)
 				return;
 
-			String message = "Waiting tasks:\n"
+			String message = "\nNodes:\n"
+					+ logGraphSize(state.projectNodes(), "projects")
+					+ logGraphSize(state.artifactNodes(), "artifacts")
+					+ "Waiting tasks:\n"
 					+ logQueueSize(addProject)
 					+ logQueueSize(resolveVersions)
 					+ logQueueSize(download)
@@ -396,6 +409,10 @@ public class AnalysisTaskManager {
 					+ logQueueSize(outputResults);
 			THREAD_LOGGER.info(message);
 			runsToNextLog = QUEUE_SIZE_LOG_INTERVAL;
+		}
+
+		private String logGraphSize(Stream<?> nodes, String graphName) {
+			return format(GRAPH_STATUS_MESSAGE_FORMAT, nodes.count(), graphName) + "\n";
 		}
 
 		private String logQueueSize(TaskChannel<?, ?, ?> channel) {

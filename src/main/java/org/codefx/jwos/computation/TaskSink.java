@@ -13,14 +13,21 @@ import static java.util.Objects.requireNonNull;
  */
 public class TaskSink<T> implements Computation {
 
+	private final String name;
 	private final ReceiveTask<T> receive;
 	private final ComputeTask<T, Void> compute;
 	private final SendError<T> sendError;
 
-	public TaskSink(ReceiveTask<T> receive, ComputeTask<T, Void> compute, SendError<T> sendError) {
+	public TaskSink(String name, ReceiveTask<T> receive, ComputeTask<T, Void> compute, SendError<T> sendError) {
+		this.name = requireNonNull(name, "The argument 'name' must not be null.");
 		this.receive = requireNonNull(receive, "The argument 'receive' must not be null.");
-		this.compute =requireNonNull(compute,"The argument 'compute' must not be null.");
+		this.compute = requireNonNull(compute, "The argument 'compute' must not be null.");
 		this.sendError = requireNonNull(sendError, "The argument 'sendError' must not be null.");
+	}
+
+	@Override
+	public String name() {
+		return name;
 	}
 
 	@Override
