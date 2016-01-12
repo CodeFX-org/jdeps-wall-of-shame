@@ -21,9 +21,14 @@ import org.slf4j.LoggerFactory;
 import java.nio.file.Path;
 import java.util.Collection;
 import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 import static java.lang.String.format;
 import static java.util.Collections.emptySet;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.Stream.concat;
+import static java.util.stream.Stream.of;
 import static org.codefx.jwos.Util.toImmutableSet;
 import static org.codefx.jwos.analysis.task.TaskStateIdentifier.NOT_COMPUTED;
 import static org.codefx.jwos.analysis.task.TaskStateIdentifier.SUCCEEDED;
@@ -95,9 +100,9 @@ public class AnalysisTaskManager {
 	private void updateState() {
 		queueTasks();
 		processAnswers();
-		queueFinishedArtifacts();
+		finishDeepAnalysisAndQueueResults();
 	}
-	
+
 	// - SEND OUT
 
 	private void queueTasks() {
@@ -214,43 +219,48 @@ public class AnalysisTaskManager {
 
 	// - OUTPUT FINISHED
 
-	private void queueFinishedArtifacts() {
-		state.artifactNodes()
-				.filter(AnalysisTaskManager::readyToFinish)
-				.map(AnalysisTaskManager::finishArtifactRecursively)
-				.forEach(outputResults::sendTask);
+	private void finishDeepAnalysisAndQueueResults() {
+		finishDeepAnalysisRecursively(state.artifactNodes()).collect(toList()).forEach(outputResults::sendTask);
 	}
 
-	private static boolean readyToFinish(ArtifactNode node) {
+	private static Stream<DeeplyAnalyzedArtifact> finishDeepAnalysisRecursively(Stream<ArtifactNode> nodes) {
+		return nodes
+				.filter(AnalysisTaskManager::readyForDeepAnalysis)
+				.flatMap(AnalysisTaskManager::deeplyAnalyzeNodeAndRecurseToDependents);
+	}
+
+	private static boolean readyForDeepAnalysis(ArtifactNode node) {
 		return node.analysis().identifier() == SUCCEEDED
 				&& node.resolution().identifier() == SUCCEEDED
 				&& node.deepAnalysis().identifier() != SUCCEEDED
-				&& node.resolution().result().stream().allMatch(AnalysisTaskManager::finishedOrReadyToFinish);
+				&& allDependeesDeeplyAnalyzed(node);
 	}
 
-	private static boolean finishedOrReadyToFinish(ArtifactNode node) {
-		return node.analysis().identifier() == SUCCEEDED
-				&& node.resolution().identifier() == SUCCEEDED
-				&& node.resolution().result().stream().allMatch(AnalysisTaskManager::finishedOrReadyToFinish);
+	private static boolean allDependeesDeeplyAnalyzed(ArtifactNode node) {
+		Predicate<ArtifactNode> deeplyAnalyzed = dependee -> dependee.deepAnalysis().identifier() == SUCCEEDED;
+		return node.resolution().result().stream().allMatch(deeplyAnalyzed);
 	}
 
-	private static DeeplyAnalyzedArtifact finishArtifactRecursively(ArtifactNode node) {
-		if (node.deepAnalysis().identifier() == SUCCEEDED)
-			return node.deepAnalysis().result();
+	private static Stream<DeeplyAnalyzedArtifact> deeplyAnalyzeNodeAndRecurseToDependents(ArtifactNode node) {
+		DeeplyAnalyzedArtifact deeplyAnalyzedArtifact = deeplyAnalyzeNode(node);
+		node.deepAnalysis().succeeded(deeplyAnalyzedArtifact);
 
+		return concat(
+				of(deeplyAnalyzedArtifact),
+				finishDeepAnalysisRecursively(node.dependents())
+		);
+	}
+
+	private static DeeplyAnalyzedArtifact deeplyAnalyzeNode(ArtifactNode node) {
 		ImmutableSet<Violation> violations = node.analysis().result();
 		ImmutableSet<DeeplyAnalyzedArtifact> dependees = node
 				.resolution()
 				.result().stream()
-				.map(AnalysisTaskManager::finishArtifactRecursively)
+				.map(analyzedArtifact -> analyzedArtifact.deepAnalysis().result())
 				.collect(toImmutableSet());
 		MarkInternalDependencies marker =
 				getMarkerForInternalDependencies(violations, dependees);
-		DeeplyAnalyzedArtifact deeplyAnalyzedArtifact =
-				new DeeplyAnalyzedArtifact(node.coordinates(), marker, violations, dependees);
-
-		node.deepAnalysis().succeeded(deeplyAnalyzedArtifact);
-		return deeplyAnalyzedArtifact;
+		return new DeeplyAnalyzedArtifact(node.coordinates(), marker, violations, dependees);
 	}
 
 	private static MarkInternalDependencies getMarkerForInternalDependencies(

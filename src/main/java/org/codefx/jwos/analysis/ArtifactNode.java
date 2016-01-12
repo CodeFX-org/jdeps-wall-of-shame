@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Stream;
 
 import static java.util.Objects.requireNonNull;
 
@@ -45,6 +46,10 @@ class ArtifactNode implements IdentifiesArtifact {
 
 	public void addAsDependent(ArtifactNode dependent) {
 		dependents.add(dependent);
+	}
+
+	public Stream<ArtifactNode> dependents() {
+		return dependents.stream();
 	}
 
 	public Task<Path> download() {
