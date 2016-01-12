@@ -31,6 +31,7 @@ import java.util.Optional;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import static java.util.Collections.emptySet;
 import static java.util.function.Function.identity;
 
 /**
@@ -54,7 +55,8 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		ResultFile resultFile = ResultFile.read(Util.getPathToResourceFile(Util.RESULT_FILE_NAME));
 
-		AnalysisTaskManager taskManager = new AnalysisTaskManager();
+		AnalysisTaskManager taskManager =
+				new AnalysisTaskManager(emptySet(), resultFile.analyzedArtifactsUnmodifiable());
 		MavenCentral maven = new MavenCentral();
 		JDeps jdeps = new JDeps();
 
