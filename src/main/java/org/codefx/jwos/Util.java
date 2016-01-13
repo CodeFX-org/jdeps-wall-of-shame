@@ -20,10 +20,10 @@ public class Util {
 	public static final Path LOCAL_MAVEN_REPOSITORY = Paths.get("/home/parlog/.m2/repository");
 	public static final Path PAGES_DIRECTORY = Paths.get("/home/nipa/code/JDepsWallOfShame-Pages");
 
-	public static final String REPOSITORY_URL = "git@github.com:CodeFX-org/jdeps-wall-of-shame.git";
-	public static final String USER_NAME = "nicolaiparlog";
-	public static final String EMAIL = "nipa@codefx.org";
-	public static final String PASSWORD = "GithubWithNicolaiParlog";
+	public static final String GIT_REPOSITORY_URL = "git@github.com:CodeFX-org/jdeps-wall-of-shame.git";
+	public static final String GIT_USER_NAME = "nicolaiparlog";
+	public static final String GIT_EMAIL = "nipa@codefx.org";
+	public static final String GIT_PASSWORD = "********";
 
 	public static Path getPathToResourceFile(String fileName) {
 		return Optional
