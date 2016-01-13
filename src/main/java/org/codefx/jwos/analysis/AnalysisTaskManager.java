@@ -47,8 +47,8 @@ public class AnalysisTaskManager {
 
 	private static final Logger TASKS_LOGGER = LoggerFactory.getLogger("Analysis Tasks");
 	private static final Logger THREAD_LOGGER = LoggerFactory.getLogger("Analysis Thread");
-	private static final String GRAPH_STATUS_MESSAGE_FORMAT = " - %4d %s";
-	private static final String CHANNEL_STATUS_MESSAGE_FORMAT = " - %4d are waiting for %s";
+	private static final String GRAPH_STATUS_MESSAGE_FORMAT = " - %5d %s";
+	private static final String CHANNEL_STATUS_MESSAGE_FORMAT = " - %5d are waiting for %s";
 
 	private final AnalysisGraph state;
 
@@ -370,7 +370,7 @@ public class AnalysisTaskManager {
 	 */
 	private class Bookkeeping {
 
-		private static final int QUEUE_SIZE_LOG_INTERVAL = 20;
+		private static final int QUEUE_SIZE_LOG_INTERVAL = 200;
 		private static final long SLEEP_TIME_IN_MS = 50;
 
 		private int runsToNextLog;
