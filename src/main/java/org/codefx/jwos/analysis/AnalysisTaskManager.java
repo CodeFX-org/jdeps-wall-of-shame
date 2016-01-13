@@ -226,7 +226,8 @@ public class AnalysisTaskManager {
 	// - OUTPUT FINISHED
 
 	private void finishDeepAnalysisAndQueueResults() {
-		finishDeepAnalysisRecursively(state.artifactNodes()).collect(toList()).forEach(outputResults::sendTask);
+		finishDeepAnalysisRecursively(state.artifactNodes())
+				.forEach(outputResults::sendTask);
 	}
 
 	private static Stream<DeeplyAnalyzedArtifact> finishDeepAnalysisRecursively(Stream<ArtifactNode> nodes) {
@@ -244,7 +245,10 @@ public class AnalysisTaskManager {
 
 	private static boolean allDependeesDeeplyAnalyzed(ArtifactNode node) {
 		Predicate<ArtifactNode> deeplyAnalyzed = dependee -> dependee.deepAnalysis().identifier() == SUCCEEDED;
-		return node.resolution().result().stream().allMatch(deeplyAnalyzed);
+		return node
+				.resolution()
+				.result().stream()
+				.allMatch(deeplyAnalyzed);
 	}
 
 	private static Stream<DeeplyAnalyzedArtifact> deeplyAnalyzeNodeAndRecurseToDependents(ArtifactNode node) {
@@ -405,7 +409,7 @@ public class AnalysisTaskManager {
 			if (running)
 				throw new IllegalStateException("The bookkeeping thread is already running.");
 			running = true;
-			runsToNextLog = QUEUE_SIZE_LOG_INTERVAL;
+			runsToNextLog = 0;
 		}
 
 		private void maybeLogGraphAndQueueSizes() {

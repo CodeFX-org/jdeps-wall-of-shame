@@ -21,6 +21,7 @@ import org.eclipse.aether.graph.Dependency;
 import org.eclipse.aether.graph.DependencyNode;
 import org.eclipse.aether.impl.DefaultServiceLocator;
 import org.eclipse.aether.repository.LocalRepository;
+import org.eclipse.aether.repository.LocalRepositoryManager;
 import org.eclipse.aether.repository.RemoteRepository;
 import org.eclipse.aether.repository.RemoteRepository.Builder;
 import org.eclipse.aether.resolution.ArtifactDescriptorRequest;
@@ -86,7 +87,8 @@ public class MavenCentral {
 		DefaultRepositorySystemSession session = MavenRepositorySystemUtils.newSession();
 
 		LocalRepository localRepo = new LocalRepository(localRepositoryPath);
-		session.setLocalRepositoryManager(system.newLocalRepositoryManager(session, localRepo));
+		LocalRepositoryManager localRepoManager = system.newLocalRepositoryManager(session, localRepo);
+		session.setLocalRepositoryManager(localRepoManager);
 
 		return session;
 	}
