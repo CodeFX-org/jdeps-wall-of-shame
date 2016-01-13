@@ -1,3 +1,64 @@
-ul {
-	list-style-type: none;
+/*  border if required */
+/*
+.artifacts, .artifacts td, .artifacts th {
+	border: 1px solid;
+	border-spacing: 2px;
+}
+*/
+
+.artifacts {
+	margin: 0px auto;
+	font-size: 0.9em;
+}
+
+.artifacts a {
+	text-decoration: none;
+}
+
+.artifacts th, .artifacts td {
+	padding: 4px 8px 0px 8px;
+}
+
+.artifacts .dt {
+	font-size: 1.5em;
+	padding-top: 1em;
+}
+
+/* "Headers" */
+
+.vdt1:before, .vde1:before, .de1:before {
+	color: rgba(255,255,255,0.7);
+	display: block;
+	text-align: center;
+}
+
+/* Violations */
+
+.vdt1:before {
+	content: 'Violating Class';
+}
+.vde1:before {
+	content: 'JDK-Internal Dependency';
+}
+
+.vdt, .vde {
+	text-align: left;
+}
+
+.artifacts .vdx td {
+	padding-top: 0px;
+}
+
+/*
+td.vdt:after {
+	content: '→';
+	font-size: 1.5em;
+	margin-right: -17px;
+}
+*/
+
+/* Dependencies */
+
+.de1:before {
+	content: 'Dependencies';
 }

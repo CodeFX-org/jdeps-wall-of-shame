@@ -10,6 +10,12 @@ $.extend($.easing,
     }
 });
 
+window.navScrollerDefaultSettings = {
+	scrollToOffset: 170,
+	scrollSpeed: 800,
+	activateParentNode: true,
+};
+
 (function( $ ) {
 
     var settings;
@@ -18,11 +24,7 @@ $.extend($.easing,
     var navs = {}, sections = {};
 
     $.fn.navScroller = function(options) {
-        settings = $.extend({
-            scrollToOffset: 170,
-            scrollSpeed: 800,
-            activateParentNode: true,
-        }, options );
+        settings = $.extend(window.navScrollerDefaultSettings, options );
         navItems = this;
 
         //attatch click listeners
@@ -91,5 +93,40 @@ $(document).ready(function (){
         }
 	});
 
-});
+	// Additions by jki & nipa
 
+	// we'd like to have links between artifacts;
+	// in order to keep the (already humonguous) HTML from getting even bigger,
+	// we add them vie JS after the side was loaded
+
+	// add anchors to the dependants
+	$('.dt').each(function (i, th) {
+		$(th).html('<a name="' + th.textContent + '">' + th.textContent + '</a>');
+	});
+
+	// add links to the dependees
+	$('.de').each(function (i, td) {
+		$(td).html('<a href="#' + td.textContent.replace(/ : /g, ":") + '">' + td.textContent + '</a>');
+	});
+
+	// add a global listener that scrolls to the anchor
+	$(document.body).on('click', '.de a', function (event) {
+		scrollToId($(event.target).attr('href').substr(1));
+	});
+
+	scrollToId(location.hash.substr(1));
+
+	function scrollToId(id) {
+		var settings = window.navScrollerDefaultSettings;
+		var $target = $('[name="' + id + '"]');
+
+		if (! $target.is(':empty')) {
+			$('html,body').animate(
+				{ scrollTop: $target.offset().top - settings.scrollToOffset },
+				settings.scrollSpeed, "easeInOutExpo", function () {
+					$target.parents('.artifacts').fadeOut().fadeIn();
+				});
+		}
+	}
+
+});
