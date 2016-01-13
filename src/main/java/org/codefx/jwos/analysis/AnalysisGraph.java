@@ -46,6 +46,8 @@ class AnalysisGraph {
 			Collection<ProjectCoordinates> resolvedProjects,
 			Collection<DeeplyAnalyzedArtifact> analyzedArtifacts) {
 		this();
+		requireNonNull(resolvedProjects, "The argument 'resolvedProjects' must not be null.");
+		requireNonNull(analyzedArtifacts, "The argument 'analyzedArtifacts' must not be null.");
 		analyzedArtifacts.forEach(this::addAnalyzedArtifact);
 		resolvedProjects.forEach(this::markProjectAsResolved);
 	}
@@ -54,7 +56,7 @@ class AnalysisGraph {
 		if (getNodeForArtifact(artifact).isPresent())
 			return;
 
-		ArtifactNode artifactNode = new ArtifactNode(artifact.coordinates());
+		ArtifactNode artifactNode = getOrCreateNodeForArtifact(artifact);
 		artifactNode.analysis().succeeded(artifact.violations());
 		artifactNode.resolution().succeeded(
 				artifact
@@ -63,9 +65,6 @@ class AnalysisGraph {
 						.peek(this::addAnalyzedArtifact)
 						.<ArtifactNode>map(this::getExistingNodeForArtifact)
 						.collect(toImmutableSet()));
-
-		registerArtifactForProject(artifact.coordinates().project(), artifactNode);
-		registerArtifactInGraph(artifactNode);
 	}
 
 	private void markProjectAsResolved(ProjectCoordinates projectCoordinates) {
@@ -85,8 +84,18 @@ class AnalysisGraph {
 				.map(artifacts::get);
 	}
 
+	private ArtifactNode createNodeForArtifact(IdentifiesArtifact artifact) {
+		ArtifactNode node = new ArtifactNode(artifact);
+		artifacts.put(artifact.coordinates(), node);
+		getOrCreateNodeForProject(artifact.coordinates().project())
+				.versions()
+				.add(node);
+		return node;
+	}
+
 	private ArtifactNode getOrCreateNodeForArtifact(IdentifiesArtifact artifact) {
-		return getNodeForArtifact(artifact).orElseGet(() -> new ArtifactNode(artifact));
+		return getNodeForArtifact(artifact)
+				.orElseGet(() -> createNodeForArtifact(artifact));
 	}
 
 	private ArtifactNode getExistingNodeForArtifact(IdentifiesArtifact artifact) {
@@ -103,8 +112,15 @@ class AnalysisGraph {
 				.map(projects::get);
 	}
 
+	private ProjectNode createNodeForProject(IdentifiesProject project) {
+		ProjectNode node = new ProjectNode(project);
+		projects.put(project.coordinates(), node);
+		return node;
+	}
+
 	private ProjectNode getOrCreateNodeForProject(IdentifiesProject project) {
-		return getNodeForProject(project).orElseGet(() -> new ProjectNode(project));
+		return getNodeForProject(project)
+				.orElseGet(() -> createNodeForProject(project));
 	}
 
 	private ProjectNode getExistingNodeForProject(IdentifiesProject project) {
@@ -113,21 +129,6 @@ class AnalysisGraph {
 					String message = "There is supposed to be a node for project %s but there isn't.";
 					return new IllegalStateException(format(message, project.coordinates()));
 				});
-	}
-
-	private void registerArtifactForProject(IdentifiesProject project, ArtifactNode artifactNode) {
-		getOrCreateNodeForProject(project).versions().add(artifactNode);
-	}
-
-	private void registerArtifactInGraph(ArtifactNode node) {
-		artifacts.put(node.coordinates(), node);
-	}
-
-	private ArtifactNode registerArtifact(ArtifactCoordinates artifact) {
-		ArtifactNode node = getOrCreateNodeForArtifact(artifact);
-		registerArtifactForProject(artifact.project(), node);
-		registerArtifactInGraph(node);
-		return node;
 	}
 
 	// PROJECTS
@@ -169,8 +170,8 @@ class AnalysisGraph {
 	/**
 	 * Presents {@link ArtifactCoordinates} instead of {@link ArtifactNode}s.
 	 * <p>
-	 * Updates the graph when the computation succeeded by {@link #registerArtifact(ArtifactCoordinates) registering}
-	 * the new artifacts.
+	 * Updates the graph when the computation succeeded by
+	 * {@link #getOrCreateNodeForArtifact(IdentifiesArtifact) registering} the new artifacts.
 	 */
 	private abstract class GraphUpdatingArtifactTask extends Task<ImmutableSet<ArtifactCoordinates>> {
 
@@ -198,7 +199,7 @@ class AnalysisGraph {
 		@Override
 		public void succeeded(ImmutableSet<ArtifactCoordinates> result) {
 			ImmutableSet<ArtifactNode> dependees = result.stream()
-					.map(AnalysisGraph.this::registerArtifact)
+					.map(AnalysisGraph.this::getOrCreateNodeForArtifact)
 					.collect(toImmutableSet());
 			updateGraph(dependees);
 			task.succeeded(dependees);
