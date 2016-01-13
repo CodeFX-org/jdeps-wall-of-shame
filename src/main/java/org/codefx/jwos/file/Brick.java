@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import static java.lang.String.format;
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.toList;
 
@@ -26,6 +27,8 @@ import static java.util.stream.Collectors.toList;
 class Brick {
 
 	private static final String SEPARATOR_IN_VIOLATION = " -> ";
+	private static final String VIOLATION_LINE = "%s " + SEPARATOR_IN_VIOLATION + " %s";
+	
 	private final SortedSet<DeeplyAnalyzedArtifact> artifacts;
 
 	private final List<String> frontMatter;
@@ -73,54 +76,43 @@ class Brick {
 	}
 
 	private void writeFrontMatterToWriter(BufferedWriter writer) throws IOException {
-		for (String frontMatterLine : frontMatter) {
-			writer.append(frontMatterLine);
-			writer.newLine();
-		}
+		for (String frontMatterLine : frontMatter)
+			writeLine(writer, frontMatterLine);
 	}
 
 	private void writeArtifactsToWriter(BufferedWriter writer) throws IOException {
-		writer.append("<ul>");
-		writer.newLine();
-
+		writeLine(writer, "<ul>");
 		for (DeeplyAnalyzedArtifact artifact : artifacts)
-			writeArtifact(artifact, writer);
-
-		writer.append("</ul>");
-		writer.newLine();
+			writeArtifact(writer, artifact);
+		writeLine(writer, "</ul>");
 	}
 
-	private static void writeArtifact(DeeplyAnalyzedArtifact artifact, BufferedWriter writer) throws IOException {
-		writer.append("<li>");
-		writer.newLine();
+	private static void writeArtifact(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) throws IOException {
+		writeLine(writer, "<li>");
+		writeArtifactLine(writer, artifact);
 
-		writeArtifactLine(artifact, writer);
-		writer.append("<ul>");
-		writer.newLine();
-
+		writeLine(writer, "<ul>");
 		for (Violation violation : artifact.violations())
 			for (InternalType dependeeType : violation.getInternalDependencies())
-				writeViolationLine(violation.getDependent(), dependeeType, writer);
+				writeViolationLine(writer, violation.getDependent(), dependeeType);
 		for (DeeplyAnalyzedArtifact dependee : artifact.dependees())
-			writeArtifactLine(dependee, writer);
+			writeArtifactLine(writer, dependee);
+		writeLine(writer, "</ul>");
 
-		writer.append("</li>");
-		writer.newLine();
-		writer.append("</ul>");
-		writer.newLine();
+		writeLine(writer, "</li>");
 	}
 
-	private static void writeArtifactLine(
-			DeeplyAnalyzedArtifact artifact, BufferedWriter writer) throws IOException {
-		writer.append(artifact.coordinates().toString());
-		writer.newLine();
+	private static void writeArtifactLine(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) throws IOException {
+		writeLine(writer, artifact.coordinates().toString());
 	}
 
-	private static void writeViolationLine(Type dependent, InternalType dependee, BufferedWriter writer)
+	private static void writeViolationLine(BufferedWriter writer, Type dependent, InternalType dependee)
 			throws IOException {
-		writer.append(dependent.getFullyQualifiedName());
-		writer.append(SEPARATOR_IN_VIOLATION);
-		writer.append(dependee.getFullyQualifiedName());
+		writeLine(writer, VIOLATION_LINE, dependent.getFullyQualifiedName(), dependee.getFullyQualifiedName());
+	}
+
+	private static void writeLine(BufferedWriter writer, String format, Object... args) throws IOException {
+		writer.append(format(format, args));
 		writer.newLine();
 	}
 
