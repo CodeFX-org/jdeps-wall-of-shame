@@ -30,8 +30,12 @@ class Brick {
 	private static final String FIRST_VIOLATION = "\t<tr><td class=\"vdt1 vdt\">%s</td><td class=\"vde1 vde\">%s</td></tr>";
 	private static final String OTHER_VIOLATION = "\t<tr><td class=\"vdt\">%s</td><td class=\"vde\">%s</td></tr>";
 	private static final String OTHER_VIOLATION_OF_MANY = "\t<tr class=\"vdx\"><td class=\"vdt\"/><td class=\"vde\">%2$s</td></tr>";
-	private static final String FIRST_DEPENDEE = "\t<tr><td class=\"de1 de\" colspan=\"2\">%s</td></tr>";
-	private static final String OTHER_DEPENDEE = "\t<tr><td class=\"de\" colspan=\"2\">%s</td></tr>";
+	private static final String FIRST_DEPENDEE = "\t<tr><td class=\"de1 de %s\" colspan=\"2\">%s</td></tr>";
+	private static final String OTHER_DEPENDEE = "\t<tr><td class=\"de %s\" colspan=\"2\">%s</td></tr>";
+
+	private static final String CSS_CLASS_FOR_DEPENDEE_WITH_NO_JDK_DEPENDENCIES = "njd";
+	private static final String CSS_CLASS_FOR_DEPENDEE_WITH_INDIRECT_JDK_DEPENDENCIES = "ijd";
+	private static final String CSS_CLASS_FOR_DEPENDEE_WITH_DIRECT_JDK_DEPENDENCIES = "djd";
 
 	private final SortedSet<DeeplyAnalyzedArtifact> artifacts;
 
@@ -109,7 +113,24 @@ class Brick {
 	}
 
 	private static void writeDependee(BufferedWriter writer, String format, DeeplyAnalyzedArtifact dependee) {
-		writeLine(writer, format, dependee.coordinates().toString().replace(":", " : "));
+		writeLine(
+				writer,
+				format,
+				cssClassForDependeesDependenciesOnJdk(dependee),
+				dependee.coordinates().toString().replace(":", " : "));
+	}
+
+	private static String cssClassForDependeesDependenciesOnJdk(DeeplyAnalyzedArtifact dependee) {
+		switch (dependee.marker()) {
+			case NONE:
+				return CSS_CLASS_FOR_DEPENDEE_WITH_NO_JDK_DEPENDENCIES;
+			case INDIRECT:
+				return CSS_CLASS_FOR_DEPENDEE_WITH_INDIRECT_JDK_DEPENDENCIES;
+			case DIRECT:
+				return CSS_CLASS_FOR_DEPENDEE_WITH_DIRECT_JDK_DEPENDENCIES;
+			default:
+				throw new IllegalArgumentException(format("Unknown dependency marker '%s'.", dependee.marker()));
+		}
 	}
 
 	private static void writeLine(BufferedWriter writer, String format, Object... args) {
