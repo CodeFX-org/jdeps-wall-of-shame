@@ -41,6 +41,7 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 import static java.util.Collections.singletonList;
+import static java.util.Objects.requireNonNull;
 import static org.codefx.jwos.Util.toImmutableSet;
 
 /**
@@ -52,16 +53,24 @@ import static org.codefx.jwos.Util.toImmutableSet;
  */
 public class MavenCentral {
 
+	private static final String DEFAULT_LOCAL_REPOSITORY_PATH = "target/local-repo";
+
 	private final RepositorySystem repositorySystem;
 	private final RepositorySystemSession repositorySystemSession;
 	private final RemoteRepository mavenCentral;
 
 	private static final String NULL_CONTEXT = null;
 
-	public MavenCentral() {
+	public MavenCentral(String localRepositoryPath) {
+		requireNonNull(localRepositoryPath, "The argument 'localRepositoryPath' must not be null."); //$NON-NLS-1$
+
 		repositorySystem = newRepositorySystem();
-		repositorySystemSession = newSession(repositorySystem);
+		repositorySystemSession = newSession(repositorySystem, localRepositoryPath);
 		mavenCentral = new Builder("central", "default", "http://repo1.maven.org/maven2/").build();
+	}
+
+	public MavenCentral() {
+		this(DEFAULT_LOCAL_REPOSITORY_PATH);
 	}
 
 	private static RepositorySystem newRepositorySystem() {
@@ -73,10 +82,10 @@ public class MavenCentral {
 		return locator.getService(RepositorySystem.class);
 	}
 
-	private static RepositorySystemSession newSession(RepositorySystem system) {
+	private static RepositorySystemSession newSession(RepositorySystem system, String localRepositoryPath) {
 		DefaultRepositorySystemSession session = MavenRepositorySystemUtils.newSession();
 
-		LocalRepository localRepo = new LocalRepository("target/local-repo");
+		LocalRepository localRepo = new LocalRepository(localRepositoryPath);
 		session.setLocalRepositoryManager(system.newLocalRepositoryManager(session, localRepo));
 
 		return session;

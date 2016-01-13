@@ -57,7 +57,7 @@ public class Main {
 
 		AnalysisTaskManager taskManager =
 				new AnalysisTaskManager(emptySet(), resultFile.analyzedArtifactsUnmodifiable());
-		MavenCentral maven = new MavenCentral();
+		MavenCentral maven = new MavenCentral(Util.LOCAL_MAVEN_REPOSITORY.toString());
 		JDeps jdeps = new JDeps();
 
 		Stream
