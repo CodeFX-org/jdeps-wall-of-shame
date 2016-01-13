@@ -70,6 +70,7 @@ class AnalysisGraph {
 						.peek(this::addAnalyzedArtifact)
 						.<ArtifactNode>map(this::getExistingNodeForArtifact)
 						.collect(toImmutableSet()));
+		artifactNode.deepAnalysis().succeeded(artifact);
 	}
 
 	private void markProjectAsResolved(ProjectCoordinates projectCoordinates) {

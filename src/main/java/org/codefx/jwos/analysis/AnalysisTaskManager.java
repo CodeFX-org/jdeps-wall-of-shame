@@ -107,7 +107,13 @@ public class AnalysisTaskManager {
 
 	private void queueTasks() {
 		state.projectNodes().forEach(this::queueTasksForProjectNode);
-		state.artifactNodes().forEach(this::queueTasksForArtifactNode);
+		state.artifactNodes()
+				.filter(this::notYetDeeplyAnalyzed)
+				.forEach(this::queueTasksForArtifactNode);
+	}
+
+	private boolean notYetDeeplyAnalyzed(ArtifactNode node) {
+		return node.deepAnalysis().identifier() != SUCCEEDED;
 	}
 
 	private void queueTasksForProjectNode(ProjectNode node) {

@@ -28,11 +28,13 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.Collections.emptySet;
 import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.toSet;
 
 /**
  * Puts the pieces together:
@@ -50,13 +52,15 @@ import static java.util.function.Function.identity;
  */
 public class Main {
 
+	private static final boolean ASSUME_ALL_PROJECTS_FROM_PREVIOUS_RESULTS_ARE_RESOLVED = true;
+	private static final boolean USE_ARTIFACTS_FROM_PREVIOUS_RESULTS = true;
+
 	private static final Logger LOGGER = LoggerFactory.getLogger("Main");
 
 	public static void main(String[] args) throws IOException {
 		ResultFile resultFile = ResultFile.read(Util.getPathToResourceFile(Util.RESULT_FILE_NAME));
 
-		AnalysisTaskManager taskManager =
-				new AnalysisTaskManager(emptySet(), resultFile.analyzedArtifactsUnmodifiable());
+		AnalysisTaskManager taskManager = createAnalysisTaskManager(resultFile);
 		MavenCentral maven = new MavenCentral(Util.LOCAL_MAVEN_REPOSITORY.toString());
 		JDeps jdeps = new JDeps();
 
@@ -71,7 +75,24 @@ public class Main {
 				.flatMap(identity())
 				.map(ComputationThread::new)
 				.forEach(Thread::start);
-		new Thread(taskManager::manageQueues).run();
+		new Thread(taskManager::manageQueues, "Manage Queue").run();
+	}
+
+	private static AnalysisTaskManager createAnalysisTaskManager(ResultFile previousResults) {
+		Set<ProjectCoordinates> resolvedProjects = ASSUME_ALL_PROJECTS_FROM_PREVIOUS_RESULTS_ARE_RESOLVED
+				? getProjects(previousResults)
+				: emptySet();
+		Set<DeeplyAnalyzedArtifact> analyzedArtifacts = USE_ARTIFACTS_FROM_PREVIOUS_RESULTS
+				? previousResults.analyzedArtifactsUnmodifiable()
+				: emptySet();
+		return new AnalysisTaskManager(resolvedProjects, analyzedArtifacts);
+	}
+
+	private static Set<ProjectCoordinates> getProjects(ResultFile previousResults) {
+		return previousResults
+				.analyzedArtifactsUnmodifiable().stream()
+				.map(artifact -> artifact.coordinates().project())
+				.collect(toSet());
 	}
 
 	private static Stream<Computation> createComputationsToReadProjectFiles(AnalysisTaskManager taskManager) {
