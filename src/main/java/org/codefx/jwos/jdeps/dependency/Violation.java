@@ -87,7 +87,7 @@ public final class Violation implements Comparable<Violation> {
 	}
 
 	/**
-	 * @return the internal types upon which {@link #getDependent()} depends
+	 * @return the internal types upon which {@link #getDependent()} depends; contains at least one element
 	 */
 	public ImmutableList<InternalType> getInternalDependencies() {
 		return sortedInternalDependencies;

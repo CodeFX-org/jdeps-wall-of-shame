@@ -26,9 +26,13 @@ import static java.util.stream.Collectors.toList;
  */
 class Brick {
 
-	private static final String SEPARATOR_IN_VIOLATION = " -> ";
-	private static final String VIOLATION_LINE = "%s " + SEPARATOR_IN_VIOLATION + " %s";
-	
+	private static final String DEPENDANT = "\t<tr><th class=\"dt\" colspan=\"2\">%s</th></tr>";
+	private static final String FIRST_VIOLATION = "\t<tr><td class=\"vdt1 vdt\">%s</td><td class=\"vde1 vde\">%s</td></tr>";
+	private static final String OTHER_VIOLATION = "\t<tr><td class=\"vdt\">%s</td><td class=\"vde\">%s</td></tr>";
+	private static final String OTHER_VIOLATION_OF_MANY = "\t<tr class=\"vdx\"><td class=\"vdt\"/><td class=\"vde\">%2$s</td></tr>";
+	private static final String FIRST_DEPENDEE = "\t<tr><td class=\"de1 de\" colspan=\"2\">%s</td></tr>";
+	private static final String OTHER_DEPENDEE = "\t<tr><td class=\"de\" colspan=\"2\">%s</td></tr>";
+
 	private final SortedSet<DeeplyAnalyzedArtifact> artifacts;
 
 	private final List<String> frontMatter;
@@ -54,6 +58,69 @@ class Brick {
 		);
 	}
 
+	private static void writeArtifact(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) {
+		writeLine(writer, "<table class=\"artifacts\">");
+		writeDependent(writer, artifact);
+		writeViolations(writer, artifact);
+		writeDependees(writer, artifact);
+		writeLine(writer, "</table>");
+	}
+
+	private static void writeDependent(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) {
+		writeLine(writer, DEPENDANT, artifact.coordinates().toString());
+	}
+
+	private static void writeViolations(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) {
+		artifact.violations().stream()
+				.findFirst()
+				.ifPresent(violation -> writeViolation(writer, FIRST_VIOLATION, OTHER_VIOLATION_OF_MANY, violation));
+		artifact.violations().stream()
+				.skip(1)
+				.forEach(violation -> writeViolation(writer, OTHER_VIOLATION, OTHER_VIOLATION_OF_MANY, violation));
+	}
+
+	private static void writeViolation(
+			BufferedWriter writer,
+			String firstViolationFormat,
+			String otherViolationOfManyFormat,
+			Violation violation) {
+		violation.getInternalDependencies().stream()
+				.findFirst()
+				.ifPresent(dependee ->
+						writeViolationLine(writer, firstViolationFormat, violation.getDependent(), dependee));
+		violation.getInternalDependencies().stream()
+				.skip(1)
+				.forEach(dependee ->
+						writeViolationLine(writer, otherViolationOfManyFormat, violation.getDependent(), dependee));
+	}
+
+	private static void writeViolationLine(
+			BufferedWriter writer, String format, Type dependent, InternalType dependee) {
+		writeLine(writer, format, dependent.getClassName(), dependee.getFullyQualifiedName());
+	}
+
+	private static void writeDependees(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) {
+		artifact.dependees().stream()
+				.findFirst()
+				.ifPresent(dependee -> writeDependee(writer, FIRST_DEPENDEE, dependee));
+		artifact.dependees().stream()
+				.skip(1)
+				.forEach(dependee -> writeDependee(writer, OTHER_DEPENDEE, dependee));
+	}
+
+	private static void writeDependee(BufferedWriter writer, String format, DeeplyAnalyzedArtifact dependee) {
+		writeLine(writer, format, dependee.coordinates().toString().replace(":", " : "));
+	}
+
+	private static void writeLine(BufferedWriter writer, String format, Object... args) {
+		try {
+			writer.append(format(format, args));
+			writer.newLine();
+		} catch (IOException ex) {
+			throw new RuntimeIOException(ex);
+		}
+	}
+
 	public void addArtifact(DeeplyAnalyzedArtifact artifact) {
 		artifacts.add(artifact);
 	}
@@ -72,52 +139,30 @@ class Brick {
 		try (BufferedWriter writer = Files.newBufferedWriter(tempFile)) {
 			writeFrontMatterToWriter(writer);
 			writeArtifactsToWriter(writer);
+			// TODO: revert to IOException
 		}
 	}
 
-	private void writeFrontMatterToWriter(BufferedWriter writer) throws IOException {
+	private void writeFrontMatterToWriter(BufferedWriter writer) {
+		// TODO moar streams
 		for (String frontMatterLine : frontMatter)
 			writeLine(writer, frontMatterLine);
 	}
 
-	private void writeArtifactsToWriter(BufferedWriter writer) throws IOException {
-		writeLine(writer, "<ul>");
+	private void writeArtifactsToWriter(BufferedWriter writer) {
+		// TODO moar streams
 		for (DeeplyAnalyzedArtifact artifact : artifacts)
 			writeArtifact(writer, artifact);
-		writeLine(writer, "</ul>");
-	}
-
-	private static void writeArtifact(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) throws IOException {
-		writeLine(writer, "<li>");
-		writeArtifactLine(writer, artifact);
-
-		writeLine(writer, "<ul>");
-		for (Violation violation : artifact.violations())
-			for (InternalType dependeeType : violation.getInternalDependencies())
-				writeViolationLine(writer, violation.getDependent(), dependeeType);
-		for (DeeplyAnalyzedArtifact dependee : artifact.dependees())
-			writeArtifactLine(writer, dependee);
-		writeLine(writer, "</ul>");
-
-		writeLine(writer, "</li>");
-	}
-
-	private static void writeArtifactLine(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) throws IOException {
-		writeLine(writer, artifact.coordinates().toString());
-	}
-
-	private static void writeViolationLine(BufferedWriter writer, Type dependent, InternalType dependee)
-			throws IOException {
-		writeLine(writer, VIOLATION_LINE, dependent.getFullyQualifiedName(), dependee.getFullyQualifiedName());
-	}
-
-	private static void writeLine(BufferedWriter writer, String format, Object... args) throws IOException {
-		writer.append(format(format, args));
-		writer.newLine();
 	}
 
 	private void replaceFileWithTempFile() throws IOException {
 		Files.move(tempFile, file, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
+	}
+
+	private static class RuntimeIOException extends RuntimeException {
+		public RuntimeIOException(IOException cause) {
+			super(cause);
+		}
 	}
 
 }
