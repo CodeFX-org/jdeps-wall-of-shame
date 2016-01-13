@@ -62,3 +62,21 @@ td.vdt:after {
 .de1:before {
 	content: 'Dependencies';
 }
+
+.njd:after, .ijd:after, .djd:after {
+	font-family: FontAwesome;
+}
+
+.njd:after {
+/* makes the layout more crowded without adding much value
+	content: " \f00c";
+*/
+}
+
+.ijd:after {
+	content: " \f071";
+}
+
+.djd:after {
+	content: " \f05e";
+}
