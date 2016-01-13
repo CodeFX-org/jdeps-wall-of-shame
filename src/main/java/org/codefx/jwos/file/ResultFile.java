@@ -1,6 +1,8 @@
 package org.codefx.jwos.file;
 
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Multimap;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
@@ -25,7 +27,6 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import static java.util.Collections.singleton;
 import static java.util.Collections.unmodifiableSet;
 import static java.util.Objects.requireNonNull;
 import static org.codefx.jwos.Util.toImmutableSet;
@@ -99,7 +100,7 @@ public class ResultFile {
 
 		ArtifactCoordinates artifact = null;
 		MarkInternalDependencies marker = null;
-		List<Violation> violations = new ArrayList<>();
+		Multimap<Type, InternalType> violations = HashMultimap.create();
 		// TODO: This is a lie!
 		// These artifacts are not truly "deeply analyzed". On the contrary, they have no violations and dependencies
 		// on their own and just the coordinates and marker remain. They are still used here because it is tedious to
@@ -108,11 +109,12 @@ public class ResultFile {
 		List<DeeplyAnalyzedArtifact> dependees = new ArrayList<>();
 
 		for (String line : (Iterable<String>) Files.lines(file)::iterator) {
-			if (line.startsWith(VIOLATION_LINE_PREFIX))
-				violations.add(parseViolationLine(line));
-			else if (line.startsWith(DEPENDENCY_LINE_PREFIX))
+			if (line.startsWith(VIOLATION_LINE_PREFIX)) {
+				ViolationPair violationPair = parseViolationLine(line);
+				violations.put(violationPair.dependent, violationPair.dependee);
+			} else if (line.startsWith(DEPENDENCY_LINE_PREFIX)) {
 				dependees.add(parseDependencyLine(line));
-			else {
+			} else {
 				// a new artifact begins here; add the former to the set ...
 				createArtifact(artifact, marker, violations, dependees)
 						.ifPresent(parsed -> preliminaryArtifacts.put(parsed.coordinates(), parsed));
@@ -130,7 +132,7 @@ public class ResultFile {
 		return preliminaryArtifacts;
 	}
 
-	private static Violation parseViolationLine(String line) {
+	private static ViolationPair parseViolationLine(String line) {
 		if (!line.startsWith(VIOLATION_LINE_PREFIX))
 			throw new IllegalArgumentException();
 
@@ -142,8 +144,7 @@ public class ResultFile {
 		int internalTypeEndIndex = line.length();
 		InternalType internalType = InternalType.of(line.substring(internalTypeStartIndex, internalTypeEndIndex));
 
-		// TODO this creates a nw violation per pair which is not quite the semantic of 'Violation'
-		return Violation.buildFor(type, singleton(internalType));
+		return new ViolationPair(type, internalType);
 	}
 
 	private static DeeplyAnalyzedArtifact parseDependencyLine(String line) {
@@ -168,13 +169,20 @@ public class ResultFile {
 	}
 
 	private static Optional<DeeplyAnalyzedArtifact> createArtifact(
-			ArtifactCoordinates artifact, MarkInternalDependencies marker, List<Violation> violations,
+			ArtifactCoordinates artifact,
+			MarkInternalDependencies marker,
+			Multimap<Type, InternalType> rawViolations,
 			List<DeeplyAnalyzedArtifact> dependees) {
 		if (artifact == null)
 			return Optional.empty();
+		
+		ImmutableSet<Violation> violations = rawViolations
+				.asMap()
+				.entrySet().stream()
+				.map(typeWithInternals -> Violation.buildFor(typeWithInternals.getKey(), typeWithInternals.getValue()))
+				.collect(toImmutableSet());
 
-		return Optional.of(new DeeplyAnalyzedArtifact(
-				artifact, marker, ImmutableSet.copyOf(violations), ImmutableSet.copyOf(dependees)));
+		return Optional.of(new DeeplyAnalyzedArtifact(artifact, marker, violations, ImmutableSet.copyOf(dependees)));
 	}
 
 	private static Collection<DeeplyAnalyzedArtifact> finalizeArtifacts(
@@ -284,4 +292,15 @@ public class ResultFile {
 		return unmodifiableSet(artifacts);
 	}
 
+	// INNER CLASSES
+
+	private static class ViolationPair {
+		public final Type dependent;
+		public final InternalType dependee;
+
+		public ViolationPair(Type dependent, InternalType dependee) {
+			this.dependent = dependent;
+			this.dependee = dependee;
+		}
+	}
 }
