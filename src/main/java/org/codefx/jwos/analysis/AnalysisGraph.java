@@ -11,9 +11,9 @@ import org.codefx.jwos.jdeps.dependency.Violation;
 
 import java.nio.file.Path;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Stream;
 
 import static java.lang.String.format;
@@ -27,19 +27,24 @@ import static org.codefx.jwos.Util.toImmutableSet;
  * them. Nodes should only be accessed directly (via {@link #artifactNodes()} or {@link #projectNodes()}) to identify
  * open tasks. Otherwise tasks should be accessed via methods like {@link #downloadOf(IdentifiesArtifact)}.
  * <p>
- * This class is highly mutable and thread-unsafe. It serves as a data structure for {@link AnalysisTaskManager}.
- * 
+ * This class serves as a data structure for {@link AnalysisTaskManager}.
+ * It is highly mutable and pretty thread-unsafe. The only thread-safety it guarantees is that concurrent read and write
+ * access to the collections of project and artifact nodes, respectively, will not fail. Invariants regarding individual
+ * projects/artifacts can not be guaranteed for concurrent read or write access.
  */
 class AnalysisGraph {
 
-	private final Map<ProjectCoordinates, ProjectNode> projects;
-	private final Map<ArtifactCoordinates, ArtifactNode> artifacts;
+	/*
+	 * To allow concurrent read and write access to the projects and artifacts, the maps have to be 'ConcurrentMap's.
+	 */
+	private final ConcurrentMap<ProjectCoordinates, ProjectNode> projects;
+	private final ConcurrentMap<ArtifactCoordinates, ArtifactNode> artifacts;
 
 	// CREATE
 
 	public AnalysisGraph() {
-		projects = new HashMap<>();
-		artifacts = new HashMap<>();
+		projects = new ConcurrentHashMap<>();
+		artifacts = new ConcurrentHashMap<>();
 	}
 
 	public AnalysisGraph(
