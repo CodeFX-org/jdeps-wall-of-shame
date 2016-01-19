@@ -11,7 +11,7 @@ $.extend($.easing,
 });
 
 window.navScrollerDefaultSettings = {
-	scrollToOffset: 170,
+	scrollToOffset: 210,
 	scrollSpeed: 800,
 	activateParentNode: true,
 };
@@ -78,47 +78,29 @@ $(document).ready(function (){
 
     //section divider icon click gently scrolls to reveal the section
 	$(".sectiondivider").on('click', function(event) {
-    	$('html,body').animate({scrollTop: $(event.target.parentNode).offset().top - 50}, 400, "linear");
-	});
-
-    //links going to other sections nicely scroll
-	$(".container a").each(function(){
-        if ($(this).attr("href").charAt(0) == '#'){
-            $(this).on('click', function(event) {
-        		event.preventDefault();
-                var target = $(event.target).closest("a");
-                var targetHight =  $(target.attr("href")).offset().top
-            	$('html,body').animate({scrollTop: targetHight - 170}, 800, "easeInOutExpo");
-            });
-        }
+        var targetHeight = $(event.target.parentNode).offset().top
+        $('html,body').animate({scrollTop: targetHeight - 82}, 400, "linear");
 	});
 
 	// Additions by jki & nipa
 
-	// we'd like to have links between artifacts;
-	// in order to keep the (already humonguous) HTML from getting even bigger,
-	// we add them vie JS after the side was loaded
+	// we now have links between artifacts;
+	// this prohibits adding a scroll listener to every anchor (as was done before);
+	// we now only have a global listener
 
-	// add anchors to the dependants
-	$('.dt').each(function (i, th) {
-		$(th).html('<a name="' + th.textContent + '">' + th.textContent + '</a>');
-	});
+	// add a global listener that handles link clicks	
+	$(document.body).on('click', '.de a', scrollToArtifactForEvent);
 
-	// add links to the dependees
-	$('.de').each(function (i, td) {
-		$(td).html('<a href="#' + td.textContent.replace(/ : /g, ":") + '">' + td.textContent + '</a>');
-	});
+	function scrollToArtifactForEvent(event) {
+		var href = event.target.getAttribute("href");
+		event.preventDefault();
+		document.location.hash = href;
+		scrollToArtifactWithName(href);
+	}
 
-	// add a global listener that scrolls to the anchor
-	$(document.body).on('click', '.de a', function (event) {
-		scrollToId($(event.target).attr('href').substr(1));
-	});
-
-	scrollToId(location.hash.substr(1));
-
-	function scrollToId(id) {
+	function scrollToArtifactWithName(name) {
 		var settings = window.navScrollerDefaultSettings;
-		var $target = $('[name="' + id + '"]');
+		var $target = $('[name="' + name + '"]');
 
 		if (! $target.is(':empty')) {
 			$('html,body').animate(
@@ -127,6 +109,10 @@ $(document).ready(function (){
 					$target.parents('.artifacts').fadeOut().fadeIn();
 				});
 		}
+	}
+
+	if (location.hash) {
+		scrollToArtifactWithName(location.hash);
 	}
 
 });
