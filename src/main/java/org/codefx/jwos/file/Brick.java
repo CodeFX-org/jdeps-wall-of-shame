@@ -26,12 +26,12 @@ import static java.util.stream.Collectors.toList;
  */
 class Brick {
 
-	private static final String DEPENDANT = "\t<tr><th class=\"dt\" colspan=\"2\">%s</th></tr>";
+	private static final String DEPENDANT = "\t<tr><th class=\"dt\" colspan=\"2\"><a name=\"#%s\">%s<a></th></tr>";
 	private static final String FIRST_VIOLATION = "\t<tr><td class=\"vdt1 vdt\">%s</td><td class=\"vde1 vde\">%s</td></tr>";
 	private static final String OTHER_VIOLATION = "\t<tr><td class=\"vdt\">%s</td><td class=\"vde\">%s</td></tr>";
 	private static final String OTHER_VIOLATION_OF_MANY = "\t<tr class=\"vdx\"><td class=\"vdt\"/><td class=\"vde\">%2$s</td></tr>";
-	private static final String FIRST_DEPENDEE = "\t<tr><td class=\"de1 de %s\" colspan=\"2\">%s</td></tr>";
-	private static final String OTHER_DEPENDEE = "\t<tr><td class=\"de %s\" colspan=\"2\">%s</td></tr>";
+	private static final String FIRST_DEPENDEE = "\t<tr><td class=\"de1 de %s\" colspan=\"2\"><a href=\"#%s\">%s</a></td></tr>";
+	private static final String OTHER_DEPENDEE = "\t<tr><td class=\"de %s\" colspan=\"2\"><a href=\"#%s\">%s</a></td></tr>";
 
 	private static final String CSS_CLASS_FOR_DEPENDEE_WITH_NO_JDK_DEPENDENCIES = "njd";
 	private static final String CSS_CLASS_FOR_DEPENDEE_WITH_INDIRECT_JDK_DEPENDENCIES = "ijd";
@@ -62,6 +62,46 @@ class Brick {
 		);
 	}
 
+	public void addArtifact(DeeplyAnalyzedArtifact artifact) {
+		artifacts.add(artifact);
+	}
+
+	public void write() throws IOException {
+		deleteTempFileIfExists();
+		writeTempFile();
+		replaceFileWithTempFile();
+	}
+
+	private void deleteTempFileIfExists() throws IOException {
+		Files.deleteIfExists(tempFile);
+	}
+
+	private void writeTempFile() throws IOException {
+		try (BufferedWriter writer = Files.newBufferedWriter(tempFile)) {
+			writeFrontMatterToWriter(writer);
+			writeArtifactsToWriter(writer);
+		} catch (RuntimeIOException ex) {
+			throw ex.getCause();
+		}
+	}
+
+	private void writeFrontMatterToWriter(BufferedWriter writer) {
+		frontMatter.forEach(frontMatterLine -> writeLine(writer, frontMatterLine));
+	}
+
+	private static void writeLine(BufferedWriter writer, String format, Object... args) {
+		try {
+			writer.append(format(format, args));
+			writer.newLine();
+		} catch (IOException ex) {
+			throw new RuntimeIOException(ex);
+		}
+	}
+
+	private void writeArtifactsToWriter(BufferedWriter writer) {
+		artifacts.forEach(artifact -> writeArtifact(writer, artifact));
+	}
+
 	private static void writeArtifact(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) {
 		writeLine(writer, "<table class=\"artifacts\">");
 		writeDependent(writer, artifact);
@@ -71,7 +111,8 @@ class Brick {
 	}
 
 	private static void writeDependent(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) {
-		writeLine(writer, DEPENDANT, artifact.coordinates().toString());
+		String coordinates = artifact.coordinates().toString();
+		writeLine(writer, DEPENDANT, coordinates, coordinates);
 	}
 
 	private static void writeViolations(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) {
@@ -113,11 +154,13 @@ class Brick {
 	}
 
 	private static void writeDependee(BufferedWriter writer, String format, DeeplyAnalyzedArtifact dependee) {
+		String coordinates = dependee.coordinates().toString();
 		writeLine(
 				writer,
 				format,
 				cssClassForDependeesDependenciesOnJdk(dependee),
-				dependee.coordinates().toString().replace(":", " : "));
+				coordinates,
+				coordinates.replace(":", " : "));
 	}
 
 	private static String cssClassForDependeesDependenciesOnJdk(DeeplyAnalyzedArtifact dependee) {
@@ -133,56 +176,19 @@ class Brick {
 		}
 	}
 
-	private static void writeLine(BufferedWriter writer, String format, Object... args) {
-		try {
-			writer.append(format(format, args));
-			writer.newLine();
-		} catch (IOException ex) {
-			throw new RuntimeIOException(ex);
-		}
-	}
-
-	public void addArtifact(DeeplyAnalyzedArtifact artifact) {
-		artifacts.add(artifact);
-	}
-
-	public void write() throws IOException {
-		deleteTempFileIfExists();
-		writeTempFile();
-		replaceFileWithTempFile();
-	}
-
-	private void deleteTempFileIfExists() throws IOException {
-		Files.deleteIfExists(tempFile);
-	}
-
-	private void writeTempFile() throws IOException {
-		try (BufferedWriter writer = Files.newBufferedWriter(tempFile)) {
-			writeFrontMatterToWriter(writer);
-			writeArtifactsToWriter(writer);
-			// TODO: revert to IOException
-		}
-	}
-
-	private void writeFrontMatterToWriter(BufferedWriter writer) {
-		// TODO moar streams
-		for (String frontMatterLine : frontMatter)
-			writeLine(writer, frontMatterLine);
-	}
-
-	private void writeArtifactsToWriter(BufferedWriter writer) {
-		// TODO moar streams
-		for (DeeplyAnalyzedArtifact artifact : artifacts)
-			writeArtifact(writer, artifact);
-	}
-
 	private void replaceFileWithTempFile() throws IOException {
 		Files.move(tempFile, file, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
 	}
 
 	private static class RuntimeIOException extends RuntimeException {
+
 		public RuntimeIOException(IOException cause) {
 			super(cause);
+		}
+
+		@Override
+		public synchronized IOException getCause() {
+			return (IOException) super.getCause();
 		}
 	}
 
