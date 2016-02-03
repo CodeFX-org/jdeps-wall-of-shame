@@ -67,6 +67,7 @@
 		<aetherVersion>1.0.2.v20150114</aetherVersion>
 		<mavenVersion>3.3.9</mavenVersion>
 		<wagonVersion>2.10</wagonVersion>
+		<junit5Version>5.0.0-ALPHA</junit5Version>
 	</properties>
 
 	<dependencies>
@@ -142,11 +143,31 @@
 		</dependency>
 
 		<dependency>
-			<!-- JUNIT for automated tests -->
+			<!-- JUNIT 4 for automated tests -->
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
+		</dependency>
+		<!-- JUNIT 5 for monkeying around
+			see http://junit-team.github.io/junit5/#using-junit-4-to-run-junit-5-tests -->
+		<dependency>
+			<groupId>org.junit</groupId>
+			<artifactId>junit5-api</artifactId>
+			<version>${junit5Version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit</groupId>
+			<artifactId>junit4-runner</artifactId>
+			<version>${junit5Version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit</groupId>
+			<artifactId>junit5-engine</artifactId>
+			<version>${junit5Version}</version>
+			<scope>test, runtime</scope>
 		</dependency>
 		<dependency>
 			<!-- MOCKITO to mock instances for automated tests -->
