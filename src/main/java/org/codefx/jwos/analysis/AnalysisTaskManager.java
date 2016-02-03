@@ -1,6 +1,8 @@
 package org.codefx.jwos.analysis;
 
 import com.google.common.collect.ImmutableSet;
+import org.codefx.jwos.analysis.channel.SimpleTaskChannel;
+import org.codefx.jwos.analysis.channel.TaskChannel;
 import org.codefx.jwos.analysis.task.Task;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
@@ -26,7 +28,6 @@ import java.util.stream.Stream;
 
 import static java.lang.String.format;
 import static java.util.Collections.emptySet;
-import static java.util.stream.Collectors.toList;
 import static java.util.stream.Stream.concat;
 import static java.util.stream.Stream.of;
 import static org.codefx.jwos.Util.toImmutableSet;
@@ -65,12 +66,12 @@ public class AnalysisTaskManager {
 			Collection<ProjectCoordinates> resolvedProjects, Collection<DeeplyAnalyzedArtifact> analyzedArtifacts) {
 		state = new AnalysisGraph(resolvedProjects, analyzedArtifacts);
 
-		addProject = new TaskChannel<>("add project");
-		resolveVersions = new TaskChannel<>("version resolution");
-		download = new TaskChannel<>("download");
-		analyze = new TaskChannel<>("analysis");
-		resolveDependencies = new TaskChannel<>("dependency resolution");
-		outputResults = new TaskChannel<>("output");
+		addProject = new SimpleTaskChannel<>("add project");
+		resolveVersions = new SimpleTaskChannel<>("version resolution");
+		download = new SimpleTaskChannel<>("download");
+		analyze = new SimpleTaskChannel<>("analysis");
+		resolveDependencies = new SimpleTaskChannel<>("dependency resolution");
+		outputResults = new SimpleTaskChannel<>("output");
 
 		bookkeeping = new Bookkeeping();
 	}

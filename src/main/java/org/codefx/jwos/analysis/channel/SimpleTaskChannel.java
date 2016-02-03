@@ -1,4 +1,4 @@
-package org.codefx.jwos.analysis;
+package org.codefx.jwos.analysis.channel;
 
 import com.google.common.collect.Iterables;
 
@@ -10,16 +10,7 @@ import java.util.stream.Stream;
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.StreamSupport.stream;
 
-/**
- * A channel handles communication of a single type of tasks.
- * <p>
- * It consists of three blocking queue, one to send out tasks and two to receive results or failures, respectively.
- * 
- * @param <T> the type of tasks
- * @param <R> the type of the tasks' successful result 
- * @param <E> the type of the tasks' error
- */
-class TaskChannel<T, R, E> {
+public class SimpleTaskChannel<T, R, E> implements TaskChannel<T,R,E> {
 
 	private final String taskName;
 
@@ -30,7 +21,7 @@ class TaskChannel<T, R, E> {
 	/**
 	 * Creates a new channel with the specified capacities for results and errors (where 0 means unbounded).
 	 */
-	public TaskChannel(String taskName, int resultCapacity, int errorCapacity) {
+	public SimpleTaskChannel(String taskName, int resultCapacity, int errorCapacity) {
 		this.taskName = requireNonNull(taskName, "The argument 'taskName' must not be null.");
 		tasks = new LinkedBlockingQueue<>();
 		results = createQueue(resultCapacity);
@@ -44,46 +35,56 @@ class TaskChannel<T, R, E> {
 	/**
 	 * Creates a new channel with the specified capacity for results and errors, respectively (where 0 means unbounded).
 	 */
-	public TaskChannel(String taskName, int capacity) {
+	public SimpleTaskChannel(String taskName, int capacity) {
 		this(taskName, capacity, capacity);
 	}
 
 	/**
 	 * Creates a new channel with unbounded capacities for results and errors.
 	 */
-	public TaskChannel(String taskName) {
+	public SimpleTaskChannel(String taskName) {
 		this(taskName, 0, 0);
 	}
 
+	@Override
 	public int nrOfWaitingTasks() {
 		return tasks.size();
 	}
 
+	@Override
 	public String taskName() {
 		return taskName;
 	}
 
+	@Override
 	public void sendTask(T task) {
 		tasks.add(task);
 	}
 
+	@Override
 	public T getTask() throws InterruptedException {
 		return tasks.take();
 	}
 
+	@Override
 	public void sendResult(R result) throws InterruptedException {
 		results.add(result);
 	}
 
+	@Override
 	public Stream<R> drainResults() {
+		// create an iterable that empties 'results' as it returns elements 
 		return stream(Iterables.consumingIterable(results).spliterator(), false);
 	}
 
+	@Override
 	public void sendError(E error) throws InterruptedException {
 		errors.add(error);
 	}
 
+	@Override
 	public Stream<E> drainErrors() {
+		// create an iterable that empties 'errors' as it returns elements 
 		return stream(Iterables.consumingIterable(errors).spliterator(), false);
 	}
 
