@@ -1,7 +1,6 @@
 package org.codefx.jwos.analysis;
 
 import com.google.common.collect.ImmutableSet;
-import org.codefx.jwos.analysis.channel.SimpleTaskChannel;
 import org.codefx.jwos.analysis.channel.TaskChannel;
 import org.codefx.jwos.analysis.task.Task;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
@@ -66,12 +65,12 @@ public class AnalysisTaskManager {
 			Collection<ProjectCoordinates> resolvedProjects, Collection<DeeplyAnalyzedArtifact> analyzedArtifacts) {
 		state = new AnalysisGraph(resolvedProjects, analyzedArtifacts);
 
-		addProject = new SimpleTaskChannel<>("add project");
-		resolveVersions = new SimpleTaskChannel<>("version resolution");
-		download = new SimpleTaskChannel<>("download");
-		analyze = new SimpleTaskChannel<>("analysis");
-		resolveDependencies = new SimpleTaskChannel<>("dependency resolution");
-		outputResults = new SimpleTaskChannel<>("output");
+		addProject = TaskChannel.namedAndUnbounded("add project");
+		resolveVersions = TaskChannel.namedAndUnbounded("version resolution");
+		download = TaskChannel.namedAndUnbounded("download");
+		analyze = TaskChannel.namedAndUnbounded("analysis");
+		resolveDependencies = TaskChannel.namedAndUnbounded("dependency resolution");
+		outputResults = TaskChannel.namedAndUnbounded("output");
 
 		bookkeeping = new Bookkeeping();
 	}
@@ -381,7 +380,7 @@ public class AnalysisTaskManager {
 	 */
 	private class Bookkeeping {
 
-		private static final int QUEUE_SIZE_LOG_INTERVAL = 200;
+		private static final int QUEUE_SIZE_LOG_INTERVAL = 20;
 		private static final long SLEEP_TIME_IN_MS = 50;
 
 		private int runsToNextLog;
