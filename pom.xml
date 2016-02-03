@@ -136,10 +136,18 @@
 			<version>${wagonVersion}</version>
 		</dependency>
 
+		<!-- GIT -->
 		<dependency>
 			<groupId>org.eclipse.jgit</groupId>
 			<artifactId>org.eclipse.jgit</artifactId>
 			<version>4.1.1.201511131810-r</version>
+		</dependency>
+		
+		<!-- PERSISTENCE WITH YAML-->
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.16</version>
 		</dependency>
 
 		<dependency>
