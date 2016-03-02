@@ -1,5 +1,6 @@
 package org.codefx.jwos.file;// NOT_PUBLISHED
 
+import com.google.common.collect.ImmutableSet;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.FailedArtifact;
@@ -18,20 +19,19 @@ import org.yaml.snakeyaml.representer.Representer;
 
 import java.util.function.Function;
 
+import static com.google.common.collect.ImmutableSet.of;
+
 class YamlPersister {
 
 	// TD = Type Description
 
-	private static final TypeDescription PROJECT_TD =
-			new TypeDescription(PersistentProjectCoordinates.class, "!project");
-	private static final TypeDescription ARTIFACT_TD =
-			new TypeDescription(PersistentArtifactCoordinates.class, "!artifact");
-	private static final TypeDescription FAILED_ARTIFACT_TD =
-			new TypeDescription(PersistentFailedArtifact.class, "!failed_artifact");
-	private static final TypeDescription RESOLVED_ARTIFACT_TD =
-			new TypeDescription(PersistentResolvedArtifact.class, "!resolved_artifact");
-	private static final TypeDescription ANALYZED_ARTIFACT_TD =
-			new TypeDescription(PersistentAnalyzedArtifact.class, "!analyzed_artifact");
+	private static final ImmutableSet<TypeDescription> TYPE_DESCRIPTIONS = of(
+			new TypeDescription(PersistentProjectCoordinates.class, "!project"),
+			new TypeDescription(PersistentArtifactCoordinates.class, "!artifact"),
+			new TypeDescription(PersistentFailedArtifact.class, "!failed_artifact"),
+			new TypeDescription(PersistentResolvedArtifact.class, "!resolved_artifact"),
+			new TypeDescription(PersistentAnalyzedArtifact.class, "!analyzed_artifact")
+	);
 
 	private final Representer representer;
 
@@ -41,11 +41,8 @@ class YamlPersister {
 
 	private static Representer createRepresenter() {
 		Representer representer = new Representer();
-		representer.addClassTag(PROJECT_TD.getType(), PROJECT_TD.getTag());
-		representer.addClassTag(ARTIFACT_TD.getType(), ARTIFACT_TD.getTag());
-		representer.addClassTag(FAILED_ARTIFACT_TD.getType(), FAILED_ARTIFACT_TD.getTag());
-		representer.addClassTag(RESOLVED_ARTIFACT_TD.getType(), RESOLVED_ARTIFACT_TD.getTag());
-		representer.addClassTag(ANALYZED_ARTIFACT_TD.getType(), ANALYZED_ARTIFACT_TD.getTag());
+		TYPE_DESCRIPTIONS
+				.forEach(description -> representer.addClassTag(description.getType(), description.getTag()));
 		return representer;
 	}
 
@@ -62,11 +59,7 @@ class YamlPersister {
 
 	private Constructor createConstructorWithTypeDescriptors() {
 		Constructor constructor = new Constructor();
-		constructor.addTypeDescription(PROJECT_TD);
-		constructor.addTypeDescription(ARTIFACT_TD);
-		constructor.addTypeDescription(FAILED_ARTIFACT_TD);
-		constructor.addTypeDescription(RESOLVED_ARTIFACT_TD);
-		constructor.addTypeDescription(ANALYZED_ARTIFACT_TD);
+		TYPE_DESCRIPTIONS.forEach(constructor::addTypeDescription);
 		return constructor;
 	}
 
