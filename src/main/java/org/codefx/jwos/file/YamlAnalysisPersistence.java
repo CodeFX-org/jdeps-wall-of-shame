@@ -70,13 +70,13 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 
 	private static YamlAnalysisPersistence from(PersistentAnalysis persistent) {
 		YamlAnalysisPersistence yaml = new YamlAnalysisPersistence();
-		addTo(persistent.projects, PersistentProjectCoordinates::toProject, yaml.projects);
-		addTo(persistent.resolvedProjects, PersistentResolvedProject::toProject, yaml.resolvedProjects);
-		addTo(persistent.resolutionFailedProjects, PersistentFailedProject::toProject, yaml.resolutionFailedProjects);
-		addTo(persistent.analyzedArtifacts, PersistentAnalyzedArtifact::toArtifact, yaml.analyzedArtifacts);
-		addTo(persistent.analysisFailedArtifacts, PersistentFailedArtifact::toArtifact, yaml.analysisFailedArtifacts);
-		addTo(persistent.resolvedArtifacts, PersistentResolvedArtifact::toArtifact, yaml.resolvedArtifacts);
-		addTo(persistent.resolutionFailedArtifacts,
+		addTo(persistent.step_1_projects, PersistentProjectCoordinates::toProject, yaml.projects);
+		addTo(persistent.step_2_resolvedProjects, PersistentResolvedProject::toProject, yaml.resolvedProjects);
+		addTo(persistent.step_2_resolutionFailedProjects, PersistentFailedProject::toProject, yaml.resolutionFailedProjects);
+		addTo(persistent.step_3_analyzedArtifacts, PersistentAnalyzedArtifact::toArtifact, yaml.analyzedArtifacts);
+		addTo(persistent.step_3_analysisFailedArtifacts, PersistentFailedArtifact::toArtifact, yaml.analysisFailedArtifacts);
+		addTo(persistent.step_4_resolvedArtifacts, PersistentResolvedArtifact::toArtifact, yaml.resolvedArtifacts);
+		addTo(persistent.step_4_resolutionFailedArtifacts,
 				PersistentFailedArtifact::toArtifact,
 				yaml.resolutionFailedArtifacts);
 		return yaml;
@@ -95,13 +95,13 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 
 	private PersistentAnalysis toPersistentAnalysis() {
 		PersistentAnalysis persistent = new PersistentAnalysis();
-		persistent.projects = transformToList(projects, PersistentProjectCoordinates::from);
-		persistent.resolvedProjects = transformToList(resolvedProjects, PersistentResolvedProject::from);
-		persistent.resolutionFailedProjects = transformToList(resolutionFailedProjects, PersistentFailedProject::from);
-		persistent.analyzedArtifacts = transformToList(analyzedArtifacts, PersistentAnalyzedArtifact::from);
-		persistent.analysisFailedArtifacts = transformToList(analysisFailedArtifacts, PersistentFailedArtifact::from);
-		persistent.resolvedArtifacts = transformToList(resolvedArtifacts, PersistentResolvedArtifact::from);
-		persistent.resolutionFailedArtifacts = transformToList(resolutionFailedArtifacts, PersistentFailedArtifact::from);
+		persistent.step_1_projects = transformToList(projects, PersistentProjectCoordinates::from);
+		persistent.step_2_resolvedProjects = transformToList(resolvedProjects, PersistentResolvedProject::from);
+		persistent.step_2_resolutionFailedProjects = transformToList(resolutionFailedProjects, PersistentFailedProject::from);
+		persistent.step_3_analyzedArtifacts = transformToList(analyzedArtifacts, PersistentAnalyzedArtifact::from);
+		persistent.step_3_analysisFailedArtifacts = transformToList(analysisFailedArtifacts, PersistentFailedArtifact::from);
+		persistent.step_4_resolvedArtifacts = transformToList(resolvedArtifacts, PersistentResolvedArtifact::from);
+		persistent.step_4_resolutionFailedArtifacts = transformToList(resolutionFailedArtifacts, PersistentFailedArtifact::from);
 		return persistent;
 	}
 

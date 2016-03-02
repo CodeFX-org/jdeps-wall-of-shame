@@ -4,13 +4,16 @@ import java.util.List;
 
 public class PersistentAnalysis {
 
-	public List<PersistentProjectCoordinates> projects;
-	public List<PersistentResolvedProject> resolvedProjects;
-	public List<PersistentFailedProject> resolutionFailedProjects;
+	// The "step_#_" prefixes are used because these steps are mostly ordered but they get ordered differently
+	// (alphabetically according to the field name) in YAML
 
-	public List<PersistentAnalyzedArtifact> analyzedArtifacts;
-	public List<PersistentFailedArtifact> analysisFailedArtifacts;
-	public List<PersistentResolvedArtifact> resolvedArtifacts;
-	public List<PersistentFailedArtifact> resolutionFailedArtifacts;
+	public List<PersistentProjectCoordinates> step_1_projects;
+	public List<PersistentResolvedProject> step_2_resolvedProjects;
+	public List<PersistentFailedProject> step_2_resolutionFailedProjects;
+
+	public List<PersistentAnalyzedArtifact> step_3_analyzedArtifacts;
+	public List<PersistentFailedArtifact> step_3_analysisFailedArtifacts;
+	public List<PersistentResolvedArtifact> step_4_resolvedArtifacts;
+	public List<PersistentFailedArtifact> step_4_resolutionFailedArtifacts;
 
 }
