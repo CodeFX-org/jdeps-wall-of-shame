@@ -4,8 +4,8 @@ import org.codefx.jwos.artifact.AnalyzedArtifact;
 
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
-import static org.codefx.jwos.Util.toImmutableSet;
+import static org.codefx.jwos.Util.transformToImmutableSet;
+import static org.codefx.jwos.Util.transformToList;
 
 public class PersistentAnalyzedArtifact {
 
@@ -15,19 +15,14 @@ public class PersistentAnalyzedArtifact {
 	public static PersistentAnalyzedArtifact from(AnalyzedArtifact artifact) {
 		PersistentAnalyzedArtifact persistent = new PersistentAnalyzedArtifact();
 		persistent.artifact = PersistentArtifactCoordinates.from(artifact.coordinates());
-		persistent.violations = artifact
-				.violations().stream()
-				.map(PersistentViolation::from)
-				.collect(toList());
+		persistent.violations = transformToList(artifact.violations(), PersistentViolation::from);
 		return persistent;
 	}
 
 	public AnalyzedArtifact toArtifact() {
 		return new AnalyzedArtifact(
 				artifact.toArtifact(),
-				violations.stream()
-						.map(PersistentViolation::toViolation)
-						.collect(toImmutableSet())
+				transformToImmutableSet(violations, PersistentViolation::toViolation)
 		);
 	}
 

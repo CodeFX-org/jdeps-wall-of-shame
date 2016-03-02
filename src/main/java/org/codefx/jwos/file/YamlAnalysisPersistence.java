@@ -18,13 +18,12 @@ import org.codefx.jwos.file.persistence.PersistentResolvedArtifact;
 import org.codefx.jwos.file.persistence.PersistentResolvedProject;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.SortedSet;
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import static java.util.Collections.unmodifiableSet;
+import static org.codefx.jwos.Util.transformToList;
 
 /**
  * An {@link AnalysisPersistence} that uses YAML to store results.
@@ -96,20 +95,14 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 
 	private PersistentAnalysis toPersistentAnalysis() {
 		PersistentAnalysis persistent = new PersistentAnalysis();
-		persistent.projects = toList(projects, PersistentProjectCoordinates::from);
-		persistent.resolvedProjects = toList(resolvedProjects, PersistentResolvedProject::from);
-		persistent.resolutionFailedProjects = toList(resolutionFailedProjects, PersistentFailedProject::from);
-		persistent.analyzedArtifacts = toList(analyzedArtifacts, PersistentAnalyzedArtifact::from);
-		persistent.analysisFailedArtifacts = toList(analysisFailedArtifacts, PersistentFailedArtifact::from);
-		persistent.resolvedArtifacts = toList(resolvedArtifacts, PersistentResolvedArtifact::from);
-		persistent.resolutionFailedArtifacts = toList(resolutionFailedArtifacts, PersistentFailedArtifact::from);
+		persistent.projects = transformToList(projects, PersistentProjectCoordinates::from);
+		persistent.resolvedProjects = transformToList(resolvedProjects, PersistentResolvedProject::from);
+		persistent.resolutionFailedProjects = transformToList(resolutionFailedProjects, PersistentFailedProject::from);
+		persistent.analyzedArtifacts = transformToList(analyzedArtifacts, PersistentAnalyzedArtifact::from);
+		persistent.analysisFailedArtifacts = transformToList(analysisFailedArtifacts, PersistentFailedArtifact::from);
+		persistent.resolvedArtifacts = transformToList(resolvedArtifacts, PersistentResolvedArtifact::from);
+		persistent.resolutionFailedArtifacts = transformToList(resolutionFailedArtifacts, PersistentFailedArtifact::from);
 		return persistent;
-	}
-
-	private static <P, T> List<P> toList(Collection<T> collection, Function<T, P> transform) {
-		return collection.stream()
-				.map(transform)
-				.collect(Collectors.toList());
 	}
 
 	// IMPLEMENTATION OF 'AnalysisPersistence'

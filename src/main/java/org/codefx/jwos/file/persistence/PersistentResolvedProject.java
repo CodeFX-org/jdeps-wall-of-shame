@@ -7,7 +7,7 @@ import org.codefx.jwos.artifact.ResolvedProject;
 
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
+import static org.codefx.jwos.Util.transformToList;
 
 public class PersistentResolvedProject {
 
@@ -17,10 +17,7 @@ public class PersistentResolvedProject {
 	public static PersistentResolvedProject from(ResolvedProject project) {
 		PersistentResolvedProject persistent = new PersistentResolvedProject();
 		persistent.project = PersistentProjectCoordinates.from(project.coordinates());
-		persistent.versions = project
-				.versions().stream()
-				.map(ArtifactCoordinates::version)
-				.collect(toList());
+		persistent.versions = transformToList(project.versions(), ArtifactCoordinates::version);
 		return persistent;
 	}
 
