@@ -2,8 +2,10 @@ package org.codefx.jwos.file;// NOT_PUBLISHED
 
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
+import org.codefx.jwos.artifact.MarkInternalDependencies;
 import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.artifact.ResolvedProject;
@@ -141,6 +143,49 @@ class YamlPersisterTest {
 		assertThat(loadedArtifact).isEqualTo(artifact);
 		// equality is based on coordinates so we have to check violations explicitly
 		assertThat(loadedArtifact.violations()).isEqualTo(artifact.violations());
+	}
+
+	@Test
+	@DisplayName("can dump and load deeply analyzed artifacts")
+	void persistDeeplyAnalyzedArtifact() {
+		DeeplyAnalyzedArtifact dependee = new DeeplyAnalyzedArtifact(
+				ArtifactCoordinates.from("artifact.group", "artifact", "version"),
+				MarkInternalDependencies.DIRECT,
+				of(
+						Violation.buildFor(
+								Type.of("artifact.package", "Class"),
+								of(
+										InternalType.of("sun.misc", "Unsafe", "internal", "JDK-internal"),
+										InternalType.of("sun.misc", "BASE64Encoder", "internal", "JDK-internal"))),
+						Violation.buildFor(
+								Type.of("artifact.package", "Class"),
+								of(
+										InternalType.of("sun.misc", "Unsafe", "internal", "JDK-internal"),
+										InternalType.of("sun.misc", "BASE64Encoder", "internal", "JDK-internal")))),
+				of()
+		);
+		DeeplyAnalyzedArtifact artifact = new DeeplyAnalyzedArtifact(
+				ArtifactCoordinates.from("artifact.group", "artifact", "version"),
+				MarkInternalDependencies.INDIRECT,
+				of(),
+				of(dependee)
+		);
+
+		String artifactAsYaml = persister.writeDeeplyAnalyzedArtifact(artifact);
+		DeeplyAnalyzedArtifact loadedArtifact = persister.readDeeplyAnalyzedArtifact(artifactAsYaml);
+
+		assertThat(loadedArtifact).isEqualTo(artifact);
+		// equality is based on coordinates so we have to check the rest explicitly
+		assertThat(loadedArtifact.marker()).isEqualTo(artifact.marker());
+		assertThat(loadedArtifact.dependees()).isEqualTo(artifact.dependees());
+		assertThat(loadedArtifact.violations()).isEqualTo(artifact.violations());
+
+		// dependee equality is based on coordinates so we have to check their state explicitly as well
+		DeeplyAnalyzedArtifact loadedInnerArtifact = loadedArtifact.dependees().stream().findFirst().get();
+		DeeplyAnalyzedArtifact innerArtifact = artifact.dependees().stream().findFirst().get();
+		assertThat(loadedInnerArtifact.marker()).isEqualTo(innerArtifact.marker());
+		assertThat(loadedInnerArtifact.dependees()).isEqualTo(innerArtifact.dependees());
+		assertThat(loadedInnerArtifact.violations()).isEqualTo(innerArtifact.violations());
 	}
 
 }

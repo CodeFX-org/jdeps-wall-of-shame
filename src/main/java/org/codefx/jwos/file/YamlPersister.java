@@ -3,6 +3,7 @@ package org.codefx.jwos.file;// NOT_PUBLISHED
 import com.google.common.collect.ImmutableSet;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
 import org.codefx.jwos.artifact.ProjectCoordinates;
@@ -11,6 +12,7 @@ import org.codefx.jwos.artifact.ResolvedProject;
 import org.codefx.jwos.file.persistence.PersistentAnalysis;
 import org.codefx.jwos.file.persistence.PersistentAnalyzedArtifact;
 import org.codefx.jwos.file.persistence.PersistentArtifactCoordinates;
+import org.codefx.jwos.file.persistence.PersistentDeeplyAnalyzedArtifact;
 import org.codefx.jwos.file.persistence.PersistentFailedArtifact;
 import org.codefx.jwos.file.persistence.PersistentFailedProject;
 import org.codefx.jwos.file.persistence.PersistentProjectCoordinates;
@@ -132,6 +134,14 @@ class YamlPersister {
 
 	AnalyzedArtifact readAnalyzedArtifact(String yamlString) {
 		return read(yamlString, PersistentAnalyzedArtifact.class, PersistentAnalyzedArtifact::toArtifact);
+	}
+
+	String writeDeeplyAnalyzedArtifact(DeeplyAnalyzedArtifact artifact) {
+		return write(artifact, PersistentDeeplyAnalyzedArtifact::from);
+	}
+
+	DeeplyAnalyzedArtifact readDeeplyAnalyzedArtifact(String yamlString) {
+		return read(yamlString, PersistentDeeplyAnalyzedArtifact.class, PersistentDeeplyAnalyzedArtifact::toArtifact);
 	}
 
 }
