@@ -11,11 +11,13 @@ public class PersistentAnalysis {
 	public List<PersistentResolvedProject> step_2_resolvedProjects;
 	public List<PersistentFailedProject> step_2_resolutionFailedProjects;
 
-	public List<PersistentAnalyzedArtifact> step_3_analyzedArtifacts;
-	public List<PersistentFailedArtifact> step_3_analysisFailedArtifacts;
-	public List<PersistentResolvedArtifact> step_4_resolvedArtifacts;
-	public List<PersistentFailedArtifact> step_4_resolutionFailedArtifacts;
+	public List<PersistentDownloadedArtifact> step_3_downloadedArtifacts;
+	public List<PersistentFailedArtifact> step_3_downloadFailedArtifacts;
+	public List<PersistentAnalyzedArtifact> step_4_analyzedArtifacts;
+	public List<PersistentFailedArtifact> step_4_analysisFailedArtifacts;
+	public List<PersistentResolvedArtifact> step_5_resolvedArtifacts;
+	public List<PersistentFailedArtifact> step_5_resolutionFailedArtifacts;
 
-	public List<PersistentDeeplyAnalyzedArtifact> step_5_deeplyAnalyzedArtifacts;
+	public List<PersistentDeeplyAnalyzedArtifact> step_6_deeplyAnalyzedArtifacts;
 
 }

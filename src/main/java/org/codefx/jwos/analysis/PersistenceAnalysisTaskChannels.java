@@ -1,5 +1,6 @@
 package org.codefx.jwos.analysis;// NOT_PUBLISHED
 
+import org.codefx.jwos.Flags;
 import org.codefx.jwos.analysis.channel.TaskChannel;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
@@ -31,6 +32,7 @@ class PersistenceAnalysisTaskChannels implements AnalysisTaskChannels {
 
 	private final TaskChannel<Void, ProjectCoordinates, Exception> addProjectsSpy;
 	private final TaskChannel<ProjectCoordinates, ResolvedProject, FailedProject> resolveVersionsSpy;
+	private final TaskChannel<ArtifactCoordinates, DownloadedArtifact, FailedArtifact> downloadArtifactsSpy;
 	private final TaskChannel<DownloadedArtifact, AnalyzedArtifact, FailedArtifact> analyzeArtifactsSpy;
 	private final TaskChannel<ArtifactCoordinates, ResolvedArtifact, FailedArtifact> resolveDependenciesSpy;
 	private final TaskChannel<DeeplyAnalyzedArtifact, Void, Void> outputResultsSpy;
@@ -52,10 +54,14 @@ class PersistenceAnalysisTaskChannels implements AnalysisTaskChannels {
 						persistence.resolvedProjectsUnmodifiable(),
 						persistence.projectResolutionErrorsUnmodifiable());
 
-		// This task downloads JARs. Because it is not feasible to include them in another storing mechanism
-		// (besides, e.g., the Maven repository) this program only deals with their paths. By themselves these are
-		// worthless, though (files could have been deleted), so it makes no sense to store or replay them.
-		downloadArtifacts = TaskChannel.namedAndUnbounded("download");
+		downloadArtifactsSpy = TaskChannel.namedAndUnbounded("download");
+		downloadArtifacts = TaskChannel
+				.<ArtifactCoordinates, DownloadedArtifact, FailedArtifact>namedAndUnbounded("download")
+				.spy(downloadArtifactsSpy)
+				.replaying(
+						Flags.REPLAY_DOWNLOADS ? persistence.downloadedArtifactsUnmodifiable() : emptySet(),
+						Flags.REPLAY_DOWNLOAD_ERRORS ? persistence.artifactDownloadErrorsUnmodifiable() : emptySet()
+				);
 
 		analyzeArtifactsSpy = TaskChannel.namedAndUnbounded("spying on analysis");
 		analyzeArtifacts = TaskChannel
@@ -90,6 +96,8 @@ class PersistenceAnalysisTaskChannels implements AnalysisTaskChannels {
 		resolveVersionsSpy.drainResults().forEach(persistence::addResolvedProject);
 		resolveVersionsSpy.drainErrors().forEach(persistence::addProjectResolutionError);
 
+		downloadArtifactsSpy.drainResults().forEach(persistence::addDownloadedArtifact);
+		downloadArtifactsSpy.drainErrors().forEach(persistence::addDownloadFailure);
 		analyzeArtifactsSpy.drainResults().forEach(persistence::addAnalyzedArtifact);
 		analyzeArtifactsSpy.drainErrors().forEach(persistence::addAnalysisFailure);
 		resolveDependenciesSpy.drainResults().forEach(persistence::addResolvedArtifact);

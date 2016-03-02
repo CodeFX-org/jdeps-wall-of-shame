@@ -2,6 +2,7 @@ package org.codefx.jwos.analysis;// NOT_PUBLISHED
 
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
 import org.codefx.jwos.artifact.ProjectCoordinates;
@@ -28,7 +29,11 @@ public interface AnalysisPersistence {
 	Collection<FailedProject> projectResolutionErrorsUnmodifiable();
 
 	//  - artifacts
-	
+
+	Collection<DownloadedArtifact> downloadedArtifactsUnmodifiable();
+
+	Collection<FailedArtifact> artifactDownloadErrorsUnmodifiable();
+
 	Collection<AnalyzedArtifact> analyzedArtifactsUnmodifiable();
 
 	Collection<FailedArtifact> artifactAnalysisErrorsUnmodifiable();
@@ -48,6 +53,10 @@ public interface AnalysisPersistence {
 	void addProjectResolutionError(FailedProject project);
 
 	//  - artifacts
+
+	void addDownloadedArtifact(DownloadedArtifact artifact);
+
+	void addDownloadFailure(FailedArtifact artifact);
 
 	void addAnalyzedArtifact(AnalyzedArtifact artifact);
 

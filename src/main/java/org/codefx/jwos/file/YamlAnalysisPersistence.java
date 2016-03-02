@@ -3,6 +3,7 @@ package org.codefx.jwos.file;// NOT_PUBLISHED
 import org.codefx.jwos.analysis.AnalysisPersistence;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
@@ -13,6 +14,7 @@ import org.codefx.jwos.artifact.ResolvedProject;
 import org.codefx.jwos.file.persistence.PersistentAnalysis;
 import org.codefx.jwos.file.persistence.PersistentAnalyzedArtifact;
 import org.codefx.jwos.file.persistence.PersistentDeeplyAnalyzedArtifact;
+import org.codefx.jwos.file.persistence.PersistentDownloadedArtifact;
 import org.codefx.jwos.file.persistence.PersistentFailedArtifact;
 import org.codefx.jwos.file.persistence.PersistentFailedProject;
 import org.codefx.jwos.file.persistence.PersistentProjectCoordinates;
@@ -43,6 +45,10 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 	private final SortedSet<FailedProject> resolutionFailedProjects
 			= new ConcurrentSkipListSet<>(IdentifiesProject.alphabeticalOrder());
 
+	private final SortedSet<DownloadedArtifact> downloadedArtifacts
+			= new ConcurrentSkipListSet<>(IdentifiesArtifact.alphabeticalOrder());
+	private final SortedSet<FailedArtifact> downloadFailedArtifacts
+			= new ConcurrentSkipListSet<>(IdentifiesArtifact.alphabeticalOrder());
 	private final SortedSet<AnalyzedArtifact> analyzedArtifacts
 			= new ConcurrentSkipListSet<>(IdentifiesArtifact.alphabeticalOrder());
 	private final SortedSet<FailedArtifact> analysisFailedArtifacts
@@ -77,13 +83,15 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 		addTo(persistent.step_1_projects, PersistentProjectCoordinates::toProject, yaml.projects);
 		addTo(persistent.step_2_resolvedProjects, PersistentResolvedProject::toProject, yaml.resolvedProjects);
 		addTo(persistent.step_2_resolutionFailedProjects, PersistentFailedProject::toProject, yaml.resolutionFailedProjects);
-		addTo(persistent.step_3_analyzedArtifacts, PersistentAnalyzedArtifact::toArtifact, yaml.analyzedArtifacts);
-		addTo(persistent.step_3_analysisFailedArtifacts, PersistentFailedArtifact::toArtifact, yaml.analysisFailedArtifacts);
-		addTo(persistent.step_4_resolvedArtifacts, PersistentResolvedArtifact::toArtifact, yaml.resolvedArtifacts);
-		addTo(persistent.step_4_resolutionFailedArtifacts,
+		addTo(persistent.step_3_downloadedArtifacts, PersistentDownloadedArtifact::toArtifact, yaml.downloadedArtifacts);
+		addTo(persistent.step_3_downloadFailedArtifacts, PersistentFailedArtifact::toArtifact, yaml.downloadFailedArtifacts);
+		addTo(persistent.step_4_analyzedArtifacts, PersistentAnalyzedArtifact::toArtifact, yaml.analyzedArtifacts);
+		addTo(persistent.step_4_analysisFailedArtifacts, PersistentFailedArtifact::toArtifact, yaml.analysisFailedArtifacts);
+		addTo(persistent.step_5_resolvedArtifacts, PersistentResolvedArtifact::toArtifact, yaml.resolvedArtifacts);
+		addTo(persistent.step_5_resolutionFailedArtifacts,
 				PersistentFailedArtifact::toArtifact,
 				yaml.resolutionFailedArtifacts);
-		addTo(persistent.step_5_deeplyAnalyzedArtifacts,
+		addTo(persistent.step_6_deeplyAnalyzedArtifacts,
 				PersistentDeeplyAnalyzedArtifact::toArtifact,
 				yaml.deeplyAnalyzedArtifacts);
 		return yaml;
@@ -105,11 +113,13 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 		persistent.step_1_projects = transformToList(projects, PersistentProjectCoordinates::from);
 		persistent.step_2_resolvedProjects = transformToList(resolvedProjects, PersistentResolvedProject::from);
 		persistent.step_2_resolutionFailedProjects = transformToList(resolutionFailedProjects, PersistentFailedProject::from);
-		persistent.step_3_analyzedArtifacts = transformToList(analyzedArtifacts, PersistentAnalyzedArtifact::from);
-		persistent.step_3_analysisFailedArtifacts = transformToList(analysisFailedArtifacts, PersistentFailedArtifact::from);
-		persistent.step_4_resolvedArtifacts = transformToList(resolvedArtifacts, PersistentResolvedArtifact::from);
-		persistent.step_4_resolutionFailedArtifacts = transformToList(resolutionFailedArtifacts, PersistentFailedArtifact::from);
-		persistent.step_5_deeplyAnalyzedArtifacts = transformToList(deeplyAnalyzedArtifacts, PersistentDeeplyAnalyzedArtifact::from);
+		persistent.step_3_downloadedArtifacts = transformToList(downloadedArtifacts, PersistentDownloadedArtifact::from);
+		persistent.step_3_downloadFailedArtifacts = transformToList(downloadFailedArtifacts, PersistentFailedArtifact::from);
+		persistent.step_4_analyzedArtifacts = transformToList(analyzedArtifacts, PersistentAnalyzedArtifact::from);
+		persistent.step_4_analysisFailedArtifacts = transformToList(analysisFailedArtifacts, PersistentFailedArtifact::from);
+		persistent.step_5_resolvedArtifacts = transformToList(resolvedArtifacts, PersistentResolvedArtifact::from);
+		persistent.step_5_resolutionFailedArtifacts = transformToList(resolutionFailedArtifacts, PersistentFailedArtifact::from);
+		persistent.step_6_deeplyAnalyzedArtifacts = transformToList(deeplyAnalyzedArtifacts, PersistentDeeplyAnalyzedArtifact::from);
 		return persistent;
 	}
 
@@ -128,6 +138,16 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 	@Override
 	public Collection<FailedProject> projectResolutionErrorsUnmodifiable() {
 		return unmodifiableSet(resolutionFailedProjects);
+	}
+
+	@Override
+	public Collection<DownloadedArtifact> downloadedArtifactsUnmodifiable() {
+		return unmodifiableSet(downloadedArtifacts);
+	}
+
+	@Override
+	public Collection<FailedArtifact> artifactDownloadErrorsUnmodifiable() {
+		return unmodifiableSet(downloadFailedArtifacts);
 	}
 
 	@Override
@@ -163,6 +183,16 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 	@Override
 	public void addProjectResolutionError(FailedProject project) {
 		resolutionFailedProjects.add(project);
+	}
+
+	@Override
+	public void addDownloadedArtifact(DownloadedArtifact artifact) {
+		downloadedArtifacts.add(artifact);
+	}
+
+	@Override
+	public void addDownloadFailure(FailedArtifact artifact) {
+		downloadFailedArtifacts.add(artifact);
 	}
 
 	@Override
