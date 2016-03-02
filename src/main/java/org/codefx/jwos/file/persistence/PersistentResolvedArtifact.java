@@ -9,12 +9,12 @@ import static org.codefx.jwos.Util.toImmutableSet;
 
 public class PersistentResolvedArtifact {
 
-	public PersistentArtifactCoordinates coordinates;
+	public PersistentArtifactCoordinates artifact;
 	public Set<PersistentArtifactCoordinates> dependees;
 
 	public static PersistentResolvedArtifact from(ResolvedArtifact artifact) {
 		PersistentResolvedArtifact persistent = new PersistentResolvedArtifact();
-		persistent.coordinates = PersistentArtifactCoordinates.from(artifact.coordinates());
+		persistent.artifact = PersistentArtifactCoordinates.from(artifact.coordinates());
 		persistent.dependees = artifact
 				.dependees().stream()
 				.map(PersistentArtifactCoordinates::from)
@@ -24,7 +24,7 @@ public class PersistentResolvedArtifact {
 
 	public ResolvedArtifact toArtifact() {
 		return new ResolvedArtifact(
-				coordinates.toArtifact(),
+				artifact.toArtifact(),
 				dependees.stream()
 						.map(PersistentArtifactCoordinates::toArtifact)
 						.collect(toImmutableSet())
