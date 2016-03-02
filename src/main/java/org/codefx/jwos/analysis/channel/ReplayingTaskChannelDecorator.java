@@ -1,5 +1,7 @@
 package org.codefx.jwos.analysis.channel;
 
+import com.google.common.collect.Iterables;
+
 import java.util.Collection;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -7,6 +9,7 @@ import java.util.stream.Stream;
 
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.Stream.concat;
+import static java.util.stream.StreamSupport.stream;
 
 /**
  * A decorator for a {@link TaskChannel} that will replay the tasks, results and errors specified during construction.
@@ -44,12 +47,14 @@ class ReplayingTaskChannelDecorator<T, R, E> extends AbstractTaskChannelDecorato
 
 	@Override
 	public Stream<R> drainResults() {
-		return concat(resultsToReplay.stream(), super.drainResults());
+		Stream<R> drainReplay = stream(Iterables.consumingIterable(resultsToReplay).spliterator(), false);
+		return concat(drainReplay, super.drainResults());
 	}
 
 	@Override
 	public Stream<E> drainErrors() {
-		return concat(errorsToReplay.stream(), super.drainErrors());
+		Stream<E> drainReplay = stream(Iterables.consumingIterable(errorsToReplay).spliterator(), false);
+		return concat(drainReplay, super.drainErrors());
 	}
 
 }

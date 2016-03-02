@@ -69,14 +69,6 @@ class AnalysisGraph {
 				.orElseGet(() -> createNodeForArtifact(artifact));
 	}
 
-	private ArtifactNode getExistingNodeForArtifact(IdentifiesArtifact artifact) {
-		return getNodeForArtifact(artifact)
-				.orElseThrow(() -> {
-					String message = "There is supposed to be a node for artifact %s but there isn't.";
-					return new IllegalStateException(format(message, artifact.coordinates()));
-				});
-	}
-
 	private Optional<ProjectNode> getNodeForProject(IdentifiesProject project) {
 		return Optional.of(project)
 				.map(IdentifiesProject::coordinates)
@@ -94,14 +86,6 @@ class AnalysisGraph {
 				.orElseGet(() -> createNodeForProject(project));
 	}
 
-	private ProjectNode getExistingNodeForProject(IdentifiesProject project) {
-		return getNodeForProject(project)
-				.orElseThrow(() -> {
-					String message = "There is supposed to be a node for project %s but there isn't.";
-					return new IllegalStateException(format(message, project.coordinates()));
-				});
-	}
-
 	// PROJECTS
 
 	public void addProject(ProjectCoordinates project) {
@@ -113,7 +97,7 @@ class AnalysisGraph {
 	}
 
 	public Task<ImmutableSet<ArtifactCoordinates>> versionResolutionOf(IdentifiesProject project) {
-		return new GraphUpdatingProjectVersionTask(getExistingNodeForProject(project));
+		return new GraphUpdatingProjectVersionTask(getOrCreateNodeForProject(project));
 	}
 
 	// ARTIFACT TASKS
@@ -123,19 +107,19 @@ class AnalysisGraph {
 	}
 
 	public Task<Path> downloadOf(IdentifiesArtifact artifact) {
-		return getExistingNodeForArtifact(artifact).download();
+		return getOrCreateNodeForArtifact(artifact).download();
 	}
 
 	public Task<ImmutableSet<Violation>> analysisOf(IdentifiesArtifact artifact) {
-		return getExistingNodeForArtifact(artifact).analysis();
+		return getOrCreateNodeForArtifact(artifact).analysis();
 	}
 
 	public Task<ImmutableSet<ArtifactCoordinates>> dependencyResolutionOf(IdentifiesArtifact artifact) {
-		return new GraphUpdatingArtifactDependeeTask(getExistingNodeForArtifact(artifact));
+		return new GraphUpdatingArtifactDependeeTask(getOrCreateNodeForArtifact(artifact));
 	}
 
 	public Task<Void> outputOf(IdentifiesArtifact artifact) {
-		return getExistingNodeForArtifact(artifact).output();
+		return getOrCreateNodeForArtifact(artifact).output();
 	}
 
 	/**
@@ -169,11 +153,11 @@ class AnalysisGraph {
 
 		@Override
 		public void succeeded(ImmutableSet<ArtifactCoordinates> result) {
-			ImmutableSet<ArtifactNode> dependees = result.stream()
+			ImmutableSet<ArtifactNode> artifacts = result.stream()
 					.map(AnalysisGraph.this::getOrCreateNodeForArtifact)
 					.collect(toImmutableSet());
-			updateGraph(dependees);
-			task.succeeded(dependees);
+			updateGraph(artifacts);
+			task.succeeded(artifacts);
 		}
 
 		protected abstract void updateGraph(ImmutableSet<ArtifactNode> artifacts);

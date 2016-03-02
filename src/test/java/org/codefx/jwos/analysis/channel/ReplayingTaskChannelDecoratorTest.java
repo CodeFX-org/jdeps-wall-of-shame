@@ -186,7 +186,7 @@ class ReplayingTaskChannelDecoratorTest {
 			int taskTotal = tasksToReplay.size() + decoratedTasks.size();
 
 			List<String> tasks = takeTimes(replayingChannel::getTask, taskTotal);
-			
+
 			assertThat(tasks).containsExactlyElementsOf(concat(tasksToReplay, decoratedTasks));
 			verify(decoratedChannel, times(decoratedTasks.size())).getTask();
 			verifyNoMoreInteractions(decoratedChannel);
@@ -207,10 +207,26 @@ class ReplayingTaskChannelDecoratorTest {
 			when(decoratedChannel.drainResults()).thenReturn(decoratedResults.stream());
 
 			Stream<Integer> results = replayingChannel.drainResults();
-			
+
 			assertThat(results).containsExactlyElementsOf(concat(resultsToReplay, decoratedResults));
 			verify(decoratedChannel).drainResults();
 			verifyNoMoreInteractions(decoratedChannel);
+		}
+
+		@Test
+		@DisplayName("gets results from replay only once")
+		void drainResults_resultsGetReplayedOnce() {
+			List<Integer> decoratedResults_1 = asList(10, 20, 30);
+			List<Integer> decoratedResults_2 = asList(100, 200, 300);
+			when(decoratedChannel.drainResults()).thenReturn(decoratedResults_1.stream(), decoratedResults_2.stream());
+
+			// the first call should drain the replay and call the stubbed method for the first time
+			replayingChannel.drainResults().forEach(ignored -> {
+			});
+			// the second call should return only the result from the stubbed method
+			Stream<Integer> results = replayingChannel.drainResults();
+
+			assertThat(results).containsExactlyElementsOf(decoratedResults_2);
 		}
 
 		@Test
@@ -234,6 +250,22 @@ class ReplayingTaskChannelDecoratorTest {
 			assertThat(errors).containsExactlyElementsOf(concat(errorsToReplay, decoratedErrors));
 			verify(decoratedChannel).drainErrors();
 			verifyNoMoreInteractions(decoratedChannel);
+		}
+
+		@Test
+		@DisplayName("gets errors from replay only once")
+		void drainErrors_resultsGetReplayedOnce() {
+			List<Exception> decoratedErrors_1 = asList(new Exception("A"), new Exception("X"));
+			List<Exception> decoratedErrors_2 = asList(new Exception("ABC"), new Exception("XYZ"));
+			when(decoratedChannel.drainErrors()).thenReturn(decoratedErrors_1.stream(), decoratedErrors_2.stream());
+
+			// the first call should drain the replay and call the stubbed method for the first time
+			replayingChannel.drainErrors().forEach(ignored -> {
+			});
+			// the second call should return only the result from the stubbed method
+			Stream<Exception> results = replayingChannel.drainErrors();
+
+			assertThat(results).containsExactlyElementsOf(decoratedErrors_2);
 		}
 
 	}
