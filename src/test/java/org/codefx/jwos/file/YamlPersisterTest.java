@@ -6,6 +6,7 @@ import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
 import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
+import org.codefx.jwos.artifact.ResolvedProject;
 import org.codefx.jwos.jdeps.dependency.InternalType;
 import org.codefx.jwos.jdeps.dependency.Type;
 import org.codefx.jwos.jdeps.dependency.Violation;
@@ -55,6 +56,23 @@ public class YamlPersisterTest {
 		assertThat(projectAsYaml).startsWith("!failed_project");
 
 		FailedProject loadedProject = persister.readFailedProject(projectAsYaml);
+		assertThat(loadedProject).isEqualTo(project);
+	}
+
+	@Test
+	@DisplayName("can dump and load resolved projects")
+	void persistResolvedProject() {
+		ResolvedProject project = new ResolvedProject(
+				ProjectCoordinates.from("project", "artifact"),
+				of(
+						ArtifactCoordinates.from("project", "artifact", "v1"),
+						ArtifactCoordinates.from("project", "artifact", "v2"))
+		);
+
+		String artifactAsYaml = persister.writeResolvedProject(project);
+		assertThat(artifactAsYaml).startsWith("!resolved_project");
+
+		ResolvedProject loadedProject = persister.readResolvedProject(artifactAsYaml);
 		assertThat(loadedProject).isEqualTo(project);
 	}
 

@@ -7,12 +7,14 @@ import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
 import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
+import org.codefx.jwos.artifact.ResolvedProject;
 import org.codefx.jwos.file.persistence.PersistentAnalyzedArtifact;
 import org.codefx.jwos.file.persistence.PersistentArtifactCoordinates;
 import org.codefx.jwos.file.persistence.PersistentFailedArtifact;
 import org.codefx.jwos.file.persistence.PersistentFailedProject;
 import org.codefx.jwos.file.persistence.PersistentProjectCoordinates;
 import org.codefx.jwos.file.persistence.PersistentResolvedArtifact;
+import org.codefx.jwos.file.persistence.PersistentResolvedProject;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.TypeDescription;
 import org.yaml.snakeyaml.Yaml;
@@ -30,6 +32,7 @@ class YamlPersister {
 	private static final ImmutableSet<TypeDescription> TYPE_DESCRIPTIONS = of(
 			new TypeDescription(PersistentProjectCoordinates.class, "!project"),
 			new TypeDescription(PersistentFailedProject.class, "!failed_project"),
+			new TypeDescription(PersistentResolvedProject.class, "!resolved_project"),
 			new TypeDescription(PersistentArtifactCoordinates.class, "!artifact"),
 			new TypeDescription(PersistentFailedArtifact.class, "!failed_artifact"),
 			new TypeDescription(PersistentResolvedArtifact.class, "!resolved_artifact"),
@@ -82,6 +85,14 @@ class YamlPersister {
 
 	FailedProject readFailedProject(String yamlString) {
 		return read(yamlString, PersistentFailedProject.class, PersistentFailedProject::toProject);
+	}
+
+	String writeResolvedProject(ResolvedProject project) {
+		return write(project, PersistentResolvedProject::from);
+	}
+
+	ResolvedProject readResolvedProject(String yamlString) {
+		return read(yamlString, PersistentResolvedProject.class, PersistentResolvedProject::toProject);
 	}
 
 	// ARTIFACTS
