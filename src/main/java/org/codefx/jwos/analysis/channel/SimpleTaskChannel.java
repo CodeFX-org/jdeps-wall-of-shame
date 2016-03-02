@@ -50,6 +50,12 @@ class SimpleTaskChannel<T, R, E> implements TaskChannel<T,R,E> {
 	}
 
 	@Override
+	public Stream<T> drainTasks() {
+		// create an iterable that empties 'tasks' as it returns elements 
+		return stream(Iterables.consumingIterable(tasks).spliterator(), false);
+	}
+
+	@Override
 	public void sendResult(R result) throws InterruptedException {
 		results.add(result);
 	}

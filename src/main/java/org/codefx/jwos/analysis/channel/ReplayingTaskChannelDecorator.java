@@ -46,6 +46,12 @@ class ReplayingTaskChannelDecorator<T, R, E> extends AbstractTaskChannelDecorato
 	}
 
 	@Override
+	public Stream<T> drainTasks() {
+		Stream<T> drainReplay = stream(Iterables.consumingIterable(tasksToReplay).spliterator(), false);
+		return concat(drainReplay, super.drainTasks());
+	}
+
+	@Override
 	public Stream<R> drainResults() {
 		Stream<R> drainReplay = stream(Iterables.consumingIterable(resultsToReplay).spliterator(), false);
 		return concat(drainReplay, super.drainResults());

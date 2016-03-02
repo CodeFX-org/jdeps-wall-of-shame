@@ -77,6 +77,8 @@ public interface TaskChannel<T, R, E> {
 
 	T getTask() throws InterruptedException;
 
+	Stream<T> drainTasks();
+
 	void sendResult(R result) throws InterruptedException;
 
 	Stream<R> drainResults();

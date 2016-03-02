@@ -34,6 +34,11 @@ abstract class AbstractTaskChannelDecorator<T, R, E> implements TaskChannel<T, R
 	}
 
 	@Override
+	public Stream<T> drainTasks() {
+		return decoratedChannel.drainTasks();
+	}
+
+	@Override
 	public void sendResult(R result) throws InterruptedException {
 		decoratedChannel.sendResult(result);
 	}
