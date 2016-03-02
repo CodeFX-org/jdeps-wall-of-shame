@@ -2,6 +2,7 @@ package org.codefx.jwos.file;// NOT_PUBLISHED
 
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.jdeps.dependency.InternalType;
 import org.codefx.jwos.jdeps.dependency.Type;
@@ -26,6 +27,21 @@ public class YamlPersisterTest {
 		persister = new YamlPersister();
 	}
 
+	// PROJECTS
+
+	@Test
+	@DisplayName("can dump and load projects")
+	void persistProject() {
+		ProjectCoordinates project = ProjectCoordinates.from("org.group", "theProject");
+
+		String artifactAsYaml = persister.writeProject(project);
+		ProjectCoordinates loadedProject = persister.readProject(artifactAsYaml);
+
+		assertThat(loadedProject).isEqualTo(project);
+	}
+
+	// ARTIFACTS
+	
 	@Test
 	@DisplayName("can dump and load artifacts")
 	void persistArtifact() {
