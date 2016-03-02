@@ -2,6 +2,7 @@ package org.codefx.jwos.file;// NOT_PUBLISHED
 
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.jdeps.dependency.InternalType;
@@ -41,7 +42,7 @@ public class YamlPersisterTest {
 	}
 
 	// ARTIFACTS
-	
+
 	@Test
 	@DisplayName("can dump and load artifacts")
 	void persistArtifact() {
@@ -49,6 +50,20 @@ public class YamlPersisterTest {
 
 		String artifactAsYaml = persister.writeArtifact(artifact);
 		ArtifactCoordinates loadedArtifact = persister.readArtifact(artifactAsYaml);
+
+		assertThat(loadedArtifact).isEqualTo(artifact);
+	}
+
+	@Test
+	@DisplayName("can dump and load failed artifacts")
+	void persistFailedArtifact() {
+		FailedArtifact artifact = new FailedArtifact(
+				ArtifactCoordinates.from("org.group", "theArtifact", "v1.Foo"),
+				new Exception("error message")
+		);
+
+		String artifactAsYaml = persister.writeFailedArtifact(artifact);
+		FailedArtifact loadedArtifact = persister.readFailedArtifact(artifactAsYaml);
 
 		assertThat(loadedArtifact).isEqualTo(artifact);
 	}

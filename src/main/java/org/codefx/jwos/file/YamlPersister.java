@@ -2,10 +2,12 @@ package org.codefx.jwos.file;// NOT_PUBLISHED
 
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.file.persistence.PersistentAnalyzedArtifact;
 import org.codefx.jwos.file.persistence.PersistentArtifactCoordinates;
+import org.codefx.jwos.file.persistence.PersistentFailedArtifact;
 import org.codefx.jwos.file.persistence.PersistentProjectCoordinates;
 import org.codefx.jwos.file.persistence.PersistentResolvedArtifact;
 import org.yaml.snakeyaml.DumperOptions;
@@ -24,6 +26,8 @@ class YamlPersister {
 			new TypeDescription(PersistentProjectCoordinates.class, "!project");
 	private static final TypeDescription ARTIFACT_TD =
 			new TypeDescription(PersistentArtifactCoordinates.class, "!artifact");
+	private static final TypeDescription FAILED_ARTIFACT_TD =
+			new TypeDescription(PersistentFailedArtifact.class, "!failed_artifact");
 	private static final TypeDescription RESOLVED_ARTIFACT_TD =
 			new TypeDescription(PersistentResolvedArtifact.class, "!resolved_artifact");
 	private static final TypeDescription ANALYZED_ARTIFACT_TD =
@@ -39,6 +43,7 @@ class YamlPersister {
 		Representer representer = new Representer();
 		representer.addClassTag(PROJECT_TD.getType(), PROJECT_TD.getTag());
 		representer.addClassTag(ARTIFACT_TD.getType(), ARTIFACT_TD.getTag());
+		representer.addClassTag(FAILED_ARTIFACT_TD.getType(), FAILED_ARTIFACT_TD.getTag());
 		representer.addClassTag(RESOLVED_ARTIFACT_TD.getType(), RESOLVED_ARTIFACT_TD.getTag());
 		representer.addClassTag(ANALYZED_ARTIFACT_TD.getType(), ANALYZED_ARTIFACT_TD.getTag());
 		return representer;
@@ -59,6 +64,7 @@ class YamlPersister {
 		Constructor constructor = new Constructor();
 		constructor.addTypeDescription(PROJECT_TD);
 		constructor.addTypeDescription(ARTIFACT_TD);
+		constructor.addTypeDescription(FAILED_ARTIFACT_TD);
 		constructor.addTypeDescription(RESOLVED_ARTIFACT_TD);
 		constructor.addTypeDescription(ANALYZED_ARTIFACT_TD);
 		return constructor;
@@ -75,13 +81,21 @@ class YamlPersister {
 	}
 
 	// ARTIFACTS
-	
+
 	String writeArtifact(ArtifactCoordinates artifact) {
 		return write(artifact, PersistentArtifactCoordinates::from);
 	}
 
 	ArtifactCoordinates readArtifact(String yamlString) {
 		return read(yamlString, PersistentArtifactCoordinates.class, PersistentArtifactCoordinates::toArtifact);
+	}
+
+	String writeFailedArtifact(FailedArtifact artifact) {
+		return write(artifact, PersistentFailedArtifact::from);
+	}
+
+	FailedArtifact readFailedArtifact(String yamlString) {
+		return read(yamlString, PersistentFailedArtifact.class, PersistentFailedArtifact::toArtifact);
 	}
 
 	String writeResolvedArtifact(ResolvedArtifact artifact) {
