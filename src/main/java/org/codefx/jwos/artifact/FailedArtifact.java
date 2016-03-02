@@ -1,5 +1,7 @@
 package org.codefx.jwos.artifact;
 
+import java.util.Objects;
+
 import static java.util.Objects.requireNonNull;
 
 /**
@@ -30,8 +32,22 @@ public final class FailedArtifact implements IdentifiesArtifactTask<Exception> {
 	}
 
 	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		FailedArtifact that = (FailedArtifact) o;
+		return Objects.equals(artifact, that.artifact) &&
+				Objects.equals(error.getMessage(), that.error.getMessage());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(artifact, error.getMessage());
+	}
+
+	@Override
 	public String toString() {
-		return artifact + " (failed: " + error + ")";
+		return artifact + " (failed: " + error.getMessage() + ")";
 	}
 
 }
