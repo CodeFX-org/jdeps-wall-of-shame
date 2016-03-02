@@ -20,13 +20,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.nio.file.Path;
-import java.util.Collection;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 import static java.lang.String.format;
-import static java.util.Collections.emptySet;
+import static java.util.Objects.requireNonNull;
 import static java.util.stream.Stream.concat;
 import static java.util.stream.Stream.of;
 import static org.codefx.jwos.Util.toImmutableSet;
@@ -51,32 +50,17 @@ public class AnalysisTaskManager {
 	private static final String CHANNEL_STATUS_MESSAGE_FORMAT = " - %5d are waiting for %s";
 
 	private final AnalysisGraph state;
-
-	private final TaskChannel<Void, ProjectCoordinates, Exception> addProject;
-	private final TaskChannel<ProjectCoordinates, ResolvedProject, FailedProject> resolveVersions;
-	private final TaskChannel<ArtifactCoordinates, DownloadedArtifact, FailedArtifact> download;
-	private final TaskChannel<DownloadedArtifact, AnalyzedArtifact, FailedArtifact> analyze;
-	private final TaskChannel<ArtifactCoordinates, ResolvedArtifact, FailedArtifact> resolveDependencies;
-	private final TaskChannel<DeeplyAnalyzedArtifact, Void, Void> outputResults;
-
+	private final AnalysisTaskChannels channels;
 	private final Bookkeeping bookkeeping;
 
-	public AnalysisTaskManager(
-			Collection<ProjectCoordinates> resolvedProjects, Collection<DeeplyAnalyzedArtifact> analyzedArtifacts) {
-		state = new AnalysisGraph(resolvedProjects, analyzedArtifacts);
-
-		addProject = TaskChannel.namedAndUnbounded("add project");
-		resolveVersions = TaskChannel.namedAndUnbounded("version resolution");
-		download = TaskChannel.namedAndUnbounded("download");
-		analyze = TaskChannel.namedAndUnbounded("analysis");
-		resolveDependencies = TaskChannel.namedAndUnbounded("dependency resolution");
-		outputResults = TaskChannel.namedAndUnbounded("output");
-
-		bookkeeping = new Bookkeeping();
+	public AnalysisTaskManager(AnalysisTaskChannels channels) {
+		this.state = new AnalysisGraph();
+		this.channels = requireNonNull(channels, "The argument 'channels' must not be null.");
+		this.bookkeeping = new Bookkeeping();
 	}
-
+	
 	public AnalysisTaskManager() {
-		this(emptySet(), emptySet());
+		this(new SimpleAnalysisTaskChannels());
 	}
 
 	/**
@@ -117,7 +101,7 @@ public class AnalysisTaskManager {
 	}
 
 	private void queueTasksForProjectNode(ProjectNode node) {
-		queueTaskForProjectNode(node, ProjectNode::resolution, resolveVersions);
+		queueTaskForProjectNode(node, ProjectNode::resolution, channels.resolveVersions());
 	}
 
 	private static void queueTaskForProjectNode(
@@ -133,9 +117,9 @@ public class AnalysisTaskManager {
 	}
 
 	private void queueTasksForArtifactNode(ArtifactNode node) {
-		queueTaskForArtifactNode(node, ArtifactNode::download, download);
-		queueAnalysisTaskForArtifactNode(node, analyze);
-		queueTaskForArtifactNode(node, ArtifactNode::resolution, resolveDependencies);
+		queueTaskForArtifactNode(node, ArtifactNode::download, channels.downloadArtifacts());
+		queueAnalysisTaskForArtifactNode(node, channels.analyzeArtifacts());
+		queueTaskForArtifactNode(node, ArtifactNode::resolution, channels.resolveDependencies());
 	}
 
 	private static void queueTaskForArtifactNode(
@@ -166,14 +150,14 @@ public class AnalysisTaskManager {
 	private void processAnswers() {
 		processAnswersFromNewProjects();
 		processAnswersFromResolvedProjects();
-		processAnswersFromChannel(download, state::downloadOf);
-		processAnswersFromChannel(analyze, state::analysisOf);
-		processAnswersFromChannel(resolveDependencies, state::dependencyResolutionOf);
+		processAnswersFromChannel(channels.downloadArtifacts(), state::downloadOf);
+		processAnswersFromChannel(channels.analyzeArtifacts(), state::analysisOf);
+		processAnswersFromChannel(channels.resolveDependencies(), state::dependencyResolutionOf);
 	}
 
 	private void processAnswersFromNewProjects() {
-		addProject.drainResults().forEach(this::processSuccessOfProjectDiscovery);
-		addProject.drainErrors().forEach(this::processFailureOfProjectDiscovery);
+		channels.addProjects().drainResults().forEach(this::processSuccessOfProjectDiscovery);
+		channels.addProjects().drainErrors().forEach(this::processFailureOfProjectDiscovery);
 	}
 
 	private void processSuccessOfProjectDiscovery(ProjectCoordinates project) {
@@ -186,17 +170,17 @@ public class AnalysisTaskManager {
 	}
 
 	private void processAnswersFromResolvedProjects() {
-		resolveVersions.drainResults().forEach(this::processSuccessOfVersionResolution);
-		resolveVersions.drainErrors().forEach(this::processFailureOfVersionResolution);
+		channels.resolveVersions().drainResults().forEach(this::processSuccessOfVersionResolution);
+		channels.resolveVersions().drainErrors().forEach(this::processFailureOfVersionResolution);
 	}
 
 	private void processSuccessOfVersionResolution(ResolvedProject project) {
-		TASKS_LOGGER.debug("Storing {} result for {}.", resolveVersions.taskName(), project.coordinates());
+		TASKS_LOGGER.debug("Storing {} result for {}.", channels.resolveVersions().taskName(), project.coordinates());
 		state.versionResolutionOf(project).succeeded(project.result());
 	}
 
 	private void processFailureOfVersionResolution(FailedProject project) {
-		TASKS_LOGGER.debug("Storing {} failure for {}.", resolveVersions.taskName(), project.coordinates());
+		TASKS_LOGGER.debug("Storing {} failure for {}.", channels.resolveVersions().taskName(), project.coordinates());
 		state.versionResolutionOf(project).failed(project.error());
 	}
 
@@ -227,7 +211,7 @@ public class AnalysisTaskManager {
 
 	private void finishDeepAnalysisAndQueueResults() {
 		finishDeepAnalysisRecursively(state.artifactNodes())
-				.forEach(outputResults::sendTask);
+				.forEach(channels.outputResults()::sendTask);
 	}
 
 	private static Stream<DeeplyAnalyzedArtifact> finishDeepAnalysisRecursively(Stream<ArtifactNode> nodes) {
@@ -307,72 +291,72 @@ public class AnalysisTaskManager {
 	}
 
 	public void addProject(ProjectCoordinates project) throws InterruptedException {
-		addProject.sendResult(project);
+		channels.addProjects().sendResult(project);
 	}
 
 	public void findingProjectFailed(Exception error) throws InterruptedException {
-		addProject.sendError(error);
+		channels.addProjects().sendError(error);
 	}
 
 	public ProjectCoordinates getNextToResolveVersions() throws InterruptedException {
-		return getTaskAndStart(resolveVersions, state::versionResolutionOf, ProjectCoordinates::coordinates);
+		return getTaskAndStart(channels.resolveVersions(), state::versionResolutionOf, ProjectCoordinates::coordinates);
 	}
 
 	public void resolvedVersions(ResolvedProject project) throws InterruptedException {
 		TASKS_LOGGER.debug("Version resolution for {} succeeded: {}", project.coordinates(), project.versions());
-		resolveVersions.sendResult(project);
+		channels.resolveVersions().sendResult(project);
 	}
 
 	public void versionResolutionFailed(FailedProject project) throws InterruptedException {
 		TASKS_LOGGER.warn("Version resolution for {} failed: {}", project.coordinates(), project.error().toString());
-		resolveVersions.sendError(project);
+		channels.resolveVersions().sendError(project);
 	}
 
 	public ArtifactCoordinates getNextToDownload() throws InterruptedException {
-		return getArtifactTaskAndStart(download, state::downloadOf);
+		return getArtifactTaskAndStart(channels.downloadArtifacts(), state::downloadOf);
 	}
 
 	public void downloaded(DownloadedArtifact artifact) throws InterruptedException {
 		TASKS_LOGGER.debug("Download for {} succeeded: {}", artifact.coordinates(), artifact.path());
-		download.sendResult(artifact);
+		channels.downloadArtifacts().sendResult(artifact);
 	}
 
 	public void downloadFailed(FailedArtifact artifact) throws InterruptedException {
 		TASKS_LOGGER.warn("Download for {} failed: {}", artifact.coordinates(), artifact.error().toString());
-		download.sendError(artifact);
+		channels.downloadArtifacts().sendError(artifact);
 	}
 
 	public DownloadedArtifact getNextToAnalyze() throws InterruptedException {
-		return getArtifactTaskAndStart(analyze, state::analysisOf);
+		return getArtifactTaskAndStart(channels.analyzeArtifacts(), state::analysisOf);
 	}
 
 	public void analyzed(AnalyzedArtifact artifact) throws InterruptedException {
 		TASKS_LOGGER.debug("Analysis for {} succeeded: {}", artifact.coordinates(), artifact.violations());
-		analyze.sendResult(artifact);
+		channels.analyzeArtifacts().sendResult(artifact);
 	}
 
 	public void analysisFailed(FailedArtifact artifact) throws InterruptedException {
 		TASKS_LOGGER.warn("Analysis for {} failed: {}", artifact.coordinates(), artifact.error().toString());
-		analyze.sendError(artifact);
+		channels.analyzeArtifacts().sendError(artifact);
 	}
 
 	public ArtifactCoordinates getNextToResolveDependencies() throws InterruptedException {
-		return getArtifactTaskAndStart(resolveDependencies, state::dependencyResolutionOf);
+		return getArtifactTaskAndStart(channels.resolveDependencies(), state::dependencyResolutionOf);
 	}
 
 	public void resolvedDependencies(ResolvedArtifact artifact) throws InterruptedException {
 		TASKS_LOGGER.debug("Dependency resolution for {} succeeded: {}", artifact.coordinates(), artifact.dependees());
-		resolveDependencies.sendResult(artifact);
+		channels.resolveDependencies().sendResult(artifact);
 	}
 
 	public void dependencyResolutionFailed(FailedArtifact artifact) throws InterruptedException {
 		TASKS_LOGGER
 				.warn("Dependency resolution for {} failed: {}", artifact.coordinates(), artifact.error().toString());
-		resolveDependencies.sendError(artifact);
+		channels.resolveDependencies().sendError(artifact);
 	}
 
 	public DeeplyAnalyzedArtifact getNextToOutput() throws InterruptedException {
-		return getArtifactTaskAndStart(outputResults, state::outputOf);
+		return getArtifactTaskAndStart(channels.outputResults(), state::outputOf);
 	}
 
 	/**
@@ -421,12 +405,12 @@ public class AnalysisTaskManager {
 					+ logGraphSize(state.projectNodes(), "projects")
 					+ logGraphSize(state.artifactNodes(), "artifacts")
 					+ "Waiting tasks:\n"
-					+ logQueueSize(addProject)
-					+ logQueueSize(resolveVersions)
-					+ logQueueSize(download)
-					+ logQueueSize(analyze)
-					+ logQueueSize(resolveDependencies)
-					+ logQueueSize(outputResults);
+					+ logQueueSize(channels.addProjects())
+					+ logQueueSize(channels.resolveVersions())
+					+ logQueueSize(channels.downloadArtifacts())
+					+ logQueueSize(channels.analyzeArtifacts())
+					+ logQueueSize(channels.resolveDependencies())
+					+ logQueueSize(channels.outputResults());
 			THREAD_LOGGER.info(message);
 			runsToNextLog = QUEUE_SIZE_LOG_INTERVAL;
 		}

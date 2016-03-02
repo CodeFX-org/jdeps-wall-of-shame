@@ -40,7 +40,7 @@ import static java.util.stream.Collectors.toSet;
  * Puts the pieces together:
  * <ul>
  *     <li>projects are read from a {@link ProjectListFile}
- *     <li>project versions identified with {@link MavenCentral} and used to create artifact coordinates
+ *     <li>project versions are identified with {@link MavenCentral} and used to create artifact coordinates
  *     <li>artifacts are downloaded (with {@code MavenCentral}) and analysed (with {@link JDeps})
  *     <li>an artifact's dependees (the artifacts on which it depends) are resolved (with {@code MavenCentral})
  *     so they (and all other versions of the same project) can be analysed as well
@@ -58,9 +58,7 @@ public class Main {
 	private static final Logger LOGGER = LoggerFactory.getLogger("Main");
 
 	public static void main(String[] args) throws IOException {
-		ResultFile resultFile = ResultFile.read(Util.getPathToResourceFile(Util.RESULT_FILE_NAME));
-
-		AnalysisTaskManager taskManager = createAnalysisTaskManager(resultFile);
+		AnalysisTaskManager taskManager = new AnalysisTaskManager();
 		MavenCentral maven = new MavenCentral(Util.LOCAL_MAVEN_REPOSITORY.toString());
 		JDeps jdeps = new JDeps();
 
@@ -70,22 +68,11 @@ public class Main {
 						createComputationsTo(resolveProjectVersions(taskManager, maven), 1),
 						createComputationsTo(downloadArtifact(taskManager, maven), 2),
 						createComputationsTo(analyzeArtifact(taskManager, jdeps), 2),
-						createComputationsTo(resolveArtifactDependees(taskManager, maven), 3),
-						createComputationsTo(outputResults(taskManager, resultFile), 1))
+						createComputationsTo(resolveArtifactDependees(taskManager, maven), 3))
 				.flatMap(identity())
 				.map(ComputationThread::new)
 				.forEach(Thread::start);
 		new Thread(taskManager::manageQueues, "Manage Queue").run();
-	}
-
-	private static AnalysisTaskManager createAnalysisTaskManager(ResultFile previousResults) {
-		Set<ProjectCoordinates> resolvedProjects = ASSUME_ALL_PROJECTS_FROM_PREVIOUS_RESULTS_ARE_RESOLVED
-				? getProjects(previousResults)
-				: emptySet();
-		Set<DeeplyAnalyzedArtifact> analyzedArtifacts = USE_ARTIFACTS_FROM_PREVIOUS_RESULTS
-				? previousResults.analyzedArtifactsUnmodifiable()
-				: emptySet();
-		return new AnalysisTaskManager(resolvedProjects, analyzedArtifacts);
 	}
 
 	private static Set<ProjectCoordinates> getProjects(ResultFile previousResults) {
