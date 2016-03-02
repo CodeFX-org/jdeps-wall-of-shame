@@ -8,6 +8,7 @@ import org.codefx.jwos.artifact.FailedProject;
 import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.artifact.ResolvedProject;
+import org.codefx.jwos.file.persistence.PersistentAnalysis;
 import org.codefx.jwos.file.persistence.PersistentAnalyzedArtifact;
 import org.codefx.jwos.file.persistence.PersistentArtifactCoordinates;
 import org.codefx.jwos.file.persistence.PersistentFailedArtifact;
@@ -27,9 +28,8 @@ import static com.google.common.collect.ImmutableSet.of;
 
 class YamlPersister {
 
-	// TD = Type Description
-
 	private static final ImmutableSet<TypeDescription> TYPE_DESCRIPTIONS = of(
+			new TypeDescription(PersistentAnalysis.class, "!analysis"),
 			new TypeDescription(PersistentProjectCoordinates.class, "!project"),
 			new TypeDescription(PersistentFailedProject.class, "!failed_project"),
 			new TypeDescription(PersistentResolvedProject.class, "!resolved_project"),
@@ -41,7 +41,7 @@ class YamlPersister {
 
 	private final Representer representer;
 
-	YamlPersister() {
+	public YamlPersister() {
 		representer = createRepresenter();
 	}
 
@@ -52,15 +52,18 @@ class YamlPersister {
 		return representer;
 	}
 
-	private <T, P> String write(T element, Function<T, P> persistentWrapper) {
-		return new Yaml(representer).dump(persistentWrapper.apply(element));
+	public <P> String write(P persistentElement) {
+		return new Yaml(representer).dump(persistentElement);
 	}
 
-	private <P, T> T read(String yamlString, Class<P> persistenceType, Function<P, T> persistentUnwrapper) {
+	private <T, P> String write(T element, Function<T, P> persistentWrapper) {
+		return write(persistentWrapper.apply(element));
+	}
+
+	public <P> P read(String yamlString, Class<P> persistenceType) {
 		Constructor constructor = createConstructorWithTypeDescriptors();
 		Yaml yaml = new Yaml(constructor, representer, new DumperOptions());
-		P loaded = yaml.loadAs(yamlString, persistenceType);
-		return persistentUnwrapper.apply(loaded);
+		return yaml.loadAs(yamlString, persistenceType);
 	}
 
 	private Constructor createConstructorWithTypeDescriptors() {
@@ -69,6 +72,11 @@ class YamlPersister {
 		return constructor;
 	}
 
+	private <P, T> T read(String yamlString, Class<P> persistenceType, Function<P, T> persistentUnwrapper) {
+		P loaded = read(yamlString, persistenceType);
+		return persistentUnwrapper.apply(loaded);
+	}
+	
 	// PROJECTS
 
 	String writeProject(ProjectCoordinates project) {

@@ -13,15 +13,12 @@ import org.codefx.jwos.jdeps.dependency.Violation;
 import org.junit.gen5.api.BeforeEach;
 import org.junit.gen5.api.DisplayName;
 import org.junit.gen5.api.Test;
-import org.junit.gen5.junit4.runner.JUnit5;
-import org.junit.runner.RunWith;
 
 import static com.google.common.collect.ImmutableSet.of;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("YAML persister")
-@RunWith(JUnit5.class)
-public class YamlPersisterTest {
+class YamlPersisterTest {
 
 	private YamlPersister persister;
 

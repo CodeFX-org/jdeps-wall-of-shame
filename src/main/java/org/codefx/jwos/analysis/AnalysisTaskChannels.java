@@ -14,7 +14,7 @@ import org.codefx.jwos.artifact.ResolvedProject;
 /**
  * A collection of all channels used by the analysis.
  */
-public interface AnalysisTaskChannels {
+interface AnalysisTaskChannels {
 	
 	TaskChannel<Void, ProjectCoordinates, Exception> addProjects();
 

@@ -53,10 +53,14 @@ public class AnalysisTaskManager {
 	private final AnalysisTaskChannels channels;
 	private final Bookkeeping bookkeeping;
 
-	public AnalysisTaskManager(AnalysisTaskChannels channels) {
+	private AnalysisTaskManager(AnalysisTaskChannels channels) {
 		this.state = new AnalysisGraph();
 		this.channels = requireNonNull(channels, "The argument 'channels' must not be null.");
 		this.bookkeeping = new Bookkeeping();
+	}
+
+	public AnalysisTaskManager(AnalysisPersistence persistence) {
+		this(new PersistenceAnalysisTaskChannels(persistence));
 	}
 	
 	public AnalysisTaskManager() {
@@ -267,6 +271,13 @@ public class AnalysisTaskManager {
 			return MarkInternalDependencies.DIRECT;
 	}
 
+	// UPDATE PERSISTENCE
+
+	private void updatePersistence() {
+		if (channels instanceof PersistenceAnalysisTaskChannels)
+			((PersistenceAnalysisTaskChannels) channels).updatePersistence();
+	}
+
 	// QUERY & UPDATE
 
 	// all of this could be replaced by creating an outward facing front for channels and exposing them;
@@ -381,6 +392,7 @@ public class AnalysisTaskManager {
 
 			while (!aborted) {
 				updateState();
+				updatePersistence();
 				maybeLogGraphAndQueueSizes();
 				sleepAndAbortWhenInterrupted();
 			}

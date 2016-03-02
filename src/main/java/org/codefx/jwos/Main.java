@@ -3,7 +3,6 @@ package org.codefx.jwos;
 import org.codefx.jwos.analysis.AnalysisTaskManager;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
-import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
@@ -12,29 +11,29 @@ import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.artifact.ResolvedProject;
 import org.codefx.jwos.computation.Computation;
 import org.codefx.jwos.computation.ComputationThread;
+import org.codefx.jwos.computation.RecurrentComputation;
 import org.codefx.jwos.computation.SendError;
 import org.codefx.jwos.computation.SendResult;
 import org.codefx.jwos.computation.TaskComputation;
-import org.codefx.jwos.computation.TaskSink;
 import org.codefx.jwos.computation.TaskSource;
 import org.codefx.jwos.discovery.ProjectListFile;
-import org.codefx.jwos.file.ResultFile;
+import org.codefx.jwos.file.YamlAnalysisPersistence;
 import org.codefx.jwos.jdeps.JDeps;
 import org.codefx.jwos.maven.MavenCentral;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static java.util.Collections.emptySet;
+import static java.util.Collections.singleton;
 import static java.util.function.Function.identity;
-import static java.util.stream.Collectors.toSet;
+import static java.util.stream.Collectors.joining;
 
 /**
  * Puts the pieces together:
@@ -44,7 +43,7 @@ import static java.util.stream.Collectors.toSet;
  *     <li>artifacts are downloaded (with {@code MavenCentral}) and analysed (with {@link JDeps})
  *     <li>an artifact's dependees (the artifacts on which it depends) are resolved (with {@code MavenCentral})
  *     so they (and all other versions of the same project) can be analysed as well
- *     <li>results are written to a {@link ResultFile} and the {@link WallOfShame}
+ *     <li>results are written to the {@link WallOfShame}
  * </ul>
  * All of these steps are called tasks and centrally managed by the {@link AnalysisTaskManager}. All that is needed
  * here is to get the tasks, hand them to the classes mentioned above, and send results and errors back to the task
@@ -58,7 +57,9 @@ public class Main {
 	private static final Logger LOGGER = LoggerFactory.getLogger("Main");
 
 	public static void main(String[] args) throws IOException {
-		AnalysisTaskManager taskManager = new AnalysisTaskManager();
+		Path resultFile = Util.getPathToExistingResourceFile(Util.RESULT_FILE_NAME);
+		YamlAnalysisPersistence persistence = createYamlPersistence(resultFile);
+		AnalysisTaskManager taskManager = new AnalysisTaskManager(persistence);
 		MavenCentral maven = new MavenCentral(Util.LOCAL_MAVEN_REPOSITORY.toString());
 		JDeps jdeps = new JDeps();
 
@@ -68,18 +69,17 @@ public class Main {
 						createComputationsTo(resolveProjectVersions(taskManager, maven), 1),
 						createComputationsTo(downloadArtifact(taskManager, maven), 2),
 						createComputationsTo(analyzeArtifact(taskManager, jdeps), 2),
-						createComputationsTo(resolveArtifactDependees(taskManager, maven), 3))
+						createComputationsTo(resolveArtifactDependees(taskManager, maven), 3),
+						createComputationsTo(writeToYaml(persistence, resultFile), 1))
 				.flatMap(identity())
 				.map(ComputationThread::new)
 				.forEach(Thread::start);
 		new Thread(taskManager::manageQueues, "Manage Queue").run();
 	}
 
-	private static Set<ProjectCoordinates> getProjects(ResultFile previousResults) {
-		return previousResults
-				.analyzedArtifactsUnmodifiable().stream()
-				.map(artifact -> artifact.coordinates().project())
-				.collect(toSet());
+	private static YamlAnalysisPersistence createYamlPersistence(Path resultFile) throws IOException {
+		String yamlString = Files.lines(resultFile).collect(joining("\n"));
+		return YamlAnalysisPersistence.fromString(yamlString);
 	}
 
 	private static Stream<Computation> createComputationsToReadProjectFiles(AnalysisTaskManager taskManager) {
@@ -94,7 +94,7 @@ public class Main {
 			String fileName,
 			AnalysisTaskManager taskManager) {
 		try {
-			Path file = Util.getPathToResourceFile(fileName);
+			Path file = Util.getPathToExistingResourceFile(fileName);
 			ProjectListFile listFile = new ProjectListFile(file).open();
 			Computation computation = new TaskSource<>(
 					"Read Project File",
@@ -155,18 +155,30 @@ public class Main {
 				sendArtifactError(taskManager::dependencyResolutionFailed));
 	}
 
-	private static TaskSink<DeeplyAnalyzedArtifact> outputResults(
-			AnalysisTaskManager taskManager, ResultFile resultFile) {
-		return new TaskSink<>(
-				"Output Results",
-				taskManager::getNextToOutput,
-				artifact -> {
-					resultFile.addArtifacts(artifact);
-					resultFile.write();
-					return null;
+	private static Computation writeToYaml(
+			YamlAnalysisPersistence persistence,
+			Path resultFile) {
+		return new RecurrentComputation(
+				"Write Results To YAML",
+				() -> {
+					String yamlString = persistence.toYaml();
+					Files.write(resultFile, singleton(yamlString));
 				},
-				(artifact, error) -> LOGGER.error("Failed to write result '" + artifact.coordinates() + "'.", error));
+				200);
 	}
+
+//	private static TaskSink<DeeplyAnalyzedArtifact> outputResults(
+//			AnalysisTaskManager taskManager, ResultFile resultFile) {
+//		return new TaskSink<>(
+//				"Output Results",
+//				taskManager::getNextToOutput,
+//				artifact -> {
+//					resultFile.addArtifacts(artifact);
+//					resultFile.write();
+//					return null;
+//				},
+//				(artifact, error) -> LOGGER.error("Failed to write result '" + artifact.coordinates() + "'.", error));
+//	}
 
 	private static SendError<ProjectCoordinates> sendProjectError(SendResult<FailedProject> sendFailedProject) {
 		return (ProjectCoordinates project, Exception error) -> {

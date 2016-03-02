@@ -14,7 +14,7 @@ import org.codefx.jwos.artifact.ResolvedProject;
 /**
  * A basic collection of task channels that do nothing fancy.
  */
-public class SimpleAnalysisTaskChannels implements AnalysisTaskChannels {
+class SimpleAnalysisTaskChannels implements AnalysisTaskChannels {
 
 	private final TaskChannel<Void, ProjectCoordinates, Exception> addProjects;
 	private final TaskChannel<ProjectCoordinates, ResolvedProject, FailedProject> resolveVersions;

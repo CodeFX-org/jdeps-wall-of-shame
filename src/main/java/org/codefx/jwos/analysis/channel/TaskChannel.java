@@ -40,7 +40,10 @@ public interface TaskChannel<T, R, E> {
 	}
 
 	/**
-	 * Creates a new channel that replays the specified tasks, results, and errors before querying this channel. 
+	 * Creates a new channel that replays the specified tasks, results, and errors before querying this channel.
+	 * <p>
+	 * Items that are send to the new channel are forwarded to this channel but will only be visible after the
+	 * replay is exhausted.
 	 */
 	default TaskChannel<T, R, E> replaying(Collection<T> tasks, Collection<R> results, Collection<E> errors) {
 		return new ReplayingTaskChannelDecorator<>(this, tasks, results, errors);
@@ -48,6 +51,9 @@ public interface TaskChannel<T, R, E> {
 
 	/**
 	 * Creates a new channel that replays the specified results and errors before querying this channel. 
+	 * <p>
+	 * Items that are send to the new channel are forwarded to this channel but will only be visible after the
+	 * replay is exhausted.
 	 */
 	default TaskChannel<T, R, E> replaying(Collection<R> results, Collection<E> errors) {
 		return new ReplayingTaskChannelDecorator<>(this, emptySet(), results, errors);
