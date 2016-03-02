@@ -2,6 +2,8 @@ package org.codefx.jwos.artifact;
 
 import com.google.common.collect.ImmutableSet;
 
+import java.util.Objects;
+
 import static java.util.Objects.requireNonNull;
 
 /**
@@ -29,6 +31,22 @@ public final class ResolvedArtifact implements IdentifiesArtifactTask<ImmutableS
 
 	public ImmutableSet<ArtifactCoordinates> dependees() {
 		return dependees;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		ResolvedArtifact that = (ResolvedArtifact) o;
+		return Objects.equals(artifact, that.artifact)
+				&& Objects.equals(dependees, that.dependees);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(artifact, dependees);
 	}
 
 	@Override

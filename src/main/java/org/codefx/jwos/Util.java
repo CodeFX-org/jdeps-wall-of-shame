@@ -5,11 +5,15 @@ import com.google.common.collect.ImmutableSet;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import static java.lang.String.format;
+import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 
 public class Util {
@@ -25,16 +29,37 @@ public class Util {
 	public static final String GIT_EMAIL = "nipa@codefx.org";
 	public static final String GIT_PASSWORD = "********";
 
-	public static Path getPathToResourceFile(String fileName) {
+	public static Path getPathToExistingResourceFile(String fileName) {
+		return getPathToResourceFile(fileName)
+				.orElseThrow(() -> new IllegalArgumentException(format("No resource file '%s' was found.", fileName)));
+	}
+
+	public static Optional<Path> getPathToResourceFile(String fileName) {
 		return Optional
 				.ofNullable(Util.class.getClassLoader().getResource(fileName))
 				.map(URL::getPath)
-				.map(Paths::get)
-				.orElseThrow(() -> new IllegalArgumentException(format("No resource file '%s' was found.", fileName)));
+				.map(Paths::get);
 	}
 
 	public static <T> Collector<T, ?, ImmutableSet<T>> toImmutableSet() {
 		// TODO create more performant implementation using the builder
 		return Collectors.collectingAndThen(toSet(), ImmutableSet::copyOf);
+	}
+
+	public static <P, T> List<P> transformToList(Collection<T> collection, Function<T, P> transform) {
+		return transform(collection, transform, toList());
+	}
+
+	public static <P, T> ImmutableSet<P> transformToImmutableSet(Collection<T> collection, Function<T, P> transform) {
+		return transform(collection, transform, toImmutableSet());
+	}
+
+	public static <P, T, C extends Collection<P>> C transform(
+			Collection<T> collection,
+			Function<T, P> transform,
+			Collector<P, ?, C> collector) {
+		return collection.stream()
+				.map(transform)
+				.collect(collector);
 	}
 }

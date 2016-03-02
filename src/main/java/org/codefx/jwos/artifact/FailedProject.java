@@ -1,5 +1,7 @@
 package org.codefx.jwos.artifact;
 
+import java.util.Objects;
+
 import static java.util.Objects.requireNonNull;
 
 /**
@@ -27,6 +29,20 @@ public final class FailedProject implements IdentifiesProjectTask<Exception> {
 
 	public Exception error() {
 		return error;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		FailedProject that = (FailedProject) o;
+		return Objects.equals(project, that.project) &&
+				Objects.equals(error.getMessage(), that.error.getMessage());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(project, error.getMessage());
 	}
 
 	@Override
