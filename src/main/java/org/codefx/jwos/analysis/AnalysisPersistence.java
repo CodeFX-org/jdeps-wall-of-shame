@@ -1,6 +1,7 @@
 package org.codefx.jwos.analysis;// NOT_PUBLISHED
 
 import org.codefx.jwos.artifact.AnalyzedArtifact;
+import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
 import org.codefx.jwos.artifact.ProjectCoordinates;
@@ -55,5 +56,7 @@ public interface AnalysisPersistence {
 	void addResolvedArtifact(ResolvedArtifact artifact);
 
 	void addArtifactResolutionFailure(FailedArtifact artifact);
+
+	void addResult(DeeplyAnalyzedArtifact deeplyAnalyzedArtifact);
 
 }

@@ -33,6 +33,7 @@ class PersistenceAnalysisTaskChannels implements AnalysisTaskChannels {
 	private final TaskChannel<ProjectCoordinates, ResolvedProject, FailedProject> resolveVersionsSpy;
 	private final TaskChannel<DownloadedArtifact, AnalyzedArtifact, FailedArtifact> analyzeArtifactsSpy;
 	private final TaskChannel<ArtifactCoordinates, ResolvedArtifact, FailedArtifact> resolveDependenciesSpy;
+	private final TaskChannel<DeeplyAnalyzedArtifact, Void, Void> outputResultsSpy;
 
 	public PersistenceAnalysisTaskChannels(AnalysisPersistence persistence) {
 		this.persistence = requireNonNull(persistence, "The argument 'persistence' must not be null.");
@@ -72,8 +73,12 @@ class PersistenceAnalysisTaskChannels implements AnalysisTaskChannels {
 						persistence.resolvedArtifactsUnmodifiable(),
 						persistence.artifactResolutionErrorsUnmodifiable());
 
-		// This is only an output mechanism and there is no need to replay its results. 
-		outputResults = TaskChannel.namedAndUnbounded("output");
+		// This is only an output mechanism and there is no need to replay its results.
+		// It is spied upon to enable gathering all results in one (code) location.
+		outputResultsSpy = TaskChannel.namedAndUnbounded("spying on output");
+		outputResults = TaskChannel
+				.<DeeplyAnalyzedArtifact, Void, Void>namedAndUnbounded("output")
+				.spy(outputResultsSpy);
 	}
 	
 	/**
@@ -89,6 +94,8 @@ class PersistenceAnalysisTaskChannels implements AnalysisTaskChannels {
 		analyzeArtifactsSpy.drainErrors().forEach(persistence::addAnalysisFailure);
 		resolveDependenciesSpy.drainResults().forEach(persistence::addResolvedArtifact);
 		resolveDependenciesSpy.drainErrors().forEach(persistence::addArtifactResolutionFailure);
+
+		outputResultsSpy.drainTasks().forEach(persistence::addResult);
 	}
 	
 	// IMPLEMENTATION OF 'AnalysisTaskChannels'

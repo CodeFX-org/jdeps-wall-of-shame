@@ -2,6 +2,7 @@ package org.codefx.jwos.file;// NOT_PUBLISHED
 
 import org.codefx.jwos.analysis.AnalysisPersistence;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
+import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
 import org.codefx.jwos.artifact.ProjectCoordinates;
@@ -87,5 +88,10 @@ public class EmptyAnalysisPersistence implements AnalysisPersistence {
 	public void addArtifactResolutionFailure(FailedArtifact artifact) {
 		// do nothing;
 	}
-	
+
+	@Override
+	public void addResult(DeeplyAnalyzedArtifact deeplyAnalyzedArtifact) {
+		// do nothing;
+	}
+
 }

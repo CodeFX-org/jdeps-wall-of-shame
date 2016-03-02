@@ -16,4 +16,6 @@ public class PersistentAnalysis {
 	public List<PersistentResolvedArtifact> step_4_resolvedArtifacts;
 	public List<PersistentFailedArtifact> step_4_resolutionFailedArtifacts;
 
+	public List<PersistentDeeplyAnalyzedArtifact> step_5_deeplyAnalyzedArtifacts;
+
 }
