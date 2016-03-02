@@ -1,14 +1,15 @@
 package org.codefx.jwos.file;// NOT_PUBLISHED
 
+import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
+import org.codefx.jwos.file.persistence.PersistentAnalyzedArtifact;
 import org.codefx.jwos.file.persistence.PersistentArtifactCoordinates;
 import org.codefx.jwos.file.persistence.PersistentResolvedArtifact;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.TypeDescription;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
-import org.yaml.snakeyaml.nodes.Tag;
 import org.yaml.snakeyaml.representer.Representer;
 
 import java.util.function.Function;
@@ -21,6 +22,8 @@ class YamlPersister {
 			new TypeDescription(PersistentArtifactCoordinates.class, "!artifact");
 	private static final TypeDescription RESOLVED_ARTIFACT_TD =
 			new TypeDescription(PersistentResolvedArtifact.class, "!resolved_artifact");
+	private static final TypeDescription ANALYZED_ARTIFACT_TD =
+			new TypeDescription(PersistentAnalyzedArtifact.class, "!analyzed_artifact");
 
 	private final Representer representer;
 
@@ -32,6 +35,7 @@ class YamlPersister {
 		Representer representer = new Representer();
 		representer.addClassTag(ARTIFACT_TD.getType(), ARTIFACT_TD.getTag());
 		representer.addClassTag(RESOLVED_ARTIFACT_TD.getType(), RESOLVED_ARTIFACT_TD.getTag());
+		representer.addClassTag(ANALYZED_ARTIFACT_TD.getType(), ANALYZED_ARTIFACT_TD.getTag());
 		return representer;
 	}
 
@@ -40,16 +44,17 @@ class YamlPersister {
 	}
 
 	private <P, T> T read(String yamlString, Class<P> persistenceType, Function<P, T> persistentUnwrapper) {
-		Constructor constructor = createConstructorWithTypeDescriptors(persistenceType);
+		Constructor constructor = createConstructorWithTypeDescriptors();
 		Yaml yaml = new Yaml(constructor, representer, new DumperOptions());
 		P loaded = yaml.loadAs(yamlString, persistenceType);
 		return persistentUnwrapper.apply(loaded);
 	}
 
-	private <P> Constructor createConstructorWithTypeDescriptors(Class<P> persistenceType) {
+	private Constructor createConstructorWithTypeDescriptors() {
 		Constructor constructor = new Constructor();
 		constructor.addTypeDescription(ARTIFACT_TD);
 		constructor.addTypeDescription(RESOLVED_ARTIFACT_TD);
+		constructor.addTypeDescription(ANALYZED_ARTIFACT_TD);
 		return constructor;
 	}
 
@@ -67,6 +72,14 @@ class YamlPersister {
 
 	ResolvedArtifact readResolvedArtifact(String yamlString) {
 		return read(yamlString, PersistentResolvedArtifact.class, PersistentResolvedArtifact::toArtifact);
+	}
+
+	String writeAnalyzedArtifact(AnalyzedArtifact artifact) {
+		return write(artifact, PersistentAnalyzedArtifact::from);
+	}
+
+	AnalyzedArtifact readAnalyzedArtifact(String yamlString) {
+		return read(yamlString, PersistentAnalyzedArtifact.class, PersistentAnalyzedArtifact::toArtifact);
 	}
 
 }
