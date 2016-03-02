@@ -68,6 +68,8 @@ class YamlPersisterTest {
 		ResolvedProject loadedProject = persister.readResolvedProject(artifactAsYaml);
 		
 		assertThat(loadedProject).isEqualTo(project);
+		// equality is based on coordinates so we have to check versions explicitly
+		assertThat(loadedProject.versions()).isEqualTo(project.versions());
 	}
 
 	// ARTIFACTS
@@ -111,6 +113,8 @@ class YamlPersisterTest {
 		ResolvedArtifact loadedArtifact = persister.readResolvedArtifact(artifactAsYaml);
 		
 		assertThat(loadedArtifact).isEqualTo(artifact);
+		// equality is based on coordinates so we have to check dependees explicitly
+		assertThat(loadedArtifact.dependees()).isEqualTo(artifact.dependees());
 	}
 
 	@Test
@@ -133,8 +137,10 @@ class YamlPersisterTest {
 
 		String artifactAsYaml = persister.writeAnalyzedArtifact(artifact);
 		AnalyzedArtifact loadedArtifact = persister.readAnalyzedArtifact(artifactAsYaml);
-		
+
 		assertThat(loadedArtifact).isEqualTo(artifact);
+		// equality is based on coordinates so we have to check violations explicitly
+		assertThat(loadedArtifact.violations()).isEqualTo(artifact.violations());
 	}
 
 }
