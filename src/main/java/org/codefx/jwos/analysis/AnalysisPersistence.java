@@ -1,4 +1,4 @@
-package org.codefx.jwos.analysis;// NOT_PUBLISHED
+package org.codefx.jwos.analysis;
 
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
@@ -12,7 +12,7 @@ import org.codefx.jwos.artifact.ResolvedProject;
 import java.util.Collection;
 
 /**
- * Stores the results and failures of an analysis and makes results from former and the current runs available.
+ * Stores the results and errors of an analysis and makes results from former and the current runs available.
  * <p>
  * Implementations must allow concurrent modifications.
  */
@@ -56,15 +56,15 @@ public interface AnalysisPersistence {
 
 	void addDownloadedArtifact(DownloadedArtifact artifact);
 
-	void addDownloadFailure(FailedArtifact artifact);
+	void addDownloadError(FailedArtifact artifact);
 
 	void addAnalyzedArtifact(AnalyzedArtifact artifact);
 
-	void addAnalysisFailure(FailedArtifact artifact);
+	void addAnalysisError(FailedArtifact artifact);
 
 	void addResolvedArtifact(ResolvedArtifact artifact);
 
-	void addArtifactResolutionFailure(FailedArtifact artifact);
+	void addArtifactResolutionError(FailedArtifact artifact);
 
 	void addResult(DeeplyAnalyzedArtifact deeplyAnalyzedArtifact);
 

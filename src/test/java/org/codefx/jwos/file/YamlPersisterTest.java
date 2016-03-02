@@ -1,4 +1,4 @@
-package org.codefx.jwos.file;// NOT_PUBLISHED
+package org.codefx.jwos.file;
 
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;

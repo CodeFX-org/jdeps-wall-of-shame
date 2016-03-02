@@ -1,4 +1,4 @@
-package org.codefx.jwos.analysis;// NOT_PUBLISHED
+package org.codefx.jwos.analysis;
 
 import org.codefx.jwos.Flags;
 import org.codefx.jwos.analysis.channel.TaskChannel;
@@ -97,11 +97,11 @@ class PersistenceAnalysisTaskChannels implements AnalysisTaskChannels {
 		resolveVersionsSpy.drainErrors().forEach(persistence::addProjectResolutionError);
 
 		downloadArtifactsSpy.drainResults().forEach(persistence::addDownloadedArtifact);
-		downloadArtifactsSpy.drainErrors().forEach(persistence::addDownloadFailure);
+		downloadArtifactsSpy.drainErrors().forEach(persistence::addDownloadError);
 		analyzeArtifactsSpy.drainResults().forEach(persistence::addAnalyzedArtifact);
-		analyzeArtifactsSpy.drainErrors().forEach(persistence::addAnalysisFailure);
+		analyzeArtifactsSpy.drainErrors().forEach(persistence::addAnalysisError);
 		resolveDependenciesSpy.drainResults().forEach(persistence::addResolvedArtifact);
-		resolveDependenciesSpy.drainErrors().forEach(persistence::addArtifactResolutionFailure);
+		resolveDependenciesSpy.drainErrors().forEach(persistence::addArtifactResolutionError);
 
 		outputResultsSpy.drainTasks().forEach(persistence::addResult);
 	}

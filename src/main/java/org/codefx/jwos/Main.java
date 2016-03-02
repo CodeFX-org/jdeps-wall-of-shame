@@ -51,9 +51,6 @@ import static java.util.stream.Collectors.joining;
  */
 public class Main {
 
-	private static final boolean ASSUME_ALL_PROJECTS_FROM_PREVIOUS_RESULTS_ARE_RESOLVED = true;
-	private static final boolean USE_ARTIFACTS_FROM_PREVIOUS_RESULTS = true;
-
 	private static final Logger LOGGER = LoggerFactory.getLogger("Main");
 
 	public static void main(String[] args) throws IOException {

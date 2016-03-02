@@ -1,4 +1,4 @@
-package org.codefx.jwos.analysis;// NOT_PUBLISHED
+package org.codefx.jwos.analysis;
 
 import org.codefx.jwos.analysis.channel.TaskChannel;
 import org.codefx.jwos.artifact.AnalyzedArtifact;

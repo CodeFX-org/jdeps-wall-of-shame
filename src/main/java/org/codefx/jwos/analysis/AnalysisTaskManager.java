@@ -83,7 +83,7 @@ public class AnalysisTaskManager {
 	// UPDATE STATE
 
 	/**
-	 * Queues new tasks and processes results and failures by updating {@link #state}.
+	 * Queues new tasks and processes results and errors by updating {@link #state}.
 	 */
 	private void updateState() {
 		queueTasks();

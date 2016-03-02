@@ -8,7 +8,7 @@ import static java.util.Collections.emptySet;
 /**
  * A channel handles communication of a single type of tasks.
  * <p>
- * It consists of three blocking queue, one to send out tasks and two to receive results or failures, respectively.
+ * It consists of three blocking queue, one to send out tasks and two to receive results or errors, respectively.
  *
  * @param <T> the type of tasks
  * @param <R> the type of the tasks' successful result 

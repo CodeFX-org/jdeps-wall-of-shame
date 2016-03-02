@@ -1,4 +1,4 @@
-package org.codefx.jwos.file;// NOT_PUBLISHED
+package org.codefx.jwos.file;
 
 import org.codefx.jwos.analysis.AnalysisPersistence;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
@@ -191,7 +191,7 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 	}
 
 	@Override
-	public void addDownloadFailure(FailedArtifact artifact) {
+	public void addDownloadError(FailedArtifact artifact) {
 		downloadFailedArtifacts.add(artifact);
 	}
 
@@ -201,7 +201,7 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 	}
 
 	@Override
-	public void addAnalysisFailure(FailedArtifact artifact) {
+	public void addAnalysisError(FailedArtifact artifact) {
 		analysisFailedArtifacts.add(artifact);
 	}
 
@@ -211,7 +211,7 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 	}
 
 	@Override
-	public void addArtifactResolutionFailure(FailedArtifact artifact) {
+	public void addArtifactResolutionError(FailedArtifact artifact) {
 		resolutionFailedArtifacts.add(artifact);
 	}
 

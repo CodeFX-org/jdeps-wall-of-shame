@@ -1,4 +1,4 @@
-package org.codefx.jwos.file.persistence;// NOT_PUBLISHED
+package org.codefx.jwos.file.persistence;
 
 import org.codefx.jwos.artifact.FailedProject;
 

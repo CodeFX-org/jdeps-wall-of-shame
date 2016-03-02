@@ -1,4 +1,4 @@
-package org.codefx.jwos.file.persistence;// NOT_PUBLISHED
+package org.codefx.jwos.file.persistence;
 
 import com.google.common.collect.ImmutableSet;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
