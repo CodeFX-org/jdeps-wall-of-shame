@@ -43,6 +43,21 @@ public class YamlPersisterTest {
 		assertThat(loadedProject).isEqualTo(project);
 	}
 
+	@Test
+	@DisplayName("can dump and load failed projects")
+	void persistFailedProject() {
+		FailedProject project = new FailedProject(
+				ProjectCoordinates.from("org.group", "theProject"),
+				new Exception("error message")
+		);
+
+		String projectAsYaml = persister.writeFailedProject(project);
+		assertThat(projectAsYaml).startsWith("!failed_project");
+
+		FailedProject loadedProject = persister.readFailedProject(projectAsYaml);
+		assertThat(loadedProject).isEqualTo(project);
+	}
+
 	// ARTIFACTS
 
 	@Test
