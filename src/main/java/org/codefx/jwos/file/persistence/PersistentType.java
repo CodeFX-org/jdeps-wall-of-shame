@@ -4,18 +4,16 @@ import org.codefx.jwos.jdeps.dependency.Type;
 
 public class PersistentType {
 
-	public String packageName;
 	public String className;
 
 	public static PersistentType from(Type type) {
 		PersistentType persistent = new PersistentType();
-		persistent.packageName = type.getPackageName();
-		persistent.className = type.getClassName();
+		persistent.className = type.getPackageName() + "." + type.getClassName();
 		return persistent;
 	}
 
 	public Type toType() {
-		return Type.of(packageName, className);
+		return Type.of(className);
 	}
 
 }

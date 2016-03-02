@@ -2,15 +2,15 @@ package org.codefx.jwos.file.persistence;// NOT_PUBLISHED
 
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 
-import java.util.Set;
+import java.util.List;
 
-import static java.util.stream.Collectors.toSet;
+import static java.util.stream.Collectors.toList;
 import static org.codefx.jwos.Util.toImmutableSet;
 
 public class PersistentAnalyzedArtifact {
 
 	public PersistentArtifactCoordinates artifact;
-	public Set<PersistentViolation> violations;
+	public List<PersistentViolation> violations;
 
 	public static PersistentAnalyzedArtifact from(AnalyzedArtifact artifact) {
 		PersistentAnalyzedArtifact persistent = new PersistentAnalyzedArtifact();
@@ -18,7 +18,7 @@ public class PersistentAnalyzedArtifact {
 		persistent.violations = artifact
 				.violations().stream()
 				.map(PersistentViolation::from)
-				.collect(toSet());
+				.collect(toList());
 		return persistent;
 	}
 

@@ -29,14 +29,11 @@ import static com.google.common.collect.ImmutableSet.of;
 class YamlPersister {
 
 	private static final ImmutableSet<TypeDescription> TYPE_DESCRIPTIONS = of(
-			new TypeDescription(PersistentAnalysis.class, "!analysis"),
-			new TypeDescription(PersistentProjectCoordinates.class, "!project"),
-			new TypeDescription(PersistentFailedProject.class, "!failed_project"),
-			new TypeDescription(PersistentResolvedProject.class, "!resolved_project"),
-			new TypeDescription(PersistentArtifactCoordinates.class, "!artifact"),
-			new TypeDescription(PersistentFailedArtifact.class, "!failed_artifact"),
-			new TypeDescription(PersistentResolvedArtifact.class, "!resolved_artifact"),
-			new TypeDescription(PersistentAnalyzedArtifact.class, "!analyzed_artifact")
+			// Descriptors are only _necessary_ on the YAML's top-level type. If no type descriptor is defined here,
+			// the fully qualified class name is used, which is fragile. So an explicit tag is defined for that class.
+			// But _if_ tags are given, they are always used so by specifying tags for all types, the resulting file
+			// gets very cluttered.
+			new TypeDescription(PersistentAnalysis.class, "!persistent_analysis")
 	);
 
 	private final Representer representer;

@@ -1,35 +1,33 @@
 package org.codefx.jwos.file.persistence;// NOT_PUBLISHED
 
+import com.google.common.collect.ImmutableSet;
+import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedProject;
 
-import java.util.Set;
+import java.util.List;
 
-import static java.util.stream.Collectors.toSet;
-import static org.codefx.jwos.Util.toImmutableSet;
+import static java.util.stream.Collectors.toList;
 
 public class PersistentResolvedProject {
 
 	public PersistentProjectCoordinates project;
-	public Set<PersistentArtifactCoordinates> versions;
+	public List<String> versions;
 
 	public static PersistentResolvedProject from(ResolvedProject project) {
 		PersistentResolvedProject persistent = new PersistentResolvedProject();
 		persistent.project = PersistentProjectCoordinates.from(project.coordinates());
 		persistent.versions = project
 				.versions().stream()
-				.map(PersistentArtifactCoordinates::from)
-				.collect(toSet());
+				.map(ArtifactCoordinates::version)
+				.collect(toList());
 		return persistent;
 	}
 
 	public ResolvedProject toProject() {
-		return new ResolvedProject(
-				project.toProject(),
-				versions.stream()
-						.map(PersistentArtifactCoordinates::toArtifact)
-						.collect(toImmutableSet())
-		);
+		ProjectCoordinates projectCoordinates = project.toProject();
+		ImmutableSet<ArtifactCoordinates> artifacts = projectCoordinates.toArtifactsWithVersions(versions.stream());
+		return new ResolvedProject(projectCoordinates,artifacts);
 	}
-
 
 }

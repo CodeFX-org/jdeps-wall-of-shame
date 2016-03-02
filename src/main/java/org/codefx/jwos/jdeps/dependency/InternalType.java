@@ -46,6 +46,14 @@ public final class InternalType extends Type {
 		return new InternalType(type.getPackageName(), type.getClassName(), "", "");
 	}
 
+	public static InternalType of(
+			String fullyQualifiedClassName,
+			String category,
+			String source) {
+		Type type = Type.of(fullyQualifiedClassName);
+		return new InternalType(type.getPackageName(), type.getClassName(), category, source);
+	}
+
 	/**
 	 * @return the category of this internal dependency as reported by JDeps (e.g. "JDK internal API")
 	 */

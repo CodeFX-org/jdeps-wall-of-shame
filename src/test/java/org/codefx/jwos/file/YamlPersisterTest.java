@@ -35,9 +35,8 @@ class YamlPersisterTest {
 		ProjectCoordinates project = ProjectCoordinates.from("org.group", "theProject");
 
 		String projectAsYaml = persister.writeProject(project);
-		assertThat(projectAsYaml).startsWith("!project");
-
 		ProjectCoordinates loadedProject = persister.readProject(projectAsYaml);
+
 		assertThat(loadedProject).isEqualTo(project);
 	}
 
@@ -50,9 +49,8 @@ class YamlPersisterTest {
 		);
 
 		String projectAsYaml = persister.writeFailedProject(project);
-		assertThat(projectAsYaml).startsWith("!failed_project");
-
 		FailedProject loadedProject = persister.readFailedProject(projectAsYaml);
+		
 		assertThat(loadedProject).isEqualTo(project);
 	}
 
@@ -67,9 +65,8 @@ class YamlPersisterTest {
 		);
 
 		String artifactAsYaml = persister.writeResolvedProject(project);
-		assertThat(artifactAsYaml).startsWith("!resolved_project");
-
 		ResolvedProject loadedProject = persister.readResolvedProject(artifactAsYaml);
+		
 		assertThat(loadedProject).isEqualTo(project);
 	}
 
@@ -81,9 +78,8 @@ class YamlPersisterTest {
 		ArtifactCoordinates artifact = ArtifactCoordinates.from("org.group", "theArtifact", "v1.Foo");
 
 		String artifactAsYaml = persister.writeArtifact(artifact);
-		assertThat(artifactAsYaml).startsWith("!artifact");
-		
 		ArtifactCoordinates loadedArtifact = persister.readArtifact(artifactAsYaml);
+		
 		assertThat(loadedArtifact).isEqualTo(artifact);
 	}
 
@@ -96,9 +92,8 @@ class YamlPersisterTest {
 		);
 
 		String artifactAsYaml = persister.writeFailedArtifact(artifact);
-		assertThat(artifactAsYaml).startsWith("!failed_artifact");
-
 		FailedArtifact loadedArtifact = persister.readFailedArtifact(artifactAsYaml);
+		
 		assertThat(loadedArtifact).isEqualTo(artifact);
 	}
 
@@ -113,9 +108,8 @@ class YamlPersisterTest {
 		);
 
 		String artifactAsYaml = persister.writeResolvedArtifact(artifact);
-		assertThat(artifactAsYaml).startsWith("!resolved_artifact");
-
 		ResolvedArtifact loadedArtifact = persister.readResolvedArtifact(artifactAsYaml);
+		
 		assertThat(loadedArtifact).isEqualTo(artifact);
 	}
 
@@ -138,9 +132,8 @@ class YamlPersisterTest {
 		);
 
 		String artifactAsYaml = persister.writeAnalyzedArtifact(artifact);
-		assertThat(artifactAsYaml).startsWith("!analyzed_artifact");
-
 		AnalyzedArtifact loadedArtifact = persister.readAnalyzedArtifact(artifactAsYaml);
+		
 		assertThat(loadedArtifact).isEqualTo(artifact);
 	}
 
