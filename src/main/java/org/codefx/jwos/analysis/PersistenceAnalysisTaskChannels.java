@@ -51,8 +51,10 @@ class PersistenceAnalysisTaskChannels implements AnalysisTaskChannels {
 				.<ProjectCoordinates, ResolvedProject, FailedProject>namedAndUnbounded("version resolution")
 				.spy(resolveVersionsSpy)
 				.replaying(
-						persistence.resolvedProjectsUnmodifiable(),
-						persistence.projectResolutionErrorsUnmodifiable());
+						Flags.REPLAY_VERSION_RESOLUTION ? persistence.resolvedProjectsUnmodifiable() : emptySet(),
+						Flags.REPLAY_VERSION_RESOLUTION_ERRORS
+								? persistence.projectResolutionErrorsUnmodifiable()
+								: emptySet());
 
 		downloadArtifactsSpy = TaskChannel.namedAndUnbounded("download");
 		downloadArtifacts = TaskChannel
@@ -68,16 +70,18 @@ class PersistenceAnalysisTaskChannels implements AnalysisTaskChannels {
 				.<DownloadedArtifact, AnalyzedArtifact, FailedArtifact>namedAndUnbounded("analysis")
 				.spy(analyzeArtifactsSpy)
 				.replaying(
-						persistence.analyzedArtifactsUnmodifiable(),
-						persistence.artifactAnalysisErrorsUnmodifiable());
+						Flags.REPLAY_ANALYSIS ? persistence.analyzedArtifactsUnmodifiable() : emptySet(),
+						Flags.REPLAY_ANALYSIS_ERRORS ? persistence.artifactAnalysisErrorsUnmodifiable() : emptySet());
 
 		resolveDependenciesSpy = TaskChannel.namedAndUnbounded("spying on dependency resolution");
 		resolveDependencies = TaskChannel
 				.<ArtifactCoordinates, ResolvedArtifact, FailedArtifact>namedAndUnbounded("dependency resolution")
 				.spy(resolveDependenciesSpy)
 				.replaying(
-						persistence.resolvedArtifactsUnmodifiable(),
-						persistence.artifactResolutionErrorsUnmodifiable());
+						Flags.REPLAY_DEPENDENCY_RESOLUTION ? persistence.resolvedArtifactsUnmodifiable() : emptySet(),
+						Flags.REPLAY_DEPENDENCY_RESOLUTION_ERRORS
+								? persistence.artifactResolutionErrorsUnmodifiable()
+								: emptySet());
 
 		// This is only an output mechanism and there is no need to replay its results.
 		// It is spied upon to enable gathering all results in one (code) location.
