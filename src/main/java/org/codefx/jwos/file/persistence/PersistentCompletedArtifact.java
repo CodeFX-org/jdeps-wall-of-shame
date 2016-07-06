@@ -39,11 +39,7 @@ public class PersistentCompletedArtifact {
 	}
 
 	public CompletedArtifact toArtifact() {
-		return COMPLETED_ARTIFACT_CACHE.computeIfAbsent(artifact.toArtifact(), this::createCompletedArtifact);
-	}
-
-	private CompletedArtifact createCompletedArtifact(ArtifactCoordinates coordinates) {
-		CompletedArtifactBuilder builder = CompletedArtifact.forArtifact(coordinates);
+		CompletedArtifactBuilder builder = CompletedArtifact.forArtifact(artifact.toArtifact());
 		if (analysisErrorMessage == null)
 			builder.withViolations(transformToImmutableSet(violations, PersistentViolation::toViolation));
 		else
