@@ -1,4 +1,3 @@
-
 $.extend($.easing,
 {
     def: 'easeOutQuad',
@@ -11,7 +10,7 @@ $.extend($.easing,
 });
 
 window.navScrollerDefaultSettings = {
-	scrollToOffset: 170,
+	scrollToOffset: 210,
 	scrollSpeed: 800,
 	activateParentNode: true,
 };
@@ -78,55 +77,53 @@ $(document).ready(function (){
 
     //section divider icon click gently scrolls to reveal the section
 	$(".sectiondivider").on('click', function(event) {
-    	$('html,body').animate({scrollTop: $(event.target.parentNode).offset().top - 50}, 400, "linear");
+    	$('html,body').animate({scrollTop: $(event.target.parentNode).offset().top - 80}, 400, "linear");
 	});
 
-    //links going to other sections nicely scroll
-	$(".container a").each(function(){
-        if ($(this).attr("href").charAt(0) == '#'){
-            $(this).on('click', function(event) {
-        		event.preventDefault();
-                var target = $(event.target).closest("a");
-                var targetHight =  $(target.attr("href")).offset().top
-            	$('html,body').animate({scrollTop: targetHight - 170}, 800, "easeInOutExpo");
-            });
-        }
-	});
+	// add a global listener that handles link clicks
+	$(document.body).on('click', 'a', scrollIfInternalLink);
 
-	// Additions by jki & nipa
-
-	// we'd like to have links between artifacts;
-	// in order to keep the (already humonguous) HTML from getting even bigger,
-	// we add them vie JS after the side was loaded
-
-	// add anchors to the dependants
-	$('.dt').each(function (i, th) {
-		$(th).html('<a name="' + th.textContent + '">' + th.textContent + '</a>');
-	});
-
-	// add links to the dependees
-	$('.de').each(function (i, td) {
-		$(td).html('<a href="#' + td.textContent.replace(/ : /g, ":") + '">' + td.textContent + '</a>');
-	});
-
-	// add a global listener that scrolls to the anchor
-	$(document.body).on('click', '.de a', function (event) {
-		scrollToId($(event.target).attr('href').substr(1));
-	});
-
-	scrollToId(location.hash.substr(1));
-
-	function scrollToId(id) {
-		var settings = window.navScrollerDefaultSettings;
-		var $target = $('[name="' + id + '"]');
-
-		if (! $target.is(':empty')) {
-			$('html,body').animate(
-				{ scrollTop: $target.offset().top - settings.scrollToOffset },
-				settings.scrollSpeed, "easeInOutExpo", function () {
-					$target.parents('.artifacts').fadeOut().fadeIn();
-				});
+	function scrollIfInternalLink(event) {
+		var href = $(event.target).attr("href");
+		if (href[0] == '#') {
+			// setting the hash in would be cool
+ 			// but it leads to instant hopping to the location
+			// avoiding our smooth scrolling
+			// location.hash = href;
+			event.preventDefault();
+			var id = href.substr(1);
+			if (linksToArtifact(id))
+				scrollToArtifact(id);
+			else
+				scrollToSection(id);
 		}
+	}
+
+	function linksToArtifact(id) {
+		// artifact ids contain colons
+		return id.indexOf(':') != -1;
+	}
+
+	function scrollToArtifact(id) {
+		// don't use `$(id)` - ids contain colons and jQuery doesn't like them
+		var element =  $(document.getElementById(id));
+		scrollTo(element).then(function () {
+			element.parents('.artifacts').fadeOut().fadeIn().fadeOut().fadeIn();
+		});
+	}
+
+	function scrollToSection(id) {
+		var element =  $(document.getElementById(id));
+		scrollTo(element);
+	}
+
+	function scrollTo(element) {
+		var settings = window.navScrollerDefaultSettings;
+		var targetHeight =  element.offset().top;
+		return $('html,body').animate(
+			{ scrollTop: targetHeight - settings.scrollToOffset },
+			settings.scrollSpeed,
+			"easeInOutExpo").promise();
 	}
 
 });
