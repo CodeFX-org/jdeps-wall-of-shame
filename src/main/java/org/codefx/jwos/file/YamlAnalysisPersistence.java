@@ -20,6 +20,8 @@ import org.codefx.jwos.file.persistence.PersistentFailedProject;
 import org.codefx.jwos.file.persistence.PersistentProjectCoordinates;
 import org.codefx.jwos.file.persistence.PersistentResolvedArtifact;
 import org.codefx.jwos.file.persistence.PersistentResolvedProject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
 import java.util.SortedSet;
@@ -35,6 +37,8 @@ import static org.codefx.jwos.Util.transformToList;
  * This implementation is not thread-safe.
  */
 public class YamlAnalysisPersistence implements AnalysisPersistence {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger("Persistence");
 
 	private static final YamlPersister PERSISTER = new YamlPersister();
 

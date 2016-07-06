@@ -59,9 +59,14 @@ public class Main {
 	private static final Logger LOGGER = LoggerFactory.getLogger("Main");
 
 	public static void main(String[] args) throws IOException {
+		LOGGER.info("Processing existing results...");
 		Path resultFile = Util.getPathToExistingResourceFile(Util.RESULT_FILE_NAME);
 		YamlAnalysisPersistence persistence = createYamlPersistence(resultFile);
+
+		LOGGER.info("Setting up task manager...");
 		AnalysisTaskManager taskManager = new AnalysisTaskManager(persistence);
+
+		LOGGER.info("Setting up tasks...");
 		MavenCentral maven = new MavenCentral(Util.LOCAL_MAVEN_REPOSITORY.toString());
 		JDeps jdeps = new JDeps();
 		WallOfShame wallOfShame = WallOfShame.openExistingDirectory(
@@ -73,7 +78,7 @@ public class Main {
 						Util.GIT_PASSWORD,
 						Util.GIT_EMAIL));
 
-		Stream
+		Stream<ComputationThread> threads = Stream
 				.of(
 						createComputationsToReadProjectFiles(taskManager),
 						createComputationsTo(resolveProjectVersions(taskManager, maven), 1),
@@ -83,8 +88,10 @@ public class Main {
 						createComputationsTo(outputResults(taskManager, wallOfShame), 1),
 						createComputationsTo(writeToYaml(persistence, resultFile), 1))
 				.flatMap(identity())
-				.map(ComputationThread::new)
-				.forEach(Thread::start);
+				.map(ComputationThread::new);
+
+		LOGGER.info("Starting computation...");
+		threads.forEach(Thread::start);
 		new Thread(taskManager::manageQueues, "Manage Queue").run();
 	}
 
