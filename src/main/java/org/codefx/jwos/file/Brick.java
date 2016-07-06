@@ -28,7 +28,7 @@ import static java.util.stream.Collectors.toList;
  */
 class Brick {
 
-	private static final String DEPENDANT = "\t<tr><th class=\"dt\" colspan=\"2\"><a name=\"#%s\">%s<a></th></tr>";
+	private static final String DEPENDANT = "\t<tr><th class=\"dt\" colspan=\"2\"><a id=\"%s\">%s<a></th></tr>";
 	private static final String FAILED_ANALYSIS = "\t<tr><td class=\"vdf\" colspan=\"2\">%s</td></tr>";
 	private static final String FIRST_VIOLATION = "\t<tr><td class=\"vdt1 vdt\">%s</td><td class=\"vde1 vde\">%s</td></tr>";
 	private static final String OTHER_VIOLATION = "\t<tr><td class=\"vdt\">%s</td><td class=\"vde\">%s</td></tr>";

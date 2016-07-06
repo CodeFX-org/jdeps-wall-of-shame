@@ -3,6 +3,7 @@ package org.codefx.jwos;
 import org.codefx.jwos.analysis.AnalysisTaskManager;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
+import org.codefx.jwos.artifact.CompletedArtifact;
 import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
@@ -15,9 +16,13 @@ import org.codefx.jwos.computation.RecurrentComputation;
 import org.codefx.jwos.computation.SendError;
 import org.codefx.jwos.computation.SendResult;
 import org.codefx.jwos.computation.TaskComputation;
+import org.codefx.jwos.computation.TaskSink;
 import org.codefx.jwos.computation.TaskSource;
 import org.codefx.jwos.discovery.ProjectListFile;
+import org.codefx.jwos.file.WallFiles;
+import org.codefx.jwos.file.WallOfShame;
 import org.codefx.jwos.file.YamlAnalysisPersistence;
+import org.codefx.jwos.git.GitInformation;
 import org.codefx.jwos.jdeps.JDeps;
 import org.codefx.jwos.maven.MavenCentral;
 import org.slf4j.Logger;
@@ -59,6 +64,14 @@ public class Main {
 		AnalysisTaskManager taskManager = new AnalysisTaskManager(persistence);
 		MavenCentral maven = new MavenCentral(Util.LOCAL_MAVEN_REPOSITORY.toString());
 		JDeps jdeps = new JDeps();
+		WallOfShame wallOfShame = WallOfShame.openExistingDirectory(
+				WallFiles.defaultsInDirectory(Util.PAGES_DIRECTORY),
+				GitInformation.simple(
+						Util.GIT_REPOSITORY_URL,
+						Util.PAGES_DIRECTORY,
+						Util.GIT_USER_NAME,
+						Util.GIT_PASSWORD,
+						Util.GIT_EMAIL));
 
 		Stream
 				.of(
@@ -67,6 +80,7 @@ public class Main {
 						createComputationsTo(downloadArtifact(taskManager, maven), 2),
 						createComputationsTo(analyzeArtifact(taskManager, jdeps), 2),
 						createComputationsTo(resolveArtifactDependees(taskManager, maven), 3),
+						createComputationsTo(outputResults(taskManager, wallOfShame), 1),
 						createComputationsTo(writeToYaml(persistence, resultFile), 1))
 				.flatMap(identity())
 				.map(ComputationThread::new)
@@ -164,18 +178,17 @@ public class Main {
 				200);
 	}
 
-//	private static TaskSink<DeeplyAnalyzedArtifact> outputResults(
-//			AnalysisTaskManager taskManager, ResultFile resultFile) {
-//		return new TaskSink<>(
-//				"Output Results",
-//				taskManager::getNextToOutput,
-//				artifact -> {
-//					resultFile.addArtifacts(artifact);
-//					resultFile.write();
-//					return null;
-//				},
-//				(artifact, error) -> LOGGER.error("Failed to write result '" + artifact.coordinates() + "'.", error));
-//	}
+	private static TaskSink<CompletedArtifact> outputResults(AnalysisTaskManager taskManager, WallOfShame wallOfShame) {
+		return new TaskSink<>(
+				"Output Results",
+				taskManager::getNextToOutput,
+				artifact -> {
+					wallOfShame.addArtifacts(artifact);
+					wallOfShame.write();
+					return null;
+				},
+				(artifact, error) -> LOGGER.error("Failed to write result '" + artifact.coordinates() + "'.", error));
+	}
 
 	private static SendError<ProjectCoordinates> sendProjectError(SendResult<FailedProject> sendFailedProject) {
 		return (ProjectCoordinates project, Exception error) -> {

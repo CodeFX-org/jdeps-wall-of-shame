@@ -27,9 +27,13 @@ class Wall {
 
 	private final Map<MarkTransitiveInternalDependencies, Brick> bricks;
 
-	private Wall(Brick directDependencies, Brick indirectDependencies, Brick noDependencies) {
+	private Wall(
+			Brick unknownDependencies,
+			Brick noDependencies,
+			Brick indirectDependencies,
+			Brick directDependencies) {
 		bricks = new EnumMap<>(MarkTransitiveInternalDependencies.class);
-		bricks.put(UNKNOWN, noDependencies);
+		bricks.put(UNKNOWN, unknownDependencies);
 		bricks.put(NONE, noDependencies);
 		bricks.put(INDIRECT, indirectDependencies);
 		bricks.put(DIRECT, directDependencies);
@@ -40,9 +44,10 @@ class Wall {
 		requireNonNull(artifacts, "The argument 'artifacts' must not be null.");
 
 		Wall wall = new Wall(
-				Brick.of(files.directDependenciesFrontMatter(), files.directDependencies()),
+				Brick.of(files.unknownDependenciesFrontMatter(), files.unknownDependencies()),
+				Brick.of(files.noDependenciesFrontMatter(), files.noDependencies()),
 				Brick.of(files.indirectDependenciesFrontMatter(), files.indirectDependencies()),
-				Brick.of(files.noDependenciesFrontMatter(), files.noDependencies()));
+				Brick.of(files.directDependenciesFrontMatter(), files.directDependencies()));
 		artifacts.forEach(wall::addArtifact);
 		return wall;
 	}
