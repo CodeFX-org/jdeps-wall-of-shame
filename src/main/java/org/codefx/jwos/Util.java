@@ -2,7 +2,9 @@ package org.codefx.jwos;
 
 import com.google.common.collect.ImmutableSet;
 
+import java.io.ByteArrayInputStream;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collection;
@@ -66,4 +68,9 @@ public class Util {
 				.map(transform)
 				.collect(collector);
 	}
+
+	public static ByteArrayInputStream asInputStream(String string) {
+		return new ByteArrayInputStream(string.getBytes(StandardCharsets.UTF_8));
+	}
+
 }

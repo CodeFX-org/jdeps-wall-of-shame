@@ -1,6 +1,7 @@
 package org.codefx.jwos.file;
 
 import com.google.common.collect.ImmutableSet;
+import org.codefx.jwos.Util;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
 import org.codefx.jwos.artifact.CompletedArtifact;
@@ -24,6 +25,7 @@ import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 import org.yaml.snakeyaml.representer.Representer;
 
+import java.io.InputStream;
 import java.util.function.Function;
 
 import static com.google.common.collect.ImmutableSet.of;
@@ -60,9 +62,13 @@ class YamlPersister {
 	}
 
 	public <P> P read(String yamlString, Class<P> persistenceType) {
+		return read(Util.asInputStream(yamlString), persistenceType);
+	}
+
+	public <P> P read(InputStream yamlStream, Class<P> persistenceType) {
 		Constructor constructor = createConstructorWithTypeDescriptors();
 		Yaml yaml = new Yaml(constructor, representer, new DumperOptions());
-		return yaml.loadAs(yamlString, persistenceType);
+		return yaml.loadAs(yamlStream, persistenceType);
 	}
 
 	private Constructor createConstructorWithTypeDescriptors() {

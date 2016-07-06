@@ -96,8 +96,7 @@ public class Main {
 	}
 
 	private static YamlAnalysisPersistence createYamlPersistence(Path resultFile) throws IOException {
-		String yamlString = Files.lines(resultFile).collect(joining("\n"));
-		return YamlAnalysisPersistence.fromString(yamlString);
+		return YamlAnalysisPersistence.fromStream(Files.newInputStream(resultFile));
 	}
 
 	private static Stream<Computation> createComputationsToReadProjectFiles(AnalysisTaskManager taskManager) {

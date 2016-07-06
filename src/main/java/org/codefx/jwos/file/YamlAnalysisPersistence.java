@@ -23,6 +23,7 @@ import org.codefx.jwos.file.persistence.PersistentResolvedProject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.InputStream;
 import java.util.Collection;
 import java.util.SortedSet;
 import java.util.concurrent.ConcurrentSkipListSet;
@@ -79,6 +80,12 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 			return empty();
 
 		PersistentAnalysis persistent = PERSISTER.read(yamlString, PersistentAnalysis.class);
+		return from(persistent);
+	}
+
+	public static YamlAnalysisPersistence fromStream(InputStream yamlStream) {
+		LOGGER.debug("Parsing result file...");
+		PersistentAnalysis persistent = PERSISTER.read(yamlStream, PersistentAnalysis.class);
 		return from(persistent);
 	}
 
