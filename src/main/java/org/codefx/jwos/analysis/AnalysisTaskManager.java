@@ -233,10 +233,11 @@ public class AnalysisTaskManager {
 	}
 
 	private static boolean allDependeesCompleted(ArtifactNode node) {
-		return node
-				.resolution()
-				.result().stream()
-				.allMatch(dependee -> dependee.completion().isFinished());
+		return node.resolution().identifier() == FAILED
+				|| node
+					.resolution()
+					.result().stream()
+					.allMatch(dependee -> dependee.completion().isFinished());
 	}
 
 	private static Stream<CompletedArtifact> completeNodeAndRecurseToDependents(ArtifactNode node) {
