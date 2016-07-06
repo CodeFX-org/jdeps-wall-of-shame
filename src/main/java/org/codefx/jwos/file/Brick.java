@@ -1,6 +1,8 @@
 package org.codefx.jwos.file;
 
-import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import com.google.common.collect.ImmutableSet;
+import javaslang.control.Either;
+import org.codefx.jwos.artifact.CompletedArtifact;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
 import org.codefx.jwos.jdeps.dependency.InternalType;
 import org.codefx.jwos.jdeps.dependency.Type;
@@ -22,29 +24,32 @@ import static java.util.stream.Collectors.toList;
 /**
  * An individual file of the Wall.
  * <p>
- * Artifacts can be {@link #addArtifact(DeeplyAnalyzedArtifact) added} and the file can be {@link #write() written}.
+ * Artifacts can be {@link #addArtifact(CompletedArtifact) added} and the file can be {@link #write() written}.
  */
 class Brick {
 
 	private static final String DEPENDANT = "\t<tr><th class=\"dt\" colspan=\"2\"><a name=\"#%s\">%s<a></th></tr>";
+	private static final String FAILED_ANALYSIS = "\t<tr><td class=\"vdf\" colspan=\"2\">%s</td></tr>";
 	private static final String FIRST_VIOLATION = "\t<tr><td class=\"vdt1 vdt\">%s</td><td class=\"vde1 vde\">%s</td></tr>";
 	private static final String OTHER_VIOLATION = "\t<tr><td class=\"vdt\">%s</td><td class=\"vde\">%s</td></tr>";
 	private static final String OTHER_VIOLATION_OF_MANY = "\t<tr class=\"vdx\"><td class=\"vdt\"/><td class=\"vde\">%2$s</td></tr>";
+	private static final String FAILED_RESOLUTION = "\t<tr><td class=\"def\" colspan=\"2\">%s</td></tr>";
 	private static final String FIRST_DEPENDEE = "\t<tr><td class=\"de1 de %s\" colspan=\"2\"><a href=\"#%s\">%s</a></td></tr>";
 	private static final String OTHER_DEPENDEE = "\t<tr><td class=\"de %s\" colspan=\"2\"><a href=\"#%s\">%s</a></td></tr>";
 
+	private static final String CSS_CLASS_FOR_DEPENDEE_WITH_UNKNOWN_JDK_DEPENDENCIES = "ujd";
 	private static final String CSS_CLASS_FOR_DEPENDEE_WITH_NO_JDK_DEPENDENCIES = "njd";
 	private static final String CSS_CLASS_FOR_DEPENDEE_WITH_INDIRECT_JDK_DEPENDENCIES = "ijd";
 	private static final String CSS_CLASS_FOR_DEPENDEE_WITH_DIRECT_JDK_DEPENDENCIES = "djd";
 
-	private final SortedSet<DeeplyAnalyzedArtifact> artifacts;
+	private final SortedSet<CompletedArtifact> artifacts;
 
 	private final List<String> frontMatter;
 
 	private final Path file;
 	private final Path tempFile;
 
-	private Brick(SortedSet<DeeplyAnalyzedArtifact> artifacts, List<String> frontMatter, Path file, Path tempFile) {
+	private Brick(SortedSet<CompletedArtifact> artifacts, List<String> frontMatter, Path file, Path tempFile) {
 		this.artifacts = artifacts;
 		this.frontMatter = frontMatter;
 		this.file = file;
@@ -62,13 +67,13 @@ class Brick {
 		);
 	}
 
-	public void addArtifact(DeeplyAnalyzedArtifact artifact) {
+	public void addArtifact(CompletedArtifact artifact) {
 		artifacts.add(artifact);
 	}
 
 	public void write() throws IOException {
 		deleteTempFileIfExists();
-		writeTempFile();
+		writeArtifactsToTempFile();
 		replaceFileWithTempFile();
 	}
 
@@ -76,7 +81,7 @@ class Brick {
 		Files.deleteIfExists(tempFile);
 	}
 
-	private void writeTempFile() throws IOException {
+	private void writeArtifactsToTempFile() throws IOException {
 		try (BufferedWriter writer = Files.newBufferedWriter(tempFile)) {
 			writeFrontMatterToWriter(writer);
 			writeArtifactsToWriter(writer);
@@ -102,7 +107,7 @@ class Brick {
 		artifacts.forEach(artifact -> writeArtifact(writer, artifact));
 	}
 
-	private static void writeArtifact(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) {
+	private static void writeArtifact(BufferedWriter writer, CompletedArtifact artifact) {
 		writeLine(writer, "<table class=\"artifacts\">");
 		writeDependent(writer, artifact);
 		writeViolations(writer, artifact);
@@ -110,16 +115,29 @@ class Brick {
 		writeLine(writer, "</table>");
 	}
 
-	private static void writeDependent(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) {
+	private static void writeDependent(BufferedWriter writer, CompletedArtifact artifact) {
 		String coordinates = artifact.coordinates().toString();
 		writeLine(writer, DEPENDANT, coordinates, coordinates);
 	}
 
-	private static void writeViolations(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) {
-		artifact.violations().stream()
+	private static void writeViolations(BufferedWriter writer, CompletedArtifact artifact) {
+		Either<Exception, ImmutableSet<Violation>> violations = artifact.violations();
+		if (violations.isLeft())
+			writeFailedAnalysis(writer, violations.getLeft());
+		else
+			writeAnalysedViolations(writer, violations.get());
+	}
+
+	private static void writeFailedAnalysis(BufferedWriter writer, Exception error) {
+		// TODO is the exception message ok should we write something else?
+		writeLine(writer, FAILED_ANALYSIS, error.getMessage());
+	}
+
+	private static void writeAnalysedViolations(BufferedWriter writer, ImmutableSet<Violation> violations) {
+		violations.stream()
 				.findFirst()
 				.ifPresent(violation -> writeViolation(writer, FIRST_VIOLATION, OTHER_VIOLATION_OF_MANY, violation));
-		artifact.violations().stream()
+		violations.stream()
 				.skip(1)
 				.forEach(violation -> writeViolation(writer, OTHER_VIOLATION, OTHER_VIOLATION_OF_MANY, violation));
 	}
@@ -144,16 +162,29 @@ class Brick {
 		writeLine(writer, format, dependent.getClassName(), dependee.getFullyQualifiedName());
 	}
 
-	private static void writeDependees(BufferedWriter writer, DeeplyAnalyzedArtifact artifact) {
-		artifact.dependees().stream()
+	private static void writeDependees(BufferedWriter writer, CompletedArtifact artifact) {
+		Either<Exception, ImmutableSet<CompletedArtifact>> dependees = artifact.dependees();
+		if (dependees.isLeft())
+			writeFailedResolution(writer, dependees.getLeft());
+		else
+			writeAnalysedDependees(writer, dependees.get());
+	}
+
+	private static void writeFailedResolution(BufferedWriter writer, Exception error) {
+		// TODO is the exception message ok or should we write something else?
+		writeLine(writer, FAILED_RESOLUTION, error.getMessage());
+	}
+
+	private static void writeAnalysedDependees(BufferedWriter writer, ImmutableSet<CompletedArtifact> dependees) {
+		dependees.stream()
 				.findFirst()
 				.ifPresent(dependee -> writeDependee(writer, FIRST_DEPENDEE, dependee));
-		artifact.dependees().stream()
+		dependees.stream()
 				.skip(1)
 				.forEach(dependee -> writeDependee(writer, OTHER_DEPENDEE, dependee));
 	}
 
-	private static void writeDependee(BufferedWriter writer, String format, DeeplyAnalyzedArtifact dependee) {
+	private static void writeDependee(BufferedWriter writer, String format, CompletedArtifact dependee) {
 		String coordinates = dependee.coordinates().toString();
 		writeLine(
 				writer,
@@ -163,8 +194,10 @@ class Brick {
 				coordinates.replace(":", " : "));
 	}
 
-	private static String cssClassForDependeesDependenciesOnJdk(DeeplyAnalyzedArtifact dependee) {
-		switch (dependee.marker()) {
+	private static String cssClassForDependeesDependenciesOnJdk(CompletedArtifact dependee) {
+		switch (dependee.transitiveMarker()) {
+			case UNKNOWN:
+				return CSS_CLASS_FOR_DEPENDEE_WITH_UNKNOWN_JDK_DEPENDENCIES;
 			case NONE:
 				return CSS_CLASS_FOR_DEPENDEE_WITH_NO_JDK_DEPENDENCIES;
 			case INDIRECT:
@@ -172,7 +205,8 @@ class Brick {
 			case DIRECT:
 				return CSS_CLASS_FOR_DEPENDEE_WITH_DIRECT_JDK_DEPENDENCIES;
 			default:
-				throw new IllegalArgumentException(format("Unknown dependency marker '%s'.", dependee.marker()));
+				throw new IllegalArgumentException(
+						format("Unknown dependency marker \"%s\".", dependee.transitiveMarker()));
 		}
 	}
 

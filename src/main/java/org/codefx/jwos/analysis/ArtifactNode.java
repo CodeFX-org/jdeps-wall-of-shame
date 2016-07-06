@@ -3,7 +3,7 @@ package org.codefx.jwos.analysis;
 import com.google.common.collect.ImmutableSet;
 import org.codefx.jwos.analysis.task.Task;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
-import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.CompletedArtifact;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
 import org.codefx.jwos.jdeps.dependency.Violation;
 
@@ -25,7 +25,7 @@ class ArtifactNode implements IdentifiesArtifact {
 	private final Task<Path> download;
 	private final Task<ImmutableSet<Violation>> analysis;
 	private final Task<ImmutableSet<ArtifactNode>> resolutionOfDependees;
-	private final Task<DeeplyAnalyzedArtifact> deepAnalysis;
+	private final Task<CompletedArtifact> completion;
 	private final Task<Void> output;
 
 	public ArtifactNode(IdentifiesArtifact artifact) {
@@ -35,7 +35,7 @@ class ArtifactNode implements IdentifiesArtifact {
 		download = new Task<>();
 		analysis = new Task<>();
 		resolutionOfDependees = new Task<>();
-		deepAnalysis = new Task<>();
+		completion = new Task<>();
 		output = new Task<>();
 	}
 
@@ -64,8 +64,8 @@ class ArtifactNode implements IdentifiesArtifact {
 		return resolutionOfDependees;
 	}
 
-	public Task<DeeplyAnalyzedArtifact> deepAnalysis() {
-		return deepAnalysis;
+	public Task<CompletedArtifact> completion() {
+		return completion;
 	}
 
 	public Task<Void> output() {

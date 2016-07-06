@@ -3,7 +3,7 @@ package org.codefx.jwos.file;
 import com.google.common.collect.ImmutableSet;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
-import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.CompletedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
 import org.codefx.jwos.artifact.ProjectCoordinates;
@@ -12,7 +12,7 @@ import org.codefx.jwos.artifact.ResolvedProject;
 import org.codefx.jwos.file.persistence.PersistentAnalysis;
 import org.codefx.jwos.file.persistence.PersistentAnalyzedArtifact;
 import org.codefx.jwos.file.persistence.PersistentArtifactCoordinates;
-import org.codefx.jwos.file.persistence.PersistentDeeplyAnalyzedArtifact;
+import org.codefx.jwos.file.persistence.PersistentCompletedArtifact;
 import org.codefx.jwos.file.persistence.PersistentFailedArtifact;
 import org.codefx.jwos.file.persistence.PersistentFailedProject;
 import org.codefx.jwos.file.persistence.PersistentProjectCoordinates;
@@ -75,7 +75,7 @@ class YamlPersister {
 		P loaded = read(yamlString, persistenceType);
 		return persistentUnwrapper.apply(loaded);
 	}
-	
+
 	// PROJECTS
 
 	String writeProject(ProjectCoordinates project) {
@@ -136,12 +136,12 @@ class YamlPersister {
 		return read(yamlString, PersistentAnalyzedArtifact.class, PersistentAnalyzedArtifact::toArtifact);
 	}
 
-	String writeDeeplyAnalyzedArtifact(DeeplyAnalyzedArtifact artifact) {
-		return write(artifact, PersistentDeeplyAnalyzedArtifact::from);
+	String writeCompletedArtifact(CompletedArtifact artifact) {
+		return write(artifact, PersistentCompletedArtifact::from);
 	}
 
-	DeeplyAnalyzedArtifact readDeeplyAnalyzedArtifact(String yamlString) {
-		return read(yamlString, PersistentDeeplyAnalyzedArtifact.class, PersistentDeeplyAnalyzedArtifact::toArtifact);
+	CompletedArtifact readCompletedArtifact(String yamlString) {
+		return read(yamlString, PersistentCompletedArtifact.class, PersistentCompletedArtifact::toArtifact);
 	}
 
 }

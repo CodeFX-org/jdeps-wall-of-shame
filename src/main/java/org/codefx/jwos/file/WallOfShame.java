@@ -1,6 +1,6 @@
 package org.codefx.jwos.file;
 
-import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.CompletedArtifact;
 import org.codefx.jwos.git.GitDirectory;
 import org.codefx.jwos.git.GitInformation;
 import org.eclipse.jgit.api.errors.GitAPIException;
@@ -18,7 +18,7 @@ import static java.util.stream.Collectors.joining;
 /**
  * The actual Wall Of Shame, which writes results in a human-readable way to files and commits them with Git.
  * <p>
- * Artifacts can be {@link #addArtifact(DeeplyAnalyzedArtifact) added} and the files can be {@link #write() written},
+ * Artifacts can be {@link #addArtifact(CompletedArtifact) added} and the files can be {@link #write() written},
  * {@link #commit() commited}, and {@link #push() pushed}.
  * <p>
  * This class is not thread-safe.
@@ -35,7 +35,7 @@ public class WallOfShame {
 	 */
 	private final GitDirectory git;
 
-	private final List<DeeplyAnalyzedArtifact> addedSinceLastCommit;
+	private final List<CompletedArtifact> addedSinceLastCommit;
 
 	private WallOfShame(Wall wall, GitDirectory git) {
 		this.wall = requireNonNull(wall, "The argument 'wall' must not be null.");
@@ -60,15 +60,15 @@ public class WallOfShame {
 				GitInformation.simple(remoteUrl, directory, userName, password, email));
 	}
 
-	public void addArtifacts(DeeplyAnalyzedArtifact... artifacts) {
+	public void addArtifacts(CompletedArtifact... artifacts) {
 		addArtifacts(Arrays.stream(artifacts));
 	}
 
-	public void addArtifacts(Stream<DeeplyAnalyzedArtifact> artifacts) {
+	public void addArtifacts(Stream<CompletedArtifact> artifacts) {
 		artifacts.forEach(this::addArtifact);
 	}
 
-	private void addArtifact(DeeplyAnalyzedArtifact artifact) {
+	private void addArtifact(CompletedArtifact artifact) {
 		wall.addArtifact(artifact);
 		addedSinceLastCommit.add(artifact);
 	}
@@ -85,7 +85,7 @@ public class WallOfShame {
 	private String createCommitMessage() {
 		return "Publish new results\n"
 				+ addedSinceLastCommit.stream()
-				.map(artifact -> artifact.coordinates().toString() + ": " + artifact.marker())
+				.map(artifact -> artifact.coordinates().toString() + ": " + artifact.transitiveMarker())
 				.collect(joining("\n * ", "\n * ", "\n"));
 	}
 

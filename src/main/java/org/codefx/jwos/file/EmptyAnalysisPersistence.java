@@ -2,7 +2,7 @@ package org.codefx.jwos.file;
 
 import org.codefx.jwos.analysis.AnalysisPersistence;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
-import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.CompletedArtifact;
 import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
@@ -16,7 +16,7 @@ import java.util.Collections;
 /**
  * An {@link AnalysisPersistence} that is empty and immutable.
  * <p>
- * The mutating methods can be called but do nothing.     
+ * The mutating methods can be called but do nothing.
  */
 public class EmptyAnalysisPersistence implements AnalysisPersistence {
 
@@ -67,52 +67,51 @@ public class EmptyAnalysisPersistence implements AnalysisPersistence {
 
 	@Override
 	public void addProject(ProjectCoordinates project) {
-		// do nothing;
+		// do nothing
 	}
 
 	@Override
 	public void addResolvedProject(ResolvedProject project) {
-		// do nothing;
+		// do nothing
 	}
 
 	@Override
 	public void addProjectResolutionError(FailedProject project) {
-		// do nothing;
+		// do nothing
 	}
 
 	@Override
 	public void addDownloadedArtifact(DownloadedArtifact artifact) {
-		// do nothing;
+		// do nothing
 	}
 
 	@Override
 	public void addDownloadError(FailedArtifact artifact) {
-		// do nothing;
+		// do nothing
 	}
 
 	@Override
 	public void addAnalyzedArtifact(AnalyzedArtifact artifact) {
-		// do nothing;
+		// do nothing
 	}
 
 	@Override
 	public void addAnalysisError(FailedArtifact artifact) {
-		// do nothing;
+		// do nothing
 	}
 
 	@Override
 	public void addResolvedArtifact(ResolvedArtifact artifact) {
-		// do nothing;
+		// do nothing
 	}
 
 	@Override
 	public void addArtifactResolutionError(FailedArtifact artifact) {
-		// do nothing;
+		// do nothing
 	}
 
 	@Override
-	public void addResult(DeeplyAnalyzedArtifact deeplyAnalyzedArtifact) {
-		// do nothing;
+	public void addResult(CompletedArtifact completedArtifact) {
+		// do nothing
 	}
-
 }

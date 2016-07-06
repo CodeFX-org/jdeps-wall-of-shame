@@ -2,10 +2,9 @@ package org.codefx.jwos.file;
 
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
-import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.CompletedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
-import org.codefx.jwos.artifact.MarkInternalDependencies;
 import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.artifact.ResolvedProject;
@@ -15,6 +14,8 @@ import org.codefx.jwos.jdeps.dependency.Violation;
 import org.junit.gen5.api.BeforeEach;
 import org.junit.gen5.api.DisplayName;
 import org.junit.gen5.api.Test;
+
+import java.io.IOException;
 
 import static com.google.common.collect.ImmutableSet.of;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -52,7 +53,7 @@ class YamlPersisterTest {
 
 		String projectAsYaml = persister.writeFailedProject(project);
 		FailedProject loadedProject = persister.readFailedProject(projectAsYaml);
-		
+
 		assertThat(loadedProject).isEqualTo(project);
 	}
 
@@ -68,7 +69,7 @@ class YamlPersisterTest {
 
 		String artifactAsYaml = persister.writeResolvedProject(project);
 		ResolvedProject loadedProject = persister.readResolvedProject(artifactAsYaml);
-		
+
 		assertThat(loadedProject).isEqualTo(project);
 		// equality is based on coordinates so we have to check versions explicitly
 		assertThat(loadedProject.versions()).isEqualTo(project.versions());
@@ -83,7 +84,7 @@ class YamlPersisterTest {
 
 		String artifactAsYaml = persister.writeArtifact(artifact);
 		ArtifactCoordinates loadedArtifact = persister.readArtifact(artifactAsYaml);
-		
+
 		assertThat(loadedArtifact).isEqualTo(artifact);
 	}
 
@@ -97,7 +98,7 @@ class YamlPersisterTest {
 
 		String artifactAsYaml = persister.writeFailedArtifact(artifact);
 		FailedArtifact loadedArtifact = persister.readFailedArtifact(artifactAsYaml);
-		
+
 		assertThat(loadedArtifact).isEqualTo(artifact);
 	}
 
@@ -113,7 +114,7 @@ class YamlPersisterTest {
 
 		String artifactAsYaml = persister.writeResolvedArtifact(artifact);
 		ResolvedArtifact loadedArtifact = persister.readResolvedArtifact(artifactAsYaml);
-		
+
 		assertThat(loadedArtifact).isEqualTo(artifact);
 		// equality is based on coordinates so we have to check dependees explicitly
 		assertThat(loadedArtifact.dependees()).isEqualTo(artifact.dependees());
@@ -146,12 +147,11 @@ class YamlPersisterTest {
 	}
 
 	@Test
-	@DisplayName("can dump and load deeply analyzed artifacts")
-	void persistDeeplyAnalyzedArtifact() {
-		DeeplyAnalyzedArtifact dependee = new DeeplyAnalyzedArtifact(
-				ArtifactCoordinates.from("artifact.group", "artifact", "version"),
-				MarkInternalDependencies.DIRECT,
-				of(
+	@DisplayName("can dump and load completed artifacts")
+	void persistCompletedArtifact() {
+		CompletedArtifact dependee = CompletedArtifact
+				.forArtifact(ArtifactCoordinates.from("artifact.group", "artifact", "version"))
+				.withViolations(of(
 						Violation.buildFor(
 								Type.of("artifact.package", "Class"),
 								of(
@@ -161,29 +161,31 @@ class YamlPersisterTest {
 								Type.of("artifact.package", "Class"),
 								of(
 										InternalType.of("sun.misc", "Unsafe", "internal", "JDK-internal"),
-										InternalType.of("sun.misc", "BASE64Encoder", "internal", "JDK-internal")))),
-				of()
-		);
-		DeeplyAnalyzedArtifact artifact = new DeeplyAnalyzedArtifact(
-				ArtifactCoordinates.from("artifact.group", "artifact", "version"),
-				MarkInternalDependencies.INDIRECT,
-				of(),
-				of(dependee)
-		);
+										InternalType.of("sun.misc", "BASE64Encoder", "internal", "JDK-internal")))))
+				.withDependees(of())
+				.build();
+		CompletedArtifact artifact = CompletedArtifact
+				.forArtifact(ArtifactCoordinates.from("artifact.group", "artifact", "version"))
+				.violationAnalysisFailedWith(new IOException("Ha Ha!"))
+				.withDependees(of(dependee))
+				.build();
 
-		String artifactAsYaml = persister.writeDeeplyAnalyzedArtifact(artifact);
-		DeeplyAnalyzedArtifact loadedArtifact = persister.readDeeplyAnalyzedArtifact(artifactAsYaml);
+		String artifactAsYaml = persister.writeCompletedArtifact(artifact);
+		CompletedArtifact loadedArtifact = persister.readCompletedArtifact(artifactAsYaml);
 
 		assertThat(loadedArtifact).isEqualTo(artifact);
 		// equality is based on coordinates so we have to check the rest explicitly
-		assertThat(loadedArtifact.marker()).isEqualTo(artifact.marker());
+		assertThat(loadedArtifact.transitiveMarker()).isEqualTo(artifact.transitiveMarker());
 		assertThat(loadedArtifact.dependees()).isEqualTo(artifact.dependees());
-		assertThat(loadedArtifact.violations()).isEqualTo(artifact.violations());
+		String loadedViolationAnalysisErrorMessage = loadedArtifact.violations().getLeft().getMessage();
+		String violationAnalysisErrorMessage = artifact.violations().getLeft().getMessage();
+		assertThat(loadedViolationAnalysisErrorMessage).isEqualTo(violationAnalysisErrorMessage);
 
 		// dependee equality is based on coordinates so we have to check their state explicitly as well
-		DeeplyAnalyzedArtifact loadedInnerArtifact = loadedArtifact.dependees().stream().findFirst().get();
-		DeeplyAnalyzedArtifact innerArtifact = artifact.dependees().stream().findFirst().get();
-		assertThat(loadedInnerArtifact.marker()).isEqualTo(innerArtifact.marker());
+		CompletedArtifact loadedInnerArtifact = loadedArtifact.dependees().get().stream().findFirst().get();
+		CompletedArtifact innerArtifact = artifact.dependees().get().stream().findFirst().get();
+
+		assertThat(loadedInnerArtifact.transitiveMarker()).isEqualTo(innerArtifact.transitiveMarker());
 		assertThat(loadedInnerArtifact.dependees()).isEqualTo(innerArtifact.dependees());
 		assertThat(loadedInnerArtifact.violations()).isEqualTo(innerArtifact.violations());
 	}

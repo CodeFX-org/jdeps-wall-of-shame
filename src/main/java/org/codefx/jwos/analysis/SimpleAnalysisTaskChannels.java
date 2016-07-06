@@ -3,7 +3,7 @@ package org.codefx.jwos.analysis;
 import org.codefx.jwos.analysis.channel.TaskChannel;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
-import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.CompletedArtifact;
 import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
@@ -21,7 +21,7 @@ class SimpleAnalysisTaskChannels implements AnalysisTaskChannels {
 	private final TaskChannel<ArtifactCoordinates, DownloadedArtifact, FailedArtifact> downloadArtifacts;
 	private final TaskChannel<DownloadedArtifact, AnalyzedArtifact, FailedArtifact> analyzeArtifacts;
 	private final TaskChannel<ArtifactCoordinates, ResolvedArtifact, FailedArtifact> resolveDependencies;
-	private final TaskChannel<DeeplyAnalyzedArtifact, Void, Void> outputResults;
+	private final TaskChannel<CompletedArtifact, Void, Void> outputResults;
 
 	public SimpleAnalysisTaskChannels() {
 		addProjects = TaskChannel.namedAndUnbounded("add project");
@@ -58,7 +58,7 @@ class SimpleAnalysisTaskChannels implements AnalysisTaskChannels {
 	}
 
 	@Override
-	public TaskChannel<DeeplyAnalyzedArtifact, Void, Void> outputResults() {
+	public TaskChannel<CompletedArtifact, Void, Void> outputResults() {
 		return outputResults;
 	}
 }

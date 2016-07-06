@@ -2,7 +2,7 @@ package org.codefx.jwos.file;
 
 import org.codefx.jwos.analysis.AnalysisPersistence;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
-import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.CompletedArtifact;
 import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
@@ -13,7 +13,7 @@ import org.codefx.jwos.artifact.ResolvedArtifact;
 import org.codefx.jwos.artifact.ResolvedProject;
 import org.codefx.jwos.file.persistence.PersistentAnalysis;
 import org.codefx.jwos.file.persistence.PersistentAnalyzedArtifact;
-import org.codefx.jwos.file.persistence.PersistentDeeplyAnalyzedArtifact;
+import org.codefx.jwos.file.persistence.PersistentCompletedArtifact;
 import org.codefx.jwos.file.persistence.PersistentDownloadedArtifact;
 import org.codefx.jwos.file.persistence.PersistentFailedArtifact;
 import org.codefx.jwos.file.persistence.PersistentFailedProject;
@@ -57,7 +57,7 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 			= new ConcurrentSkipListSet<>(IdentifiesArtifact.alphabeticalOrder());
 	private final SortedSet<FailedArtifact> resolutionFailedArtifacts
 			= new ConcurrentSkipListSet<>(IdentifiesArtifact.alphabeticalOrder());
-	private final SortedSet<DeeplyAnalyzedArtifact> deeplyAnalyzedArtifacts
+	private final SortedSet<CompletedArtifact> completedArtifacts
 			= new ConcurrentSkipListSet<>(IdentifiesArtifact.alphabeticalOrder());
 
 	// CREATION & PERSISTENCE
@@ -73,7 +73,7 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 	public static YamlAnalysisPersistence fromString(String yamlString) {
 		if (yamlString.isEmpty())
 			return empty();
-		
+
 		PersistentAnalysis persistent = PERSISTER.read(yamlString, PersistentAnalysis.class);
 		return from(persistent);
 	}
@@ -91,9 +91,9 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 		addTo(persistent.step_5_resolutionFailedArtifacts,
 				PersistentFailedArtifact::toArtifact,
 				yaml.resolutionFailedArtifacts);
-		addTo(persistent.step_6_deeplyAnalyzedArtifacts,
-				PersistentDeeplyAnalyzedArtifact::toArtifact,
-				yaml.deeplyAnalyzedArtifacts);
+		addTo(persistent.step_6_completedArtifacts,
+				PersistentCompletedArtifact::toArtifact,
+				yaml.completedArtifacts);
 		return yaml;
 	}
 
@@ -119,7 +119,7 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 		persistent.step_4_analysisFailedArtifacts = transformToList(analysisFailedArtifacts, PersistentFailedArtifact::from);
 		persistent.step_5_resolvedArtifacts = transformToList(resolvedArtifacts, PersistentResolvedArtifact::from);
 		persistent.step_5_resolutionFailedArtifacts = transformToList(resolutionFailedArtifacts, PersistentFailedArtifact::from);
-		persistent.step_6_deeplyAnalyzedArtifacts = transformToList(deeplyAnalyzedArtifacts, PersistentDeeplyAnalyzedArtifact::from);
+		persistent.step_6_completedArtifacts = transformToList(completedArtifacts, PersistentCompletedArtifact::from);
 		return persistent;
 	}
 
@@ -216,8 +216,8 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 	}
 
 	@Override
-	public void addResult(DeeplyAnalyzedArtifact artifact) {
-		deeplyAnalyzedArtifacts.add(artifact);
+	public void addResult(CompletedArtifact artifact) {
+		completedArtifacts.add(artifact);
 	}
 
 }

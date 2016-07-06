@@ -1,39 +1,41 @@
 package org.codefx.jwos.file;
 
-import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
-import org.codefx.jwos.artifact.MarkInternalDependencies;
+import org.codefx.jwos.artifact.CompletedArtifact;
+import org.codefx.jwos.artifact.MarkTransitiveInternalDependencies;
 
 import java.io.IOException;
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 import static java.util.Collections.emptySet;
 import static java.util.Objects.requireNonNull;
-import static org.codefx.jwos.artifact.MarkInternalDependencies.DIRECT;
-import static org.codefx.jwos.artifact.MarkInternalDependencies.INDIRECT;
-import static org.codefx.jwos.artifact.MarkInternalDependencies.NONE;
+import static org.codefx.jwos.artifact.MarkTransitiveInternalDependencies.DIRECT;
+import static org.codefx.jwos.artifact.MarkTransitiveInternalDependencies.INDIRECT;
+import static org.codefx.jwos.artifact.MarkTransitiveInternalDependencies.NONE;
+import static org.codefx.jwos.artifact.MarkTransitiveInternalDependencies.UNKNOWN;
 
 /**
  * The wall contains a {@link Brick} (a single file) for each type of
- * {@link MarkInternalDependencies internal dependency}.
+ * {@link MarkTransitiveInternalDependencies internal dependency}.
  * <p>
- * Artifacts can be {@link #addArtifact(DeeplyAnalyzedArtifact) added} and the files can be {@link #write() written}.
+ * Artifacts can be {@link #addArtifact(CompletedArtifact) added} and the files can be {@link #write() written}.
  * <p>
  * This class is not thread-safe.
  */
 class Wall {
 
-	private final Map<MarkInternalDependencies, Brick> bricks;
+	private final Map<MarkTransitiveInternalDependencies, Brick> bricks;
 
 	private Wall(Brick directDependencies, Brick indirectDependencies, Brick noDependencies) {
-		bricks = new HashMap<>();
-		bricks.put(DIRECT, directDependencies);
-		bricks.put(INDIRECT, indirectDependencies);
+		bricks = new EnumMap<>(MarkTransitiveInternalDependencies.class);
+		bricks.put(UNKNOWN, noDependencies);
 		bricks.put(NONE, noDependencies);
+		bricks.put(INDIRECT, indirectDependencies);
+		bricks.put(DIRECT, directDependencies);
 	}
 
-	public static Wall of(WallFiles files, Collection<DeeplyAnalyzedArtifact> artifacts) throws IOException {
+	public static Wall of(WallFiles files, Collection<CompletedArtifact> artifacts) throws IOException {
 		requireNonNull(files, "The argument 'files' must not be null.");
 		requireNonNull(artifacts, "The argument 'artifacts' must not be null.");
 
@@ -49,8 +51,8 @@ class Wall {
 		return of(files, emptySet());
 	}
 
-	public void addArtifact(DeeplyAnalyzedArtifact artifact) {
-		bricks.get(artifact.marker()).addArtifact(artifact);
+	public void addArtifact(CompletedArtifact artifact) {
+		bricks.get(artifact.transitiveMarker()).addArtifact(artifact);
 	}
 
 	public void write() throws IOException {

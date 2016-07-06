@@ -49,6 +49,10 @@ public class Task<R> {
 		return state.identifier();
 	}
 
+	public boolean isFinished() {
+		return state.isFinished();
+	}
+
 	@Override
 	public String toString() {
 		return state.toString();

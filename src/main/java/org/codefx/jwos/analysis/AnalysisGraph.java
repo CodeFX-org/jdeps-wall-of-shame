@@ -3,20 +3,17 @@ package org.codefx.jwos.analysis;
 import com.google.common.collect.ImmutableSet;
 import org.codefx.jwos.analysis.task.Task;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
-import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
 import org.codefx.jwos.artifact.IdentifiesArtifact;
 import org.codefx.jwos.artifact.IdentifiesProject;
 import org.codefx.jwos.artifact.ProjectCoordinates;
 import org.codefx.jwos.jdeps.dependency.Violation;
 
 import java.nio.file.Path;
-import java.util.Collection;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Stream;
 
-import static java.lang.String.format;
 import static java.util.Objects.requireNonNull;
 import static org.codefx.jwos.Util.toImmutableSet;
 

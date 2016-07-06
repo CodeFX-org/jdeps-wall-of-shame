@@ -1,0 +1,2476 @@
+!persistent_analysis
+step_1_projects:
+- {coordinates: 'ant:ant'}
+- {coordinates: 'com.google.guava:guava'}
+step_2_resolutionFailedProjects: []
+step_2_resolvedProjects:
+- project: {coordinates: 'ant:ant'}
+  versions: ['1.6', 1.4.1, 1.5.3-1, 1.5.2, 1.6.1, 1.5.1, 1.5.4, 1.6.3, 1.6.2, '1.5',
+    1.6.5, 1.6.4]
+- project: {coordinates: 'com.google.code.findbugs:jsr305'}
+  versions: [2.0.2, 2.0.3, 3.0.1, 3.0.0]
+- project: {coordinates: 'com.google.errorprone:error_prone_annotations'}
+  versions: [2.0.7, 2.0.8, 2.0.5, 2.0.6, 2.0.3, 2.0.4, 2.0.1, 2.0.2, '2.0', 2.0.9]
+- project: {coordinates: 'com.google.guava:guava'}
+  versions: [14.0-rc2, 13.0.1, 14.0-rc3, 19.0-rc2, 19.0-rc1, 19.0-rc3, 12.0-rc2, 12.0-rc1,
+    16.0-rc1, 12.0.1, '18.0', 11.0-rc1, '19.0', 17.0-rc2, 17.0-rc1, 11.0.2, 11.0.1,
+    14.0-rc1, 13.0-rc1, 13.0-rc2, 16.0.1, '12.0', 15.0-rc1, 10.0.1, '13.0', '10.0',
+    '11.0', r08, '16.0', r07, '17.0', '14.0', r09, '15.0', r03, r06, 10.0-rc1, r05,
+    10.0-rc3, 14.0.1, 10.0-rc2, 18.0-rc1, 18.0-rc2]
+- project: {coordinates: 'com.google.guava:guava-bootstrap'}
+  versions: [11.0-rc1, 11.0.2, 10.0.1, '11.0', 11.0.1, 10.0-rc3, '10.0', 12.0-rc1,
+    10.0-rc2, 10.0-rc1]
+- project: {coordinates: 'com.google.j2objc:j2objc-annotations'}
+  versions: ['0.1', 0.9.8]
+- project: {coordinates: 'javax.inject:javax.inject'}
+  versions: ['1']
+- project: {coordinates: 'jdk:srczip'}
+  versions: []
+- project: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations'}
+  versions: ['1.5', '1.4', '1.7', '1.6', '1.3', '1.12', '1.11', '1.10', '1.15', '1.14',
+    '1.13', '1.9', '1.8']
+- project: {coordinates: 'xerces:xerces-impl'}
+  versions: []
+- project: {coordinates: 'xerces:xercesImpl'}
+  versions: [2.6.2-jaxb-1.0.6, 2.5.0, 2.6.0, 2.2.1, 2.3.0, 2.4.0, 2.8.1, 2.9.0, 2.9.1,
+    2.6.1, 2.6.2, 2.7.1, 2.8.0, 2.11.0, 2.10.0, 2.0.2, 2.0.0]
+- project: {coordinates: 'xml-apis:xml-apis'}
+  versions: [1.4.01, 1.2.01, 1.3.03, 1.3.04, 1.0.b2, 1.3.02, 2.0.2, 2.0.0]
+- project: {coordinates: 'xml-resolver:xml-resolver'}
+  versions: ['1.1']
+step_3_downloadFailedArtifacts:
+- artifact: {coordinates: 'jdk:srczip:999'}
+  errorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+- artifact: {coordinates: 'xerces:xerces-impl:2.6.2'}
+  errorMessage: Could not find artifact xerces:xerces-impl:jar:2.6.2 in central (http://repo1.maven.org/maven2/)
+- artifact: {coordinates: 'xml-apis:xml-apis:1.2.01'}
+  errorMessage: Could not find artifact xml-apis:xml-apis:jar:1.2.01 in central (http://repo1.maven.org/maven2/)
+- artifact: {coordinates: 'xml-apis:xml-apis:2.6.2'}
+  errorMessage: Could not find artifact xml-apis:xml-apis:jar:2.6.2 in central (http://repo1.maven.org/maven2/)
+step_3_downloadedArtifacts:
+- artifact: {coordinates: 'ant:ant:1.4.1'}
+  path: /home/parlog/.m2/repository/ant/ant/1.4.1/ant-1.4.1.jar
+- artifact: {coordinates: 'ant:ant:1.5'}
+  path: /home/parlog/.m2/repository/ant/ant/1.5/ant-1.5.jar
+- artifact: {coordinates: 'ant:ant:1.5.1'}
+  path: /home/parlog/.m2/repository/ant/ant/1.5.1/ant-1.5.1.jar
+- artifact: {coordinates: 'ant:ant:1.5.2'}
+  path: /home/parlog/.m2/repository/ant/ant/1.5.2/ant-1.5.2.jar
+- artifact: {coordinates: 'ant:ant:1.5.3-1'}
+  path: /home/parlog/.m2/repository/ant/ant/1.5.3-1/ant-1.5.3-1.jar
+- artifact: {coordinates: 'ant:ant:1.5.4'}
+  path: /home/parlog/.m2/repository/ant/ant/1.5.4/ant-1.5.4.jar
+- artifact: {coordinates: 'ant:ant:1.6'}
+  path: /home/parlog/.m2/repository/ant/ant/1.6/ant-1.6.jar
+- artifact: {coordinates: 'ant:ant:1.6.1'}
+  path: /home/parlog/.m2/repository/ant/ant/1.6.1/ant-1.6.1.jar
+- artifact: {coordinates: 'ant:ant:1.6.2'}
+  path: /home/parlog/.m2/repository/ant/ant/1.6.2/ant-1.6.2.jar
+- artifact: {coordinates: 'ant:ant:1.6.3'}
+  path: /home/parlog/.m2/repository/ant/ant/1.6.3/ant-1.6.3.jar
+- artifact: {coordinates: 'ant:ant:1.6.4'}
+  path: /home/parlog/.m2/repository/ant/ant/1.6.4/ant-1.6.4.jar
+- artifact: {coordinates: 'ant:ant:1.6.5'}
+  path: /home/parlog/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+  path: /home/parlog/.m2/repository/com/google/code/findbugs/jsr305/1.3.7/jsr305-1.3.7.jar
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  path: /home/parlog/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:2.0.2'}
+  path: /home/parlog/.m2/repository/com/google/code/findbugs/jsr305/2.0.2/jsr305-2.0.2.jar
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:2.0.3'}
+  path: /home/parlog/.m2/repository/com/google/code/findbugs/jsr305/2.0.3/jsr305-2.0.3.jar
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:3.0.0'}
+  path: /home/parlog/.m2/repository/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:3.0.1'}
+  path: /home/parlog/.m2/repository/com/google/code/findbugs/jsr305/3.0.1/jsr305-3.0.1.jar
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0'}
+  path: /home/parlog/.m2/repository/com/google/errorprone/error_prone_annotations/2.0/error_prone_annotations-2.0.jar
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.1'}
+  path: /home/parlog/.m2/repository/com/google/errorprone/error_prone_annotations/2.0.1/error_prone_annotations-2.0.1.jar
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.2'}
+  path: /home/parlog/.m2/repository/com/google/errorprone/error_prone_annotations/2.0.2/error_prone_annotations-2.0.2.jar
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.3'}
+  path: /home/parlog/.m2/repository/com/google/errorprone/error_prone_annotations/2.0.3/error_prone_annotations-2.0.3.jar
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.4'}
+  path: /home/parlog/.m2/repository/com/google/errorprone/error_prone_annotations/2.0.4/error_prone_annotations-2.0.4.jar
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.5'}
+  path: /home/parlog/.m2/repository/com/google/errorprone/error_prone_annotations/2.0.5/error_prone_annotations-2.0.5.jar
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.6'}
+  path: /home/parlog/.m2/repository/com/google/errorprone/error_prone_annotations/2.0.6/error_prone_annotations-2.0.6.jar
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.7'}
+  path: /home/parlog/.m2/repository/com/google/errorprone/error_prone_annotations/2.0.7/error_prone_annotations-2.0.7.jar
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.8'}
+  path: /home/parlog/.m2/repository/com/google/errorprone/error_prone_annotations/2.0.8/error_prone_annotations-2.0.8.jar
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.9'}
+  path: /home/parlog/.m2/repository/com/google/errorprone/error_prone_annotations/2.0.9/error_prone_annotations-2.0.9.jar
+- artifact: {coordinates: 'com.google.guava:guava:10.0'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/10.0/guava-10.0.jar
+- artifact: {coordinates: 'com.google.guava:guava:10.0-rc1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/10.0-rc1/guava-10.0-rc1.jar
+- artifact: {coordinates: 'com.google.guava:guava:10.0-rc2'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/10.0-rc2/guava-10.0-rc2.jar
+- artifact: {coordinates: 'com.google.guava:guava:10.0-rc3'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/10.0-rc3/guava-10.0-rc3.jar
+- artifact: {coordinates: 'com.google.guava:guava:10.0.1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/10.0.1/guava-10.0.1.jar
+- artifact: {coordinates: 'com.google.guava:guava:11.0'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/11.0/guava-11.0.jar
+- artifact: {coordinates: 'com.google.guava:guava:11.0-rc1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/11.0-rc1/guava-11.0-rc1.jar
+- artifact: {coordinates: 'com.google.guava:guava:11.0.1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/11.0.1/guava-11.0.1.jar
+- artifact: {coordinates: 'com.google.guava:guava:11.0.2'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/11.0.2/guava-11.0.2.jar
+- artifact: {coordinates: 'com.google.guava:guava:12.0'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/12.0/guava-12.0.jar
+- artifact: {coordinates: 'com.google.guava:guava:12.0-rc1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/12.0-rc1/guava-12.0-rc1.jar
+- artifact: {coordinates: 'com.google.guava:guava:12.0-rc2'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/12.0-rc2/guava-12.0-rc2.jar
+- artifact: {coordinates: 'com.google.guava:guava:12.0.1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/12.0.1/guava-12.0.1.jar
+- artifact: {coordinates: 'com.google.guava:guava:13.0'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/13.0/guava-13.0.jar
+- artifact: {coordinates: 'com.google.guava:guava:13.0-rc1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/13.0-rc1/guava-13.0-rc1.jar
+- artifact: {coordinates: 'com.google.guava:guava:13.0-rc2'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/13.0-rc2/guava-13.0-rc2.jar
+- artifact: {coordinates: 'com.google.guava:guava:13.0.1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/13.0.1/guava-13.0.1.jar
+- artifact: {coordinates: 'com.google.guava:guava:14.0'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/14.0/guava-14.0.jar
+- artifact: {coordinates: 'com.google.guava:guava:14.0-rc1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/14.0-rc1/guava-14.0-rc1.jar
+- artifact: {coordinates: 'com.google.guava:guava:14.0-rc2'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/14.0-rc2/guava-14.0-rc2.jar
+- artifact: {coordinates: 'com.google.guava:guava:14.0-rc3'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/14.0-rc3/guava-14.0-rc3.jar
+- artifact: {coordinates: 'com.google.guava:guava:14.0.1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar
+- artifact: {coordinates: 'com.google.guava:guava:15.0'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/15.0/guava-15.0.jar
+- artifact: {coordinates: 'com.google.guava:guava:15.0-rc1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/15.0-rc1/guava-15.0-rc1.jar
+- artifact: {coordinates: 'com.google.guava:guava:16.0'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar
+- artifact: {coordinates: 'com.google.guava:guava:16.0-rc1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/16.0-rc1/guava-16.0-rc1.jar
+- artifact: {coordinates: 'com.google.guava:guava:16.0.1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/16.0.1/guava-16.0.1.jar
+- artifact: {coordinates: 'com.google.guava:guava:17.0'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/17.0/guava-17.0.jar
+- artifact: {coordinates: 'com.google.guava:guava:17.0-rc1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/17.0-rc1/guava-17.0-rc1.jar
+- artifact: {coordinates: 'com.google.guava:guava:17.0-rc2'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/17.0-rc2/guava-17.0-rc2.jar
+- artifact: {coordinates: 'com.google.guava:guava:18.0'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/18.0/guava-18.0.jar
+- artifact: {coordinates: 'com.google.guava:guava:18.0-rc1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/18.0-rc1/guava-18.0-rc1.jar
+- artifact: {coordinates: 'com.google.guava:guava:18.0-rc2'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/18.0-rc2/guava-18.0-rc2.jar
+- artifact: {coordinates: 'com.google.guava:guava:19.0'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/19.0/guava-19.0.jar
+- artifact: {coordinates: 'com.google.guava:guava:19.0-rc1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/19.0-rc1/guava-19.0-rc1.jar
+- artifact: {coordinates: 'com.google.guava:guava:19.0-rc2'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/19.0-rc2/guava-19.0-rc2.jar
+- artifact: {coordinates: 'com.google.guava:guava:19.0-rc3'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/19.0-rc3/guava-19.0-rc3.jar
+- artifact: {coordinates: 'com.google.guava:guava:r03'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/r03/guava-r03.jar
+- artifact: {coordinates: 'com.google.guava:guava:r05'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/r05/guava-r05.jar
+- artifact: {coordinates: 'com.google.guava:guava:r06'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/r06/guava-r06.jar
+- artifact: {coordinates: 'com.google.guava:guava:r07'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/r07/guava-r07.jar
+- artifact: {coordinates: 'com.google.guava:guava:r08'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/r08/guava-r08.jar
+- artifact: {coordinates: 'com.google.guava:guava:r09'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava/r09/guava-r09.jar
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava-bootstrap/10.0/guava-bootstrap-10.0.jar
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava-bootstrap/10.0-rc1/guava-bootstrap-10.0-rc1.jar
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc2'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava-bootstrap/10.0-rc2/guava-bootstrap-10.0-rc2.jar
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc3'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava-bootstrap/10.0-rc3/guava-bootstrap-10.0-rc3.jar
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0.1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava-bootstrap/10.0.1/guava-bootstrap-10.0.1.jar
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava-bootstrap/11.0/guava-bootstrap-11.0.jar
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0-rc1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava-bootstrap/11.0-rc1/guava-bootstrap-11.0-rc1.jar
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0.1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava-bootstrap/11.0.1/guava-bootstrap-11.0.1.jar
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0.2'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava-bootstrap/11.0.2/guava-bootstrap-11.0.2.jar
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:12.0-rc1'}
+  path: /home/parlog/.m2/repository/com/google/guava/guava-bootstrap/12.0-rc1/guava-bootstrap-12.0-rc1.jar
+- artifact: {coordinates: 'com.google.j2objc:j2objc-annotations:0.1'}
+  path: /home/parlog/.m2/repository/com/google/j2objc/j2objc-annotations/0.1/j2objc-annotations-0.1.jar
+- artifact: {coordinates: 'com.google.j2objc:j2objc-annotations:0.9.8'}
+  path: /home/parlog/.m2/repository/com/google/j2objc/j2objc-annotations/0.9.8/j2objc-annotations-0.9.8.jar
+- artifact: {coordinates: 'javax.inject:javax.inject:1'}
+  path: /home/parlog/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.10'}
+  path: /home/parlog/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.10/animal-sniffer-annotations-1.10.jar
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.11'}
+  path: /home/parlog/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.11/animal-sniffer-annotations-1.11.jar
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.12'}
+  path: /home/parlog/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.12/animal-sniffer-annotations-1.12.jar
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.13'}
+  path: /home/parlog/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.13/animal-sniffer-annotations-1.13.jar
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.14'}
+  path: /home/parlog/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.15'}
+  path: /home/parlog/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.15/animal-sniffer-annotations-1.15.jar
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.3'}
+  path: /home/parlog/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.3/animal-sniffer-annotations-1.3.jar
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.4'}
+  path: /home/parlog/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.4/animal-sniffer-annotations-1.4.jar
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.5'}
+  path: /home/parlog/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.5/animal-sniffer-annotations-1.5.jar
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.6'}
+  path: /home/parlog/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.6/animal-sniffer-annotations-1.6.jar
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.7'}
+  path: /home/parlog/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.7/animal-sniffer-annotations-1.7.jar
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.8'}
+  path: /home/parlog/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.8/animal-sniffer-annotations-1.8.jar
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.9'}
+  path: /home/parlog/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.9/animal-sniffer-annotations-1.9.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.0.0'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.0.0/xercesImpl-2.0.0.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.0.2'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.0.2/xercesImpl-2.0.2.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.10.0'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.10.0/xercesImpl-2.10.0.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.11.0'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.2.1'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.2.1/xercesImpl-2.2.1.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.3.0'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.3.0/xercesImpl-2.3.0.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.4.0'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.4.0/xercesImpl-2.4.0.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.5.0'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.5.0/xercesImpl-2.5.0.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.6.0'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.6.0/xercesImpl-2.6.0.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.6.1'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.6.1/xercesImpl-2.6.1.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.6.2'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.6.2/xercesImpl-2.6.2.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.6.2-jaxb-1.0.6'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.6.2-jaxb-1.0.6/xercesImpl-2.6.2-jaxb-1.0.6.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.7.1'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.7.1/xercesImpl-2.7.1.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.8.0'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.8.0/xercesImpl-2.8.0.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.8.1'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.9.0'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.9.0/xercesImpl-2.9.0.jar
+- artifact: {coordinates: 'xerces:xercesImpl:2.9.1'}
+  path: /home/parlog/.m2/repository/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar
+- artifact: {coordinates: 'xml-apis:xml-apis:1.0.b2'}
+  path: /home/parlog/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar
+- artifact: {coordinates: 'xml-apis:xml-apis:1.3.02'}
+  path: /home/parlog/.m2/repository/xml-apis/xml-apis/1.3.02/xml-apis-1.3.02.jar
+- artifact: {coordinates: 'xml-apis:xml-apis:1.3.03'}
+  path: /home/parlog/.m2/repository/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.jar
+- artifact: {coordinates: 'xml-apis:xml-apis:1.3.04'}
+  path: /home/parlog/.m2/repository/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar
+- artifact: {coordinates: 'xml-apis:xml-apis:1.4.01'}
+  path: /home/parlog/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar
+- artifact: {coordinates: 'xml-apis:xml-apis:2.0.0'}
+  path: /home/parlog/.m2/repository/xml-apis/xml-apis/2.0.0/xml-apis-2.0.0.jar
+- artifact: {coordinates: 'xml-apis:xml-apis:2.0.2'}
+  path: /home/parlog/.m2/repository/xml-apis/xml-apis/2.0.2/xml-apis-2.0.2.jar
+- artifact: {coordinates: 'xml-resolver:xml-resolver:1.1'}
+  path: /home/parlog/.m2/repository/xml-resolver/xml-resolver/1.1/xml-resolver-1.1.jar
+- artifact: {coordinates: 'xml-resolver:xml-resolver:1.2'}
+  path: /home/parlog/.m2/repository/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar
+step_4_analysisFailedArtifacts: []
+step_4_analyzedArtifacts:
+- artifact: {coordinates: 'ant:ant:1.4.1'}
+  violations: []
+- artifact: {coordinates: 'ant:ant:1.5'}
+  violations: []
+- artifact: {coordinates: 'ant:ant:1.5.1'}
+  violations: []
+- artifact: {coordinates: 'ant:ant:1.5.2'}
+  violations: []
+- artifact: {coordinates: 'ant:ant:1.5.3-1'}
+  violations: []
+- artifact: {coordinates: 'ant:ant:1.5.4'}
+  violations: []
+- artifact: {coordinates: 'ant:ant:1.6'}
+  violations:
+  - dependent: {className: org.apache.tools.ant.taskdefs.email.UUMailer}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.CharacterEncoder, source: rt.jar}
+    - {category: JDK internal API, className: sun.misc.UUEncoder, source: rt.jar}
+- artifact: {coordinates: 'ant:ant:1.6.1'}
+  violations:
+  - dependent: {className: org.apache.tools.ant.taskdefs.email.UUMailer}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.CharacterEncoder, source: rt.jar}
+    - {category: JDK internal API, className: sun.misc.UUEncoder, source: rt.jar}
+- artifact: {coordinates: 'ant:ant:1.6.2'}
+  violations:
+  - dependent: {className: org.apache.tools.ant.taskdefs.email.UUMailer}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.UUEncoder, source: rt.jar}
+- artifact: {coordinates: 'ant:ant:1.6.3'}
+  violations:
+  - dependent: {className: org.apache.tools.ant.taskdefs.email.UUMailer}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.UUEncoder, source: rt.jar}
+- artifact: {coordinates: 'ant:ant:1.6.4'}
+  violations:
+  - dependent: {className: org.apache.tools.ant.taskdefs.email.UUMailer}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.UUEncoder, source: rt.jar}
+- artifact: {coordinates: 'ant:ant:1.6.5'}
+  violations:
+  - dependent: {className: org.apache.tools.ant.taskdefs.email.UUMailer}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.UUEncoder, source: rt.jar}
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+  violations: []
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  violations: []
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:2.0.2'}
+  violations: []
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:2.0.3'}
+  violations: []
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:3.0.0'}
+  violations: []
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:3.0.1'}
+  violations: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0'}
+  violations: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.1'}
+  violations: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.2'}
+  violations: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.3'}
+  violations: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.4'}
+  violations: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.5'}
+  violations: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.6'}
+  violations: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.7'}
+  violations: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.8'}
+  violations: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.9'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:10.0'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:10.0-rc1'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:10.0-rc2'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:10.0-rc3'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:10.0.1'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:11.0'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:11.0-rc1'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:11.0.1'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:11.0.2'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:12.0'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:12.0-rc1'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:12.0-rc2'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:12.0.1'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:13.0'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:13.0-rc1'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:13.0-rc2'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:13.0.1'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:14.0'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:14.0-rc1'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:14.0-rc2'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:14.0-rc3'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:14.0.1'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:15.0'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:15.0-rc1'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:16.0'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:16.0-rc1'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:16.0.1'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:17.0'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:17.0-rc1'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:17.0-rc2'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:18.0'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:18.0-rc1'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:18.0-rc2'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:19.0'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:19.0-rc1'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:19.0-rc2'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:19.0-rc3'}
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- artifact: {coordinates: 'com.google.guava:guava:r03'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:r05'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:r06'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:r07'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:r08'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava:r09'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc1'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc2'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc3'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0.1'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0-rc1'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0.1'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0.2'}
+  violations: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:12.0-rc1'}
+  violations: []
+- artifact: {coordinates: 'com.google.j2objc:j2objc-annotations:0.1'}
+  violations: []
+- artifact: {coordinates: 'com.google.j2objc:j2objc-annotations:0.9.8'}
+  violations: []
+- artifact: {coordinates: 'javax.inject:javax.inject:1'}
+  violations: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.10'}
+  violations: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.11'}
+  violations: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.12'}
+  violations: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.13'}
+  violations: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.14'}
+  violations: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.15'}
+  violations: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.3'}
+  violations: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.4'}
+  violations: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.5'}
+  violations: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.6'}
+  violations: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.7'}
+  violations: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.8'}
+  violations: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.9'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.0.0'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.0.2'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.10.0'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.11.0'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.2.1'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.3.0'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.4.0'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.5.0'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.6.0'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.6.1'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.6.2'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.6.2-jaxb-1.0.6'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.7.1'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.8.0'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.8.1'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.9.0'}
+  violations: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.9.1'}
+  violations: []
+- artifact: {coordinates: 'xml-apis:xml-apis:1.0.b2'}
+  violations: []
+- artifact: {coordinates: 'xml-apis:xml-apis:1.3.02'}
+  violations: []
+- artifact: {coordinates: 'xml-apis:xml-apis:1.3.03'}
+  violations: []
+- artifact: {coordinates: 'xml-apis:xml-apis:1.3.04'}
+  violations: []
+- artifact: {coordinates: 'xml-apis:xml-apis:1.4.01'}
+  violations: []
+- artifact: {coordinates: 'xml-apis:xml-apis:2.0.0'}
+  violations: []
+- artifact: {coordinates: 'xml-apis:xml-apis:2.0.2'}
+  violations: []
+- artifact: {coordinates: 'xml-resolver:xml-resolver:1.1'}
+  violations: []
+- artifact: {coordinates: 'xml-resolver:xml-resolver:1.2'}
+  violations: []
+step_5_resolutionFailedArtifacts: []
+step_5_resolvedArtifacts:
+- artifact: {coordinates: 'ant:ant:1.4.1'}
+  dependees: []
+- artifact: {coordinates: 'ant:ant:1.5'}
+  dependees: []
+- artifact: {coordinates: 'ant:ant:1.5.1'}
+  dependees: []
+- artifact: {coordinates: 'ant:ant:1.5.2'}
+  dependees: []
+- artifact: {coordinates: 'ant:ant:1.5.3-1'}
+  dependees: []
+- artifact: {coordinates: 'ant:ant:1.5.4'}
+  dependees: []
+- artifact: {coordinates: 'ant:ant:1.6'}
+  dependees: []
+- artifact: {coordinates: 'ant:ant:1.6.1'}
+  dependees: []
+- artifact: {coordinates: 'ant:ant:1.6.2'}
+  dependees:
+  - {coordinates: 'xml-apis:xml-apis:2.6.2'}
+  - {coordinates: 'xerces:xerces-impl:2.6.2'}
+- artifact: {coordinates: 'ant:ant:1.6.3'}
+  dependees:
+  - {coordinates: 'xerces:xercesImpl:2.6.2'}
+- artifact: {coordinates: 'ant:ant:1.6.4'}
+  dependees: []
+- artifact: {coordinates: 'ant:ant:1.6.5'}
+  dependees:
+  - {coordinates: 'xerces:xercesImpl:2.6.2'}
+  - {coordinates: 'xml-apis:xml-apis:1.3.04'}
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+  dependees: []
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  dependees: []
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:2.0.2'}
+  dependees: []
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:2.0.3'}
+  dependees: []
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:3.0.0'}
+  dependees: []
+- artifact: {coordinates: 'com.google.code.findbugs:jsr305:3.0.1'}
+  dependees: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0'}
+  dependees: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.1'}
+  dependees: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.2'}
+  dependees: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.3'}
+  dependees: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.4'}
+  dependees: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.5'}
+  dependees: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.6'}
+  dependees: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.7'}
+  dependees: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.8'}
+  dependees: []
+- artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.9'}
+  dependees: []
+- artifact: {coordinates: 'com.google.guava:guava:10.0'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'com.google.guava:guava-bootstrap:10.0'}
+- artifact: {coordinates: 'com.google.guava:guava:10.0-rc1'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc1'}
+- artifact: {coordinates: 'com.google.guava:guava:10.0-rc2'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc2'}
+- artifact: {coordinates: 'com.google.guava:guava:10.0-rc3'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc3'}
+- artifact: {coordinates: 'com.google.guava:guava:10.0.1'}
+  dependees:
+  - {coordinates: 'com.google.guava:guava-bootstrap:10.0.1'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:11.0'}
+  dependees:
+  - {coordinates: 'com.google.guava:guava-bootstrap:11.0'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:11.0-rc1'}
+  dependees:
+  - {coordinates: 'com.google.guava:guava-bootstrap:11.0-rc1'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:11.0.1'}
+  dependees:
+  - {coordinates: 'com.google.guava:guava-bootstrap:11.0.1'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:11.0.2'}
+  dependees:
+  - {coordinates: 'com.google.guava:guava-bootstrap:11.0.2'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:12.0'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:12.0-rc1'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'com.google.guava:guava-bootstrap:12.0-rc1'}
+- artifact: {coordinates: 'com.google.guava:guava:12.0-rc2'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:12.0.1'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:13.0'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:13.0-rc1'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:13.0-rc2'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:13.0.1'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:14.0'}
+  dependees:
+  - {coordinates: 'javax.inject:javax.inject:1'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:14.0-rc1'}
+  dependees:
+  - {coordinates: 'javax.inject:javax.inject:1'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:14.0-rc2'}
+  dependees:
+  - {coordinates: 'javax.inject:javax.inject:1'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:14.0-rc3'}
+  dependees:
+  - {coordinates: 'javax.inject:javax.inject:1'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:14.0.1'}
+  dependees:
+  - {coordinates: 'javax.inject:javax.inject:1'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+- artifact: {coordinates: 'com.google.guava:guava:15.0'}
+  dependees:
+  - {coordinates: 'javax.inject:javax.inject:1'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:15.0-rc1'}
+  dependees:
+  - {coordinates: 'javax.inject:javax.inject:1'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:16.0'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:16.0-rc1'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:16.0.1'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:17.0'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:17.0-rc1'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:17.0-rc2'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:18.0'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:18.0-rc1'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:18.0-rc2'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:19.0'}
+  dependees:
+  - {coordinates: 'com.google.j2objc:j2objc-annotations:0.1'}
+  - {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.14'}
+  - {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.2'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:19.0-rc1'}
+  dependees:
+  - {coordinates: 'com.google.j2objc:j2objc-annotations:0.1'}
+  - {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.14'}
+  - {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.2'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:19.0-rc2'}
+  dependees:
+  - {coordinates: 'com.google.j2objc:j2objc-annotations:0.1'}
+  - {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.14'}
+  - {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.2'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:19.0-rc3'}
+  dependees:
+  - {coordinates: 'com.google.j2objc:j2objc-annotations:0.1'}
+  - {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.14'}
+  - {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.2'}
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  - {coordinates: 'jdk:srczip:999'}
+- artifact: {coordinates: 'com.google.guava:guava:r03'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+- artifact: {coordinates: 'com.google.guava:guava:r05'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+- artifact: {coordinates: 'com.google.guava:guava:r06'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+- artifact: {coordinates: 'com.google.guava:guava:r07'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+- artifact: {coordinates: 'com.google.guava:guava:r08'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+- artifact: {coordinates: 'com.google.guava:guava:r09'}
+  dependees:
+  - {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0'}
+  dependees: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc1'}
+  dependees: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc2'}
+  dependees: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc3'}
+  dependees: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0.1'}
+  dependees: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0'}
+  dependees: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0-rc1'}
+  dependees: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0.1'}
+  dependees: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0.2'}
+  dependees: []
+- artifact: {coordinates: 'com.google.guava:guava-bootstrap:12.0-rc1'}
+  dependees: []
+- artifact: {coordinates: 'com.google.j2objc:j2objc-annotations:0.1'}
+  dependees: []
+- artifact: {coordinates: 'com.google.j2objc:j2objc-annotations:0.9.8'}
+  dependees: []
+- artifact: {coordinates: 'javax.inject:javax.inject:1'}
+  dependees: []
+- artifact: {coordinates: 'jdk:srczip:999'}
+  dependees: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.10'}
+  dependees: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.11'}
+  dependees: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.12'}
+  dependees: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.13'}
+  dependees: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.14'}
+  dependees: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.15'}
+  dependees: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.3'}
+  dependees: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.4'}
+  dependees: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.5'}
+  dependees: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.6'}
+  dependees: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.7'}
+  dependees: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.8'}
+  dependees: []
+- artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.9'}
+  dependees: []
+- artifact: {coordinates: 'xerces:xerces-impl:2.6.2'}
+  dependees: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.0.0'}
+  dependees: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.0.2'}
+  dependees: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.10.0'}
+  dependees:
+  - {coordinates: 'xml-apis:xml-apis:1.4.01'}
+  - {coordinates: 'xml-resolver:xml-resolver:1.2'}
+- artifact: {coordinates: 'xerces:xercesImpl:2.11.0'}
+  dependees:
+  - {coordinates: 'xml-apis:xml-apis:1.4.01'}
+  - {coordinates: 'xml-resolver:xml-resolver:1.2'}
+- artifact: {coordinates: 'xerces:xercesImpl:2.2.1'}
+  dependees: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.3.0'}
+  dependees: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.4.0'}
+  dependees: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.5.0'}
+  dependees: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.6.0'}
+  dependees: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.6.1'}
+  dependees: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.6.2'}
+  dependees: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.6.2-jaxb-1.0.6'}
+  dependees: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.7.1'}
+  dependees: []
+- artifact: {coordinates: 'xerces:xercesImpl:2.8.0'}
+  dependees:
+  - {coordinates: 'xml-resolver:xml-resolver:1.1'}
+  - {coordinates: 'xml-apis:xml-apis:1.3.03'}
+- artifact: {coordinates: 'xerces:xercesImpl:2.8.1'}
+  dependees:
+  - {coordinates: 'xml-resolver:xml-resolver:1.1'}
+  - {coordinates: 'xml-apis:xml-apis:1.3.03'}
+- artifact: {coordinates: 'xerces:xercesImpl:2.9.0'}
+  dependees:
+  - {coordinates: 'xml-resolver:xml-resolver:1.2'}
+  - {coordinates: 'xml-apis:xml-apis:1.3.04'}
+- artifact: {coordinates: 'xerces:xercesImpl:2.9.1'}
+  dependees:
+  - {coordinates: 'xml-resolver:xml-resolver:1.2'}
+  - {coordinates: 'xml-apis:xml-apis:1.3.04'}
+- artifact: {coordinates: 'xml-apis:xml-apis:1.0.b2'}
+  dependees: []
+- artifact: {coordinates: 'xml-apis:xml-apis:1.2.01'}
+  dependees: []
+- artifact: {coordinates: 'xml-apis:xml-apis:1.3.02'}
+  dependees: []
+- artifact: {coordinates: 'xml-apis:xml-apis:1.3.03'}
+  dependees: []
+- artifact: {coordinates: 'xml-apis:xml-apis:1.3.04'}
+  dependees: []
+- artifact: {coordinates: 'xml-apis:xml-apis:1.4.01'}
+  dependees: []
+- artifact: {coordinates: 'xml-apis:xml-apis:2.0.0'}
+  dependees: []
+- artifact: {coordinates: 'xml-apis:xml-apis:2.0.2'}
+  dependees: []
+- artifact: {coordinates: 'xml-apis:xml-apis:2.6.2'}
+  dependees: []
+- artifact: {coordinates: 'xml-resolver:xml-resolver:1.1'}
+  dependees: []
+- artifact: {coordinates: 'xml-resolver:xml-resolver:1.2'}
+  dependees: []
+step_6_completedArtifacts:
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'ant:ant:1.4.1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'ant:ant:1.5'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'ant:ant:1.5.1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'ant:ant:1.5.2'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'ant:ant:1.5.3-1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'ant:ant:1.5.4'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'ant:ant:1.6'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: org.apache.tools.ant.taskdefs.email.UUMailer}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.CharacterEncoder, source: rt.jar}
+    - {category: JDK internal API, className: sun.misc.UUEncoder, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'ant:ant:1.6.1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: org.apache.tools.ant.taskdefs.email.UUMailer}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.CharacterEncoder, source: rt.jar}
+    - {category: JDK internal API, className: sun.misc.UUEncoder, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'ant:ant:1.6.2'}
+  dependees:
+  - analysisErrorMessage: Could not find artifact xml-apis:xml-apis:jar:2.6.2 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'xml-apis:xml-apis:2.6.2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: Could not find artifact xerces:xerces-impl:jar:2.6.2 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'xerces:xerces-impl:2.6.2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: org.apache.tools.ant.taskdefs.email.UUMailer}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.UUEncoder, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'ant:ant:1.6.3'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xerces:xercesImpl:2.6.2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: org.apache.tools.ant.taskdefs.email.UUMailer}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.UUEncoder, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'ant:ant:1.6.4'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: org.apache.tools.ant.taskdefs.email.UUMailer}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.UUEncoder, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'ant:ant:1.6.5'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xml-apis:xml-apis:1.3.04'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xerces:xercesImpl:2.6.2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: org.apache.tools.ant.taskdefs.email.UUMailer}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.UUEncoder, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.code.findbugs:jsr305:2.0.2'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.code.findbugs:jsr305:2.0.3'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.code.findbugs:jsr305:3.0.0'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.code.findbugs:jsr305:3.0.1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.2'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.3'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.4'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.5'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.6'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.7'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.8'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.9'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:10.0'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:10.0-rc1'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:10.0-rc2'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:10.0-rc3'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc3'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:10.0.1'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0.1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:11.0'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:11.0-rc1'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0-rc1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:11.0.1'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0.1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:11.0.2'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0.2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:12.0'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:12.0-rc1'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.guava:guava-bootstrap:12.0-rc1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:12.0-rc2'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:12.0.1'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:13.0'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:13.0-rc1'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:13.0-rc2'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:13.0.1'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:14.0'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'javax.inject:javax.inject:1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:14.0-rc1'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'javax.inject:javax.inject:1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:14.0-rc2'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'javax.inject:javax.inject:1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:14.0-rc3'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'javax.inject:javax.inject:1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:14.0.1'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'javax.inject:javax.inject:1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:15.0'}
+  dependees:
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'javax.inject:javax.inject:1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:15.0-rc1'}
+  dependees:
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'javax.inject:javax.inject:1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:16.0'}
+  dependees:
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:16.0-rc1'}
+  dependees:
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:16.0.1'}
+  dependees:
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:17.0'}
+  dependees:
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:17.0-rc1'}
+  dependees:
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:17.0-rc2'}
+  dependees:
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:18.0'}
+  dependees:
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:18.0-rc1'}
+  dependees:
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:18.0-rc2'}
+  dependees:
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:19.0'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.j2objc:j2objc-annotations:0.1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.14'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:19.0-rc1'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.j2objc:j2objc-annotations:0.1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.14'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:19.0-rc2'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.j2objc:j2objc-annotations:0.1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.14'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: DIRECT
+  artifact: {coordinates: 'com.google.guava:guava:19.0-rc3'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.j2objc:j2objc-annotations:0.1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+    analysisResult: UNKNOWN
+    artifact: {coordinates: 'jdk:srczip:999'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: null
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.9'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.14'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.errorprone:error_prone_annotations:2.0.2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations:
+  - dependent: {className: com.google.common.cache.Striped64}
+    internalDependencies:
+    - {category: JDK internal API, className: sun.misc.Unsafe, source: rt.jar}
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:r03'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:r05'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:r06'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:r07'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:r08'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava:r09'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'com.google.code.findbugs:jsr305:1.3.7'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc2'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0-rc3'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava-bootstrap:10.0.1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0-rc1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0.1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava-bootstrap:11.0.2'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.guava:guava-bootstrap:12.0-rc1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.j2objc:j2objc-annotations:0.1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'com.google.j2objc:j2objc-annotations:0.9.8'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'javax.inject:javax.inject:1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: Could not find artifact jdk:srczip:jar:999 in central (http://repo1.maven.org/maven2/)
+  analysisResult: UNKNOWN
+  artifact: {coordinates: 'jdk:srczip:999'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: null
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.10'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.11'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.12'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.13'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.14'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.15'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.3'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.4'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.5'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.6'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.7'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.8'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'org.codehaus.mojo:animal-sniffer-annotations:1.9'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: Could not find artifact xerces:xerces-impl:jar:2.6.2 in central (http://repo1.maven.org/maven2/)
+  analysisResult: UNKNOWN
+  artifact: {coordinates: 'xerces:xerces-impl:2.6.2'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: null
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.0.0'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.0.2'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.10.0'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xml-resolver:xml-resolver:1.2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xml-apis:xml-apis:1.4.01'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.11.0'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xml-resolver:xml-resolver:1.2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xml-apis:xml-apis:1.4.01'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.2.1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.3.0'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.4.0'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.5.0'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.6.0'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.6.1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.6.2'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.6.2-jaxb-1.0.6'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.7.1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.8.0'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xml-resolver:xml-resolver:1.1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xml-apis:xml-apis:1.3.03'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.8.1'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xml-resolver:xml-resolver:1.1'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xml-apis:xml-apis:1.3.03'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.9.0'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xml-resolver:xml-resolver:1.2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xml-apis:xml-apis:1.3.04'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xerces:xercesImpl:2.9.1'}
+  dependees:
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xml-resolver:xml-resolver:1.2'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  - analysisErrorMessage: null
+    analysisResult: NONE
+    artifact: {coordinates: 'xml-apis:xml-apis:1.3.04'}
+    dependees: []
+    resolutionErrorMessage: null
+    violations: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xml-apis:xml-apis:1.0.b2'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: Could not find artifact xml-apis:xml-apis:jar:1.2.01 in central (http://repo1.maven.org/maven2/)
+  analysisResult: UNKNOWN
+  artifact: {coordinates: 'xml-apis:xml-apis:1.2.01'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: null
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xml-apis:xml-apis:1.3.02'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xml-apis:xml-apis:1.3.03'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xml-apis:xml-apis:1.3.04'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xml-apis:xml-apis:1.4.01'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xml-apis:xml-apis:2.0.0'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xml-apis:xml-apis:2.0.2'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: Could not find artifact xml-apis:xml-apis:jar:2.6.2 in central (http://repo1.maven.org/maven2/)
+  analysisResult: UNKNOWN
+  artifact: {coordinates: 'xml-apis:xml-apis:2.6.2'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: null
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xml-resolver:xml-resolver:1.1'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+- analysisErrorMessage: null
+  analysisResult: NONE
+  artifact: {coordinates: 'xml-resolver:xml-resolver:1.2'}
+  dependees: []
+  resolutionErrorMessage: null
+  violations: []
+

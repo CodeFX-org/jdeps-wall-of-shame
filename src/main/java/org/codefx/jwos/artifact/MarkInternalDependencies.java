@@ -1,24 +1,23 @@
 package org.codefx.jwos.artifact;
 
-public enum MarkInternalDependencies {
+/**
+ * Marks the internal dependencies of an individual artifact.
+ */
+enum MarkInternalDependencies {
 
+	/**
+	 * The jdeps analysis could not be performed.
+	 */
+	UNKNOWN,
+
+	/**
+	 * The analysis was performed and no internal dependencies were found.
+	 */
 	NONE,
-	INDIRECT,
+
+	/**
+	 * The analysis was performed and internal dependencies were found.
+	 */
 	DIRECT;
-
-	public MarkInternalDependencies combineWithDependee(MarkInternalDependencies other) {
-		if (this == NONE) {
-			switch (other) {
-				case NONE:
-					return NONE;
-				case INDIRECT:
-					return INDIRECT;
-				case DIRECT:
-					return INDIRECT;
-			}
-		}
-
-		return this;
-	}
 
 }

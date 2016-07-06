@@ -1,7 +1,7 @@
 package org.codefx.jwos.analysis;
 
 import org.codefx.jwos.artifact.AnalyzedArtifact;
-import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.CompletedArtifact;
 import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
@@ -19,9 +19,9 @@ import java.util.Collection;
 public interface AnalysisPersistence {
 
 	// QUERY
-	
+
 	//  - projects
-	
+
 	Collection<ProjectCoordinates> projectsUnmodifiable();
 
 	Collection<ResolvedProject> resolvedProjectsUnmodifiable();
@@ -43,9 +43,9 @@ public interface AnalysisPersistence {
 	Collection<FailedArtifact> artifactResolutionErrorsUnmodifiable();
 
 	// ADD
-	
+
 	//  - projects
-	
+
 	void addProject(ProjectCoordinates project);
 
 	void addResolvedProject(ResolvedProject project);
@@ -66,6 +66,6 @@ public interface AnalysisPersistence {
 
 	void addArtifactResolutionError(FailedArtifact artifact);
 
-	void addResult(DeeplyAnalyzedArtifact deeplyAnalyzedArtifact);
+	void addResult(CompletedArtifact completedArtifact);
 
 }

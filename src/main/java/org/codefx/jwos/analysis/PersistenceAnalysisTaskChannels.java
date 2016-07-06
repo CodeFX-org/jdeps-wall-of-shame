@@ -4,7 +4,7 @@ import org.codefx.jwos.Flags;
 import org.codefx.jwos.analysis.channel.TaskChannel;
 import org.codefx.jwos.artifact.AnalyzedArtifact;
 import org.codefx.jwos.artifact.ArtifactCoordinates;
-import org.codefx.jwos.artifact.DeeplyAnalyzedArtifact;
+import org.codefx.jwos.artifact.CompletedArtifact;
 import org.codefx.jwos.artifact.DownloadedArtifact;
 import org.codefx.jwos.artifact.FailedArtifact;
 import org.codefx.jwos.artifact.FailedProject;
@@ -22,24 +22,24 @@ import static java.util.Objects.requireNonNull;
 class PersistenceAnalysisTaskChannels implements AnalysisTaskChannels {
 
 	private final AnalysisPersistence persistence;
-	
+
 	private final TaskChannel<Void, ProjectCoordinates, Exception> addProjects;
 	private final TaskChannel<ProjectCoordinates, ResolvedProject, FailedProject> resolveVersions;
 	private final TaskChannel<ArtifactCoordinates, DownloadedArtifact, FailedArtifact> downloadArtifacts;
 	private final TaskChannel<DownloadedArtifact, AnalyzedArtifact, FailedArtifact> analyzeArtifacts;
 	private final TaskChannel<ArtifactCoordinates, ResolvedArtifact, FailedArtifact> resolveDependencies;
-	private final TaskChannel<DeeplyAnalyzedArtifact, Void, Void> outputResults;
+	private final TaskChannel<CompletedArtifact, Void, Void> outputResults;
 
 	private final TaskChannel<Void, ProjectCoordinates, Exception> addProjectsSpy;
 	private final TaskChannel<ProjectCoordinates, ResolvedProject, FailedProject> resolveVersionsSpy;
 	private final TaskChannel<ArtifactCoordinates, DownloadedArtifact, FailedArtifact> downloadArtifactsSpy;
 	private final TaskChannel<DownloadedArtifact, AnalyzedArtifact, FailedArtifact> analyzeArtifactsSpy;
 	private final TaskChannel<ArtifactCoordinates, ResolvedArtifact, FailedArtifact> resolveDependenciesSpy;
-	private final TaskChannel<DeeplyAnalyzedArtifact, Void, Void> outputResultsSpy;
+	private final TaskChannel<CompletedArtifact, Void, Void> outputResultsSpy;
 
 	public PersistenceAnalysisTaskChannels(AnalysisPersistence persistence) {
 		this.persistence = requireNonNull(persistence, "The argument 'persistence' must not be null.");
-		
+
 		addProjectsSpy = TaskChannel.namedAndUnbounded("spying on add project");
 		addProjects = TaskChannel
 				.<Void, ProjectCoordinates, Exception>namedAndUnbounded("add project")
@@ -83,10 +83,10 @@ class PersistenceAnalysisTaskChannels implements AnalysisTaskChannels {
 		// It is spied upon to enable gathering all results in one (code) location.
 		outputResultsSpy = TaskChannel.namedAndUnbounded("spying on output");
 		outputResults = TaskChannel
-				.<DeeplyAnalyzedArtifact, Void, Void>namedAndUnbounded("output")
+				.<CompletedArtifact, Void, Void>namedAndUnbounded("output")
 				.spy(outputResultsSpy);
 	}
-	
+
 	/**
 	 * Updates the {@link AnalysisPersistence} specified during construction with the messages that were sent
 	 * on various channels since this method was last called.
@@ -105,7 +105,7 @@ class PersistenceAnalysisTaskChannels implements AnalysisTaskChannels {
 
 		outputResultsSpy.drainTasks().forEach(persistence::addResult);
 	}
-	
+
 	// IMPLEMENTATION OF 'AnalysisTaskChannels'
 
 	@Override
@@ -134,7 +134,7 @@ class PersistenceAnalysisTaskChannels implements AnalysisTaskChannels {
 	}
 
 	@Override
-	public TaskChannel<DeeplyAnalyzedArtifact, Void, Void> outputResults() {
+	public TaskChannel<CompletedArtifact, Void, Void> outputResults() {
 		return outputResults;
 	}
 
