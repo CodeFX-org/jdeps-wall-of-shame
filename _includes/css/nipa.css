@@ -63,8 +63,12 @@ td.vdt:after {
 	content: 'Dependencies';
 }
 
-.njd:after, .ijd:after, .djd:after {
+.ujd:after, .njd:after, .ijd:after, .djd:after {
 	font-family: FontAwesome;
+}
+
+.ujd:after {
+	content: " \f059";
 }
 
 .njd:after {
