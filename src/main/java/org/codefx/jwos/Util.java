@@ -1,6 +1,7 @@
 package org.codefx.jwos;
 
 import com.google.common.collect.ImmutableSet;
+import org.codefx.jwos.file.YamlAnalysisPersistence;
 
 import java.io.ByteArrayInputStream;
 import java.net.URL;
@@ -72,5 +73,10 @@ public class Util {
 	public static ByteArrayInputStream asInputStream(String string) {
 		return new ByteArrayInputStream(string.getBytes(StandardCharsets.UTF_8));
 	}
+
+	public static YamlAnalysisPersistence createYamlPersistence(Path resultFile) throws IOException {
+		return YamlAnalysisPersistence.fromStream(Files.newInputStream(resultFile));
+	}
+
 
 }

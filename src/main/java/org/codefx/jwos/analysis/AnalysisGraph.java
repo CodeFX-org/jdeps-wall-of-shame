@@ -83,6 +83,16 @@ class AnalysisGraph {
 				.orElseGet(() -> createNodeForProject(project));
 	}
 
+	public boolean allTasksCompleted() {
+		return Stream
+				.concat(
+						// these are the relevant tasks; if all project versions are resolved
+						// and all artifacts are completed, no more tasks can emerge
+						projectNodes().map(ProjectNode::resolution),
+						artifactNodes().map(ArtifactNode::completion))
+				.allMatch(Task::isFinished);
+	}
+
 	// PROJECTS
 
 	public void addProject(ProjectCoordinates project) {

@@ -18,6 +18,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.nio.file.Path;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
@@ -67,6 +69,8 @@ public class AnalysisTaskManager {
 
 	/**
 	 * A blocking call which queues tasks and processes answers.
+	 * <p>
+	 * Will eventually return once all tasks are completed.
 	 *
 	 * @see Bookkeeping
 	 */
@@ -384,8 +388,15 @@ public class AnalysisTaskManager {
 
 		private static final int QUEUE_SIZE_LOG_INTERVAL = 20;
 		private static final long SLEEP_TIME_IN_MS = 50;
+		/**
+		 * Time until completion is checked for the first time. Without this, computation threads might not have enough
+		 * time to add something to the channels and completion is reported because nothing happened yet.
+		 */
+		private static final long MORATORIUM_UNTIL_FIRST_COMPLETION_CHECK_IN_MS = 5000;
 
-		private int runsToNextLog;
+		private LocalDateTime startTime;
+		private boolean moratoriumExpired;
+		private int runsToCheckpoint;
 
 		private boolean running;
 		private boolean aborted;
@@ -400,7 +411,7 @@ public class AnalysisTaskManager {
 			while (!aborted) {
 				updateState();
 				updatePersistence();
-				maybeLogGraphAndQueueSizes();
+				maybeVisitCheckpoint();
 				sleepAndAbortWhenInterrupted();
 			}
 
@@ -412,14 +423,20 @@ public class AnalysisTaskManager {
 			if (running)
 				throw new IllegalStateException("The bookkeeping thread is already running.");
 			running = true;
-			runsToNextLog = 0;
+			runsToCheckpoint = 0;
+			startTime = LocalDateTime.now();
 		}
 
-		private void maybeLogGraphAndQueueSizes() {
-			runsToNextLog--;
-			if (runsToNextLog > 0)
-				return;
+		private void maybeVisitCheckpoint() {
+			runsToCheckpoint--;
+			if (runsToCheckpoint <= 0) {
+				logGraphAndQueueSizes();
+				checkWhetherToAbort();
+				runsToCheckpoint = QUEUE_SIZE_LOG_INTERVAL;
+			}
+		}
 
+		private void logGraphAndQueueSizes() {
 			String message = "\nNodes:\n"
 					+ logGraphSize(state.projectNodes(), "projects")
 					+ logGraphSize(state.artifactNodes(), "artifacts")
@@ -431,7 +448,6 @@ public class AnalysisTaskManager {
 					+ logQueueSize(channels.resolveDependencies())
 					+ logQueueSize(channels.outputResults());
 			THREAD_LOGGER.info(message);
-			runsToNextLog = QUEUE_SIZE_LOG_INTERVAL;
 		}
 
 		private String logGraphSize(Stream<?> nodes, String graphName) {
@@ -440,6 +456,25 @@ public class AnalysisTaskManager {
 
 		private String logQueueSize(TaskChannel<?, ?, ?> channel) {
 			return format(CHANNEL_STATUS_MESSAGE_FORMAT, channel.nrOfWaitingTasks(), channel.taskName()) + "\n";
+		}
+
+		private void checkWhetherToAbort() {
+			if (!isMoratoriumExpired())
+				return;
+
+			boolean allTasksCompletedAndWrittenToOutput =
+					state.allTasksCompleted() && channels.outputResults().noWaitingTasks();
+			if (allTasksCompletedAndWrittenToOutput)
+				aborted = true;
+		}
+
+		private boolean isMoratoriumExpired() {
+			if (!moratoriumExpired) {
+				long millisSinceStart = ChronoUnit.MILLIS.between(startTime, LocalDateTime.now());
+				if (millisSinceStart > MORATORIUM_UNTIL_FIRST_COMPLETION_CHECK_IN_MS)
+					moratoriumExpired = true;
+			}
+			return moratoriumExpired;
 		}
 
 		private void sleepAndAbortWhenInterrupted() {

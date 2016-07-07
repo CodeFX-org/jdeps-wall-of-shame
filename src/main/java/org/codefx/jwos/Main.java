@@ -32,13 +32,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.Collections.singleton;
 import static java.util.function.Function.identity;
-import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 
 /**
  * Puts the pieces together:
@@ -61,7 +62,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		LOGGER.info("Processing existing results...");
 		Path resultFile = Util.getPathToExistingResourceFile(Util.RESULT_FILE_NAME);
-		YamlAnalysisPersistence persistence = createYamlPersistence(resultFile);
+		YamlAnalysisPersistence persistence = Util.createYamlPersistence(resultFile);
 
 		LOGGER.info("Setting up task manager...");
 		AnalysisTaskManager taskManager = new AnalysisTaskManager(persistence);
@@ -77,26 +78,39 @@ public class Main {
 						Util.GIT_USER_NAME,
 						Util.GIT_PASSWORD,
 						Util.GIT_EMAIL));
+		List<ComputationThread> threads = createComputations(
+				resultFile, persistence, taskManager, maven, jdeps, wallOfShame);
 
-		Stream<ComputationThread> threads = Stream
+		LOGGER.info("Starting computation...");
+		Thread.currentThread().setName("Manage Queues");
+		threads.forEach(ComputationThread::start);
+
+		// this call blocks until everything is done
+		taskManager.manageQueues();
+
+		threads.forEach(ComputationThread::notifyAbort);
+
+		LOGGER.info("All done.");
+	}
+
+	private static List<ComputationThread> createComputations(Path resultFile,
+			YamlAnalysisPersistence persistence, AnalysisTaskManager taskManager, MavenCentral maven, JDeps jdeps,
+			WallOfShame wallOfShame) {
+		List<ComputationThread> computations = Stream
 				.of(
 						createComputationsToReadProjectFiles(taskManager),
 						createComputationsTo(resolveProjectVersions(taskManager, maven), 1),
 						createComputationsTo(downloadArtifact(taskManager, maven), 2),
-						createComputationsTo(analyzeArtifact(taskManager, jdeps), 2),
-						createComputationsTo(resolveArtifactDependees(taskManager, maven), 3),
-						createComputationsTo(outputResults(taskManager, wallOfShame), 1),
-						createComputationsTo(writeToYaml(persistence, resultFile), 1))
+						createComputationsTo(analyzeArtifact(taskManager, jdeps), 4),
+						createComputationsTo(resolveArtifactDependees(taskManager, maven), 4),
+						createComputationsTo(outputResults(taskManager, wallOfShame), 1))
 				.flatMap(identity())
-				.map(ComputationThread::new);
-
-		LOGGER.info("Starting computation...");
-		threads.forEach(Thread::start);
-		new Thread(taskManager::manageQueues, "Manage Queue").run();
-	}
-
-	private static YamlAnalysisPersistence createYamlPersistence(Path resultFile) throws IOException {
-		return YamlAnalysisPersistence.fromStream(Files.newInputStream(resultFile));
+				.map(ComputationThread::new)
+				.collect(toList());
+		computations.add(new ComputationThread(
+				writeToYaml(persistence, resultFile),
+				ComputationThread.OnAbort.DO_NOT_INTERRUPT_THREAD));
+		return computations;
 	}
 
 	private static Stream<Computation> createComputationsToReadProjectFiles(AnalysisTaskManager taskManager) {
@@ -177,10 +191,8 @@ public class Main {
 			Path resultFile) {
 		return new RecurrentComputation(
 				"Write Results To YAML",
-				() -> {
-					String yamlString = persistence.toYaml();
-					Files.write(resultFile, singleton(yamlString));
-				},
+				() -> Files.write(resultFile, singleton(persistence.toYaml())),
+				// the delay is not yet implemented
 				200);
 	}
 
