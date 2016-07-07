@@ -1,8 +1,6 @@
 package org.codefx.jwos.artifact;
 
 import org.junit.gen5.api.Test;
-import org.junit.gen5.junit4.runner.JUnit5;
-import org.junit.runner.RunWith;
 
 import java.util.Arrays;
 import java.util.Optional;
@@ -15,9 +13,7 @@ import static org.codefx.jwos.artifact.MarkTransitiveInternalDependencies.NONE;
 import static org.codefx.jwos.artifact.MarkTransitiveInternalDependencies.DIRECT;
 import static org.codefx.jwos.artifact.MarkTransitiveInternalDependencies.fromDependees;
 
-// NOT_PUBLISHED
-@RunWith(JUnit5.class)
-public class MarkTransitiveInternalDependenciesTest {
+class MarkTransitiveInternalDependenciesTest {
 
 	// UNRESOLVED DEPENDEES
 
