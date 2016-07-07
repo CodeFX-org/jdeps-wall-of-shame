@@ -35,6 +35,11 @@ class SimpleTaskChannel<T, R, E> implements TaskChannel<T,R,E> {
 	}
 
 	@Override
+	public boolean noWaitingTasks() {
+		return tasks.isEmpty();
+	}
+
+	@Override
 	public String taskName() {
 		return taskName;
 	}
@@ -51,7 +56,7 @@ class SimpleTaskChannel<T, R, E> implements TaskChannel<T,R,E> {
 
 	@Override
 	public Stream<T> drainTasks() {
-		// create an iterable that empties 'tasks' as it returns elements 
+		// create an iterable that empties 'tasks' as it returns elements
 		return stream(Iterables.consumingIterable(tasks).spliterator(), false);
 	}
 
@@ -62,7 +67,7 @@ class SimpleTaskChannel<T, R, E> implements TaskChannel<T,R,E> {
 
 	@Override
 	public Stream<R> drainResults() {
-		// create an iterable that empties 'results' as it returns elements 
+		// create an iterable that empties 'results' as it returns elements
 		return stream(Iterables.consumingIterable(results).spliterator(), false);
 	}
 
@@ -73,7 +78,7 @@ class SimpleTaskChannel<T, R, E> implements TaskChannel<T,R,E> {
 
 	@Override
 	public Stream<E> drainErrors() {
-		// create an iterable that empties 'errors' as it returns elements 
+		// create an iterable that empties 'errors' as it returns elements
 		return stream(Iterables.consumingIterable(errors).spliterator(), false);
 	}
 

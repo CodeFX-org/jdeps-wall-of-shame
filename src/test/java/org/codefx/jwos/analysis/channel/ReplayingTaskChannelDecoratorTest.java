@@ -89,6 +89,20 @@ class ReplayingTaskChannelDecoratorTest {
 		}
 
 		@Test
+		@DisplayName("reports decorated channel's size")
+		void nrOfWaitingTasks_decoratedChannelSizeGetsReported() {
+			when(decoratedChannel.nrOfWaitingTasks()).thenReturn(42);
+			assertThat(replayingChannel.nrOfWaitingTasks()).isEqualTo(42);
+		}
+
+		@Test
+		@DisplayName("reports decorated channel's \"empty state\"")
+		void noTasksWaiting_decoratedChannelStateGetsReported() {
+			when(decoratedChannel.noWaitingTasks()).thenReturn(false);
+			assertThat(replayingChannel.noWaitingTasks()).isEqualTo(false);
+		}
+
+		@Test
 		@DisplayName("sends task to decorated channel")
 		void sendTask_decoratedChannelGetsCalled() {
 			replayingChannel.sendTask("Task");
@@ -116,10 +130,8 @@ class ReplayingTaskChannelDecoratorTest {
 		@DisplayName("returns only results from decorated channel")
 		void drainResults_onlyFromDecoratedChannel() {
 			List<Integer> decoratedResults = asList(1, 2, 3);
-			
-			Stream<Integer> results = decoratedChannel.drainResults();
-			
-			when(results).thenReturn(decoratedResults.stream());
+
+			when(decoratedChannel.drainResults()).thenReturn(decoratedResults.stream());
 			assertThat(replayingChannel.drainResults()).containsExactlyElementsOf(decoratedResults);
 		}
 
@@ -141,9 +153,9 @@ class ReplayingTaskChannelDecoratorTest {
 					new Exception("X"),
 					new Exception("Y")
 			);
-			
+
 			Stream<Exception> errors = decoratedChannel.drainErrors();
-			
+
 			when(errors).thenReturn(decoratedErrors.stream());
 			assertThat(replayingChannel.drainErrors()).containsExactlyElementsOf(decoratedErrors);
 		}
@@ -166,6 +178,20 @@ class ReplayingTaskChannelDecoratorTest {
 					tasksToReplay,
 					resultsToReplay,
 					errorsToReplay);
+		}
+
+		@Test
+		@DisplayName("reports own's plus decorated channel's size")
+		void nrOfWaitingTasks_decoratedChannelSizeGetsReported() {
+			when(decoratedChannel.nrOfWaitingTasks()).thenReturn(0);
+			assertThat(replayingChannel.nrOfWaitingTasks()).isEqualTo(3);
+		}
+
+		@Test
+		@DisplayName("reports own's plus decorated channel's \"empty state\"")
+		void noTasksWaiting_decoratedChannelStateGetsReported() {
+			when(decoratedChannel.noWaitingTasks()).thenReturn(true);
+			assertThat(replayingChannel.noWaitingTasks()).isEqualTo(false);
 		}
 
 		@Test
@@ -266,6 +292,45 @@ class ReplayingTaskChannelDecoratorTest {
 			Stream<Exception> results = replayingChannel.drainErrors();
 
 			assertThat(results).containsExactlyElementsOf(decoratedErrors_2);
+		}
+
+		@Nested
+		@DisplayName("when created with elements and then drained")
+		class WhenCreatedWithElementsThenDrained {
+
+			private final List<String> tasksToReplay = of("1", "2", "C");
+			private final List<Integer> resultsToReplay = of(1, 2);
+			private final List<Exception> errorsToReplay = of(new Exception("C"));
+
+			@BeforeEach
+			void createReplayingChannelThenDrain() {
+				replayingChannel = new ReplayingTaskChannelDecorator<>(
+						decoratedChannel,
+						tasksToReplay,
+						resultsToReplay,
+						errorsToReplay);
+				when(decoratedChannel.drainTasks()).thenReturn(Stream.of());
+				when(decoratedChannel.drainResults()).thenReturn(Stream.of());
+				when(decoratedChannel.drainErrors()).thenReturn(Stream.of());
+				replayingChannel.drainTasks().forEach(ignore -> { });
+				replayingChannel.drainResults().forEach(ignore -> { });
+				replayingChannel.drainErrors().forEach(ignore -> { });
+			}
+
+			@Test
+			@DisplayName("reports own's plus decorated channel's size")
+			void nrOfWaitingTasks_computedChannelSizeGetsReported() {
+				when(decoratedChannel.nrOfWaitingTasks()).thenReturn(0);
+				assertThat(replayingChannel.nrOfWaitingTasks()).isEqualTo(0);
+			}
+
+			@Test
+			@DisplayName("reports own's plus decorated channel's \"empty state\"")
+			void noTasksWaiting_computedChannelStateGetsReported() {
+				when(decoratedChannel.noWaitingTasks()).thenReturn(true);
+				assertThat(replayingChannel.noWaitingTasks()).isEqualTo(true);
+			}
+
 		}
 
 	}

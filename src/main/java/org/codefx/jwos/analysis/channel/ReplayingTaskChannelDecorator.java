@@ -38,6 +38,16 @@ class ReplayingTaskChannelDecorator<T, R, E> extends AbstractTaskChannelDecorato
 	}
 
 	@Override
+	public int nrOfWaitingTasks() {
+		return tasksToReplay.size() + super.nrOfWaitingTasks();
+	}
+
+	@Override
+	public boolean noWaitingTasks() {
+		return tasksToReplay.isEmpty() && super.noWaitingTasks();
+	}
+
+	@Override
 	public T getTask() throws InterruptedException {
 		T task = tasksToReplay.poll();
 		return task == null

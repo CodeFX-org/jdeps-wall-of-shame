@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 import static java.util.Objects.requireNonNull;
 
 abstract class AbstractTaskChannelDecorator<T, R, E> implements TaskChannel<T, R, E> {
-	
+
 	private final TaskChannel<T, R, E> decoratedChannel;
 
 	protected AbstractTaskChannelDecorator(TaskChannel<T, R, E> decoratedChannel) {
@@ -16,6 +16,11 @@ abstract class AbstractTaskChannelDecorator<T, R, E> implements TaskChannel<T, R
 	@Override
 	public int nrOfWaitingTasks() {
 		return decoratedChannel.nrOfWaitingTasks();
+	}
+
+	@Override
+	public boolean noWaitingTasks() {
+		return decoratedChannel.noWaitingTasks();
 	}
 
 	@Override
@@ -57,5 +62,5 @@ abstract class AbstractTaskChannelDecorator<T, R, E> implements TaskChannel<T, R
 	public Stream<E> drainErrors() {
 		return decoratedChannel.drainErrors();
 	}
-	
+
 }

@@ -11,13 +11,13 @@ import static java.util.Collections.emptySet;
  * It consists of three blocking queue, one to send out tasks and two to receive results or errors, respectively.
  *
  * @param <T> the type of tasks
- * @param <R> the type of the tasks' successful result 
+ * @param <R> the type of the tasks' successful result
  * @param <E> the type of the tasks' error
  */
 public interface TaskChannel<T, R, E> {
 
 	// CREATION
-	
+
 	/**
 	 * Creates a new channel with unbounded capacities for results and errors.
 	 */
@@ -50,7 +50,7 @@ public interface TaskChannel<T, R, E> {
 	}
 
 	/**
-	 * Creates a new channel that replays the specified results and errors before querying this channel. 
+	 * Creates a new channel that replays the specified results and errors before querying this channel.
 	 * <p>
 	 * Items that are send to the new channel are forwarded to this channel but will only be visible after the
 	 * replay is exhausted.
@@ -70,6 +70,8 @@ public interface TaskChannel<T, R, E> {
 	// CONTRACT
 
 	int nrOfWaitingTasks();
+
+	boolean noWaitingTasks();
 
 	String taskName();
 
