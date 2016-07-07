@@ -78,8 +78,9 @@ public class Main {
 						Util.GIT_USER_NAME,
 						Util.GIT_PASSWORD,
 						Util.GIT_EMAIL));
+		Path resultTempFile = Util.createNewTempFileForResourceFile(Util.RESULT_FILE_NAME);
 		List<ComputationThread> threads = createComputations(
-				resultFile, persistence, taskManager, maven, jdeps, wallOfShame);
+				resultTempFile, persistence, taskManager, maven, jdeps, wallOfShame);
 
 		LOGGER.info("Starting computation...");
 		Thread.currentThread().setName("Manage Queues");
@@ -89,6 +90,10 @@ public class Main {
 		taskManager.manageQueues();
 
 		threads.forEach(ComputationThread::notifyAbort);
+
+		LOGGER.info("Writing results...");
+		wallOfShame.write();
+		Files.write(resultFile, singleton(persistence.toYaml()));
 
 		LOGGER.info("All done.");
 	}
@@ -202,7 +207,6 @@ public class Main {
 				taskManager::getNextToOutput,
 				artifact -> {
 					wallOfShame.addArtifacts(artifact);
-					wallOfShame.write();
 					return null;
 				},
 				(artifact, error) -> LOGGER.error("Failed to write result '" + artifact.coordinates() + "'.", error));

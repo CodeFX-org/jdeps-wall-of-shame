@@ -214,16 +214,4 @@ class Brick {
 		Files.move(tempFile, file, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
 	}
 
-	private static class RuntimeIOException extends RuntimeException {
-
-		public RuntimeIOException(IOException cause) {
-			super(cause);
-		}
-
-		@Override
-		public synchronized IOException getCause() {
-			return (IOException) super.getCause();
-		}
-	}
-
 }

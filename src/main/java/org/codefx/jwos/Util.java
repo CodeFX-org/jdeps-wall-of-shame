@@ -1,11 +1,14 @@
 package org.codefx.jwos;
 
 import com.google.common.collect.ImmutableSet;
+import org.codefx.jwos.file.RuntimeIOException;
 import org.codefx.jwos.file.YamlAnalysisPersistence;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collection;
@@ -36,6 +39,15 @@ public class Util {
 	public static final String GIT_USER_NAME = "nicolaiparlog";
 	public static final String GIT_EMAIL = "nipa@codefx.org";
 	public static final String GIT_PASSWORD = "********";
+
+	public static Path createNewTempFileForResourceFile(String fileName) {
+		try {
+			Path directory = getPathToExistingResourceFile(fileName).getParent();
+			return Files.createTempFile(directory, fileName, "");
+		} catch (IOException ex) {
+			throw new RuntimeIOException(ex);
+		}
+	}
 
 	public static Path getPathToExistingResourceFile(String fileName) {
 		return getPathToResourceFile(fileName)
