@@ -86,7 +86,10 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 	public static YamlAnalysisPersistence fromStream(InputStream yamlStream) {
 		LOGGER.debug("Parsing result file...");
 		PersistentAnalysis persistent = PERSISTER.read(yamlStream, PersistentAnalysis.class);
-		return from(persistent);
+		if (persistent == null)
+			return new YamlAnalysisPersistence();
+		else
+			return from(persistent);
 	}
 
 	private static YamlAnalysisPersistence from(PersistentAnalysis persistent) {
@@ -99,12 +102,11 @@ public class YamlAnalysisPersistence implements AnalysisPersistence {
 		addTo(persistent.step_4_analyzedArtifacts, PersistentAnalyzedArtifact::toArtifact, yaml.analyzedArtifacts);
 		addTo(persistent.step_4_analysisFailedArtifacts, PersistentFailedArtifact::toArtifact, yaml.analysisFailedArtifacts);
 		addTo(persistent.step_5_resolvedArtifacts, PersistentResolvedArtifact::toArtifact, yaml.resolvedArtifacts);
-		addTo(persistent.step_5_resolutionFailedArtifacts,
-				PersistentFailedArtifact::toArtifact,
-				yaml.resolutionFailedArtifacts);
-		addTo(persistent.step_6_completedArtifacts,
-				PersistentCompletedArtifact::toArtifact,
-				yaml.completedArtifacts);
+		addTo(persistent.step_5_resolutionFailedArtifacts, PersistentFailedArtifact::toArtifact, yaml.resolutionFailedArtifacts);
+		PersistentCompletedArtifact
+				.toArtifacts(persistent.step_6_completedArtifacts.stream())
+				.forEach(yaml.completedArtifacts::add);
+
 		return yaml;
 	}
 

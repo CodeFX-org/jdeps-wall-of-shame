@@ -23,7 +23,9 @@ public class PersistentResolvedProject {
 
 	public ResolvedProject toProject() {
 		ProjectCoordinates projectCoordinates = project.toProject();
-		ImmutableSet<ArtifactCoordinates> artifacts = projectCoordinates.toArtifactsWithVersions(versions.stream());
+		ImmutableSet<ArtifactCoordinates> artifacts = versions == null
+				? ImmutableSet.of()
+				: projectCoordinates.toArtifactsWithVersions(versions.stream());
 		return new ResolvedProject(projectCoordinates,artifacts);
 	}
 

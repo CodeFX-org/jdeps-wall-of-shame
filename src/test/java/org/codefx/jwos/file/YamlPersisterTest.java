@@ -14,10 +14,15 @@ import org.codefx.jwos.jdeps.dependency.Violation;
 import org.junit.gen5.api.BeforeEach;
 import org.junit.gen5.api.DisplayName;
 import org.junit.gen5.api.Test;
+import org.junit.gen5.junit4.runner.JUnit5;
+import org.junit.runner.RunWith;
 
 import java.io.IOException;
+import java.util.Collection;
 
 import static com.google.common.collect.ImmutableSet.of;
+import static java.util.Arrays.asList;
+import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("YAML persister")
@@ -149,8 +154,9 @@ class YamlPersisterTest {
 	@Test
 	@DisplayName("can dump and load completed artifacts")
 	void persistCompletedArtifact() {
+		// CREATE ARTIFACTS
 		CompletedArtifact dependee = CompletedArtifact
-				.forArtifact(ArtifactCoordinates.from("artifact.group", "artifact", "version"))
+				.forArtifact(ArtifactCoordinates.from("group", "x", "version"))
 				.withViolations(of(
 						Violation.buildFor(
 								Type.of("artifact.package", "Class"),
@@ -165,29 +171,50 @@ class YamlPersisterTest {
 				.withDependees(of())
 				.build();
 		CompletedArtifact artifact = CompletedArtifact
-				.forArtifact(ArtifactCoordinates.from("artifact.group", "artifact", "version"))
+				.forArtifact(ArtifactCoordinates.from("group", "y", "version"))
 				.violationAnalysisFailedWith(new IOException("Ha Ha!"))
 				.withDependees(of(dependee))
 				.build();
+		Collection<CompletedArtifact> artifacts = asList(artifact, dependee);
 
-		String artifactAsYaml = persister.writeCompletedArtifact(artifact);
-		CompletedArtifact loadedArtifact = persister.readCompletedArtifact(artifactAsYaml);
+		// WRITE AND READ
+		String artifactsAsYaml = persister.writeCompletedArtifacts(artifacts);
+		Collection<CompletedArtifact> loadedArtifacts = persister.
+				readCompletedArtifacts(artifactsAsYaml)
+				.collect(toList());
 
-		assertThat(loadedArtifact).isEqualTo(artifact);
+		// ASSERT
+		assertThat(loadedArtifacts)
+				// 'loadedArtifacts' and 'artifacts' must contain equal elements (in any order)
+				// (isn't there a better way to check this?)
+				.containsOnlyElementsOf(artifacts)
+				.containsAll(artifacts);
+
 		// equality is based on coordinates so we have to check the rest explicitly
+
+		CompletedArtifact loadedArtifact = loadedArtifacts.stream()
+				.filter(loaded -> loaded.coordinates().equals(artifact.coordinates()))
+				.findAny()
+				// if the two collections are equal (checked above), then the artifact will always be found
+				.get();
 		assertThat(loadedArtifact.transitiveMarker()).isEqualTo(artifact.transitiveMarker());
 		assertThat(loadedArtifact.dependees()).isEqualTo(artifact.dependees());
-		String loadedViolationAnalysisErrorMessage = loadedArtifact.violations().getLeft().getMessage();
 		String violationAnalysisErrorMessage = artifact.violations().getLeft().getMessage();
+		String loadedViolationAnalysisErrorMessage = loadedArtifact.violations().getLeft().getMessage();
 		assertThat(loadedViolationAnalysisErrorMessage).isEqualTo(violationAnalysisErrorMessage);
 
-		// dependee equality is based on coordinates so we have to check their state explicitly as well
-		CompletedArtifact loadedInnerArtifact = loadedArtifact.dependees().get().stream().findFirst().get();
-		CompletedArtifact innerArtifact = artifact.dependees().get().stream().findFirst().get();
+		CompletedArtifact loadedDependee = loadedArtifacts.stream()
+				.filter(loaded -> loaded.coordinates().equals(dependee.coordinates()))
+				.findAny()
+				// if the two collections are equal (checked above), then the artifact will always be found
+				.get();
+		assertThat(loadedDependee.transitiveMarker()).isEqualTo(dependee.transitiveMarker());
+		assertThat(loadedDependee.dependees()).isEqualTo(dependee.dependees());
+		assertThat(loadedDependee.violations()).isEqualTo(dependee.violations());
 
-		assertThat(loadedInnerArtifact.transitiveMarker()).isEqualTo(innerArtifact.transitiveMarker());
-		assertThat(loadedInnerArtifact.dependees()).isEqualTo(innerArtifact.dependees());
-		assertThat(loadedInnerArtifact.violations()).isEqualTo(innerArtifact.violations());
+		// the loaded artifact's dependee and the loaded dependee must be the same instance
+		CompletedArtifact dependeeOfLoadedArtifact = loadedArtifact.dependees().get().stream().findFirst().get();
+		assertThat(loadedDependee).isSameAs(dependeeOfLoadedArtifact);
 	}
 
 }

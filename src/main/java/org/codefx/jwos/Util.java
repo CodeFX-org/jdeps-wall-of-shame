@@ -14,6 +14,7 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.lang.String.format;
 import static java.util.stream.Collectors.toList;
@@ -65,9 +66,9 @@ public class Util {
 			Collection<T> collection,
 			Function<T, P> transform,
 			Collector<P, ?, C> collector) {
-		return collection.stream()
-				.map(transform)
-				.collect(collector);
+		return collection == null
+				? Stream.<P>empty().collect(collector)
+				: collection.stream().map(transform).collect(collector);
 	}
 
 	public static ByteArrayInputStream asInputStream(String string) {

@@ -23,12 +23,22 @@ import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.TypeDescription;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
+import org.yaml.snakeyaml.introspector.Property;
+import org.yaml.snakeyaml.nodes.CollectionNode;
+import org.yaml.snakeyaml.nodes.MappingNode;
+import org.yaml.snakeyaml.nodes.Node;
+import org.yaml.snakeyaml.nodes.NodeTuple;
+import org.yaml.snakeyaml.nodes.SequenceNode;
+import org.yaml.snakeyaml.nodes.Tag;
 import org.yaml.snakeyaml.representer.Representer;
 
 import java.io.InputStream;
+import java.util.Collection;
 import java.util.function.Function;
+import java.util.stream.Stream;
 
 import static com.google.common.collect.ImmutableSet.of;
+import static java.util.stream.StreamSupport.stream;
 
 class YamlPersister {
 
@@ -47,11 +57,13 @@ class YamlPersister {
 	}
 
 	private static Representer createRepresenter() {
-		Representer representer = new Representer();
+		Representer representer = new SkipEmptyRepresenter();
 		TYPE_DESCRIPTIONS
 				.forEach(description -> representer.addClassTag(description.getType(), description.getTag()));
 		return representer;
 	}
+
+	// WRITE
 
 	public <P> String write(P persistentElement) {
 		return new Yaml(representer).dump(persistentElement);
@@ -61,25 +73,45 @@ class YamlPersister {
 		return write(persistentWrapper.apply(element));
 	}
 
+	public <P> String writeAll(Stream<P> persistentElements) {
+		return new Yaml(representer).dumpAll(persistentElements.iterator());
+	}
+
+	private <T, P> String writeAll(Stream<T> elements, Function<T, P> persistentWrapper) {
+		return writeAll(elements.map(persistentWrapper));
+	}
+
+	// READ
+
 	public <P> P read(String yamlString, Class<P> persistenceType) {
 		return read(Util.asInputStream(yamlString), persistenceType);
 	}
 
 	public <P> P read(InputStream yamlStream, Class<P> persistenceType) {
-		Constructor constructor = createConstructorWithTypeDescriptors();
-		Yaml yaml = new Yaml(constructor, representer, new DumperOptions());
+		Yaml yaml = createYamlFromConstructorWithTypeDescriptors();
 		return yaml.loadAs(yamlStream, persistenceType);
 	}
 
-	private Constructor createConstructorWithTypeDescriptors() {
+	private Yaml createYamlFromConstructorWithTypeDescriptors() {
 		Constructor constructor = new Constructor();
 		TYPE_DESCRIPTIONS.forEach(constructor::addTypeDescription);
-		return constructor;
+		return new Yaml(constructor, representer, new DumperOptions());
 	}
 
 	private <P, T> T read(String yamlString, Class<P> persistenceType, Function<P, T> persistentUnwrapper) {
 		P loaded = read(yamlString, persistenceType);
 		return persistentUnwrapper.apply(loaded);
+	}
+
+	public <P> Stream<P> readAll(String yamlString, Class<P> persistenceType) {
+		Yaml yaml = createYamlFromConstructorWithTypeDescriptors();
+		return stream(yaml.loadAll(yamlString).spliterator(), false)
+				.map(persistenceType::cast);
+	}
+
+	private <P, T> Stream<T> readAll(String yamlString, Class<P> persistenceType, Function<P, T> persistentUnwrapper) {
+		return readAll(yamlString, persistenceType)
+				.map(persistentUnwrapper);
 	}
 
 	// PROJECTS
@@ -142,12 +174,52 @@ class YamlPersister {
 		return read(yamlString, PersistentAnalyzedArtifact.class, PersistentAnalyzedArtifact::toArtifact);
 	}
 
-	String writeCompletedArtifact(CompletedArtifact artifact) {
-		return write(artifact, PersistentCompletedArtifact::from);
+	String writeCompletedArtifacts(Collection<CompletedArtifact> artifact) {
+		return writeCompletedArtifacts(artifact.stream());
 	}
 
-	CompletedArtifact readCompletedArtifact(String yamlString) {
-		return read(yamlString, PersistentCompletedArtifact.class, PersistentCompletedArtifact::toArtifact);
+	String writeCompletedArtifacts(Stream<CompletedArtifact> artifact) {
+		return writeAll(artifact, PersistentCompletedArtifact::from);
+	}
+
+	Stream<CompletedArtifact> readCompletedArtifacts(String yamlString) {
+		Stream<PersistentCompletedArtifact> persistentArtifacts = readAll(yamlString, PersistentCompletedArtifact.class);
+		return PersistentCompletedArtifact.toArtifacts(persistentArtifacts);
+	}
+
+	/**
+	 * A representer that skips empty collections and null elements, so they do not clutter the output.
+	 */
+	private static class SkipEmptyRepresenter extends Representer {
+
+		@Override
+		protected NodeTuple representJavaBeanProperty(Object javaBean, Property property,
+				Object propertyValue, Tag customTag) {
+			NodeTuple tuple = super.representJavaBeanProperty(javaBean, property, propertyValue,
+					customTag);
+			Node valueNode = tuple.getValueNode();
+			if (Tag.NULL.equals(valueNode.getTag())) {
+				// skip 'null' values
+				return null;
+			}
+			if (valueNode instanceof CollectionNode) {
+				if (Tag.SEQ.equals(valueNode.getTag())) {
+					SequenceNode seq = (SequenceNode) valueNode;
+					if (seq.getValue().isEmpty()) {
+						// skip empty lists
+						return null;
+					}
+				}
+				if (Tag.MAP.equals(valueNode.getTag())) {
+					MappingNode seq = (MappingNode) valueNode;
+					if (seq.getValue().isEmpty()) {
+						// skip empty maps
+						return null;
+					}
+				}
+			}
+			return tuple;
+		}
 	}
 
 }
