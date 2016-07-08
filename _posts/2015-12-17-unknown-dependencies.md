@@ -15,6 +15,30 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact activeio:activeio:jar:${activeio_version} in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="activeio:activeio:2.0-20050905">activeio:activeio:2.0-20050905<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#jetty:org.mortbay.jetty:${org.mortbay.jetty_version}">jetty : org.mortbay.jetty : ${org.mortbay.jetty_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#openorb:openorb-orb-omg:${openorb_orb_omg_version}">openorb : openorb-orb-omg : ${openorb_orb_omg_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#commons-logging:commons-logging:${commons_logging_version}">commons-logging : commons-logging : ${commons_logging_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#geronimo-spec:geronimo-spec-j2ee:${geronimo_spec_j2ee_version}">geronimo-spec : geronimo-spec-j2ee : ${geronimo_spec_j2ee_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#concurrent:concurrent:${concurrent_version}">concurrent : concurrent : ${concurrent_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#geronimo:geronimo-kernel:${geronimo_version}">geronimo : geronimo-kernel : ${geronimo_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#geronimo:geronimo-j2ee:${geronimo_version}">geronimo : geronimo-j2ee : ${geronimo_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#p2psockets:p2psockets-core:${p2psockets_core_version}">p2psockets : p2psockets-core : ${p2psockets_core_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#openorb:openorb-tools:${openorb_tools_version}">openorb : openorb-tools : ${openorb_tools_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#commons-collections:commons-collections:${commons_collections_version}">commons-collections : commons-collections : ${commons_collections_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#avalon:avalon-framework:${avalon_framework_version}">avalon : avalon-framework : ${avalon_framework_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#avalon:avalon-logkit:${avalon_logkit_version}">avalon : avalon-logkit : ${avalon_logkit_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#commons-beanutils:commons-beanutils:${commons_beanutils_version}">commons-beanutils : commons-beanutils : ${commons_beanutils_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#openorb:openorb-orb-tools:${openorb_orb_tools_version}">openorb : openorb-orb-tools : ${openorb_orb_tools_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#openorb:openorb-orb:${openorb_orb_version}">openorb : openorb-orb : ${openorb_orb_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jxta:jxta:${jxta_version}">jxta : jxta : ${jxta_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:${log4j_version}">log4j : log4j : ${log4j_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#junit:junit:${junit_version}">junit : junit : ${junit_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#ibmaio:ibmaio:${ibmaio_version}">ibmaio : ibmaio : ${ibmaio_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#mx4j:mx4j:${mx4j_version}">mx4j : mx4j : ${mx4j_version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#howl:howl-logger:${howl_logger_version}">howl : howl-logger : ${howl_logger_version}</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="adaptx:adaptx:0.9.13">adaptx:adaptx:0.9.13<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact adaptx:adaptx:jar:0.9.13 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -56,6 +80,14 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="apache-taglibs:standard:1.1.2">apache-taglibs:standard:1.1.2<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact apache-taglibs:standard:jar:1.1.2 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="apache-xalan:serializer:j_2.7.0">apache-xalan:serializer:j_2.7.0<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact apache-xalan:serializer:jar:j_2.7.0 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="apache-xalan:xalan:j_2.7.0">apache-xalan:xalan:j_2.7.0<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact apache-xalan:xalan:jar:j_2.7.0 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="apache-xerces:xercesImpl:2.7.1">apache-xerces:xercesImpl:2.7.1<a></th></tr>
@@ -162,8 +194,22 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact backport175:backport175:jar:1.0-beta1 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="beanshell:beanshell:1.2b3">beanshell:beanshell:1.2b3<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact beanshell:beanshell:jar:1.2b3 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="bouncycastle:bcprov:${bouncycastle_version}">bouncycastle:bcprov:${bouncycastle_version}<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact bouncycastle:bcprov:jar:${bouncycastle_version} in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="bouncycastle:bcprov-jdk14:117">bouncycastle:bcprov-jdk14:117<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact bouncycastle:bcprov-jdk14:jar:117 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="bouncycastle:bctsp-jdk14:138">bouncycastle:bctsp-jdk14:138<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact bouncycastle:bctsp-jdk14:jar:138 in central (http://repo1.maven.org/maven2/)</td></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.bouncycastle:bcprov-jdk14:1.38">org.bouncycastle : bcprov-jdk14 : 1.38</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.bouncycastle:bcmail-jdk14:1.38">org.bouncycastle : bcmail-jdk14 : 1.38</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="bouncycastle:lcrypto-jdk14:131">bouncycastle:lcrypto-jdk14:131<a></th></tr>
@@ -204,9 +250,9 @@ fa-icon: question
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="ch.qos.logback:logback-classic:0.6">ch.qos.logback:logback-classic:0.6<a></th></tr>
-	<tr><td class="de1 de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:1.1.0-RC0">org.slf4j : slf4j-api : 1.1.0-RC0</a></td></tr>
-	<tr><td class="de njd" colspan="2"><a href="#javax.mail:mail:1.4">javax.mail : mail : 1.4</a></td></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#javax.mail:mail:1.4">javax.mail : mail : 1.4</a></td></tr>
 	<tr><td class="de njd" colspan="2"><a href="#janino:janino:2.4.3">janino : janino : 2.4.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:1.1.0-RC0">org.slf4j : slf4j-api : 1.1.0-RC0</a></td></tr>
 	<tr><td class="de njd" colspan="2"><a href="#ch.qos.logback:logback-core:0.6">ch.qos.logback : logback-core : 0.6</a></td></tr>
 </table>
 <table class="artifacts">
@@ -420,6 +466,10 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact com.centerkey.utils:barebonesbrowserlaunch:jar:3.1 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.eclipsesource.minimal-json:minimal-json:0.9.3">com.eclipsesource.minimal-json:minimal-json:0.9.3<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for com.eclipsesource.minimal-json:minimal-json:jar:0.9.3</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.github.jnr:jffi:1.2.11-SNAPSHOT">com.github.jnr:jffi:1.2.11-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact com.github.jnr:jffi:jar:1.2.11-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -440,12 +490,32 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact com.github.jnr:jnr-ffi:jar:[0.6.0,1.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.github.jnr:jnr-netdb:1.0.5">com.github.jnr:jnr-netdb:1.0.5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.github.jnr:jnr-ffi:[0.6.0,1.0.0)">com.github.jnr : jnr-ffi : [0.6.0,1.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.github.jnr:jnr-netdb:1.0.6">com.github.jnr:jnr-netdb:1.0.6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.github.jnr:jnr-ffi:[0.6.0,1.0.0)">com.github.jnr : jnr-ffi : [0.6.0,1.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.github.jnr:jnr-netdb:1.1.0">com.github.jnr:jnr-netdb:1.1.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.github.jnr:jnr-ffi:[0.6.0,1.0.0)">com.github.jnr : jnr-ffi : [0.6.0,1.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.github.jnr:jnr-x86asm:[1.0.1,2.0.0)">com.github.jnr:jnr-x86asm:[1.0.1,2.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact com.github.jnr:jnr-x86asm:jar:[1.0.1,2.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.github.jnr:jnr-x86asm:[1.0.2,)">com.github.jnr:jnr-x86asm:[1.0.2,)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact com.github.jnr:jnr-x86asm:jar:[1.0.2,) in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.google.code.gson:gson:1.3">com.google.code.gson:gson:1.3<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact com.google.code.gson:gson:jar:1.3 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.google.code.guice:guice:2.0">com.google.code.guice:guice:2.0<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact com.google.code.guice:guice:jar:2.0 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.google.code.morphia:morphia:0.99">com.google.code.morphia:morphia:0.99<a></th></tr>
@@ -456,12 +526,36 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact com.googlecode:openbeans:jar:1.0 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.hazelcast:hazelcast:2.6.2">com.hazelcast:hazelcast:2.6.2<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for com.hazelcast:hazelcast:jar:2.6.2</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.hazelcast:hazelcast-all:2.6.2">com.hazelcast:hazelcast-all:2.6.2<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for com.hazelcast:hazelcast-all:jar:2.6.2</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.hazelcast:hazelcast-client:2.6.2">com.hazelcast:hazelcast-client:2.6.2<a></th></tr>
 	<tr><td class="def" colspan="2">Failed to read artifact descriptor for com.hazelcast:hazelcast-client:jar:2.6.2</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.hazelcast:hazelcast-cloud:2.6.2">com.hazelcast:hazelcast-cloud:2.6.2<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for com.hazelcast:hazelcast-cloud:jar:2.6.2</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.hazelcast:hazelcast-code-generator:1.0.0">com.hazelcast:hazelcast-code-generator:1.0.0<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact com.hazelcast:hazelcast-code-generator:jar:1.0.0 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.hazelcast:hazelcast-hibernate:2.6.2">com.hazelcast:hazelcast-hibernate:2.6.2<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for com.hazelcast:hazelcast-hibernate:jar:2.6.2</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.hazelcast:hazelcast-spring:2.6.2">com.hazelcast:hazelcast-spring:2.6.2<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for com.hazelcast:hazelcast-spring:jar:2.6.2</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.hazelcast:hazelcast-wm:2.6.2">com.hazelcast:hazelcast-wm:2.6.2<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for com.hazelcast:hazelcast-wm:jar:2.6.2</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.ibatis:ibatis2:2.3.0.677">com.ibatis:ibatis2:2.3.0.677<a></th></tr>
@@ -489,6 +583,10 @@ fa-icon: question
 </td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.ibm.icu:icu4j:3.4.1">com.ibm.icu:icu4j:3.4.1<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact com.ibm.icu:icu4j:jar:3.4.1 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.ibm.websphere:com.springsource.com.ibm.websphere.uow:6.0.2.17">com.ibm.websphere:com.springsource.com.ibm.websphere.uow:6.0.2.17<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact com.ibm.websphere:com.springsource.com.ibm.websphere.uow:jar:6.0.2.17 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -499,6 +597,11 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.ibm.websphere:websphere_uow_api:0.0.1">com.ibm.websphere:websphere_uow_api:0.0.1<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact com.ibm.websphere:websphere_uow_api:jar:0.0.1 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.itextpdf:itext-pdfa:5.5.6">com.itextpdf:itext-pdfa:5.5.6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.itextpdf:itextpdf:5.5.6-SNAPSHOT">com.itextpdf : itextpdf : 5.5.6-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.bouncycastle:bcprov-jdk15on:1.48">org.bouncycastle : bcprov-jdk15on : 1.48</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.itextpdf:itextpdf:5.5.6-SNAPSHOT">com.itextpdf:itextpdf:5.5.6-SNAPSHOT<a></th></tr>
@@ -549,8 +652,136 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact com.lowagie:itext:jar:[1.02b,) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.2-pre2-RELEASE">com.mchange:c3p0:0.9.2-pre2-RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.1">com.mchange : mchange-commons-java : 0.2.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.2-pre3">com.mchange:c3p0:0.9.2-pre3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.1">com.mchange : mchange-commons-java : 0.2.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.5">com.mchange:c3p0:0.9.5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.9">com.mchange : mchange-commons-java : 0.2.9</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.5-pre10">com.mchange:c3p0:0.9.5-pre10<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.8">com.mchange : mchange-commons-java : 0.2.8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.5-pre2">com.mchange:c3p0:0.9.5-pre2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.5">com.mchange : mchange-commons-java : 0.2.5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.5-pre3">com.mchange:c3p0:0.9.5-pre3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.6">com.mchange : mchange-commons-java : 0.2.6</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.5-pre4">com.mchange:c3p0:0.9.5-pre4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.6.1">com.mchange : mchange-commons-java : 0.2.6.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.5-pre5">com.mchange:c3p0:0.9.5-pre5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.6.2">com.mchange : mchange-commons-java : 0.2.6.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.5-pre6">com.mchange:c3p0:0.9.5-pre6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.6.3">com.mchange : mchange-commons-java : 0.2.6.3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.5-pre7">com.mchange:c3p0:0.9.5-pre7<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.6.5">com.mchange : mchange-commons-java : 0.2.6.5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.5-pre8">com.mchange:c3p0:0.9.5-pre8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.7">com.mchange : mchange-commons-java : 0.2.7</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.5-pre9">com.mchange:c3p0:0.9.5-pre9<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.8">com.mchange : mchange-commons-java : 0.2.8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.5.1">com.mchange:c3p0:0.9.5.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.10">com.mchange : mchange-commons-java : 0.2.10</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:c3p0:0.9.5.2">com.mchange:c3p0:0.9.5.2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.mchange:mchange-commons-java:0.2.11">com.mchange : mchange-commons-java : 0.2.11</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.mchange:mchange-commons-java:0.2.1">com.mchange:mchange-commons-java:0.2.1<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact com.mchange:mchange-commons-java:jar:0.2.1 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:mchange-commons-java:0.2.10">com.mchange:mchange-commons-java:0.2.10<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:[1.7.5,1.7.6),[1.7.50,1.7.60),[1.7.500,1.7.600),[1.7.5000,1.7.6000),[1.7.50000,1.7.60000)">org.slf4j : slf4j-api : [1.7.5,1.7.6),[1.7.50,1.7.60),[1.7.500,1.7.600),[1.7.5000,1.7.6000),[1.7.50000,1.7.60000)</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.typesafe:config:1.2.1">com.typesafe : config : 1.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:[1.2.14,1.2.15),[1.2.140,1.2.150),[1.2.1400,1.2.1500),[1.2.14000,1.2.15000),[1.2.140000,1.2.150000)">log4j : log4j : [1.2.14,1.2.15),[1.2.140,1.2.150),[1.2.1400,1.2.1500),[1.2.14000,1.2.15000),[1.2.140000,1.2.150000)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:mchange-commons-java:0.2.11">com.mchange:mchange-commons-java:0.2.11<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:[1.7.5,1.7.6),[1.7.50,1.7.60),[1.7.500,1.7.600),[1.7.5000,1.7.6000),[1.7.50000,1.7.60000)">org.slf4j : slf4j-api : [1.7.5,1.7.6),[1.7.50,1.7.60),[1.7.500,1.7.600),[1.7.5000,1.7.6000),[1.7.50000,1.7.60000)</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.typesafe:config:1.2.1">com.typesafe : config : 1.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:[1.2.14,1.2.15),[1.2.140,1.2.150),[1.2.1400,1.2.1500),[1.2.14000,1.2.15000),[1.2.140000,1.2.150000)">log4j : log4j : [1.2.14,1.2.15),[1.2.140,1.2.150),[1.2.1400,1.2.1500),[1.2.14000,1.2.15000),[1.2.140000,1.2.150000)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:mchange-commons-java:0.2.12">com.mchange:mchange-commons-java:0.2.12<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:[1.7.5,1.7.6),[1.7.50,1.7.60),[1.7.500,1.7.600),[1.7.5000,1.7.6000),[1.7.50000,1.7.60000)">org.slf4j : slf4j-api : [1.7.5,1.7.6),[1.7.50,1.7.60),[1.7.500,1.7.600),[1.7.5000,1.7.6000),[1.7.50000,1.7.60000)</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.typesafe:config:1.3.0">com.typesafe : config : 1.3.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:[1.2.14,1.2.15),[1.2.140,1.2.150),[1.2.1400,1.2.1500),[1.2.14000,1.2.15000),[1.2.140000,1.2.150000)">log4j : log4j : [1.2.14,1.2.15),[1.2.140,1.2.150),[1.2.1400,1.2.1500),[1.2.14000,1.2.15000),[1.2.140000,1.2.150000)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:mchange-commons-java:0.2.5">com.mchange:mchange-commons-java:0.2.5<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#com.typesafe:config:1.0.0">com.typesafe : config : 1.0.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:1.7.5+">org.slf4j : slf4j-api : 1.7.5+</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:1.2.14+">log4j : log4j : 1.2.14+</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:mchange-commons-java:0.2.6">com.mchange:mchange-commons-java:0.2.6<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#com.typesafe:config:1.0.0">com.typesafe : config : 1.0.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:1.7.5+">org.slf4j : slf4j-api : 1.7.5+</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:1.2.14+">log4j : log4j : 1.2.14+</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:mchange-commons-java:0.2.6.1">com.mchange:mchange-commons-java:0.2.6.1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#com.typesafe:config:1.0.0">com.typesafe : config : 1.0.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:1.7.5+">org.slf4j : slf4j-api : 1.7.5+</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:1.2.14+">log4j : log4j : 1.2.14+</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:mchange-commons-java:0.2.6.2">com.mchange:mchange-commons-java:0.2.6.2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#com.typesafe:config:1.0.0">com.typesafe : config : 1.0.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:1.7.5+">org.slf4j : slf4j-api : 1.7.5+</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:1.2.14+">log4j : log4j : 1.2.14+</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:mchange-commons-java:0.2.6.3">com.mchange:mchange-commons-java:0.2.6.3<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#com.typesafe:config:1.0.0">com.typesafe : config : 1.0.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:1.7.5+">org.slf4j : slf4j-api : 1.7.5+</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:1.2.14+">log4j : log4j : 1.2.14+</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:mchange-commons-java:0.2.6.5">com.mchange:mchange-commons-java:0.2.6.5<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#com.typesafe:config:1.0.0">com.typesafe : config : 1.0.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:1.7.5+">org.slf4j : slf4j-api : 1.7.5+</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:1.2.14+">log4j : log4j : 1.2.14+</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:mchange-commons-java:0.2.7">com.mchange:mchange-commons-java:0.2.7<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#com.typesafe:config:1.0.0">com.typesafe : config : 1.0.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:1.7.5+">org.slf4j : slf4j-api : 1.7.5+</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:1.2.14+">log4j : log4j : 1.2.14+</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:mchange-commons-java:0.2.8">com.mchange:mchange-commons-java:0.2.8<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#com.typesafe:config:1.0.0">com.typesafe : config : 1.0.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:1.7.5+">org.slf4j : slf4j-api : 1.7.5+</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:1.2.14+">log4j : log4j : 1.2.14+</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.mchange:mchange-commons-java:0.2.9">com.mchange:mchange-commons-java:0.2.9<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.slf4j:slf4j-api:[1.7.5,1.7.6),[1.7.50,1.7.60),[1.7.500,1.7.600),[1.7.5000,1.7.6000),[1.7.50000,1.7.60000)">org.slf4j : slf4j-api : [1.7.5,1.7.6),[1.7.50,1.7.60),[1.7.500,1.7.600),[1.7.5000,1.7.6000),[1.7.50000,1.7.60000)</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.typesafe:config:1.0.0">com.typesafe : config : 1.0.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:[1.2.14,1.2.15),[1.2.140,1.2.150),[1.2.1400,1.2.1500),[1.2.14000,1.2.15000),[1.2.140000,1.2.150000)">log4j : log4j : [1.2.14,1.2.15),[1.2.140,1.2.150),[1.2.1400,1.2.1500),[1.2.14000,1.2.15000),[1.2.140000,1.2.150000)</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.oracle:classes12:10.2.0.2.0">com.oracle:classes12:10.2.0.2.0<a></th></tr>
@@ -601,6 +832,46 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact com.sun.faces:jsf-impl:jar:2.2.3-jbossorg-1 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.istack:istack-commons-tools:2.15">com.sun.istack:istack-commons-tools:2.15<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.6">com.sun : tools : 1.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.0">org.apache.ant : ant : 1.7.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.istack:istack-commons-tools:2.16">com.sun.istack:istack-commons-tools:2.16<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.6">com.sun : tools : 1.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.0">org.apache.ant : ant : 1.7.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.istack:istack-commons-tools:2.17">com.sun.istack:istack-commons-tools:2.17<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.6">com.sun : tools : 1.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.0">org.apache.ant : ant : 1.7.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.istack:istack-commons-tools:2.18">com.sun.istack:istack-commons-tools:2.18<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.6">com.sun : tools : 1.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.0">org.apache.ant : ant : 1.7.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.istack:istack-commons-tools:2.19">com.sun.istack:istack-commons-tools:2.19<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.6">com.sun : tools : 1.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.0">org.apache.ant : ant : 1.7.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.istack:istack-commons-tools:2.20">com.sun.istack:istack-commons-tools:2.20<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.6">com.sun : tools : 1.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.0">org.apache.ant : ant : 1.7.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.istack:istack-commons-tools:2.21">com.sun.istack:istack-commons-tools:2.21<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.6">com.sun : tools : 1.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.0">org.apache.ant : ant : 1.7.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.istack:istack-commons-tools:2.22">com.sun.istack:istack-commons-tools:2.22<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.6">com.sun : tools : 1.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.0">org.apache.ant : ant : 1.7.0</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.sun.java:tools:1.8.0_91">com.sun.java:tools:1.8.0_91<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact com.sun.java:tools:jar:1.8.0_91 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -611,6 +882,83 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.sun.jdmk:jmxtools:1.2.1">com.sun.jdmk:jmxtools:1.2.1<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact com.sun.jdmk:jmxtools:jar:1.2.1 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.jersey:jersey-json:1.13">com.sun.jersey:jersey-json:1.13<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.codehaus.jettison:jettison:1.1">org.codehaus.jettison : jettison : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.jersey:jersey-core:1.13">com.sun.jersey : jersey-core : 1.13</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-xc:1.9.2">org.codehaus.jackson : jackson-xc : 1.9.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.moxy:2.3.2">org.eclipse.persistence : org.eclipse.persistence.moxy : 2.3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-mapper-asl:1.9.2">org.codehaus.jackson : jackson-mapper-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-jaxrs:1.9.2">org.codehaus.jackson : jackson-jaxrs : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-core-asl:1.9.2">org.codehaus.jackson : jackson-core-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.xml.bind:jaxb-impl:2.2.3-1">com.sun.xml.bind : jaxb-impl : 2.2.3-1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.jersey:jersey-json:1.14">com.sun.jersey:jersey-json:1.14<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.codehaus.jettison:jettison:1.1">org.codehaus.jettison : jettison : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-xc:1.9.2">org.codehaus.jackson : jackson-xc : 1.9.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.moxy:2.3.2">org.eclipse.persistence : org.eclipse.persistence.moxy : 2.3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-mapper-asl:1.9.2">org.codehaus.jackson : jackson-mapper-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-jaxrs:1.9.2">org.codehaus.jackson : jackson-jaxrs : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-core-asl:1.9.2">org.codehaus.jackson : jackson-core-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.jersey:jersey-core:1.14">com.sun.jersey : jersey-core : 1.14</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.xml.bind:jaxb-impl:2.2.3-1">com.sun.xml.bind : jaxb-impl : 2.2.3-1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.jersey:jersey-json:1.15">com.sun.jersey:jersey-json:1.15<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.codehaus.jettison:jettison:1.1">org.codehaus.jettison : jettison : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-xc:1.9.2">org.codehaus.jackson : jackson-xc : 1.9.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.moxy:2.3.2">org.eclipse.persistence : org.eclipse.persistence.moxy : 2.3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-mapper-asl:1.9.2">org.codehaus.jackson : jackson-mapper-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-jaxrs:1.9.2">org.codehaus.jackson : jackson-jaxrs : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-core-asl:1.9.2">org.codehaus.jackson : jackson-core-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.jersey:jersey-core:1.15">com.sun.jersey : jersey-core : 1.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.xml.bind:jaxb-impl:2.2.3-1">com.sun.xml.bind : jaxb-impl : 2.2.3-1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.jersey:jersey-json:1.16">com.sun.jersey:jersey-json:1.16<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.codehaus.jettison:jettison:1.1">org.codehaus.jettison : jettison : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.jersey:jersey-core:1.16">com.sun.jersey : jersey-core : 1.16</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-xc:1.9.2">org.codehaus.jackson : jackson-xc : 1.9.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.moxy:2.3.2">org.eclipse.persistence : org.eclipse.persistence.moxy : 2.3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-mapper-asl:1.9.2">org.codehaus.jackson : jackson-mapper-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-jaxrs:1.9.2">org.codehaus.jackson : jackson-jaxrs : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-core-asl:1.9.2">org.codehaus.jackson : jackson-core-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.xml.bind:jaxb-impl:2.2.3-1">com.sun.xml.bind : jaxb-impl : 2.2.3-1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.jersey:jersey-json:1.17">com.sun.jersey:jersey-json:1.17<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.codehaus.jettison:jettison:1.1">org.codehaus.jettison : jettison : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.jersey:jersey-core:1.17">com.sun.jersey : jersey-core : 1.17</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-xc:1.9.2">org.codehaus.jackson : jackson-xc : 1.9.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.moxy:2.3.2">org.eclipse.persistence : org.eclipse.persistence.moxy : 2.3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-mapper-asl:1.9.2">org.codehaus.jackson : jackson-mapper-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-jaxrs:1.9.2">org.codehaus.jackson : jackson-jaxrs : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-core-asl:1.9.2">org.codehaus.jackson : jackson-core-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.xml.bind:jaxb-impl:2.2.3-1">com.sun.xml.bind : jaxb-impl : 2.2.3-1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.jersey:jersey-json:1.18">com.sun.jersey:jersey-json:1.18<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.codehaus.jettison:jettison:1.1">org.codehaus.jettison : jettison : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.jersey:jersey-core:1.18">com.sun.jersey : jersey-core : 1.18</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-xc:1.9.2">org.codehaus.jackson : jackson-xc : 1.9.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.moxy:2.3.2">org.eclipse.persistence : org.eclipse.persistence.moxy : 2.3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-mapper-asl:1.9.2">org.codehaus.jackson : jackson-mapper-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-jaxrs:1.9.2">org.codehaus.jackson : jackson-jaxrs : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-core-asl:1.9.2">org.codehaus.jackson : jackson-core-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.xml.bind:jaxb-impl:2.2.3-1">com.sun.xml.bind : jaxb-impl : 2.2.3-1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.jersey:jersey-json:1.19">com.sun.jersey:jersey-json:1.19<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.codehaus.jettison:jettison:1.1">org.codehaus.jettison : jettison : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.jersey:jersey-core:1.19">com.sun.jersey : jersey-core : 1.19</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-xc:1.9.2">org.codehaus.jackson : jackson-xc : 1.9.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.moxy:2.3.2">org.eclipse.persistence : org.eclipse.persistence.moxy : 2.3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-mapper-asl:1.9.2">org.codehaus.jackson : jackson-mapper-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-jaxrs:1.9.2">org.codehaus.jackson : jackson-jaxrs : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.jackson:jackson-core-asl:1.9.2">org.codehaus.jackson : jackson-core-asl : 1.9.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.xml.bind:jaxb-impl:2.2.3-1">com.sun.xml.bind : jaxb-impl : 2.2.3-1</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.sun.jmx:jmxri:1.2">com.sun.jmx:jmxri:1.2<a></th></tr>
@@ -629,12 +977,26 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact com.sun.xml.bind:jaxb-core:jar:2.1.16 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.xml.bind:jaxb-impl:2.1.15">com.sun.xml.bind:jaxb-impl:2.1.15<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#com.sun.xml.fastinfoset:FastInfoset:1.2.12">com.sun.xml.fastinfoset : FastInfoset : 1.2.12</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.sun.xml.bind:jaxb-core:2.1.15">com.sun.xml.bind : jaxb-core : 2.1.15</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.sun.xml.bind:jaxb-impl:2.1.16">com.sun.xml.bind:jaxb-impl:2.1.16<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#com.sun.xml.fastinfoset:FastInfoset:1.2.12">com.sun.xml.fastinfoset : FastInfoset : 1.2.12</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.sun.xml.bind:jaxb-core:2.1.16">com.sun.xml.bind : jaxb-core : 2.1.16</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.twitter:util-core:1.12.13">com.twitter:util-core:1.12.13<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact com.twitter:util-core:jar:1.12.13 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.twitter:util-core:4.0.0">com.twitter:util-core:4.0.0<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact com.twitter:util-core:jar:4.0.0 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="com.typesafe:config:1.1.0-9f31d6308e7ebbc3d7904b64ebb9f61f7e22a968">com.typesafe:config:1.1.0-9f31d6308e7ebbc3d7904b64ebb9f61f7e22a968<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.typesafe.sbteclipse:sbteclipse-plugin:2.3.0">com.typesafe.sbteclipse : sbteclipse-plugin : 2.3.0</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="com.typesafe.sbteclipse:sbteclipse-plugin:2.3.0">com.typesafe.sbteclipse:sbteclipse-plugin:2.3.0<a></th></tr>
@@ -689,8 +1051,40 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact commons-dbcp:commons-dbcp:jar:1.0-dev in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="commons-dbcp:commons-dbcp:1.1">commons-dbcp:commons-dbcp:1.1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-collections:commons-collections:2.1">commons-collections : commons-collections : 2.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xml-apis:xml-apis:2.0.2">xml-apis : xml-apis : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:2.0.2">xerces : xerces : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:3.8.1">junit : junit : 3.8.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-pool:commons-pool:1.1">commons-pool : commons-pool : 1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jdbc:jdbc:2.0">jdbc : jdbc : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="commons-dbcp:commons-dbcp:1.2">commons-dbcp:commons-dbcp:1.2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-collections:commons-collections:2.1">commons-collections : commons-collections : 2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.sql:jdbc-stdext:2.0">javax.sql : jdbc-stdext : 2.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xml-apis:xml-apis:2.0.2">xml-apis : xml-apis : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:2.0.2">xerces : xerces : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-pool:commons-pool:1.2">commons-pool : commons-pool : 1.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="commons-dbcp:commons-dbcp:1.2.1">commons-dbcp:commons-dbcp:1.2.1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-collections:commons-collections:2.1">commons-collections : commons-collections : 2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.sql:jdbc-stdext:2.0">javax.sql : jdbc-stdext : 2.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xml-apis:xml-apis:2.0.2">xml-apis : xml-apis : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:2.0.2">xerces : xerces : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-pool:commons-pool:1.2">commons-pool : commons-pool : 1.2</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="commons-dbcp:commons-dcdbcp:1.2.2">commons-dbcp:commons-dcdbcp:1.2.2<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact commons-dbcp:commons-dcdbcp:jar:1.2.2 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="commons-digester:commons-digester:1.3">commons-digester:commons-digester:1.3<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#xml-apis:xml-apis:2.0.2">xml-apis : xml-apis : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.0">commons-logging : commons-logging : 1.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:2.0">commons-collections : commons-collections : 2.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#commons-beanutils:commons-beanutils:1.4-dev">commons-beanutils : commons-beanutils : 1.4-dev</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="commons-digester:commons-digester:[1.7,)">commons-digester:commons-digester:[1.7,)<a></th></tr>
@@ -852,12 +1246,41 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact commons-jelly:commons-jelly:jar:SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="commons-jelly:commons-jelly-tags-junit:20040902.064627">commons-jelly:commons-jelly-tags-junit:20040902.064627<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-cli:commons-cli:1.0">commons-cli : commons-cli : 1.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:3.8.1">junit : junit : 3.8.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#commons-jelly:commons-jelly:SNAPSHOT">commons-jelly : commons-jelly : SNAPSHOT</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="commons-jelly:commons-jelly-tags-junit:20040902.070920">commons-jelly:commons-jelly-tags-junit:20040902.070920<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-cli:commons-cli:1.0">commons-cli : commons-cli : 1.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:3.8.1">junit : junit : 3.8.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#commons-jelly:commons-jelly:SNAPSHOT">commons-jelly : commons-jelly : SNAPSHOT</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="commons-jelly:commons-jelly-tags-junit:SNAPSHOT">commons-jelly:commons-jelly-tags-junit:SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact commons-jelly:commons-jelly-tags-junit:jar:SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="commons-jelly:commons-jelly-tags-log:20040902.071410">commons-jelly:commons-jelly-tags-log:20040902.071410<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#commons-jelly:commons-jelly-tags-junit:SNAPSHOT">commons-jelly : commons-jelly-tags-junit : SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#commons-jelly:commons-jelly:SNAPSHOT">commons-jelly : commons-jelly : SNAPSHOT</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="commons-jelly:commons-jelly-tags-xml:1.1-SNAPSHOT">commons-jelly:commons-jelly-tags-xml:1.1-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact commons-jelly:commons-jelly-tags-xml:jar:1.1-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="commons-jelly:commons-jelly-tags-xml:20040613.030723">commons-jelly:commons-jelly-tags-xml:20040613.030723<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#commons-jelly:commons-jelly-tags-junit:SNAPSHOT">commons-jelly : commons-jelly-tags-junit : SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xalan:xalan:2.3.1">xalan : xalan : 2.3.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#commons-jelly:commons-jelly:SNAPSHOT">commons-jelly : commons-jelly : SNAPSHOT</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="commons-jelly:commons-jelly-tags-xml:20040902.072037">commons-jelly:commons-jelly-tags-xml:20040902.072037<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#commons-jelly:commons-jelly-tags-junit:SNAPSHOT">commons-jelly : commons-jelly-tags-junit : SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xalan:xalan:2.3.1">xalan : xalan : 2.3.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#commons-jelly:commons-jelly:SNAPSHOT">commons-jelly : commons-jelly : SNAPSHOT</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="commons-jexl:commons-jexl:1.0-dev">commons-jexl:commons-jexl:1.0-dev<a></th></tr>
@@ -926,6 +1349,14 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="dom4j:dom4j:1.4-dev">dom4j:dom4j:1.4-dev<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact dom4j:dom4j:jar:1.4-dev in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="doxia:doxia-core:1.0-alpha-1">doxia:doxia-core:1.0-alpha-1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#plexus:plexus:0.17">plexus : plexus : 0.17</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#oro:oro:2.0.7">oro : oro : 2.0.7</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xpp3:xpp3:1.1.3.3">xpp3 : xpp3 : 1.1.3.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#maven:maven-model:2.0-SNAPSHOT">maven : maven-model : 2.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:3.8.1">junit : junit : 3.8.1</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="doxia:doxia-sink-api:1.0-alpha-5-SNAPSHOT">doxia:doxia-sink-api:1.0-alpha-5-SNAPSHOT<a></th></tr>
@@ -1290,6 +1721,12 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact javax.el:javax.el-api:jar:[3.0.0,) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="javax.enterprise:cdi-api:1.0-CR1">javax.enterprise:cdi-api:1.0-CR1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#javax.el:el-api:2.1.2-b04">javax.el : el-api : 2.1.2-b04</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.ejb3:jboss-ejb3-api:3.1.0-Alpha1">org.jboss.ejb3 : jboss-ejb3-api : 3.1.0-Alpha1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.inject:javax.inject:1.0-PFD-1">javax.inject : javax.inject : 1.0-PFD-1</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="javax.faces:jsf-api:1.1">javax.faces:jsf-api:1.1<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact javax.faces:jsf-api:jar:1.1 in central (http://repo1.maven.org/maven2/)</td></tr>
 	<tr><td class="de1 de njd" colspan="2"><a href="#javax.servlet:servlet-api:2.3">javax.servlet : servlet-api : 2.3</a></td></tr>
@@ -1314,6 +1751,10 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="javax.jdo:jdo:2.0-20050507">javax.jdo:jdo:2.0-20050507<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact javax.jdo:jdo:jar:2.0-20050507 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="javax.jms:jms:1.02b">javax.jms:jms:1.02b<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact javax.jms:jms:jar:1.02b in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="javax.jms:jms:1.1">javax.jms:jms:1.1<a></th></tr>
@@ -1348,6 +1789,10 @@ fa-icon: question
 	<tr><td class="de1 de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="javax.management:jmxri:1.2.1">javax.management:jmxri:1.2.1<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact javax.management:jmxri:jar:1.2.1 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="javax.persistence:ejb:3.0-edr2-20050513">javax.persistence:ejb:3.0-edr2-20050513<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact javax.persistence:ejb:jar:3.0-edr2-20050513 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -1375,6 +1820,31 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="javax.servlet:servlet-api:${servlet-api.version}">javax.servlet:servlet-api:${servlet-api.version}<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact javax.servlet:servlet-api:jar:${servlet-api.version} in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="javax.servlet.jsp:javax.servlet.jsp-api:2.3.0">javax.servlet.jsp:javax.servlet.jsp-api:2.3.0<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#javax.servlet:javax.servlet-api:3.0.1">javax.servlet : javax.servlet-api : 3.0.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.el:javax.el-api:[3.0-b03,)">javax.el : javax.el-api : [3.0-b03,)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="javax.servlet.jsp:javax.servlet.jsp-api:2.3.1">javax.servlet.jsp:javax.servlet.jsp-api:2.3.1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#javax.servlet:javax.servlet-api:3.0.1">javax.servlet : javax.servlet-api : 3.0.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.el:javax.el-api:[3.0-b08,)">javax.el : javax.el-api : [3.0-b08,)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="javax.servlet.jsp:jsp-api:2.1.2">javax.servlet.jsp:jsp-api:2.1.2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#javax.servlet:servlet-api:${servlet-api.version}">javax.servlet : servlet-api : ${servlet-api.version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.el:el-api:${el-impl.version}">javax.el : el-api : ${el-impl.version}</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="javax.servlet.jsp:jsp-api:2.1.3-b04">javax.servlet.jsp:jsp-api:2.1.3-b04<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.glassfish:javax.servlet:[3.0-b57,3.1)">org.glassfish : javax.servlet : [3.0-b57,3.1)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.el:el-api:[2.1.2-b04,2.2)">javax.el : el-api : [2.1.2-b04,2.2)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="javax.servlet.jsp:jsp-api:2.1.3-b05">javax.servlet.jsp:jsp-api:2.1.3-b05<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.glassfish:javax.servlet:[3.0-b57,3.1)">org.glassfish : javax.servlet : [3.0-b57,3.1)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.el:el-api:[2.1.2-b04,2.2)">javax.el : el-api : [2.1.2-b04,2.2)</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="javax.sql:jdbc-stdext:2.0">javax.sql:jdbc-stdext:2.0<a></th></tr>
@@ -1417,12 +1887,31 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact javax.xml.bind:jaxb-api:jar:1.0.5 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="javax.xml.soap:saaj-api:1.3">javax.xml.soap:saaj-api:1.3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#activation:activation:1.0.2">activation : activation : 1.0.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="javax.xml.ws:jaxws-api:2.1-1">javax.xml.ws:jaxws-api:2.1-1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#javax.jws:jsr181:1.0">javax.jws : jsr181 : 1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.xml.soap:saaj-api:1.3">javax.xml.soap : saaj-api : 1.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.annotation:jsr250-api:1.0">javax.annotation : jsr250-api : 1.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.xml.bind:jaxb-api:2.1">javax.xml.bind : jaxb-api : 2.1</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="jboss:jboss:2.4.6">jboss:jboss:2.4.6<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact jboss:jboss:jar:2.4.6 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="jboss:jboss-common-core:2.0.3.GA">jboss:jboss-common-core:2.0.3.GA<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact jboss:jboss-common-core:jar:2.0.3.GA in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="jboss:jboss-common-core:2.0.4.GA">jboss:jboss-common-core:2.0.4.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#oswego-concurrent:concurrent:1.3.4">oswego-concurrent : concurrent : 1.3.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-common-logging-spi:2.0.4.GA">jboss : jboss-common-logging-spi : 2.0.4.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xml-apis:2.7.1">apache-xerces : xml-apis : 2.7.1</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="jboss:jboss-common-logging-spi:2.0.4.GA">jboss:jboss-common-logging-spi:2.0.4.GA<a></th></tr>
@@ -1501,16 +1990,6 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact jdo:jdori:jar:1.0.1 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
-	<tr><th class="dt" colspan="2"><a id="jdom:jdom:1.1">jdom:jdom:1.1<a></th></tr>
-	<tr><td class="vdf" colspan="2">Could not find artifact jdom:jdom:jar:1.1 in central (http://repo1.maven.org/maven2/)</td></tr>
-	<tr><td class="de1 de njd" colspan="2"><a href="#xalan:xalan:2.5.D1">xalan : xalan : 2.5.D1</a></td></tr>
-	<tr><td class="de njd" colspan="2"><a href="#org.jdom:saxpath:1.0-FCS">org.jdom : saxpath : 1.0-FCS</a></td></tr>
-	<tr><td class="de njd" colspan="2"><a href="#org.jdom:jaxen-core:1.0-FCS">org.jdom : jaxen-core : 1.0-FCS</a></td></tr>
-	<tr><td class="de njd" colspan="2"><a href="#xerces:xmlParserAPIs:2.6.1">xerces : xmlParserAPIs : 2.6.1</a></td></tr>
-	<tr><td class="de njd" colspan="2"><a href="#xerces:xercesImpl:2.6.1">xerces : xercesImpl : 2.6.1</a></td></tr>
-	<tr><td class="de njd" colspan="2"><a href="#org.jdom:jaxen-jdom:1.0-FCS">org.jdom : jaxen-jdom : 1.0-FCS</a></td></tr>
-</table>
-<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="jetty:org.mortbay.jetty:${org.mortbay.jetty_version}">jetty:org.mortbay.jetty:${org.mortbay.jetty_version}<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact jetty:org.mortbay.jetty:jar:${org.mortbay.jetty_version} in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -1527,8 +2006,80 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact jfree:jcommon:jar:[1.0.0,) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="jfree:jfreechart:1.0.8">jfree:jfreechart:1.0.8<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact jfree:jfreechart:jar:1.0.8 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="jfree:jfreechart:[1.0.0,)">jfree:jfreechart:[1.0.0,)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact jfree:jfreechart:jar:[1.0.0,) in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="jgroups:jgroups:2.4.2.GA_CP01">jgroups:jgroups:2.4.2.GA_CP01<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact jgroups:jgroups:jar:2.4.2.GA_CP01 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="jgroups:jgroups:2.4.4.GA">jgroups:jgroups:2.4.4.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#concurrent:concurrent:1.3.4">concurrent : concurrent : 1.3.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xalan:xalan:j_2.7.0">apache-xalan : xalan : j_2.7.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.02b">javax.jms : jms : 1.02b</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xalan:serializer:j_2.7.0">apache-xalan : serializer : j_2.7.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.management:jmxri:1.2.1">javax.management : jmxri : 1.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#beanshell:beanshell:1.2b3">beanshell : beanshell : 1.2b3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.6">log4j : log4j : 1.2.6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#bouncycastle:bcprov-jdk14:117">bouncycastle : bcprov-jdk14 : 117</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.0.3">commons-logging : commons-logging : 1.0.3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="jgroups:jgroups:2.4.5.GA">jgroups:jgroups:2.4.5.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#concurrent:concurrent:1.3.4">concurrent : concurrent : 1.3.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xalan:xalan:j_2.7.0">apache-xalan : xalan : j_2.7.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.02b">javax.jms : jms : 1.02b</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xalan:serializer:j_2.7.0">apache-xalan : serializer : j_2.7.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.management:jmxri:1.2.1">javax.management : jmxri : 1.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#beanshell:beanshell:1.2b3">beanshell : beanshell : 1.2b3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.6">log4j : log4j : 1.2.6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#bouncycastle:bcprov-jdk14:117">bouncycastle : bcprov-jdk14 : 117</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.0.3">commons-logging : commons-logging : 1.0.3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="jgroups:jgroups:2.4.6.GA">jgroups:jgroups:2.4.6.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#concurrent:concurrent:1.3.4">concurrent : concurrent : 1.3.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xalan:xalan:j_2.7.0">apache-xalan : xalan : j_2.7.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.02b">javax.jms : jms : 1.02b</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xalan:serializer:j_2.7.0">apache-xalan : serializer : j_2.7.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.management:jmxri:1.2.1">javax.management : jmxri : 1.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#beanshell:beanshell:1.2b3">beanshell : beanshell : 1.2b3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.6">log4j : log4j : 1.2.6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#bouncycastle:bcprov-jdk14:117">bouncycastle : bcprov-jdk14 : 117</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.0.3">commons-logging : commons-logging : 1.0.3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="jgroups:jgroups:2.4.7.GA">jgroups:jgroups:2.4.7.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#concurrent:concurrent:1.3.4">concurrent : concurrent : 1.3.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xalan:xalan:j_2.7.0">apache-xalan : xalan : j_2.7.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.02b">javax.jms : jms : 1.02b</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xalan:serializer:j_2.7.0">apache-xalan : serializer : j_2.7.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.management:jmxri:1.2.1">javax.management : jmxri : 1.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#beanshell:beanshell:1.2b3">beanshell : beanshell : 1.2b3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.6">log4j : log4j : 1.2.6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#bouncycastle:bcprov-jdk14:117">bouncycastle : bcprov-jdk14 : 117</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.0.3">commons-logging : commons-logging : 1.0.3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="jgroups:jgroups:2.4.8.GA">jgroups:jgroups:2.4.8.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#concurrent:concurrent:1.3.4">concurrent : concurrent : 1.3.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xalan:xalan:j_2.7.0">apache-xalan : xalan : j_2.7.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.02b">javax.jms : jms : 1.02b</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xalan:serializer:j_2.7.0">apache-xalan : serializer : j_2.7.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.management:jmxri:1.2.1">javax.management : jmxri : 1.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#beanshell:beanshell:1.2b3">beanshell : beanshell : 1.2b3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.6">log4j : log4j : 1.2.6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#bouncycastle:bcprov-jdk14:117">bouncycastle : bcprov-jdk14 : 117</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.0.3">commons-logging : commons-logging : 1.0.3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="jgroups:jgroups:2.6.0-GA">jgroups:jgroups:2.6.0-GA<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact jgroups:jgroups:jar:2.6.0-GA in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="jms:jms:1.0.2b">jms:jms:1.0.2b<a></th></tr>
@@ -1664,12 +2215,44 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact mx4j:mx4j:jar:2.1.0 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="mysql:mysql-connector-java:3.0.10">mysql:mysql-connector-java:3.0.10<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#javax.sql:jdbc-stdext:2.0">javax.sql : jdbc-stdext : 2.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.transaction:jta:1.0.1B">javax.transaction : jta : 1.0.1B</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="nanocontainer:nanocontainer-testmodel:1.0-RC-1">nanocontainer:nanocontainer-testmodel:1.0-RC-1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#picocontainer:picocontainer:${picocontainer.version}">picocontainer : picocontainer : ${picocontainer.version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#picocontainer:picocontainer-tck:${picocontainer.version}">picocontainer : picocontainer-tck : ${picocontainer.version}</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="nanocontainer:nanocontainer-testmodel:1.0-RC-2">nanocontainer:nanocontainer-testmodel:1.0-RC-2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#picocontainer:picocontainer:${picocontainer.version}">picocontainer : picocontainer : ${picocontainer.version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#picocontainer:picocontainer-tck:${picocontainer.version}">picocontainer : picocontainer-tck : ${picocontainer.version}</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="nanocontainer:nanocontainer-testmodel:1.0-SNAPSHOT">nanocontainer:nanocontainer-testmodel:1.0-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact nanocontainer:nanocontainer-testmodel:jar:1.0-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="nanocontainer:nanocontainer-testmodel:1.0-beta-1">nanocontainer:nanocontainer-testmodel:1.0-beta-1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#picocontainer:picocontainer:${picocontainer.version}">picocontainer : picocontainer : ${picocontainer.version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#picocontainer:picocontainer-tck:${picocontainer.version}">picocontainer : picocontainer-tck : ${picocontainer.version}</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="nanocontainer:nanocontainer-testmodel:1.0-beta-4">nanocontainer:nanocontainer-testmodel:1.0-beta-4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#picocontainer:picocontainer:${picocontainer.version}">picocontainer : picocontainer : ${picocontainer.version}</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#picocontainer:picocontainer-tck:${picocontainer.version}">picocontainer : picocontainer-tck : ${picocontainer.version}</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:ehcache:1.1">net.sf.ehcache:ehcache:1.1<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact net.sf.ehcache:ehcache:jar:1.1 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:ehcache:2.6.7">net.sf.ehcache:ehcache:2.6.7<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact net.sf.ehcache:ehcache:jar:2.6.7 in central (http://repo1.maven.org/maven2/)</td></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#net.sf.ehcache:ehcache-core:2.6.7">net.sf.ehcache : ehcache-core : 2.6.7</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#net.sf.ehcache:ehcache-terracotta:2.6.7">net.sf.ehcache : ehcache-terracotta : 2.6.7</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-jdk14:1.6.1">org.slf4j : slf4j-jdk14 : 1.6.1</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:ehcache-core:2.6.7">net.sf.ehcache:ehcache-core:2.6.7<a></th></tr>
@@ -1678,6 +2261,28 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:ehcache-terracotta:2.0.1-SNAPSHOT">net.sf.ehcache:ehcache-terracotta:2.0.1-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact net.sf.ehcache:ehcache-terracotta:jar:2.0.1-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:ehcache-terracotta:2.1.0">net.sf.ehcache:ehcache-terracotta:2.1.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta:terracotta-l1:3.2.1">org.terracotta : terracotta-l1 : 3.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.terracotta.modules:standard-config:3.2.1">org.terracotta.modules : standard-config : 3.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.terracotta.modules:excludes-config:3.2.1">org.terracotta.modules : excludes-config : 3.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#net.sf.ehcache:ehcache-terracotta-bootstrap:2.1.0">net.sf.ehcache : ehcache-terracotta-bootstrap : 2.1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.terracotta.modules:tim-ehcache-2.0:1.5.3">org.terracotta.modules : tim-ehcache-2.0 : 1.5.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.terracotta.api:terracotta-api:1.2.1">org.terracotta.api : terracotta-api : 1.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.terracotta.modules:guimodels-config:3.2.1">org.terracotta.modules : guimodels-config : 3.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.terracotta.modules:jdk15-preinst-config:3.2.1">org.terracotta.modules : jdk15-preinst-config : 3.2.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:ehcache-terracotta:2.1.1">net.sf.ehcache:ehcache-terracotta:2.1.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta.modules:standard-config:3.2.2">org.terracotta.modules : standard-config : 3.2.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.terracotta:terracotta-l1:3.2.2">org.terracotta : terracotta-l1 : 3.2.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#net.sf.ehcache:ehcache-terracotta-bootstrap:2.1.1">net.sf.ehcache : ehcache-terracotta-bootstrap : 2.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.terracotta.modules:excludes-config:3.2.2">org.terracotta.modules : excludes-config : 3.2.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.terracotta.modules:guimodels-config:3.2.2">org.terracotta.modules : guimodels-config : 3.2.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.terracotta.api:terracotta-api:1.2.2">org.terracotta.api : terracotta-api : 1.2.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.terracotta.modules:tim-ehcache-2.0:1.5.4">org.terracotta.modules : tim-ehcache-2.0 : 1.5.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.terracotta.modules:jdk15-preinst-config:3.2.2">org.terracotta.modules : jdk15-preinst-config : 3.2.2</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:ehcache-terracotta:2.2.0">net.sf.ehcache:ehcache-terracotta:2.2.0<a></th></tr>
@@ -1800,6 +2405,54 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact net.sf.ehcache:ehcache-terracotta-bootstrap:jar:2.1.1 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:management-ehcache-v1:2.10.0">net.sf.ehcache:management-ehcache-v1:2.10.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta:management-common-resources-v1:2.0.12">org.terracotta : management-common-resources-v1 : 2.0.12</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:management-ehcache-v1:2.10.1">net.sf.ehcache:management-ehcache-v1:2.10.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta:management-common-resources-v1:2.0.14">org.terracotta : management-common-resources-v1 : 2.0.14</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:management-ehcache-v1:2.10.2">net.sf.ehcache:management-ehcache-v1:2.10.2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta:management-common-resources-v1:2.0.14">org.terracotta : management-common-resources-v1 : 2.0.14</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:management-ehcache-v1:2.10.2.2.21">net.sf.ehcache:management-ehcache-v1:2.10.2.2.21<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta:management-common-resources-v1:2.0.15">org.terracotta : management-common-resources-v1 : 2.0.15</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:management-ehcache-v1:2.9.0">net.sf.ehcache:management-ehcache-v1:2.9.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta:management-common-resources-v1:2.0.7">org.terracotta : management-common-resources-v1 : 2.0.7</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:management-ehcache-v1:2.9.1">net.sf.ehcache:management-ehcache-v1:2.9.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta:management-common-resources-v1:2.0.12">org.terracotta : management-common-resources-v1 : 2.0.12</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:management-ehcache-v2:2.10.0">net.sf.ehcache:management-ehcache-v2:2.10.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta:management-common-resources-v2:2.0.12">org.terracotta : management-common-resources-v2 : 2.0.12</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:management-ehcache-v2:2.10.1">net.sf.ehcache:management-ehcache-v2:2.10.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta:management-common-resources-v2:2.0.14">org.terracotta : management-common-resources-v2 : 2.0.14</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:management-ehcache-v2:2.10.2">net.sf.ehcache:management-ehcache-v2:2.10.2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta:management-common-resources-v2:2.0.14">org.terracotta : management-common-resources-v2 : 2.0.14</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:management-ehcache-v2:2.10.2.2.21">net.sf.ehcache:management-ehcache-v2:2.10.2.2.21<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta:management-common-resources-v2:2.0.15">org.terracotta : management-common-resources-v2 : 2.0.15</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:management-ehcache-v2:2.9.0">net.sf.ehcache:management-ehcache-v2:2.9.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta:management-common-resources-v2:2.0.7">org.terracotta : management-common-resources-v2 : 2.0.7</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:management-ehcache-v2:2.9.1">net.sf.ehcache:management-ehcache-v2:2.9.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.terracotta:management-common-resources-v2:2.0.12">org.terracotta : management-common-resources-v2 : 2.0.12</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache:sizeof-agent:1.0.0">net.sf.ehcache:sizeof-agent:1.0.0<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact net.sf.ehcache:sizeof-agent:jar:1.0.0 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -1854,6 +2507,38 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="net.sf.ehcache.internal:ehcache-terracotta-bootstrap:2.9.1">net.sf.ehcache.internal:ehcache-terracotta-bootstrap:2.9.1<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact net.sf.ehcache.internal:ehcache-terracotta-bootstrap:jar:2.9.1 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="net.sf.jopt-simple:jopt-simple:2.4-beta1">net.sf.jopt-simple:jopt-simple:2.4-beta1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#ant:ant:1.7.0">ant : ant : 1.7.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="ognl:ognl:3.1.10">ognl:ognl:3.1.10<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.javassist:javassist:3.20.0-GA">org.javassist : javassist : 3.20.0-GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="ognl:ognl:3.1.4">ognl:ognl:3.1.4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.javassist:javassist:3.20.0-GA">org.javassist : javassist : 3.20.0-GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="ognl:ognl:3.1.5">ognl:ognl:3.1.5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.javassist:javassist:3.20.0-GA">org.javassist : javassist : 3.20.0-GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="ognl:ognl:3.1.6">ognl:ognl:3.1.6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.javassist:javassist:3.20.0-GA">org.javassist : javassist : 3.20.0-GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="ognl:ognl:3.1.7">ognl:ognl:3.1.7<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.javassist:javassist:3.20.0-GA">org.javassist : javassist : 3.20.0-GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="ognl:ognl:3.1.8">ognl:ognl:3.1.8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.javassist:javassist:3.20.0-GA">org.javassist : javassist : 3.20.0-GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="ognl:ognl:3.1.9">ognl:ognl:3.1.9<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.javassist:javassist:3.20.0-GA">org.javassist : javassist : 3.20.0-GA</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="ojb:ojb:0.9.6-dev">ojb:ojb:0.9.6-dev<a></th></tr>
@@ -1912,6 +2597,11 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.bsf:bsf-api:jar:[3.0-beta3,) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.commons:commons-jexl:2.0">org.apache.commons:commons-jexl:2.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.bsf:bsf-api:[3.0-beta3,)">org.apache.bsf : bsf-api : [3.0-beta3,)</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.apache.derby:com.springsource.org.apache.derby:10.5.1000001.764942">org.apache.derby:com.springsource.org.apache.derby:10.5.1000001.764942<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.derby:com.springsource.org.apache.derby:jar:10.5.1000001.764942 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -1920,12 +2610,98 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.derby:com.springsource.org.apache.derby.client:jar:10.5.1000001.764942 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.server:apacheds-constants:1.5.0">org.apache.directory.server:apacheds-constants:1.5.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.directory.shared:shared-ldap:0.9.6">org.apache.directory.shared : shared-ldap : 0.9.6</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.server:apacheds-core-shared:1.0-RC1">org.apache.directory.server:apacheds-core-shared:1.0-RC1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.directory.shared:shared-ldap:0.9.5">org.apache.directory.shared : shared-ldap : 0.9.5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.server:apacheds-core-shared:1.5.0">org.apache.directory.server:apacheds-core-shared:1.5.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.directory.shared:shared-ldap:0.9.6">org.apache.directory.shared : shared-ldap : 0.9.6</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.server:apacheds-schema-bootstrap:1.5.0">org.apache.directory.server:apacheds-schema-bootstrap:1.5.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.directory.server:apacheds-core-shared:1.5.0">org.apache.directory.server : apacheds-core-shared : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.directory.server:apacheds-schema-registries:1.5.0">org.apache.directory.server : apacheds-schema-registries : 1.5.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jdbm:jdbm:1.0">jdbm : jdbm : 1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.directory.server:apacheds-constants:1.5.0">org.apache.directory.server : apacheds-constants : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.directory.shared:shared-ldap:0.9.6">org.apache.directory.shared : shared-ldap : 0.9.6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:nlog4j:1.2.25">org.slf4j : nlog4j : 1.2.25</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.server:apacheds-schema-extras:1.5.0">org.apache.directory.server:apacheds-schema-extras:1.5.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.directory.server:apacheds-schema-bootstrap:1.5.0">org.apache.directory.server : apacheds-schema-bootstrap : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.directory.server:apacheds-schema-registries:1.5.0">org.apache.directory.server : apacheds-schema-registries : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.directory.shared:shared-ldap:0.9.6">org.apache.directory.shared : shared-ldap : 0.9.6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:nlog4j:1.2.25">org.slf4j : nlog4j : 1.2.25</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.server:apacheds-schema-registries:1.5.0">org.apache.directory.server:apacheds-schema-registries:1.5.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.directory.server:apacheds-core-shared:1.5.0">org.apache.directory.server : apacheds-core-shared : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.directory.shared:shared-ldap:0.9.6">org.apache.directory.shared : shared-ldap : 0.9.6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:nlog4j:1.2.25">org.slf4j : nlog4j : 1.2.25</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.server:apacheds-utils:1.5.0">org.apache.directory.server:apacheds-utils:1.5.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.directory.server:apacheds-core-shared:1.5.0">org.apache.directory.server : apacheds-core-shared : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.directory.server:apacheds-constants:1.5.0">org.apache.directory.server : apacheds-constants : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.directory.shared:shared-ldap:0.9.6">org.apache.directory.shared : shared-ldap : 0.9.6</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.apache.directory.shared:shared-asn1:0.9.6-SNAPSHOT">org.apache.directory.shared:shared-asn1:0.9.6-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.directory.shared:shared-asn1:jar:0.9.6-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.shared:shared-asn1:0.9.9">org.apache.directory.shared:shared-asn1:0.9.9<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.apache.directory.shared:shared-asn1:jar:0.9.9</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.shared:shared-bouncycastle-reduced:0.9.9">org.apache.directory.shared:shared-bouncycastle-reduced:0.9.9<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.apache.directory.shared:shared-bouncycastle-reduced:jar:0.9.9</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.shared:shared-ldap:0.9.4">org.apache.directory.shared:shared-ldap:0.9.4<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#antlr:antlr:2.7.2">antlr : antlr : 2.7.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:nlog4j:1.2.19">org.slf4j : nlog4j : 1.2.19</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.0">commons-collections : commons-collections : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.directory.shared:shared-asn1:0.9.4">org.apache.directory.shared : shared-asn1 : 0.9.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-lang:commons-lang:2.0">commons-lang : commons-lang : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.shared:shared-ldap:0.9.5">org.apache.directory.shared:shared-ldap:0.9.5<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#antlr:antlr:2.7.2">antlr : antlr : 2.7.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:nlog4j:1.2.19">org.slf4j : nlog4j : 1.2.19</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.0">commons-collections : commons-collections : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.directory.shared:shared-asn1:0.9.5">org.apache.directory.shared : shared-asn1 : 0.9.5</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-lang:commons-lang:2.0">commons-lang : commons-lang : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.shared:shared-ldap:0.9.6">org.apache.directory.shared:shared-ldap:0.9.6<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.apache.directory.shared:shared-ldap-constants:0.9.6">org.apache.directory.shared : shared-ldap-constants : 0.9.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.0">commons-collections : commons-collections : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.directory.shared:shared-asn1:0.9.6">org.apache.directory.shared : shared-asn1 : 0.9.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-lang:commons-lang:2.1">commons-lang : commons-lang : 2.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#antlr:antlr:2.7.6">antlr : antlr : 2.7.6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:nlog4j:1.2.25">org.slf4j : nlog4j : 1.2.25</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.shared:shared-ldap:0.9.9">org.apache.directory.shared:shared-ldap:0.9.9<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.apache.directory.shared:shared-ldap:jar:0.9.9</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.directory.shared:shared-ldap-constants:0.9.9">org.apache.directory.shared:shared-ldap-constants:0.9.9<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.apache.directory.shared:shared-ldap-constants:jar:0.9.9</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.apache.hadoop:hadoop-common:0.22.0-SNAPSHOT">org.apache.hadoop:hadoop-common:0.22.0-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.hadoop:hadoop-common:jar:0.22.0-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.hadoop:hadoop-hdfs:0.22.0">org.apache.hadoop:hadoop-hdfs:0.22.0<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#com.google.guava:guava:r09">com.google.guava : guava : r09</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.hadoop:hadoop-common:0.22.0-SNAPSHOT">org.apache.hadoop : hadoop-common : 0.22.0-SNAPSHOT</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.apache.httpcomponents:httpcore:4.0-alpha3">org.apache.httpcomponents:httpcore:4.0-alpha3<a></th></tr>
@@ -1940,8 +2716,252 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.ibatis:ibatis-sqlmap:jar:2.3.0.677 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.james:apache-mime4j:0.7">org.apache.james:apache-mime4j:0.7<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.james:apache-mime4j:jar:0.7 in central (http://repo1.maven.org/maven2/)</td></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.apache.james:apache-mime4j-examples:0.7">org.apache.james : apache-mime4j-examples : 0.7</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.james:apache-mime4j-core:0.7">org.apache.james : apache-mime4j-core : 0.7</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.james:apache-mime4j-benchmark:0.7">org.apache.james : apache-mime4j-benchmark : 0.7</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.james:apache-mime4j:0.7.1">org.apache.james:apache-mime4j:0.7.1<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.james:apache-mime4j:jar:0.7.1 in central (http://repo1.maven.org/maven2/)</td></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.apache.james:apache-mime4j-core:0.7.1">org.apache.james : apache-mime4j-core : 0.7.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.james:apache-mime4j-benchmark:0.7.1">org.apache.james : apache-mime4j-benchmark : 0.7.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.james:apache-mime4j-examples:0.7.1">org.apache.james : apache-mime4j-examples : 0.7.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.james:apache-mime4j:0.7.2">org.apache.james:apache-mime4j:0.7.2<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.james:apache-mime4j:jar:0.7.2 in central (http://repo1.maven.org/maven2/)</td></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.apache.james:apache-mime4j-examples:0.7.2">org.apache.james : apache-mime4j-examples : 0.7.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.james:apache-mime4j-benchmark:0.7.2">org.apache.james : apache-mime4j-benchmark : 0.7.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.james:apache-mime4j-core:0.7.2">org.apache.james : apache-mime4j-core : 0.7.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-analyzers-common:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-analyzers-common:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-analyzers-common:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-backward-codecs:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-backward-codecs:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-backward-codecs:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-core:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-core:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-core:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-grouping:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-grouping:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-grouping:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-highlighter:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-highlighter:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-highlighter:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-join:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-join:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-join:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-memory:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-memory:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-memory:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-misc:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-misc:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-misc:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-queries:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-queries:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-queries:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-queryparser:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-queryparser:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-queryparser:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-sandbox:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-sandbox:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-sandbox:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-spatial:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-spatial:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-spatial:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-spatial-extras:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-spatial-extras:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-spatial-extras:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-spatial3d:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-spatial3d:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-spatial3d:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.lucene:lucene-suggest:6.0.0-snapshot-f0aa4fc">org.apache.lucene:lucene-suggest:6.0.0-snapshot-f0aa4fc<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.lucene:lucene-suggest:jar:6.0.0-snapshot-f0aa4fc in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.mahout:mahout-math:0.4">org.apache.mahout:mahout-math:0.4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.google.code.gson:gson:1.3">com.google.code.gson : gson : 1.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.6.0">org.slf4j : slf4j-api : 1.6.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.mahout:mahout-collections:1.0">org.apache.mahout : mahout-collections : 1.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.google.guava:guava:r03">com.google.guava : guava : r03</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.uncommons.maths:uncommons-maths:1.2">org.uncommons.maths : uncommons-maths : 1.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.mahout:mahout-math:0.6">org.apache.mahout:mahout-math:0.6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.uncommons.maths:uncommons-maths:1.2.2">org.uncommons.maths : uncommons-maths : 1.2.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.6.1">org.slf4j : slf4j-api : 1.6.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.mahout:mahout-collections:1.0">org.apache.mahout : mahout-collections : 1.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.google.guava:guava:r09">com.google.guava : guava : r09</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.commons:commons-math:2.2">org.apache.commons : commons-math : 2.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.mahout:mahout-math:0.7">org.apache.mahout:mahout-math:0.7<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.uncommons.maths:uncommons-maths:1.2.2">org.uncommons.maths : uncommons-maths : 1.2.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.6.1">org.slf4j : slf4j-api : 1.6.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.google.guava:guava:r09">com.google.guava : guava : r09</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.commons:commons-math:2.2">org.apache.commons : commons-math : 2.2</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.apache.maven:maven-artifact:2.0-20050401.153037-4">org.apache.maven:maven-artifact:2.0-20050401.153037-4<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.maven:maven-artifact:jar:2.0-20050401.153037-4 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-kernel:2.1.0">org.apache.openjpa:openjpa-kernel:2.1.0<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-pool:commons-pool:1.5.4">commons-pool : commons-pool : 1.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jta_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jms_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openjpa:openjpa-lib:2.1.0">org.apache.openjpa : openjpa-lib : 2.1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.ibm.websphere:websphere_uow_api:0.0.1">com.ibm.websphere : websphere_uow_api : 0.0.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.1">org.apache.ant : ant : 1.7.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-kernel:2.1.1">org.apache.openjpa:openjpa-kernel:2.1.1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-pool:commons-pool:1.5.4">commons-pool : commons-pool : 1.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jta_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jms_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.ibm.websphere:websphere_uow_api:0.0.1">com.ibm.websphere : websphere_uow_api : 0.0.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openjpa:openjpa-lib:2.1.1">org.apache.openjpa : openjpa-lib : 2.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.1">org.apache.ant : ant : 1.7.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-kernel:2.2.0">org.apache.openjpa:openjpa-kernel:2.2.0<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-pool:commons-pool:1.5.4">commons-pool : commons-pool : 1.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jta_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm:3.2">asm : asm : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jms_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.ibm.websphere:websphere_uow_api:0.0.1">com.ibm.websphere : websphere_uow_api : 0.0.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openjpa:openjpa-lib:2.2.0">org.apache.openjpa : openjpa-lib : 2.2.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.1">org.apache.ant : ant : 1.7.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.osgi:org.osgi.core:4.2.0">org.osgi : org.osgi.core : 4.2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-kernel:2.2.1">org.apache.openjpa:openjpa-kernel:2.2.1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-pool:commons-pool:1.5.4">commons-pool : commons-pool : 1.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jta_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm:3.2">asm : asm : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jms_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.ibm.websphere:websphere_uow_api:0.0.1">com.ibm.websphere : websphere_uow_api : 0.0.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openjpa:openjpa-lib:2.2.1">org.apache.openjpa : openjpa-lib : 2.2.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.1">org.apache.ant : ant : 1.7.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.osgi:org.osgi.core:4.2.0">org.osgi : org.osgi.core : 4.2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-kernel:2.2.2">org.apache.openjpa:openjpa-kernel:2.2.2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-pool:commons-pool:1.5.4">commons-pool : commons-pool : 1.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jta_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm:3.2">asm : asm : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jms_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.ibm.websphere:websphere_uow_api:0.0.1">com.ibm.websphere : websphere_uow_api : 0.0.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.1">org.apache.ant : ant : 1.7.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openjpa:openjpa-lib:2.2.2">org.apache.openjpa : openjpa-lib : 2.2.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.osgi:org.osgi.core:4.2.0">org.osgi : org.osgi.core : 4.2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-kernel:2.3.0">org.apache.openjpa:openjpa-kernel:2.3.0<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.apache.xbean:xbean-asm4-shaded:3.14">org.apache.xbean : xbean-asm4-shaded : 3.14</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-pool:commons-pool:1.5.4">commons-pool : commons-pool : 1.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jta_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jms_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.ibm.websphere:websphere_uow_api:0.0.1">com.ibm.websphere : websphere_uow_api : 0.0.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.1">org.apache.ant : ant : 1.7.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openjpa:openjpa-lib:2.3.0">org.apache.openjpa : openjpa-lib : 2.3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.osgi:org.osgi.core:4.2.0">org.osgi : org.osgi.core : 4.2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-kernel:2.4.0">org.apache.openjpa:openjpa-kernel:2.4.0<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.apache.xbean:xbean-asm5-shaded:3.17">org.apache.xbean : xbean-asm5-shaded : 3.17</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openjpa:openjpa-lib:2.4.0">org.apache.openjpa : openjpa-lib : 2.4.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-pool:commons-pool:1.5.4">commons-pool : commons-pool : 1.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jta_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1">org.apache.geronimo.specs : geronimo-jms_1.1_spec : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.ibm.websphere:websphere_uow_api:0.0.1">com.ibm.websphere : websphere_uow_api : 0.0.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.1">org.apache.ant : ant : 1.7.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.osgi:org.osgi.core:4.2.0">org.osgi : org.osgi.core : 4.2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-persistence:2.1.0">org.apache.openjpa:openjpa-persistence:2.1.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.openjpa:openjpa-kernel:2.1.0">org.apache.openjpa : openjpa-kernel : 2.1.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-validation_1.0_spec:1.1">org.apache.geronimo.specs : geronimo-validation_1.0_spec : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.osgi:org.osgi.core:4.2.0">org.osgi : org.osgi.core : 4.2.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jpa_2.0_spec:1.1">org.apache.geronimo.specs : geronimo-jpa_2.0_spec : 1.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-persistence:2.1.1">org.apache.openjpa:openjpa-persistence:2.1.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.openjpa:openjpa-kernel:2.1.1">org.apache.openjpa : openjpa-kernel : 2.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-validation_1.0_spec:1.1">org.apache.geronimo.specs : geronimo-validation_1.0_spec : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.osgi:org.osgi.core:4.2.0">org.osgi : org.osgi.core : 4.2.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.geronimo.specs:geronimo-jpa_2.0_spec:1.1">org.apache.geronimo.specs : geronimo-jpa_2.0_spec : 1.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-xmlstore:2.1.0">org.apache.openjpa:openjpa-xmlstore:2.1.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.openjpa:openjpa-kernel:2.1.0">org.apache.openjpa : openjpa-kernel : 2.1.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-xmlstore:2.1.1">org.apache.openjpa:openjpa-xmlstore:2.1.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.openjpa:openjpa-kernel:2.1.1">org.apache.openjpa : openjpa-kernel : 2.1.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-xmlstore:2.2.0">org.apache.openjpa:openjpa-xmlstore:2.2.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.openjpa:openjpa-kernel:2.2.0">org.apache.openjpa : openjpa-kernel : 2.2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-xmlstore:2.2.1">org.apache.openjpa:openjpa-xmlstore:2.2.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.openjpa:openjpa-kernel:2.2.1">org.apache.openjpa : openjpa-kernel : 2.2.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-xmlstore:2.2.2">org.apache.openjpa:openjpa-xmlstore:2.2.2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.openjpa:openjpa-kernel:2.2.2">org.apache.openjpa : openjpa-kernel : 2.2.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-xmlstore:2.3.0">org.apache.openjpa:openjpa-xmlstore:2.3.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.openjpa:openjpa-kernel:2.3.0">org.apache.openjpa : openjpa-kernel : 2.3.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.openjpa:openjpa-xmlstore:2.4.0">org.apache.openjpa:openjpa-xmlstore:2.4.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.openjpa:openjpa-kernel:2.4.0">org.apache.openjpa : openjpa-kernel : 2.4.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.tomcat.embed:tomcat-embed-core:8.5.3">org.apache.tomcat.embed:tomcat-embed-core:8.5.3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.tomcat.embed:tomcat-embed-logging-log4j:8.5.3">org.apache.tomcat.embed : tomcat-embed-logging-log4j : 8.5.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.tomcat.embed:tomcat-embed-logging-juli:8.5.3">org.apache.tomcat.embed : tomcat-embed-logging-juli : 8.5.3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.tomcat.embed:tomcat-embed-core:9.0.0.M8">org.apache.tomcat.embed:tomcat-embed-core:9.0.0.M8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.tomcat.embed:tomcat-embed-logging-juli:9.0.0.M8">org.apache.tomcat.embed : tomcat-embed-logging-juli : 9.0.0.M8</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.tomcat.embed:tomcat-embed-logging-log4j:9.0.0.M8">org.apache.tomcat.embed : tomcat-embed-logging-log4j : 9.0.0.M8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.tomcat.embed:tomcat-embed-jasper:8.5.3">org.apache.tomcat.embed:tomcat-embed-jasper:8.5.3<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.apache.tomcat.embed:tomcat-embed-el:8.5.3">org.apache.tomcat.embed : tomcat-embed-el : 8.5.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.eclipse.jdt.core.compiler:ecj:4.5.1">org.eclipse.jdt.core.compiler : ecj : 4.5.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.tomcat.embed:tomcat-embed-core:8.5.3">org.apache.tomcat.embed : tomcat-embed-core : 8.5.3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.tomcat.embed:tomcat-embed-jasper:9.0.0.M8">org.apache.tomcat.embed:tomcat-embed-jasper:9.0.0.M8<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.apache.tomcat.embed:tomcat-embed-el:9.0.0.M8">org.apache.tomcat.embed : tomcat-embed-el : 9.0.0.M8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.eclipse.jdt.core.compiler:ecj:4.5.1">org.eclipse.jdt.core.compiler : ecj : 4.5.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.tomcat.embed:tomcat-embed-core:9.0.0.M8">org.apache.tomcat.embed : tomcat-embed-core : 9.0.0.M8</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.apache.tomcat.embed:tomcat-embed-logging-juli:8.5.3">org.apache.tomcat.embed:tomcat-embed-logging-juli:8.5.3<a></th></tr>
@@ -1964,6 +2984,34 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.velocity:velocity-tools:jar:2.0-20090514.211946-1 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.wicket:wicket:7.0.0">org.apache.wicket:wicket:7.0.0<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.wicket:wicket:jar:7.0.0 in central (http://repo1.maven.org/maven2/)</td></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#javax.servlet:javax.servlet-api:3.0.1">javax.servlet : javax.servlet-api : 3.0.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.wicket:wicket-core:7.0.0">org.apache.wicket : wicket-core : 7.0.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.7.12">org.slf4j : slf4j-api : 1.7.12</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.wicket:wicket:7.1.0">org.apache.wicket:wicket:7.1.0<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.wicket:wicket:jar:7.1.0 in central (http://repo1.maven.org/maven2/)</td></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#javax.servlet:javax.servlet-api:3.0.1">javax.servlet : javax.servlet-api : 3.0.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.wicket:wicket-core:7.1.0">org.apache.wicket : wicket-core : 7.1.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.7.12">org.slf4j : slf4j-api : 1.7.12</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.wicket:wicket:7.2.0">org.apache.wicket:wicket:7.2.0<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.wicket:wicket:jar:7.2.0 in central (http://repo1.maven.org/maven2/)</td></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#javax.servlet:javax.servlet-api:3.0.1">javax.servlet : javax.servlet-api : 3.0.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.7.12">org.slf4j : slf4j-api : 1.7.12</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.wicket:wicket-core:7.2.0">org.apache.wicket : wicket-core : 7.2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.wicket:wicket:7.3.0">org.apache.wicket:wicket:7.3.0<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.wicket:wicket:jar:7.3.0 in central (http://repo1.maven.org/maven2/)</td></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#javax.servlet:javax.servlet-api:3.0.1">javax.servlet : javax.servlet-api : 3.0.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.wicket:wicket-core:7.3.0">org.apache.wicket : wicket-core : 7.3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.7.12">org.slf4j : slf4j-api : 1.7.12</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.apache.xalan:xalan:2.7.1-1.jbossorg">org.apache.xalan:xalan:2.7.1-1.jbossorg<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.xalan:xalan:jar:2.7.1-1.jbossorg in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -1976,8 +3024,113 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.apache.xbean:xbean-spring:jar:3.2-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.xmlgraphics:batik-css:1.6.1">org.apache.xmlgraphics:batik-css:1.6.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.xmlgraphics:batik-ext:1.6.1">org.apache.xmlgraphics : batik-ext : 1.6.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.xmlgraphics:batik-util:1.6.1">org.apache.xmlgraphics : batik-util : 1.6.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xml-apis:xml-apis:1.1.2">xml-apis : xml-apis : 1.1.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.xmlgraphics:batik-dom:1.6.1">org.apache.xmlgraphics:batik-dom:1.6.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.xmlgraphics:batik-css:1.6.1">org.apache.xmlgraphics : batik-css : 1.6.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.xmlgraphics:batik-ext:1.6.1">org.apache.xmlgraphics : batik-ext : 1.6.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.xmlgraphics:batik-util:1.6.1">org.apache.xmlgraphics : batik-util : 1.6.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.xmlgraphics:batik-xml:1.6.1">org.apache.xmlgraphics : batik-xml : 1.6.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xml-apis:xml-apis:1.1.2">xml-apis : xml-apis : 1.1.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.xmlgraphics:batik-ext:1.6.1">org.apache.xmlgraphics:batik-ext:1.6.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#xml-apis:xml-apis:1.1.2">xml-apis : xml-apis : 1.1.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.xmlgraphics:batik-gui-util:1.6.1">org.apache.xmlgraphics:batik-gui-util:1.6.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#xml-apis:xml-apis:1.1.2">xml-apis : xml-apis : 1.1.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.xmlgraphics:batik-util:1.6.1">org.apache.xmlgraphics:batik-util:1.6.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.xmlgraphics:batik-gui-util:1.6.1">org.apache.xmlgraphics : batik-gui-util : 1.6.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.xmlgraphics:batik-xml:1.6.1">org.apache.xmlgraphics:batik-xml:1.6.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.xmlgraphics:batik-util:1.6.1">org.apache.xmlgraphics : batik-util : 1.6.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.zookeeper:zookeeper:3.3.0">org.apache.zookeeper:zookeeper:3.3.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.1">commons-collections : commons-collections : 3.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-lang:commons-lang:2.4">commons-lang : commons-lang : 2.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jline:jline:0.9.94">jline : jline : 0.9.94</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jdiff:jdiff:1.0.9">jdiff : jdiff : 1.0.9</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:1.4.4">xerces : xerces : 1.4.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.rat:apache-rat-tasks:0.6">org.apache.rat : apache-rat-tasks : 0.6</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.zookeeper:zookeeper:3.3.1">org.apache.zookeeper:zookeeper:3.3.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.1">commons-collections : commons-collections : 3.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-lang:commons-lang:2.4">commons-lang : commons-lang : 2.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jline:jline:0.9.94">jline : jline : 0.9.94</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jdiff:jdiff:1.0.9">jdiff : jdiff : 1.0.9</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:1.4.4">xerces : xerces : 1.4.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.rat:apache-rat-tasks:0.6">org.apache.rat : apache-rat-tasks : 0.6</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.zookeeper:zookeeper:3.3.2">org.apache.zookeeper:zookeeper:3.3.2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.1">commons-collections : commons-collections : 3.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-lang:commons-lang:2.4">commons-lang : commons-lang : 2.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jline:jline:0.9.94">jline : jline : 0.9.94</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jdiff:jdiff:1.0.9">jdiff : jdiff : 1.0.9</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:1.4.4">xerces : xerces : 1.4.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.rat:apache-rat-tasks:0.6">org.apache.rat : apache-rat-tasks : 0.6</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.zookeeper:zookeeper:3.3.3">org.apache.zookeeper:zookeeper:3.3.3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.1">commons-collections : commons-collections : 3.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-lang:commons-lang:2.4">commons-lang : commons-lang : 2.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jline:jline:0.9.94">jline : jline : 0.9.94</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jdiff:jdiff:1.0.9">jdiff : jdiff : 1.0.9</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:1.4.4">xerces : xerces : 1.4.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.rat:apache-rat-tasks:0.6">org.apache.rat : apache-rat-tasks : 0.6</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.zookeeper:zookeeper:3.3.4">org.apache.zookeeper:zookeeper:3.3.4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.1">commons-collections : commons-collections : 3.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-lang:commons-lang:2.4">commons-lang : commons-lang : 2.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jline:jline:0.9.94">jline : jline : 0.9.94</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jdiff:jdiff:1.0.9">jdiff : jdiff : 1.0.9</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:1.4.4">xerces : xerces : 1.4.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.rat:apache-rat-tasks:0.6">org.apache.rat : apache-rat-tasks : 0.6</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.zookeeper:zookeeper:3.3.5">org.apache.zookeeper:zookeeper:3.3.5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.1">commons-collections : commons-collections : 3.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-lang:commons-lang:2.4">commons-lang : commons-lang : 2.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jline:jline:0.9.94">jline : jline : 0.9.94</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jdiff:jdiff:1.0.9">jdiff : jdiff : 1.0.9</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:1.4.4">xerces : xerces : 1.4.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.rat:apache-rat-tasks:0.6">org.apache.rat : apache-rat-tasks : 0.6</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.apache.zookeeper:zookeeper:3.3.6">org.apache.zookeeper:zookeeper:3.3.6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.1">commons-collections : commons-collections : 3.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-lang:commons-lang:2.4">commons-lang : commons-lang : 2.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jline:jline:0.9.94">jline : jline : 0.9.94</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jdiff:jdiff:1.0.9">jdiff : jdiff : 1.0.9</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:1.4.4">xerces : xerces : 1.4.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.rat:apache-rat-tasks:0.6">org.apache.rat : apache-rat-tasks : 0.6</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.aspectj:aspectjweaver:1.8.0.M1">org.aspectj:aspectjweaver:1.8.0.M1<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.aspectj:aspectjweaver:jar:1.8.0.M1 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.bouncycastle:bcmail-jdk14:1.49">org.bouncycastle:bcmail-jdk14:1.49<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.bouncycastle:bcpkix-bcmail-jdk14-149:1.49">org.bouncycastle : bcpkix-bcmail-jdk14-149 : 1.49</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.bouncycastle:bcprov-bcmail-jdk14-149:1.49">org.bouncycastle : bcprov-bcmail-jdk14-149 : 1.49</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.bouncycastle:bcpg-jdk14:1.49">org.bouncycastle:bcpg-jdk14:1.49<a></th></tr>
@@ -1986,6 +3139,10 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.bouncycastle:bcpkix-bcmail-jdk14-149:1.49">org.bouncycastle:bcpkix-bcmail-jdk14-149:1.49<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.bouncycastle:bcpkix-bcmail-jdk14-149:jar:1.49 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.bouncycastle:bcpkix-jdk14:1.49">org.bouncycastle:bcpkix-jdk14:1.49<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.bouncycastle:bcprov-bcpkix-jdk14-149:1.49">org.bouncycastle : bcprov-bcpkix-jdk14-149 : 1.49</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.bouncycastle:bcprov-bcmail-jdk14-149:1.49">org.bouncycastle:bcprov-bcmail-jdk14-149:1.49<a></th></tr>
@@ -2081,6 +3238,14 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.codehaus.jcsp:jcsp:jar:1.1-rc5-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.codehaus.plexus:plexus-container-default:1.0-alpha-46">org.codehaus.plexus:plexus-container-default:1.0-alpha-46<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.codehaus.plexus:plexus-classworlds:1.2-alpha-13">org.codehaus.plexus : plexus-classworlds : 1.2-alpha-13</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.codehaus.plexus:plexus-utils:1.4.5">org.codehaus.plexus : plexus-utils : 1.4.5</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#aspectj:aspectjrt:1.5.3">aspectj : aspectjrt : 1.5.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:3.8.1">junit : junit : 3.8.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.apache.xbean:xbean-reflect:3.4-20080418.173627-4">org.apache.xbean : xbean-reflect : 3.4-20080418.173627-4</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.codehaus.woodstox:stax2-api:[3.0,3.1)">org.codehaus.woodstox:stax2-api:[3.0,3.1)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.codehaus.woodstox:stax2-api:jar:[3.0,3.1) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -2115,24 +3280,82 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse:osgi:jar:[3.7.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse:text:3.2.0-v20060605-1400">org.eclipse:text:3.2.0-v20060605-1400<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.core:commands:[3.2.0,4.0.0)">org.eclipse.core : commands : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse:text:3.3.0-v20070606-0010">org.eclipse:text:3.3.0-v20070606-0010<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.3.0,4.0.0)">org.eclipse.equinox : common : [3.3.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:commands:[3.2.0,4.0.0)">org.eclipse.core : commands : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse:text:[3.1.0,4.0.0)">org.eclipse:text:[3.1.0,4.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse:text:jar:[3.1.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.ant:core:3.1.100-v20060531">org.eclipse.ant:core:3.1.100-v20060531<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.core:variables:[3.1.0,4.0.0)">org.eclipse.core : variables : [3.1.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:runtime:[3.2.0,4.0.0)">org.eclipse.core : runtime : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.ant:core:3.1.200-v20070522">org.eclipse.ant:core:3.1.200-v20070522<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.core:variables:[3.1.0,4.0.0)">org.eclipse.core : variables : [3.1.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:runtime:[3.2.0,4.0.0)">org.eclipse.core : runtime : [3.2.0,4.0.0)</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.ant:core:[3.1.0,4.0.0)">org.eclipse.ant:core:[3.1.0,4.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.ant:core:jar:[3.1.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:commands:3.2.0-I20060605-1400">org.eclipse.core:commands:3.2.0-I20060605-1400<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:commands:3.3.0-I20070605-0010">org.eclipse.core:commands:3.3.0-I20070605-0010<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:commands:[3.2.0,4.0.0)">org.eclipse.core:commands:[3.2.0,4.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.core:commands:jar:[3.2.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:contenttype:3.4.200-v20130326-1255">org.eclipse.core:contenttype:3.4.200-v20130326-1255<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:registry:[3.2.0,4.0.0)">org.eclipse.equinox : registry : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:preferences:[3.2.0,4.0.0)">org.eclipse.equinox : preferences : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:contenttype:3.4.200-v20140207-1251">org.eclipse.core:contenttype:3.4.200-v20140207-1251<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:registry:[3.2.0,4.0.0)">org.eclipse.equinox : registry : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:preferences:[3.2.0,4.0.0)">org.eclipse.equinox : preferences : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:contenttype:[3.3.0,4.0.0)">org.eclipse.core:contenttype:[3.3.0,4.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.core:contenttype:jar:[3.3.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:expressions:3.2.1-r321_v20060721">org.eclipse.core:expressions:3.2.1-r321_v20060721<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.core:runtime:[3.1.0,4.0.0)">org.eclipse.core : runtime : [3.1.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:expressions:3.3.0-v20070606-0010">org.eclipse.core:expressions:3.3.0-v20070606-0010<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.core:runtime:[3.1.0,4.0.0)">org.eclipse.core : runtime : [3.1.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:expressions:[3.1.0,4.0.0)">org.eclipse.core:expressions:[3.1.0,4.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.core:expressions:jar:[3.1.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:filesystem:1.0.0-v20060603">org.eclipse.core:filesystem:1.0.0-v20060603<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.core:runtime:[3.2.0,4.0.0)">org.eclipse.core : runtime : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:filesystem:1.1.0-v20070606">org.eclipse.core:filesystem:1.1.0-v20070606<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse:osgi:[0,)">org.eclipse : osgi : [0,)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:registry:[0,)">org.eclipse.equinox : registry : [0,)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[0,)">org.eclipse.equinox : common : [0,)</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:filesystem:[1.0.0,2.0.0)">org.eclipse.core:filesystem:[1.0.0,2.0.0)<a></th></tr>
@@ -2147,8 +3370,26 @@ fa-icon: question
 	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:jobs:3.6.0-v20140424-0053">org.eclipse.core:jobs:3.6.0-v20140424-0053<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:jobs:[3.2.0,4.0.0)">org.eclipse.core:jobs:[3.2.0,4.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.core:jobs:jar:[3.2.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:resources:3.2.1-R32x_v20060914">org.eclipse.core:resources:3.2.1-R32x_v20060914<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.core:expressions:[3.1.0,4.0.0)">org.eclipse.core : expressions : [3.1.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:filesystem:[1.0.0,2.0.0)">org.eclipse.core : filesystem : [1.0.0,2.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core.runtime:compatibility:[3.1.0,4.0.0)">org.eclipse.core.runtime : compatibility : [3.1.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.ant:core:[3.1.0,4.0.0)">org.eclipse.ant : core : [3.1.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:resources:3.3.0-v20070604">org.eclipse.core:resources:3.3.0-v20070604<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.core:expressions:[3.1.0,4.0.0)">org.eclipse.core : expressions : [3.1.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:runtime:[3.2.0,4.0.0)">org.eclipse.core : runtime : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:filesystem:[1.0.0,2.0.0)">org.eclipse.core : filesystem : [1.0.0,2.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.ant:core:[3.1.0,4.0.0)">org.eclipse.ant : core : [3.1.0,4.0.0)</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:resources:[3.2.0,4.0.0)">org.eclipse.core:resources:[3.2.0,4.0.0)<a></th></tr>
@@ -2157,6 +3398,30 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:resources:[3.3.0,4.0.0)">org.eclipse.core:resources:[3.3.0,4.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.core:resources:jar:[3.3.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:runtime:3.9.0-v20130326-1255">org.eclipse.core:runtime:3.9.0-v20130326-1255<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:app:[1.0.0,2.0.0)">org.eclipse.equinox : app : [1.0.0,2.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core.runtime.compatibility:auth:[3.2.0,4.0.0)">org.eclipse.core.runtime.compatibility : auth : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:preferences:[3.4.0,4.0.0)">org.eclipse.equinox : preferences : [3.4.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse:osgi:[3.7.0,4.0.0)">org.eclipse : osgi : [3.7.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:jobs:[3.2.0,4.0.0)">org.eclipse.core : jobs : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:registry:[3.4.0,4.0.0)">org.eclipse.equinox : registry : [3.4.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:contenttype:[3.3.0,4.0.0)">org.eclipse.core : contenttype : [3.3.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.6.100,4.0.0)">org.eclipse.equinox : common : [3.6.100,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:runtime:3.9.100-v20131218-1515">org.eclipse.core:runtime:3.9.100-v20131218-1515<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:app:[1.0.0,2.0.0)">org.eclipse.equinox : app : [1.0.0,2.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core.runtime.compatibility:auth:[3.2.0,4.0.0)">org.eclipse.core.runtime.compatibility : auth : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:preferences:[3.4.0,4.0.0)">org.eclipse.equinox : preferences : [3.4.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse:osgi:[3.7.0,4.0.0)">org.eclipse : osgi : [3.7.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:jobs:[3.2.0,4.0.0)">org.eclipse.core : jobs : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:registry:[3.4.0,4.0.0)">org.eclipse.equinox : registry : [3.4.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax:annotation:1.1.0">javax : annotation : 1.1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:contenttype:[3.3.0,4.0.0)">org.eclipse.core : contenttype : [3.3.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax:inject:1.0.0">javax : inject : 1.0.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.6.100,4.0.0)">org.eclipse.equinox : common : [3.6.100,4.0.0)</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:runtime:[3.1.0,4.0.0)">org.eclipse.core:runtime:[3.1.0,4.0.0)<a></th></tr>
@@ -2171,8 +3436,17 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.core:runtime:jar:[3.3.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:variables:3.1.100-v20060605">org.eclipse.core:variables:3.1.100-v20060605<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.core:runtime:[3.1.0,4.0.0)">org.eclipse.core : runtime : [3.1.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.core:variables:[3.1.0,4.0.0)">org.eclipse.core:variables:[3.1.0,4.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.core:variables:jar:[3.1.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core.runtime:compatibility:3.1.100-v20060603">org.eclipse.core.runtime:compatibility:3.1.100-v20060603<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.core:runtime:[3.2.0,4.0.0)">org.eclipse.core : runtime : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.update:configurator:[3.1.100,4.0.0)">org.eclipse.update : configurator : [3.1.100,4.0.0)</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.core.runtime:compatibility:3.1.200-v20070502">org.eclipse.core.runtime:compatibility:3.1.200-v20070502<a></th></tr>
@@ -2188,8 +3462,22 @@ fa-icon: question
 	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.core.runtime.compatibility:auth:3.2.100-v20070502">org.eclipse.core.runtime.compatibility:auth:3.2.100-v20070502<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.core.runtime.compatibility:auth:[3.2.0,4.0.0)">org.eclipse.core.runtime.compatibility:auth:[3.2.0,4.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.core.runtime.compatibility:auth:jar:[3.2.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.equinox:app:1.3.100-v20130327-1442">org.eclipse.equinox:app:1.3.100-v20130327-1442<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:registry:[3.4.0,4.0.0)">org.eclipse.equinox : registry : [3.4.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.equinox:app:1.3.200-v20130910-1609">org.eclipse.equinox:app:1.3.200-v20130910-1609<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:registry:[3.4.0,4.0.0)">org.eclipse.equinox : registry : [3.4.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.equinox:app:[1.0.0,)">org.eclipse.equinox:app:[1.0.0,)<a></th></tr>
@@ -2216,12 +3504,30 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.equinox:common:jar:[3.6.100,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.equinox:preferences:3.5.100-v20130422-1538">org.eclipse.equinox:preferences:3.5.100-v20130422-1538<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:registry:[3.2.0,4.0.0)">org.eclipse.equinox : registry : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.equinox:preferences:3.5.200-v20140224-1527">org.eclipse.equinox:preferences:3.5.200-v20140224-1527<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:registry:[3.2.0,4.0.0)">org.eclipse.equinox : registry : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.equinox:preferences:[3.2.0,4.0.0)">org.eclipse.equinox:preferences:[3.2.0,4.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.equinox:preferences:jar:[3.2.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.equinox:preferences:[3.4.0,4.0.0)">org.eclipse.equinox:preferences:[3.4.0,4.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.equinox:preferences:jar:[3.4.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.equinox:registry:3.5.301-v20130717-1549">org.eclipse.equinox:registry:3.5.301-v20130717-1549<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.equinox:registry:3.5.400-v20140428-1507">org.eclipse.equinox:registry:3.5.400-v20140428-1507<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.equinox:registry:[0,)">org.eclipse.equinox:registry:[0,)<a></th></tr>
@@ -2234,6 +3540,42 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.equinox:registry:[3.4.0,4.0.0)">org.eclipse.equinox:registry:[3.4.0,4.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.equinox:registry:jar:[3.4.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.higgins:higgins-configuration-api:SNAPSHOT">org.eclipse.higgins:higgins-configuration-api:SNAPSHOT<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.higgins:higgins-configuration-api:jar:SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.higgins:higgins-sts-api:SNAPSHOT">org.eclipse.higgins:higgins-sts-api:SNAPSHOT<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.higgins:higgins-sts-api:jar:SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.higgins:higgins-sts-common:SNAPSHOT">org.eclipse.higgins:higgins-sts-common:SNAPSHOT<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.higgins:higgins-sts-common:jar:SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.higgins:higgins-sts-server-token-handler:SNAPSHOT">org.eclipse.higgins:higgins-sts-server-token-handler:SNAPSHOT<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.higgins:higgins-sts-server-token-handler:jar:SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.higgins:higgins-sts-spi:SNAPSHOT">org.eclipse.higgins:higgins-sts-spi:SNAPSHOT<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.higgins:higgins-sts-spi:jar:SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.jdt:core:3.2.1-v_677_R32x">org.eclipse.jdt:core:3.2.1-v_677_R32x<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.core:resources:[3.2.0,4.0.0)">org.eclipse.core : resources : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse:text:[3.1.0,4.0.0)">org.eclipse : text : [3.1.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:runtime:[3.1.0,4.0.0)">org.eclipse.core : runtime : [3.1.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:filesystem:[1.0.0,2.0.0)">org.eclipse.core : filesystem : [1.0.0,2.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.team:core:[3.1.0,4.0.0)">org.eclipse.team : core : [3.1.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.jdt:core:3.3.0-v_771">org.eclipse.jdt:core:3.3.0-v_771<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.core:resources:[3.2.0,4.0.0)">org.eclipse.core : resources : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse:text:[3.1.0,4.0.0)">org.eclipse : text : [3.1.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:filesystem:[1.0.0,2.0.0)">org.eclipse.core : filesystem : [1.0.0,2.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:runtime:[3.3.0,4.0.0)">org.eclipse.core : runtime : [3.3.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.team:core:[3.1.0,4.0.0)">org.eclipse.team : core : [3.1.0,4.0.0)</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.jdt.core.compiler:ecj:4.4RC4">org.eclipse.jdt.core.compiler:ecj:4.4RC4<a></th></tr>
@@ -2256,12 +3598,39 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.persistence:org.eclipse.persistence.jpa:jar:1.0.1 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.persistence:org.eclipse.persistence.jpa:2.3.4-M4">org.eclipse.persistence:org.eclipse.persistence.jpa:2.3.4-M4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.persistence:javax.persistence:2.0.6">org.eclipse.persistence : javax.persistence : 2.0.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.core:2.3.4-M4">org.eclipse.persistence : org.eclipse.persistence.core : 2.3.4-M4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.asm:2.3.4-M4">org.eclipse.persistence : org.eclipse.persistence.asm : 2.3.4-M4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.antlr:2.3.4-M4">org.eclipse.persistence : org.eclipse.persistence.antlr : 2.3.4-M4</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.persistence:org.eclipse.persistence.jpa:2.3.4-M5">org.eclipse.persistence:org.eclipse.persistence.jpa:2.3.4-M5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.persistence:javax.persistence:2.0.6">org.eclipse.persistence : javax.persistence : 2.0.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.core:2.3.4-M5">org.eclipse.persistence : org.eclipse.persistence.core : 2.3.4-M5</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.asm:2.3.4-M5">org.eclipse.persistence : org.eclipse.persistence.asm : 2.3.4-M5</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.antlr:2.3.4-M5">org.eclipse.persistence : org.eclipse.persistence.antlr : 2.3.4-M5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.persistence:org.eclipse.persistence.jpa:2.3.4-M6">org.eclipse.persistence:org.eclipse.persistence.jpa:2.3.4-M6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.persistence:javax.persistence:2.0.6">org.eclipse.persistence : javax.persistence : 2.0.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.asm:2.3.4-M6">org.eclipse.persistence : org.eclipse.persistence.asm : 2.3.4-M6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.core:2.3.4-M6">org.eclipse.persistence : org.eclipse.persistence.core : 2.3.4-M6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.eclipse.persistence:org.eclipse.persistence.antlr:2.3.4-M6">org.eclipse.persistence : org.eclipse.persistence.antlr : 2.3.4-M6</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.persistence:org.eclipse.persistence.jpa:2.4.0">org.eclipse.persistence:org.eclipse.persistence.jpa:2.4.0<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.persistence:org.eclipse.persistence.jpa:jar:2.4.0 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.persistence:org.eclipse.persistence.moxy:2.3.2">org.eclipse.persistence:org.eclipse.persistence.moxy:2.3.2<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.persistence:org.eclipse.persistence.moxy:jar:2.3.2 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.team:core:3.2.1-M20060711">org.eclipse.team:core:3.2.1-M20060711<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse.core:resources:[3.2.0,4.0.0)">org.eclipse.core : resources : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:runtime:[3.1.0,4.0.0)">org.eclipse.core : runtime : [3.1.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.core:filesystem:[1.0.0,2.0.0)">org.eclipse.core : filesystem : [1.0.0,2.0.0)</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.team:core:3.3.0-I20070607">org.eclipse.team:core:3.3.0-I20070607<a></th></tr>
@@ -2272,6 +3641,16 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.team:core:[3.1.0,4.0.0)">org.eclipse.team:core:[3.1.0,4.0.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.eclipse.team:core:jar:[3.1.0,4.0.0) in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.update:configurator:3.2.1-v20092006">org.eclipse.update:configurator:3.2.1-v20092006<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse:osgi:[3.2.0,4.0.0)">org.eclipse : osgi : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.eclipse.update:configurator:3.2.100-v20070615">org.eclipse.update:configurator:3.2.100-v20070615<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.eclipse:osgi:[3.2.0,4.0.0)">org.eclipse : osgi : [3.2.0,4.0.0)</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.eclipse.equinox:common:[3.2.0,4.0.0)">org.eclipse.equinox : common : [3.2.0,4.0.0)</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.eclipse.update:configurator:[3.1.100,4.0.0)">org.eclipse.update:configurator:[3.1.100,4.0.0)<a></th></tr>
@@ -2286,9 +3665,483 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.glassfish:javax.servlet:jar:[3.0-b57,3.1) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-api:2.1.48">org.glassfish.hk2:hk2-api:2.1.48<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.glassfish.hk2:hk2-api:jar:2.1.48</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.1.48">org.glassfish.hk2:hk2-locator:2.1.48<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.1.48">org.glassfish.hk2.external : javax.inject : 2.1.48</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.1.48">org.glassfish.hk2 : hk2-api : 2.1.48</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.glassfish.hk2.external:cglib:2.1.48">org.glassfish.hk2.external : cglib : 2.1.48</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.1.48">org.glassfish.hk2 : hk2-utils : 2.1.48</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.glassfish.hk2.external:asm-all-repackaged:2.1.48">org.glassfish.hk2.external : asm-all-repackaged : 2.1.48</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:4.3.1">junit : junit : 4.3.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.2.0">org.glassfish.hk2:hk2-locator:2.2.0<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.2.0">org.glassfish.hk2 : hk2-api : 2.2.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.2.0">org.glassfish.hk2 : hk2-utils : 2.2.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.2.0">org.glassfish.hk2.external : javax.inject : 2.2.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:4.3.1">junit : junit : 4.3.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.2.0">org.glassfish.hk2.external : aopalliance-repackaged : 2.2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.2.0-b24">org.glassfish.hk2:hk2-locator:2.2.0-b24<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:asm-all-repackaged:2.2.0-b24">org.glassfish.hk2.external : asm-all-repackaged : 2.2.0-b24</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.2.0-b24">org.glassfish.hk2.external : javax.inject : 2.2.0-b24</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.2.0-b24">org.glassfish.hk2 : hk2-utils : 2.2.0-b24</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.2.0-b24">org.glassfish.hk2 : hk2-api : 2.2.0-b24</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:4.3.1">junit : junit : 4.3.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.2.0-b25">org.glassfish.hk2:hk2-locator:2.2.0-b25<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.2.0-b25">org.glassfish.hk2.external : aopalliance-repackaged : 2.2.0-b25</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.2.0-b25">org.glassfish.hk2 : hk2-utils : 2.2.0-b25</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.2.0-b25">org.glassfish.hk2.external : javax.inject : 2.2.0-b25</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.2.0-b25">org.glassfish.hk2 : hk2-api : 2.2.0-b25</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:4.3.1">junit : junit : 4.3.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.2.0-b26">org.glassfish.hk2:hk2-locator:2.2.0-b26<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.2.0-b26">org.glassfish.hk2.external : javax.inject : 2.2.0-b26</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.2.0-b26">org.glassfish.hk2 : hk2-utils : 2.2.0-b26</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:4.3.1">junit : junit : 4.3.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.2.0-b26">org.glassfish.hk2.external : aopalliance-repackaged : 2.2.0-b26</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.2.0-b26">org.glassfish.hk2 : hk2-api : 2.2.0-b26</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.2.0-b27">org.glassfish.hk2:hk2-locator:2.2.0-b27<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.2.0-b27">org.glassfish.hk2 : hk2-api : 2.2.0-b27</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.2.0-b27">org.glassfish.hk2.external : javax.inject : 2.2.0-b27</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.2.0-b27">org.glassfish.hk2 : hk2-utils : 2.2.0-b27</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:4.3.1">junit : junit : 4.3.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.2.0-b27">org.glassfish.hk2.external : aopalliance-repackaged : 2.2.0-b27</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.3.0-b01">org.glassfish.hk2:hk2-locator:2.3.0-b01<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b01">org.glassfish.hk2.external : aopalliance-repackaged : 2.3.0-b01</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.3.0-b01">org.glassfish.hk2 : hk2-utils : 2.3.0-b01</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.3.0-b01">org.glassfish.hk2 : hk2-api : 2.3.0-b01</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.3.0-b01">org.glassfish.hk2.external : javax.inject : 2.3.0-b01</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:4.3.1">junit : junit : 4.3.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.3.0-b03">org.glassfish.hk2:hk2-locator:2.3.0-b03<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.3.0-b03">org.glassfish.hk2 : hk2-utils : 2.3.0-b03</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.3.0-b03">org.glassfish.hk2.external : javax.inject : 2.3.0-b03</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b03">org.glassfish.hk2.external : aopalliance-repackaged : 2.3.0-b03</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.3.0-b03">org.glassfish.hk2 : hk2-api : 2.3.0-b03</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.3.0-b04">org.glassfish.hk2:hk2-locator:2.3.0-b04<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.3.0-b04">org.glassfish.hk2 : hk2-utils : 2.3.0-b04</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.3.0-b04">org.glassfish.hk2.external : javax.inject : 2.3.0-b04</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b04">org.glassfish.hk2.external : aopalliance-repackaged : 2.3.0-b04</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.3.0-b04">org.glassfish.hk2 : hk2-api : 2.3.0-b04</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.3.0-b05">org.glassfish.hk2:hk2-locator:2.3.0-b05<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.3.0-b05">org.glassfish.hk2 : hk2-api : 2.3.0-b05</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.3.0-b05">org.glassfish.hk2.external : javax.inject : 2.3.0-b05</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.3.0-b05">org.glassfish.hk2 : hk2-utils : 2.3.0-b05</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b05">org.glassfish.hk2.external : aopalliance-repackaged : 2.3.0-b05</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.3.0-b06">org.glassfish.hk2:hk2-locator:2.3.0-b06<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.3.0-b06">org.glassfish.hk2.external : javax.inject : 2.3.0-b06</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.3.0-b06">org.glassfish.hk2 : hk2-api : 2.3.0-b06</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.3.0-b06">org.glassfish.hk2 : hk2-utils : 2.3.0-b06</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b06">org.glassfish.hk2.external : aopalliance-repackaged : 2.3.0-b06</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.3.0-b07">org.glassfish.hk2:hk2-locator:2.3.0-b07<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.3.0-b07">org.glassfish.hk2.external : javax.inject : 2.3.0-b07</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b07">org.glassfish.hk2.external : aopalliance-repackaged : 2.3.0-b07</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.3.0-b07">org.glassfish.hk2 : hk2-api : 2.3.0-b07</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.3.0-b07">org.glassfish.hk2 : hk2-utils : 2.3.0-b07</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.3.0-b08">org.glassfish.hk2:hk2-locator:2.3.0-b08<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.3.0-b08">org.glassfish.hk2.external : javax.inject : 2.3.0-b08</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.3.0-b08">org.glassfish.hk2 : hk2-api : 2.3.0-b08</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b08">org.glassfish.hk2.external : aopalliance-repackaged : 2.3.0-b08</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.3.0-b08">org.glassfish.hk2 : hk2-utils : 2.3.0-b08</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.3.0-b09">org.glassfish.hk2:hk2-locator:2.3.0-b09<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b09">org.glassfish.hk2.external : aopalliance-repackaged : 2.3.0-b09</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.3.0-b09">org.glassfish.hk2 : hk2-api : 2.3.0-b09</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.3.0-b09">org.glassfish.hk2 : hk2-utils : 2.3.0-b09</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.3.0-b09">org.glassfish.hk2.external : javax.inject : 2.3.0-b09</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.3.0-b10">org.glassfish.hk2:hk2-locator:2.3.0-b10<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b10">org.glassfish.hk2.external : aopalliance-repackaged : 2.3.0-b10</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.3.0-b10">org.glassfish.hk2 : hk2-api : 2.3.0-b10</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.3.0-b10">org.glassfish.hk2 : hk2-utils : 2.3.0-b10</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.3.0-b10">org.glassfish.hk2.external : javax.inject : 2.3.0-b10</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b01">org.glassfish.hk2:hk2-locator:2.4.0-b01<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b01">org.glassfish.hk2 : hk2-utils : 2.4.0-b01</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b01">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b01</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b01">org.glassfish.hk2.external : javax.inject : 2.4.0-b01</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b01">org.glassfish.hk2 : hk2-api : 2.4.0-b01</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b02">org.glassfish.hk2:hk2-locator:2.4.0-b02<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b02">org.glassfish.hk2 : hk2-utils : 2.4.0-b02</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b02">org.glassfish.hk2 : hk2-api : 2.4.0-b02</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b02">org.glassfish.hk2.external : javax.inject : 2.4.0-b02</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b02">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b02</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b03">org.glassfish.hk2:hk2-locator:2.4.0-b03<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b03">org.glassfish.hk2 : hk2-api : 2.4.0-b03</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b03">org.glassfish.hk2 : hk2-utils : 2.4.0-b03</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b03">org.glassfish.hk2.external : javax.inject : 2.4.0-b03</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b03">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b03</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b04">org.glassfish.hk2:hk2-locator:2.4.0-b04<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b04">org.glassfish.hk2.external : javax.inject : 2.4.0-b04</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b04">org.glassfish.hk2 : hk2-utils : 2.4.0-b04</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b04">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b04</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b04">org.glassfish.hk2 : hk2-api : 2.4.0-b04</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b05">org.glassfish.hk2:hk2-locator:2.4.0-b05<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b05">org.glassfish.hk2.external : javax.inject : 2.4.0-b05</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b05">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b05</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b05">org.glassfish.hk2 : hk2-api : 2.4.0-b05</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b05">org.glassfish.hk2 : hk2-utils : 2.4.0-b05</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b06">org.glassfish.hk2:hk2-locator:2.4.0-b06<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b06">org.glassfish.hk2.external : javax.inject : 2.4.0-b06</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b06">org.glassfish.hk2 : hk2-api : 2.4.0-b06</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b06">org.glassfish.hk2 : hk2-utils : 2.4.0-b06</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b06">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b06</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b07">org.glassfish.hk2:hk2-locator:2.4.0-b07<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b07">org.glassfish.hk2.external : javax.inject : 2.4.0-b07</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b07">org.glassfish.hk2 : hk2-api : 2.4.0-b07</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b07">org.glassfish.hk2 : hk2-utils : 2.4.0-b07</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b07">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b07</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b08">org.glassfish.hk2:hk2-locator:2.4.0-b08<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b08">org.glassfish.hk2 : hk2-api : 2.4.0-b08</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b08">org.glassfish.hk2.external : javax.inject : 2.4.0-b08</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b08">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b08</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b08">org.glassfish.hk2 : hk2-utils : 2.4.0-b08</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b09">org.glassfish.hk2:hk2-locator:2.4.0-b09<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b09">org.glassfish.hk2 : hk2-utils : 2.4.0-b09</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b09">org.glassfish.hk2.external : javax.inject : 2.4.0-b09</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b09">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b09</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b09">org.glassfish.hk2 : hk2-api : 2.4.0-b09</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b10">org.glassfish.hk2:hk2-locator:2.4.0-b10<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b10">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b10</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b10">org.glassfish.hk2 : hk2-utils : 2.4.0-b10</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b10">org.glassfish.hk2.external : javax.inject : 2.4.0-b10</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b10">org.glassfish.hk2 : hk2-api : 2.4.0-b10</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b11">org.glassfish.hk2:hk2-locator:2.4.0-b11<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b11">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b11</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b11">org.glassfish.hk2.external : javax.inject : 2.4.0-b11</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b11">org.glassfish.hk2 : hk2-utils : 2.4.0-b11</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b11">org.glassfish.hk2 : hk2-api : 2.4.0-b11</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b12">org.glassfish.hk2:hk2-locator:2.4.0-b12<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b12">org.glassfish.hk2 : hk2-utils : 2.4.0-b12</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b12">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b12</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b12">org.glassfish.hk2.external : javax.inject : 2.4.0-b12</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b12">org.glassfish.hk2 : hk2-api : 2.4.0-b12</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b13">org.glassfish.hk2:hk2-locator:2.4.0-b13<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b13">org.glassfish.hk2 : hk2-utils : 2.4.0-b13</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b13">org.glassfish.hk2 : hk2-api : 2.4.0-b13</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b13">org.glassfish.hk2.external : javax.inject : 2.4.0-b13</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b13">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b13</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b14">org.glassfish.hk2:hk2-locator:2.4.0-b14<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b14">org.glassfish.hk2 : hk2-api : 2.4.0-b14</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b14">org.glassfish.hk2 : hk2-utils : 2.4.0-b14</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b14">org.glassfish.hk2.external : javax.inject : 2.4.0-b14</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b14">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b14</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b15">org.glassfish.hk2:hk2-locator:2.4.0-b15<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b15">org.glassfish.hk2.external : javax.inject : 2.4.0-b15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b15">org.glassfish.hk2 : hk2-utils : 2.4.0-b15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b15">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b15">org.glassfish.hk2 : hk2-api : 2.4.0-b15</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b16">org.glassfish.hk2:hk2-locator:2.4.0-b16<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b16">org.glassfish.hk2.external : javax.inject : 2.4.0-b16</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b16">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b16</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b16">org.glassfish.hk2 : hk2-api : 2.4.0-b16</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b16">org.glassfish.hk2 : hk2-utils : 2.4.0-b16</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b17">org.glassfish.hk2:hk2-locator:2.4.0-b17<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b17">org.glassfish.hk2.external : javax.inject : 2.4.0-b17</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b17">org.glassfish.hk2 : hk2-api : 2.4.0-b17</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b17">org.glassfish.hk2 : hk2-utils : 2.4.0-b17</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b17">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b17</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b18">org.glassfish.hk2:hk2-locator:2.4.0-b18<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b18">org.glassfish.hk2.external : javax.inject : 2.4.0-b18</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b18">org.glassfish.hk2 : hk2-api : 2.4.0-b18</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b18">org.glassfish.hk2 : hk2-utils : 2.4.0-b18</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b18">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b18</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b19">org.glassfish.hk2:hk2-locator:2.4.0-b19<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b19">org.glassfish.hk2 : hk2-api : 2.4.0-b19</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b19">org.glassfish.hk2.external : javax.inject : 2.4.0-b19</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b19">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b19</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b19">org.glassfish.hk2 : hk2-utils : 2.4.0-b19</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b20">org.glassfish.hk2:hk2-locator:2.4.0-b20<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b20">org.glassfish.hk2 : hk2-utils : 2.4.0-b20</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b20">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b20</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b20">org.glassfish.hk2.external : javax.inject : 2.4.0-b20</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b20">org.glassfish.hk2 : hk2-api : 2.4.0-b20</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b21">org.glassfish.hk2:hk2-locator:2.4.0-b21<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b21">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b21</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b21">org.glassfish.hk2 : hk2-utils : 2.4.0-b21</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b21">org.glassfish.hk2.external : javax.inject : 2.4.0-b21</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b21">org.glassfish.hk2 : hk2-api : 2.4.0-b21</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b22">org.glassfish.hk2:hk2-locator:2.4.0-b22<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b22">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b22</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b22">org.glassfish.hk2.external : javax.inject : 2.4.0-b22</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b22">org.glassfish.hk2 : hk2-utils : 2.4.0-b22</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b22">org.glassfish.hk2 : hk2-api : 2.4.0-b22</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b24">org.glassfish.hk2:hk2-locator:2.4.0-b24<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b24">org.glassfish.hk2 : hk2-utils : 2.4.0-b24</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b24">org.glassfish.hk2 : hk2-api : 2.4.0-b24</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b24">org.glassfish.hk2.external : javax.inject : 2.4.0-b24</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b24">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b24</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b25">org.glassfish.hk2:hk2-locator:2.4.0-b25<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b25">org.glassfish.hk2 : hk2-api : 2.4.0-b25</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b25">org.glassfish.hk2 : hk2-utils : 2.4.0-b25</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b25">org.glassfish.hk2.external : javax.inject : 2.4.0-b25</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b25">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b25</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b26">org.glassfish.hk2:hk2-locator:2.4.0-b26<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b26">org.glassfish.hk2.external : javax.inject : 2.4.0-b26</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b26">org.glassfish.hk2 : hk2-utils : 2.4.0-b26</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b26">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b26</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b26">org.glassfish.hk2 : hk2-api : 2.4.0-b26</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b27">org.glassfish.hk2:hk2-locator:2.4.0-b27<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b27">org.glassfish.hk2.external : javax.inject : 2.4.0-b27</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b27">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b27</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b27">org.glassfish.hk2 : hk2-api : 2.4.0-b27</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b27">org.glassfish.hk2 : hk2-utils : 2.4.0-b27</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b28">org.glassfish.hk2:hk2-locator:2.4.0-b28<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b28">org.glassfish.hk2.external : javax.inject : 2.4.0-b28</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b28">org.glassfish.hk2 : hk2-api : 2.4.0-b28</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b28">org.glassfish.hk2 : hk2-utils : 2.4.0-b28</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b28">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b28</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b29">org.glassfish.hk2:hk2-locator:2.4.0-b29<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b29">org.glassfish.hk2.external : javax.inject : 2.4.0-b29</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b29">org.glassfish.hk2 : hk2-api : 2.4.0-b29</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b29">org.glassfish.hk2 : hk2-utils : 2.4.0-b29</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b29">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b29</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b30">org.glassfish.hk2:hk2-locator:2.4.0-b30<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b30">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b30</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b30">org.glassfish.hk2 : hk2-api : 2.4.0-b30</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b30">org.glassfish.hk2 : hk2-utils : 2.4.0-b30</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b30">org.glassfish.hk2.external : javax.inject : 2.4.0-b30</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b31">org.glassfish.hk2:hk2-locator:2.4.0-b31<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b31">org.glassfish.hk2 : hk2-utils : 2.4.0-b31</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b31">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b31</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b31">org.glassfish.hk2.external : javax.inject : 2.4.0-b31</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b31">org.glassfish.hk2 : hk2-api : 2.4.0-b31</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b32">org.glassfish.hk2:hk2-locator:2.4.0-b32<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b32">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b32</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b32">org.glassfish.hk2 : hk2-utils : 2.4.0-b32</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b32">org.glassfish.hk2.external : javax.inject : 2.4.0-b32</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b32">org.glassfish.hk2 : hk2-api : 2.4.0-b32</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b33">org.glassfish.hk2:hk2-locator:2.4.0-b33<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b33">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b33</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b33">org.glassfish.hk2.external : javax.inject : 2.4.0-b33</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b33">org.glassfish.hk2 : hk2-utils : 2.4.0-b33</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b33">org.glassfish.hk2 : hk2-api : 2.4.0-b33</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-locator:2.4.0-b34">org.glassfish.hk2:hk2-locator:2.4.0-b34<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jvnet:tiger-types:1.4">org.jvnet : tiger-types : 1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.javassist:javassist:3.18.1-GA">org.javassist : javassist : 3.18.1-GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-utils:2.4.0-b34">org.glassfish.hk2 : hk2-utils : 2.4.0-b34</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b34">org.glassfish.hk2.external : aopalliance-repackaged : 2.4.0-b34</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2.external:javax.inject:2.4.0-b34">org.glassfish.hk2.external : javax.inject : 2.4.0-b34</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.glassfish.hk2:hk2-api:2.4.0-b34">org.glassfish.hk2 : hk2-api : 2.4.0-b34</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2:hk2-utils:2.1.48">org.glassfish.hk2:hk2-utils:2.1.48<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.glassfish.hk2:hk2-utils:jar:2.1.48</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2.external:asm-all-repackaged:2.1.48">org.glassfish.hk2.external:asm-all-repackaged:2.1.48<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.glassfish.hk2.external:asm-all-repackaged:jar:2.1.48</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2.external:cglib:2.1.48">org.glassfish.hk2.external:cglib:2.1.48<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.glassfish.hk2.external:cglib:jar:2.1.48</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.glassfish.hk2.external:javax.inject:2.1.48">org.glassfish.hk2.external:javax.inject:2.1.48<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.glassfish.hk2.external:javax.inject:jar:2.1.48</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.grails:grails:1.1-beta1">org.grails:grails:1.1-beta1<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.grails:grails:jar:1.1-beta1 in central (http://repo1.maven.org/maven2/)</td></tr>
 	<tr><td class="de1 de ujd" colspan="2"><a href="#org.codehaus.groovy:groovy-all:1.6-beta-2-SNAPSHOT">org.codehaus.groovy : groovy-all : 1.6-beta-2-SNAPSHOT</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.grails:grails-bootstrap:1.1-beta1">org.grails:grails-bootstrap:1.1-beta1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.codehaus.gant:gant_groovy1.6:1.5.0-SNAPSHOT">org.codehaus.gant : gant_groovy1.6 : 1.5.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant:1.7.1">org.apache.ant : ant : 1.7.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.codehaus.groovy:groovy-all:1.6-beta-2-SNAPSHOT">org.codehaus.groovy : groovy-all : 1.6-beta-2-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.ant:ant-launcher:1.7.1">org.apache.ant : ant-launcher : 1.7.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.grails:grails-bootstrap:1.3.0.RC1">org.grails:grails-bootstrap:1.3.0.RC1<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.grails:grails-bootstrap:jar:1.3.0.RC1</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.grails:grails-bootstrap:1.3.0.RC2">org.grails:grails-bootstrap:1.3.0.RC2<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.grails:grails-bootstrap:jar:1.3.0.RC2</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.grails:grails-core:1.3.0.RC1">org.grails:grails-core:1.3.0.RC1<a></th></tr>
@@ -2301,6 +4154,14 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.grails:grails-docs:1.2.0.BUILD-SNAPSHOT">org.grails:grails-docs:1.2.0.BUILD-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.grails:grails-docs:jar:1.2.0.BUILD-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.grails:grails-spring:1.3.0.RC1">org.grails:grails-spring:1.3.0.RC1<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.grails:grails-spring:jar:1.3.0.RC1</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.grails:grails-spring:1.3.0.RC2">org.grails:grails-spring:1.3.0.RC2<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.grails:grails-spring:jar:1.3.0.RC2</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.grails:grails-spring:3.0.0.M1">org.grails:grails-spring:3.0.0.M1<a></th></tr>
@@ -2418,6 +4279,11 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.hibernate:hibernate-annotations:jar:3.3.0.GA in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.hibernate:hibernate-commons-annotations:3.0.0.ga">org.hibernate:hibernate-commons-annotations:3.0.0.ga<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.0.4">commons-logging : commons-logging : 1.0.4</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.hibernate:hibernate-entitymanager:3.2.2.ga">org.hibernate:hibernate-entitymanager:3.2.2.ga<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.hibernate:hibernate-entitymanager:jar:3.2.2.ga in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -2430,6 +4296,15 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.hibernate:hibernate-entitymanager:jar:3.3.2.ga in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.hibernate:hibernate-validator:4.0.0.Beta3">org.hibernate:hibernate-validator:4.0.0.Beta3<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.5.6">org.slf4j : slf4j-api : 1.5.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-log4j12:1.5.6">org.slf4j : slf4j-log4j12 : 1.5.6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.hibernate.java-persistence:jpa-api:2.0.Beta-SNAPSHOT">org.hibernate.java-persistence : jpa-api : 2.0.Beta-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#com.sun.xml.bind:jaxb-impl:2.1.3">com.sun.xml.bind : jaxb-impl : 2.1.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.xml.bind:jaxb-api:2.1">javax.xml.bind : jaxb-api : 2.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.validation:validation-api:1.0.CR4">javax.validation : validation-api : 1.0.CR4</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.hibernate.java-persistence:jpa-api:2.0.Beta-SNAPSHOT">org.hibernate.java-persistence:jpa-api:2.0.Beta-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.hibernate.java-persistence:jpa-api:jar:2.0.Beta-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -2438,7 +4313,35 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jacorb:jacorb:jar:2.3.2-jbossorg-5 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.javassist:javassist:3.16.1-GA">org.javassist:javassist:3.16.1-GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.8.0_91">com.sun : tools : 1.8.0_91</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.javassist:javassist:3.17.0-GA">org.javassist:javassist:3.17.0-GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.8.0_91">com.sun : tools : 1.8.0_91</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.javassist:javassist:3.17.1-GA">org.javassist:javassist:3.17.1-GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.8.0_91">com.sun : tools : 1.8.0_91</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.javassist:javassist:3.18.0-GA">org.javassist:javassist:3.18.0-GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.8.0_91">com.sun : tools : 1.8.0_91</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.javassist:javassist:3.18.1-GA">org.javassist:javassist:3.18.1-GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.8.0_91">com.sun : tools : 1.8.0_91</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.javassist:javassist:3.18.2-GA">org.javassist:javassist:3.18.2-GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.8.0_91">com.sun : tools : 1.8.0_91</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.javassist:javassist:3.19.0-GA">org.javassist:javassist:3.19.0-GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.8.0_91">com.sun : tools : 1.8.0_91</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.javassist:javassist:3.20.0-GA">org.javassist:javassist:3.20.0-GA<a></th></tr>
 	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun:tools:1.8.0_91">com.sun : tools : 1.8.0_91</a></td></tr>
 </table>
 <table class="artifacts">
@@ -2458,10 +4361,305 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss:jboss-classloading-spi:jar:5.0.0.Beta4 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.0.5.GA">org.jboss:jboss-common-core:2.0.5.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#oswego-concurrent:concurrent:1.3.4">oswego-concurrent : concurrent : 1.3.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-common-logging-spi:2.0.4.GA">jboss : jboss-common-logging-spi : 2.0.4.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xml-apis:2.7.1">apache-xerces : xml-apis : 2.7.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.10.GA">org.jboss:jboss-common-core:2.2.10.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.11.GA">org.jboss:jboss-common-core:2.2.11.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.12.GA">org.jboss:jboss-common-core:2.2.12.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.13.GA">org.jboss:jboss-common-core:2.2.13.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.14.GA">org.jboss:jboss-common-core:2.2.14.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.15.GA">org.jboss:jboss-common-core:2.2.15.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.16.GA">org.jboss:jboss-common-core:2.2.16.GA<a></th></tr>
 	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
 	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.0.GA">org.jboss.logging : jboss-logging-spi : 2.1.0.GA</a></td></tr>
 	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.17.GA">org.jboss:jboss-common-core:2.2.17.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.0.GA">org.jboss.logging : jboss-logging-spi : 2.1.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.2.GA">org.jboss:jboss-common-core:2.2.2.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-common-logging-spi:2.0.4.GA">jboss : jboss-common-logging-spi : 2.0.4.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xml-apis:2.7.1">apache-xerces : xml-apis : 2.7.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.3.GA">org.jboss:jboss-common-core:2.2.3.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-common-logging-spi:2.0.4.GA">jboss : jboss-common-logging-spi : 2.0.4.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xml-apis:2.7.1">apache-xerces : xml-apis : 2.7.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.4.GA">org.jboss:jboss-common-core:2.2.4.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-common-logging-spi:2.0.4.GA">jboss : jboss-common-logging-spi : 2.0.4.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.5.GA">org.jboss:jboss-common-core:2.2.5.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.5.beta1">org.jboss:jboss-common-core:2.2.5.beta1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-common-logging-spi:2.0.4.GA">jboss : jboss-common-logging-spi : 2.0.4.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.6.GA">org.jboss:jboss-common-core:2.2.6.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.7.GA">org.jboss:jboss-common-core:2.2.7.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.8.GA">org.jboss:jboss-common-core:2.2.8.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-common-core:2.2.9.GA">org.jboss:jboss-common-core:2.2.9.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-httpclient:commons-httpclient:2.0.2">apache-httpclient : commons-httpclient : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-mdr:2.0.0.CR1">org.jboss:jboss-mdr:2.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.CR1">org.jboss : jboss-reflect : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.8.1.GA">javassist : javassist : 3.8.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-mdr:2.0.0.CR2">org.jboss:jboss-mdr:2.0.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.CR1">org.jboss : jboss-reflect : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.8.1.GA">javassist : javassist : 3.8.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-mdr:2.0.0.CR3">org.jboss:jboss-mdr:2.0.0.CR3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.CR1">org.jboss : jboss-reflect : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.8.1.GA">javassist : javassist : 3.8.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-mdr:2.0.0.GA">org.jboss:jboss-mdr:2.0.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.8.1.GA">javassist : javassist : 3.8.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.GA">org.jboss : jboss-reflect : 2.0.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-mdr:2.0.1.GA">org.jboss:jboss-mdr:2.0.1.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#javassist:javassist:3.8.1.GA">javassist : javassist : 3.8.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.GA">org.jboss : jboss-reflect : 2.0.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-mdr:2.0.2.GA">org.jboss:jboss-mdr:2.0.2.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.10.0.GA">javassist : javassist : 3.10.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-mdr:2.0.3.GA">org.jboss:jboss-mdr:2.0.3.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.10.0.GA">javassist : javassist : 3.10.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-mdr:2.2.0.Alpha1">org.jboss:jboss-mdr:2.2.0.Alpha1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#javassist:javassist:3.11.0.GA">javassist : javassist : 3.11.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.2.0.Alpha2">org.jboss : jboss-reflect : 2.2.0.Alpha2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.1.GA">org.jboss.logging : jboss-logging-spi : 2.1.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-mdr:2.2.0.Alpha2">org.jboss:jboss-mdr:2.2.0.Alpha2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#javassist:javassist:3.11.0.GA">javassist : javassist : 3.11.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.2.0.Alpha2">org.jboss : jboss-reflect : 2.2.0.Alpha2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.1.GA">org.jboss.logging : jboss-logging-spi : 2.1.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-mdr:2.2.0.Alpha3">org.jboss:jboss-mdr:2.2.0.Alpha3<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#javassist:javassist:3.12.0.GA">javassist : javassist : 3.12.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.2.0.Alpha5">org.jboss : jboss-reflect : 2.2.0.Alpha5</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.1.GA">org.jboss.logging : jboss-logging-spi : 2.1.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-mdr:2.2.0.GA">org.jboss:jboss-mdr:2.2.0.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.2.0.GA">org.jboss : jboss-reflect : 2.2.0.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.12.1.GA">javassist : javassist : 3.12.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-mdr:2.2.0.SP1">org.jboss:jboss-mdr:2.2.0.SP1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.2.0.GA">org.jboss : jboss-reflect : 2.2.0.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.12.1.GA">javassist : javassist : 3.12.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.0.0.CR1">org.jboss:jboss-reflect:2.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.8.1.GA">javassist : javassist : 3.8.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.0.0.GA">org.jboss:jboss-reflect:2.0.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.8.1.GA">javassist : javassist : 3.8.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.0.1.GA">org.jboss:jboss-reflect:2.0.1.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.8.1.GA">javassist : javassist : 3.8.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.0.2.GA">org.jboss:jboss-reflect:2.0.2.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.8.1.GA">javassist : javassist : 3.8.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.0.3.GA">org.jboss:jboss-reflect:2.0.3.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.12.GA">org.jboss : jboss-common-core : 2.2.12.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.10.0.GA">javassist : javassist : 3.10.0.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.2.0.Alpha1">org.jboss:jboss-reflect:2.2.0.Alpha1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.11.0.GA">javassist : javassist : 3.11.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.16.GA">org.jboss : jboss-common-core : 2.2.16.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.2.0.Alpha2">org.jboss:jboss-reflect:2.2.0.Alpha2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.11.0.GA">javassist : javassist : 3.11.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.2.0.Alpha3">org.jboss:jboss-reflect:2.2.0.Alpha3<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.11.0.GA">javassist : javassist : 3.11.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.classpool:jboss-classpool-scoped:1.0.0.Alpha3">org.jboss.classpool : jboss-classpool-scoped : 1.0.0.Alpha3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.2.0.Alpha4">org.jboss:jboss-reflect:2.2.0.Alpha4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.classpool:jboss-classpool-scoped:1.0.0.Alpha4">org.jboss.classpool : jboss-classpool-scoped : 1.0.0.Alpha4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.11.0.GA">javassist : javassist : 3.11.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.2.0.Alpha5">org.jboss:jboss-reflect:2.2.0.Alpha5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.classpool:jboss-classpool-scoped:1.0.0.Alpha4">org.jboss.classpool : jboss-classpool-scoped : 1.0.0.Alpha4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.12.0.GA">javassist : javassist : 3.12.0.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.2.0.Alpha6">org.jboss:jboss-reflect:2.2.0.Alpha6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.classpool:jboss-classpool-scoped:1.0.0.Alpha4">org.jboss.classpool : jboss-classpool-scoped : 1.0.0.Alpha4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.12.1.GA">javassist : javassist : 3.12.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.2.0.Alpha7">org.jboss:jboss-reflect:2.2.0.Alpha7<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.classpool:jboss-classpool-scoped:1.0.0.Alpha4">org.jboss.classpool : jboss-classpool-scoped : 1.0.0.Alpha4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.12.1.GA">javassist : javassist : 3.12.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.2.0.Alpha8">org.jboss:jboss-reflect:2.2.0.Alpha8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.classpool:jboss-classpool-scoped:1.0.0.Alpha4">org.jboss.classpool : jboss-classpool-scoped : 1.0.0.Alpha4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.12.1.GA">javassist : javassist : 3.12.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.2.0.Alpha9">org.jboss:jboss-reflect:2.2.0.Alpha9<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.classpool:jboss-classpool-scoped:1.0.0.Alpha4">org.jboss.classpool : jboss-classpool-scoped : 1.0.0.Alpha4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.12.1.GA">javassist : javassist : 3.12.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.2.0.GA">org.jboss:jboss-reflect:2.2.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.classpool:jboss-classpool-scoped:1.0.0.GA">org.jboss.classpool : jboss-classpool-scoped : 1.0.0.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.12.1.GA">javassist : javassist : 3.12.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-reflect:2.2.1.SP1">org.jboss:jboss-reflect:2.2.1.SP1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.classpool:jboss-classpool-scoped:1.0.0.GA">org.jboss.classpool : jboss-classpool-scoped : 1.0.0.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javassist:javassist:3.12.1.GA">javassist : javassist : 3.12.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-test:1.0.4.GA">org.jboss:jboss-test:1.0.4.GA<a></th></tr>
@@ -2470,6 +4668,232 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-test:1.0.5.GA">org.jboss:jboss-test:1.0.5.GA<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss:jboss-test:jar:1.0.5.GA in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.Beta10">org.jboss:jboss-vfs:2.0.0.Beta10<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.4.GA">org.jboss : jboss-common-core : 2.2.4.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-common-logging-spi:2.0.4.GA">jboss : jboss-common-logging-spi : 2.0.4.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.Beta11">org.jboss:jboss-vfs:2.0.0.Beta11<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.Beta12">org.jboss:jboss-vfs:2.0.0.Beta12<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.Beta13">org.jboss:jboss-vfs:2.0.0.Beta13<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.Beta14">org.jboss:jboss-vfs:2.0.0.Beta14<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.Beta15">org.jboss:jboss-vfs:2.0.0.Beta15<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.Beta16">org.jboss:jboss-vfs:2.0.0.Beta16<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.Beta17">org.jboss:jboss-vfs:2.0.0.Beta17<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.Beta18">org.jboss:jboss-vfs:2.0.0.Beta18<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.Beta19">org.jboss:jboss-vfs:2.0.0.Beta19<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.7.GA">org.jboss : jboss-common-core : 2.2.7.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.Beta20">org.jboss:jboss-vfs:2.0.0.Beta20<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.7.GA">org.jboss : jboss-common-core : 2.2.7.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.Beta21">org.jboss:jboss-vfs:2.0.0.Beta21<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.7.GA">org.jboss : jboss-common-core : 2.2.7.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.Beta22">org.jboss:jboss-vfs:2.0.0.Beta22<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.7.GA">org.jboss : jboss-common-core : 2.2.7.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.CR1">org.jboss:jboss-vfs:2.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.CR2">org.jboss:jboss-vfs:2.0.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.CR3">org.jboss:jboss-vfs:2.0.0.CR3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.CR4">org.jboss:jboss-vfs:2.0.0.CR4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.CR5">org.jboss:jboss-vfs:2.0.0.CR5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.0.GA">org.jboss:jboss-vfs:2.0.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.0.1.GA">org.jboss:jboss-vfs:2.0.1.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.1.0.GA">org.jboss:jboss-vfs:2.1.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.1.1.GA">org.jboss:jboss-vfs:2.1.1.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.13.GA">org.jboss : jboss-common-core : 2.2.13.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.1.3.GA">org.jboss:jboss-vfs:2.1.3.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.13.GA">org.jboss : jboss-common-core : 2.2.13.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.1.3.SP1">org.jboss:jboss-vfs:2.1.3.SP1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.13.GA">org.jboss : jboss-common-core : 2.2.13.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.2.0.Alpha1">org.jboss:jboss-vfs:2.2.0.Alpha1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.16.GA">org.jboss : jboss-common-core : 2.2.16.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.2.0.Alpha2">org.jboss:jboss-vfs:2.2.0.Alpha2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.1.GA">org.jboss.logging : jboss-logging-spi : 2.1.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.2.0.SP1">org.jboss:jboss-vfs:2.2.0.SP1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.1.GA">org.jboss.logging : jboss-logging-spi : 2.1.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.2.1.GA">org.jboss:jboss-vfs:2.2.1.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.1.GA">org.jboss.logging : jboss-logging-spi : 2.1.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:2.2.3.GA">org.jboss:jboss-vfs:2.2.3.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.1.GA">org.jboss.logging : jboss-logging-spi : 2.1.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:3.0.0.CR1">org.jboss:jboss-vfs:3.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.logging:jboss-logging-log4j:2.2.0.CR1">org.jboss.logging : jboss-logging-log4j : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.13.GA">org.jboss : jboss-common-core : 2.2.13.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:3.0.0.CR2">org.jboss:jboss-vfs:3.0.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.logging:jboss-logging-log4j:2.2.0.CR1">org.jboss.logging : jboss-logging-log4j : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.13.GA">org.jboss : jboss-common-core : 2.2.13.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:3.0.0.CR3">org.jboss:jboss-vfs:3.0.0.CR3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.logging:jboss-logging-log4j:2.2.0.CR1">org.jboss.logging : jboss-logging-log4j : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.13.GA">org.jboss : jboss-common-core : 2.2.13.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:3.0.0.CR4">org.jboss:jboss-vfs:3.0.0.CR4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.logging:jboss-logging-log4j:2.2.0.CR1">org.jboss.logging : jboss-logging-log4j : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.13.GA">org.jboss : jboss-common-core : 2.2.13.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jboss-vfs:3.0.0.CR5">org.jboss:jboss-vfs:3.0.0.CR5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.logging:jboss-logging-log4j:2.2.0.CR1">org.jboss.logging : jboss-logging-log4j : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.13.GA">org.jboss : jboss-common-core : 2.2.13.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jbossxb:1.0.0.CR11">org.jboss:jbossxb:1.0.0.CR11<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#jboss.common.core:jboss-common-core:1.0">jboss.common.core : jboss-common-core : 1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xercesImpl:2.7.1">apache-xerces : xercesImpl : 2.7.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#wutka-dtdparser:dtdparser121:1.2.1">wutka-dtdparser : dtdparser121 : 1.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss.logging:jboss-logging-spi:1.0">jboss.logging : jboss-logging-spi : 1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaf:activation:1.0.2">sun-jaf : activation : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-slide:webdavlib:2.0">apache-slide : webdavlib : 2.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss.logging.log4j:jboss-logging-log4j:1.0">jboss.logging.log4j : jboss-logging-log4j : 1.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jbossxb:2.0.0.CR13">org.jboss:jbossxb:2.0.0.CR13<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-xerces:xercesImpl:2.9.1">apache-xerces : xercesImpl : 2.9.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.CR1">org.jboss : jboss-reflect : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#wutka-dtdparser:dtdparser121:1.2.1">wutka-dtdparser : dtdparser121 : 1.2.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xml-apis:2.9.1">apache-xerces : xml-apis : 2.9.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jbossxb:2.0.0.CR14">org.jboss:jbossxb:2.0.0.CR14<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-xerces:xercesImpl:2.9.1">apache-xerces : xercesImpl : 2.9.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.CR1">org.jboss : jboss-reflect : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#wutka-dtdparser:dtdparser121:1.2.1">wutka-dtdparser : dtdparser121 : 1.2.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xml-apis:2.9.1">apache-xerces : xml-apis : 2.9.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jbossxb:2.0.0.CR15">org.jboss:jbossxb:2.0.0.CR15<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-xerces:xercesImpl:2.9.1">apache-xerces : xercesImpl : 2.9.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.CR1">org.jboss : jboss-reflect : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#wutka-dtdparser:dtdparser121:1.2.1">wutka-dtdparser : dtdparser121 : 1.2.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xml-apis:2.9.1">apache-xerces : xml-apis : 2.9.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss:jbossxb:2.0.0.CR4">org.jboss:jbossxb:2.0.0.CR4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xercesImpl:2.7.1">apache-xerces : xercesImpl : 2.7.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#wutka-dtdparser:dtdparser121:1.2.1">wutka-dtdparser : dtdparser121 : 1.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-common-logging-spi:2.0.4.GA">jboss : jboss-common-logging-spi : 2.0.4.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-common-core:2.0.4.GA">jboss : jboss-common-core : 2.0.4.GA</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.aop:jboss-aop:2.0.0.CR1">org.jboss.aop:jboss-aop:2.0.0.CR1<a></th></tr>
@@ -2592,6 +5016,34 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.bootstrap:jboss-bootstrap-spi-as:jar:2.1.0-alpha-6 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.cl:jboss-classloader:2.0.0.Beta11">org.jboss.cl:jboss-classloader:2.0.0.Beta11<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#junit:junit:4.4">junit : junit : 4.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.3.GA">org.jboss : jboss-common-core : 2.2.3.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-test:1.0.5.GA">org.jboss : jboss-test : 1.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-classloading-spi:5.0.0.Beta4">org.jboss : jboss-classloading-spi : 5.0.0.Beta4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-common-logging-spi:2.0.4.GA">jboss : jboss-common-logging-spi : 2.0.4.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.cl:jboss-classloader:2.0.0.Beta12">org.jboss.cl:jboss-classloader:2.0.0.Beta12<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#junit:junit:4.4">junit : junit : 4.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.4.GA">org.jboss : jboss-common-core : 2.2.4.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-test:1.0.5.GA">org.jboss : jboss-test : 1.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-classloading-spi:5.0.0.Beta4">org.jboss : jboss-classloading-spi : 5.0.0.Beta4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-common-logging-spi:2.0.4.GA">jboss : jboss-common-logging-spi : 2.0.4.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.cl:jboss-classloader:2.0.0.CR1">org.jboss.cl:jboss-classloader:2.0.0.CR1<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.jboss.cl:jboss-classloader:jar:2.0.0.CR1</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.cl:jboss-classloading:2.0.0.CR1">org.jboss.cl:jboss-classloading:2.0.0.CR1<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.jboss.cl:jboss-classloading:jar:2.0.0.CR1</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.cl:jboss-classloading-vfs:2.0.0.CR1">org.jboss.cl:jboss-classloading-vfs:2.0.0.CR1<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.jboss.cl:jboss-classloading-vfs:jar:2.0.0.CR1</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.classpool:jboss-classpool-scoped:1.0.0.Alpha3">org.jboss.classpool:jboss-classpool-scoped:1.0.0.Alpha3<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.classpool:jboss-classpool-scoped:jar:1.0.0.Alpha3 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -2602,6 +5054,521 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.classpool:jboss-classpool-scoped:1.0.0.GA">org.jboss.classpool:jboss-classpool-scoped:1.0.0.GA<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.classpool:jboss-classpool-scoped:jar:1.0.0.GA in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.0.0.CR1">org.jboss.deployers:jboss-deployers-client:2.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR1">org.jboss.deployers : jboss-deployers-client-spi : 2.0.0.CR1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.0.0.CR2">org.jboss.deployers:jboss-deployers-client:2.0.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR2">org.jboss.deployers : jboss-deployers-client-spi : 2.0.0.CR2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.0.0.CR3">org.jboss.deployers:jboss-deployers-client:2.0.0.CR3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR3">org.jboss.deployers : jboss-deployers-client-spi : 2.0.0.CR3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.0.0.CR4">org.jboss.deployers:jboss-deployers-client:2.0.0.CR4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR4">org.jboss.deployers : jboss-deployers-client-spi : 2.0.0.CR4</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.0.0.CR5">org.jboss.deployers:jboss-deployers-client:2.0.0.CR5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR5">org.jboss.deployers : jboss-deployers-client-spi : 2.0.0.CR5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.0.1.GA">org.jboss.deployers:jboss-deployers-client:2.0.1.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.0.1.GA">org.jboss.deployers : jboss-deployers-client-spi : 2.0.1.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.0.2.GA">org.jboss.deployers:jboss-deployers-client:2.0.2.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.0.2.GA">org.jboss.deployers : jboss-deployers-client-spi : 2.0.2.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.0.3.GA">org.jboss.deployers:jboss-deployers-client:2.0.3.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.0.3.GA">org.jboss.deployers : jboss-deployers-client-spi : 2.0.3.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.0.4.GA">org.jboss.deployers:jboss-deployers-client:2.0.4.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.0.4.GA">org.jboss.deployers : jboss-deployers-client-spi : 2.0.4.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.0.5.GA">org.jboss.deployers:jboss-deployers-client:2.0.5.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.0.5.GA">org.jboss.deployers : jboss-deployers-client-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha1">org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha1">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha2">org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha2">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha3">org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha3">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha4">org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha4">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha4</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha5">org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha5">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha6">org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha6">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha6</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha7">org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha7<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha7">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha7</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha8">org.jboss.deployers:jboss-deployers-client:2.2.0.Alpha8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha8">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.2.1.GA">org.jboss.deployers:jboss-deployers-client:2.2.1.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.1.GA">org.jboss.deployers : jboss-deployers-client-spi : 2.2.1.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client:2.2.2.GA">org.jboss.deployers:jboss-deployers-client:2.2.2.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.2.GA">org.jboss.deployers : jboss-deployers-client-spi : 2.2.2.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR1">org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.0.0.CR1">org.jboss.man : jboss-managed : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR1">org.jboss.deployers : jboss-deployers-core-spi : 2.0.0.CR1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR2">org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR2">org.jboss.deployers : jboss-deployers-core-spi : 2.0.0.CR2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.0.0.CR1">org.jboss.man : jboss-managed : 2.0.0.CR1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR3">org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.0.0.CR2">org.jboss.man : jboss-managed : 2.0.0.CR2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR3">org.jboss.deployers : jboss-deployers-core-spi : 2.0.0.CR3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR4">org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.0.0.CR2">org.jboss.man : jboss-managed : 2.0.0.CR2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR4">org.jboss.deployers : jboss-deployers-core-spi : 2.0.0.CR4</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR5">org.jboss.deployers:jboss-deployers-client-spi:2.0.0.CR5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.0.0.CR4">org.jboss.man : jboss-managed : 2.0.0.CR4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR5">org.jboss.deployers : jboss-deployers-core-spi : 2.0.0.CR5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.0.1.GA">org.jboss.deployers:jboss-deployers-client-spi:2.0.1.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.1.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.0.0.GA">org.jboss.man : jboss-managed : 2.0.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.0.10.GA">org.jboss.deployers:jboss-deployers-client-spi:2.0.10.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.10.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.1.SP2">org.jboss.man : jboss-managed : 2.1.1.SP2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.0.2.GA">org.jboss.deployers:jboss-deployers-client-spi:2.0.2.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.2.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.2.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.0.0.GA">org.jboss.man : jboss-managed : 2.0.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.0.3.GA">org.jboss.deployers:jboss-deployers-client-spi:2.0.3.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.3.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.3.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.0.0.GA">org.jboss.man : jboss-managed : 2.0.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.0.4.GA">org.jboss.deployers:jboss-deployers-client-spi:2.0.4.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.0.0.GA">org.jboss.man : jboss-managed : 2.0.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.4.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.4.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.0.5.GA">org.jboss.deployers:jboss-deployers-client-spi:2.0.5.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.5.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.0.0.GA">org.jboss.man : jboss-managed : 2.0.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.0.5.SP1">org.jboss.deployers:jboss-deployers-client-spi:2.0.5.SP1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.0.0.GA">org.jboss.man : jboss-managed : 2.0.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.5.SP1">org.jboss.deployers : jboss-deployers-core-spi : 2.0.5.SP1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.0.6.GA">org.jboss.deployers:jboss-deployers-client-spi:2.0.6.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.0.CR8">org.jboss.man : jboss-managed : 2.1.0.CR8</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.6.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.6.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha1">org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.1.SP1">org.jboss.man : jboss-managed : 2.1.1.SP1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha1">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha2">org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.1.SP1">org.jboss.man : jboss-managed : 2.1.1.SP1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha2">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha3">org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.1.SP1">org.jboss.man : jboss-managed : 2.1.1.SP1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha3">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha4">org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha4">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.1.SP1">org.jboss.man : jboss-managed : 2.1.1.SP1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha5">org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha5">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha5</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.1.SP2">org.jboss.man : jboss-managed : 2.1.1.SP2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha6">org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha6">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.1.SP2">org.jboss.man : jboss-managed : 2.1.1.SP2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha7">org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha7<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha7">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha7</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.1.SP2">org.jboss.man : jboss-managed : 2.1.1.SP2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha8">org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha8">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha8</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.1.SP2">org.jboss.man : jboss-managed : 2.1.1.SP2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.2.0.GA">org.jboss.deployers:jboss-deployers-client-spi:2.2.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.1.SP2">org.jboss.man : jboss-managed : 2.1.1.SP2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.2.0.M1">org.jboss.deployers:jboss-deployers-client-spi:2.2.0.M1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.0.0.GA">org.jboss.man : jboss-managed : 2.0.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.M1">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.M1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.2.0.M2">org.jboss.deployers:jboss-deployers-client-spi:2.2.0.M2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.0.0.GA">org.jboss.man : jboss-managed : 2.0.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.M2">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.M2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.2.1.GA">org.jboss.deployers:jboss-deployers-client-spi:2.2.1.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.1.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.2.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.1.SP2">org.jboss.man : jboss-managed : 2.1.1.SP2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-client-spi:2.2.2.GA">org.jboss.deployers:jboss-deployers-client-spi:2.2.2.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.1.SP2">org.jboss.man : jboss-managed : 2.1.1.SP2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.2.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.2.2.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.0.CR1">org.jboss.deployers:jboss-deployers-core:2.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR1">org.jboss.deployers : jboss-deployers-core-spi : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.0.CR2">org.jboss.deployers:jboss-deployers-core:2.0.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR2">org.jboss.deployers : jboss-deployers-core-spi : 2.0.0.CR2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.0.CR3">org.jboss.deployers:jboss-deployers-core:2.0.0.CR3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR3">org.jboss.deployers : jboss-deployers-core-spi : 2.0.0.CR3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.0.CR4">org.jboss.deployers:jboss-deployers-core:2.0.0.CR4<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR4">org.jboss.deployers : jboss-deployers-core-spi : 2.0.0.CR4</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.0.CR5">org.jboss.deployers:jboss-deployers-core:2.0.0.CR5<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR5">org.jboss.deployers : jboss-deployers-core-spi : 2.0.0.CR5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.0.GA">org.jboss.deployers:jboss-deployers-core:2.0.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.0.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.0.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.1.GA">org.jboss.deployers:jboss-deployers-core:2.0.1.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.1.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.2.GA">org.jboss.deployers:jboss-deployers-core:2.0.2.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.2.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.3.GA">org.jboss.deployers:jboss-deployers-core:2.0.3.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.3.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.3.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.4.GA">org.jboss.deployers:jboss-deployers-core:2.0.4.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.4.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.4.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.5.GA">org.jboss.deployers:jboss-deployers-core:2.0.5.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.5.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.8.GA">org.jboss.deployers:jboss-deployers-core:2.0.8.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.8.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.8.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.8.SP1">org.jboss.deployers:jboss-deployers-core:2.0.8.SP1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.8.SP1">org.jboss.deployers : jboss-deployers-core-spi : 2.0.8.SP1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.0.9.GA">org.jboss.deployers:jboss-deployers-core:2.0.9.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.0.9.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.0.9.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha1">org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha1">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha2">org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha2">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha3">org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha3<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha3">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha4">org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha4<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha4">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha4</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha5">org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha5<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha5">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha6">org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha6<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha6">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha6</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha7">org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha7<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha7">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha7</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha8">org.jboss.deployers:jboss-deployers-core:2.2.0.Alpha8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha8">org.jboss.deployers : jboss-deployers-core-spi : 2.2.0.Alpha8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core:2.2.1.GA">org.jboss.deployers:jboss-deployers-core:2.2.1.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-core-spi:2.2.1.GA">org.jboss.deployers : jboss-deployers-core-spi : 2.2.1.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR1">org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR2">org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR3">org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR4">org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR5">org.jboss.deployers:jboss-deployers-core-spi:2.0.0.CR5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.0.GA">org.jboss.deployers:jboss-deployers-core-spi:2.0.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.1.GA">org.jboss.deployers:jboss-deployers-core-spi:2.0.1.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.10.GA">org.jboss.deployers:jboss-deployers-core-spi:2.0.10.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.2.GA">org.jboss.deployers:jboss-deployers-core-spi:2.0.2.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.3.GA">org.jboss.deployers:jboss-deployers-core-spi:2.0.3.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.4.GA">org.jboss.deployers:jboss-deployers-core-spi:2.0.4.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.5.GA">org.jboss.deployers:jboss-deployers-core-spi:2.0.5.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.5.SP1">org.jboss.deployers:jboss-deployers-core-spi:2.0.5.SP1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.6.GA">org.jboss.deployers:jboss-deployers-core-spi:2.0.6.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.13.GA">org.jboss : jboss-common-core : 2.2.13.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.8.GA">org.jboss.deployers:jboss-deployers-core-spi:2.0.8.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.8.SP1">org.jboss.deployers:jboss-deployers-core-spi:2.0.8.SP1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.0.9.GA">org.jboss.deployers:jboss-deployers-core-spi:2.0.9.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.16.GA">org.jboss : jboss-common-core : 2.2.16.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha1">org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha2">org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha3">org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha4">org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha5">org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha6">org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha7">org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha7<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha8">org.jboss.deployers:jboss-deployers-core-spi:2.2.0.Alpha8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.2.0.GA">org.jboss.deployers:jboss-deployers-core-spi:2.2.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.2.0.M1">org.jboss.deployers:jboss-deployers-core-spi:2.2.0.M1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.2.0.M2">org.jboss.deployers:jboss-deployers-core-spi:2.2.0.M2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.12.GA">org.jboss : jboss-common-core : 2.2.12.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.2.1.GA">org.jboss.deployers:jboss-deployers-core-spi:2.2.1.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-core-spi:2.2.2.GA">org.jboss.deployers:jboss-deployers-core-spi:2.2.2.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha1">org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha1">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:5.1.0.SP1">org.jboss.integration : jboss-classloading-spi : 5.1.0.SP1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.kernel:jboss-dependency:2.2.0.Alpha1">org.jboss.kernel : jboss-dependency : 2.2.0.Alpha1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha2">org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha2">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:5.1.0.SP1">org.jboss.integration : jboss-classloading-spi : 5.1.0.SP1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.kernel:jboss-dependency:2.2.0.Alpha1">org.jboss.kernel : jboss-dependency : 2.2.0.Alpha1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha3">org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha3<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:5.1.0.SP1">org.jboss.integration : jboss-classloading-spi : 5.1.0.SP1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha3">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.kernel:jboss-dependency:2.2.0.Alpha1">org.jboss.kernel : jboss-dependency : 2.2.0.Alpha1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha4">org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha4<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.kernel:jboss-dependency:2.2.0.Alpha9">org.jboss.kernel : jboss-dependency : 2.2.0.Alpha9</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:5.1.0.SP1">org.jboss.integration : jboss-classloading-spi : 5.1.0.SP1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha4">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha4</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha5">org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha5<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.kernel:jboss-dependency:2.2.0.Alpha10">org.jboss.kernel : jboss-dependency : 2.2.0.Alpha10</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha5">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha5</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:6.0.0-Alpha8">org.jboss.integration : jboss-classloading-spi : 6.0.0-Alpha8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha6">org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha6<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha6">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.kernel:jboss-dependency:2.2.0.Alpha10">org.jboss.kernel : jboss-dependency : 2.2.0.Alpha10</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:6.0.0-Alpha8">org.jboss.integration : jboss-classloading-spi : 6.0.0-Alpha8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha7">org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha7<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha7">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha7</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.kernel:jboss-dependency:2.2.0.Alpha10">org.jboss.kernel : jboss-dependency : 2.2.0.Alpha10</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:6.0.0-Alpha8">org.jboss.integration : jboss-classloading-spi : 6.0.0-Alpha8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha8">org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.Alpha8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.Alpha8">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.Alpha8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.kernel:jboss-dependency:2.2.0.Alpha10">org.jboss.kernel : jboss-dependency : 2.2.0.Alpha10</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:6.0.0-Alpha8">org.jboss.integration : jboss-classloading-spi : 6.0.0-Alpha8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.GA">org.jboss.deployers:jboss-deployers-structure-spi:2.2.0.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.kernel:jboss-dependency:2.2.0.GA">org.jboss.kernel : jboss-dependency : 2.2.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.0.GA">org.jboss.deployers : jboss-deployers-client-spi : 2.2.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:6.0.0-Alpha8">org.jboss.integration : jboss-classloading-spi : 6.0.0-Alpha8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.deployers:jboss-deployers-structure-spi:2.2.1.GA">org.jboss.deployers:jboss-deployers-structure-spi:2.2.1.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.kernel:jboss-dependency:2.2.0.GA">org.jboss.kernel : jboss-dependency : 2.2.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:6.0.0-Alpha8">org.jboss.integration : jboss-classloading-spi : 6.0.0-Alpha8</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.deployers:jboss-deployers-client-spi:2.2.1.GA">org.jboss.deployers : jboss-deployers-client-spi : 2.2.1.GA</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.ejb3:jboss-ejb3-api:3.1.0">org.jboss.ejb3:jboss-ejb3-api:3.1.0<a></th></tr>
@@ -2644,8 +5611,298 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.injection:jboss-switchboard-metadata:jar:0.1.0-alpha-2 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:5.0.0.Beta5">org.jboss.integration:jboss-classloading-spi:5.0.0.Beta5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:5.0.0.CR2">org.jboss.integration:jboss-classloading-spi:5.0.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:5.0.0.GA">org.jboss.integration:jboss-classloading-spi:5.0.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:5.0.2.GA">org.jboss.integration:jboss-classloading-spi:5.0.2.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:5.0.3.GA">org.jboss.integration:jboss-classloading-spi:5.0.3.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:5.1.0.CR1">org.jboss.integration:jboss-classloading-spi:5.1.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.11.GA">org.jboss : jboss-common-core : 2.2.11.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:5.1.0.CR2">org.jboss.integration:jboss-classloading-spi:5.1.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.11.GA">org.jboss : jboss-common-core : 2.2.11.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:5.1.0.CR3">org.jboss.integration:jboss-classloading-spi:5.1.0.CR3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.11.GA">org.jboss : jboss-common-core : 2.2.11.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:5.1.0.CR4">org.jboss.integration:jboss-classloading-spi:5.1.0.CR4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.11.GA">org.jboss : jboss-common-core : 2.2.11.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:5.1.0.GA">org.jboss.integration:jboss-classloading-spi:5.1.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:5.1.0.SP1">org.jboss.integration:jboss-classloading-spi:5.1.0.SP1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:6.0.0-Alpha8">org.jboss.integration:jboss-classloading-spi:6.0.0-Alpha8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha1">org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha2">org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha3">org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha4">org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha5">org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.11.GA">org.jboss : jboss-common-core : 2.2.11.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha6">org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.11.GA">org.jboss : jboss-common-core : 2.2.11.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha7">org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha7<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.11.GA">org.jboss : jboss-common-core : 2.2.11.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha9">org.jboss.integration:jboss-classloading-spi:6.0.0.Alpha9<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-classloading-spi:6.0.0.CR1">org.jboss.integration:jboss-classloading-spi:6.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-profileservice-spi:6.0.0.Alpha9">org.jboss.integration:jboss-profileservice-spi:6.0.0.Alpha9<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-managed:2.1.0.SP1">org.jboss.man : jboss-managed : 2.1.0.SP1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-vfs:3.0.0.CR1">org.jboss : jboss-vfs : 3.0.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.kernel:jboss-dependency:2.2.0.Alpha6">org.jboss.kernel : jboss-dependency : 2.2.0.Alpha6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.0.SP1">org.jboss.man : jboss-metatype : 2.1.0.SP1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:5.0.0.GA">org.jboss.integration:jboss-transaction-spi:5.0.0.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:5.0.1.GA">org.jboss.integration:jboss-transaction-spi:5.0.1.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:5.0.2.GA">org.jboss.integration:jboss-transaction-spi:5.0.2.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:5.0.3.GA">org.jboss.integration:jboss-transaction-spi:5.0.3.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:5.1.0.CR1">org.jboss.integration:jboss-transaction-spi:5.1.0.CR1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:5.1.0.CR2">org.jboss.integration:jboss-transaction-spi:5.1.0.CR2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:5.1.0.CR3">org.jboss.integration:jboss-transaction-spi:5.1.0.CR3<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:5.1.0.CR4">org.jboss.integration:jboss-transaction-spi:5.1.0.CR4<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:5.1.0.GA">org.jboss.integration:jboss-transaction-spi:5.1.0.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.0.GA">org.jboss.logging : jboss-logging-spi : 2.1.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:5.1.0.SP1">org.jboss.integration:jboss-transaction-spi:5.1.0.SP1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.0.GA">org.jboss.logging : jboss-logging-spi : 2.1.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:6.0.0-Alpha8">org.jboss.integration:jboss-transaction-spi:6.0.0-Alpha8<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.0.GA">org.jboss.logging : jboss-logging-spi : 2.1.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha1">org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha2">org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha3">org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha3<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha4">org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha4<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha5">org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha5<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha6">org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha6<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha7">org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha7<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha9">org.jboss.integration:jboss-transaction-spi:6.0.0.Alpha9<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.integration:jboss-transaction-spi:6.0.0.CR1">org.jboss.integration:jboss-transaction-spi:6.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee : jboss-jca-api : 1.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.interceptor:jboss-interceptor-api:3.1.0-CR4">org.jboss.interceptor:jboss-interceptor-api:3.1.0-CR4<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.interceptor:jboss-interceptor-api:jar:3.1.0-CR4 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-ejb-api:3.0.0.20070913080910">org.jboss.javaee:jboss-ejb-api:3.0.0.20070913080910<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#jboss.jbossws:jboss-jaxrpc:1.0.4.GA">jboss.jbossws : jboss-jaxrpc : 1.0.4.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.20070913080910">org.jboss.javaee : jboss-transaction-api : 1.0.1.20070913080910</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-ejb-api:3.0.0.Beta3Update1">org.jboss.javaee:jboss-ejb-api:3.0.0.Beta3Update1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#jboss.jbossws:jboss-jaxrpc:1.0.4.GA">jboss.jbossws : jboss-jaxrpc : 1.0.4.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.Beta3Update1">org.jboss.javaee : jboss-transaction-api : 1.0.1.Beta3Update1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-ejb-api:3.0.0.CR1">org.jboss.javaee:jboss-ejb-api:3.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#jboss.jbossws:jboss-jaxrpc:1.0.4.GA">jboss.jbossws : jboss-jaxrpc : 1.0.4.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.CR1">org.jboss.javaee : jboss-transaction-api : 1.0.1.CR1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-ejb-api:3.0.0.CR2">org.jboss.javaee:jboss-ejb-api:3.0.0.CR2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.CR2">org.jboss.javaee : jboss-transaction-api : 1.0.1.CR2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss.jbossws:jboss-jaxrpc:1.0.4.GA">jboss.jbossws : jboss-jaxrpc : 1.0.4.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-ejb-api:3.0.0.GA">org.jboss.javaee:jboss-ejb-api:3.0.0.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.ws.native:jbossws-native-jaxrpc:3.0.4.GA">org.jboss.ws.native : jbossws-native-jaxrpc : 3.0.4.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-ejb-api:3.0.0.GA_SP1">org.jboss.javaee:jboss-ejb-api:3.0.0.GA_SP1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-transaction-api:1.0.1.GA">org.jboss.javaee : jboss-transaction-api : 1.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.ws.native:jbossws-native-jaxrpc:3.0.4.GA">org.jboss.ws.native : jbossws-native-jaxrpc : 3.0.4.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-jacc-api:1.1.0.CR1">org.jboss.javaee:jboss-jacc-api:1.1.0.CR1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-servlet-api:2.5.0.CR1">org.jboss.javaee : jboss-servlet-api : 2.5.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-jacc-api:1.1.0.CR2">org.jboss.javaee:jboss-jacc-api:1.1.0.CR2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.javaee:jboss-servlet-api:2.5.0.CR2">org.jboss.javaee : jboss-servlet-api : 2.5.0.CR2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-jacc-api:1.1.0.GA">org.jboss.javaee:jboss-jacc-api:1.1.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.javaee:jboss-servlet-api:2.5.0.GA">org.jboss.javaee : jboss-servlet-api : 2.5.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-jacc-api:1.1.0.GA_SP1">org.jboss.javaee:jboss-jacc-api:1.1.0.GA_SP1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss.web:servlet-api:2.1.1.GA">jboss.web : servlet-api : 2.1.1.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-jacc-api_JDK4:1.1.0">org.jboss.javaee:jboss-jacc-api_JDK4:1.1.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.javaee:jboss-servlet-api_3.0:1.0-SNAPSHOT">org.jboss.javaee : jboss-servlet-api_3.0 : 1.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.0.5.GA">org.jboss : jboss-common-core : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-jad-api:1.2.0.CR1">org.jboss.javaee:jboss-jad-api:1.2.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-jad-api:1.2.0.CR2">org.jboss.javaee:jboss-jad-api:1.2.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-jad-api:1.2.0.GA">org.jboss.javaee:jboss-jad-api:1.2.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-jaspi-api:1.0-BETA1">org.jboss.javaee:jboss-jaspi-api:1.0-BETA1<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.jboss.javaee:jboss-jaspi-api:jar:1.0-BETA1</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-jca-api:1.5.0.GA">org.jboss.javaee:jboss-jca-api:1.5.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.javaee:jboss-servlet-api_3.0:1.0-SNAPSHOT">org.jboss.javaee:jboss-servlet-api_3.0:1.0-SNAPSHOT<a></th></tr>
@@ -2660,8 +5917,44 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.jbossas:jboss-as-deployment:jar:5.0.0.Beta4 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-deployment:6.0.0.20100429-M3">org.jboss.jbossas:jboss-as-deployment:6.0.0.20100429-M3<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.jboss.jbossas:jboss-as-deployment:jar:6.0.0.20100429-M3</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-j2se:5.0.0.Beta4">org.jboss.jbossas:jboss-as-j2se:5.0.0.Beta4<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.jbossas:jboss-as-j2se:jar:5.0.0.Beta4 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-j2se:5.0.0.GA">org.jboss.jbossas:jboss-as-j2se:5.0.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#oswego-concurrent:concurrent:1.3.4-jboss-update1">oswego-concurrent : concurrent : 1.3.4-jboss-update1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:5.0.3.GA">org.jboss.integration : jboss-classloading-spi : 5.0.3.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xml-apis:2.9.1">apache-xerces : xml-apis : 2.9.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-j2se:5.0.1.GA">org.jboss.jbossas:jboss-as-j2se:5.0.1.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#oswego-concurrent:concurrent:1.3.4-jboss-update1">oswego-concurrent : concurrent : 1.3.4-jboss-update1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.11.GA">org.jboss : jboss-common-core : 2.2.11.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:5.0.3.GA">org.jboss.integration : jboss-classloading-spi : 5.0.3.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xml-apis:2.9.1">apache-xerces : xml-apis : 2.9.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-j2se:5.1.0.Beta1">org.jboss.jbossas:jboss-as-j2se:5.1.0.Beta1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#oswego-concurrent:concurrent:1.3.4-jboss-update1">oswego-concurrent : concurrent : 1.3.4-jboss-update1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.11.GA">org.jboss : jboss-common-core : 2.2.11.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xml-apis:2.9.1">apache-xerces : xml-apis : 2.9.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:5.1.0.CR1">org.jboss.integration : jboss-classloading-spi : 5.1.0.CR1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-j2se:6.0.0.M1">org.jboss.jbossas:jboss-as-j2se:6.0.0.M1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#oswego-concurrent:concurrent:1.3.4-jboss-update1">oswego-concurrent : concurrent : 1.3.4-jboss-update1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.16.GA">org.jboss : jboss-common-core : 2.2.16.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.integration:jboss-classloading-spi:5.1.0.SP1">org.jboss.integration : jboss-classloading-spi : 5.1.0.SP1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.1.GA">org.jboss.logging : jboss-logging-spi : 2.1.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xml-apis:2.9.1">apache-xerces : xml-apis : 2.9.1</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-jmx:5.0.0.Beta4">org.jboss.jbossas:jboss-as-jmx:5.0.0.Beta4<a></th></tr>
@@ -2679,6 +5972,27 @@ fa-icon: question
 	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.logbridge:jboss-logbridge:1.0.0.CR3">org.jboss.logbridge : jboss-logbridge : 1.0.0.CR3</a></td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-main:5.1.0.CR1">org.jboss.jbossas:jboss-as-main:5.1.0.CR1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#log4j:log4j:1.2.14">log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#gnu-getopt:getopt:1.0.12-brew">gnu-getopt : getopt : 1.0.12-brew</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.logbridge:jboss-logbridge:1.0.0.CR4">org.jboss.logbridge : jboss-logbridge : 1.0.0.CR4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.bootstrap:jboss-bootstrap:1.0.0-Beta-3">org.jboss.bootstrap : jboss-bootstrap : 1.0.0-Beta-3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-main:5.1.0.GA">org.jboss.jbossas:jboss-as-main:5.1.0.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#log4j:log4j:1.2.14">log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.logbridge:jboss-logbridge:1.0.0.GA">org.jboss.logbridge : jboss-logbridge : 1.0.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#gnu-getopt:getopt:1.0.12-brew">gnu-getopt : getopt : 1.0.12-brew</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.bootstrap:jboss-bootstrap:1.0.0-Beta-3">org.jboss.bootstrap : jboss-bootstrap : 1.0.0-Beta-3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-main:6.0.0.M1">org.jboss.jbossas:jboss-as-main:6.0.0.M1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.bootstrap:jboss-bootstrap-spi-as:2.0.0-alpha-4">org.jboss.bootstrap : jboss-bootstrap-spi-as : 2.0.0-alpha-4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.14">log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.logbridge:jboss-logbridge:1.0.0.GA">org.jboss.logbridge : jboss-logbridge : 1.0.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#gnu-getopt:getopt:1.0.12-brew">gnu-getopt : getopt : 1.0.12-brew</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-mbeans:5.0.0.Beta4">org.jboss.jbossas:jboss-as-mbeans:5.0.0.Beta4<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.jbossas:jboss-as-mbeans:jar:5.0.0.Beta4 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -2691,12 +6005,24 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.jbossas:jboss-as-server:jar:5.0.0.Beta4 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-server:6.0.0.20100429-M3">org.jboss.jbossas:jboss-as-server:6.0.0.20100429-M3<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.jboss.jbossas:jboss-as-server:jar:6.0.0.20100429-M3</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-system:5.0.0.Beta4">org.jboss.jbossas:jboss-as-system:5.0.0.Beta4<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.jbossas:jboss-as-system:jar:5.0.0.Beta4 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-system:6.0.0.20100429-M3">org.jboss.jbossas:jboss-as-system:6.0.0.20100429-M3<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.jboss.jbossas:jboss-as-system:jar:6.0.0.20100429-M3</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-system-jmx:5.0.0.Beta4">org.jboss.jbossas:jboss-as-system-jmx:5.0.0.Beta4<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.jbossas:jboss-as-system-jmx:jar:5.0.0.Beta4 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.jbossas:jboss-as-system-jmx:6.0.0.20100429-M3">org.jboss.jbossas:jboss-as-system-jmx:6.0.0.20100429-M3<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.jboss.jbossas:jboss-as-system-jmx:jar:6.0.0.20100429-M3</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.jdeparser:jdeparser:2.0.0.Alpha2-SNAPSHOT">org.jboss.jdeparser:jdeparser:2.0.0.Alpha2-SNAPSHOT<a></th></tr>
@@ -2859,6 +6185,30 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.logbridge:jboss-logbridge:jar:1.0.0.GA in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logging:jboss-logging:3.0.0.Beta1">org.jboss.logging:jboss-logging:3.0.0.Beta1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.logmanager:jboss-logmanager:1.2.0.CR1-SNAPSHOT">org.jboss.logmanager : jboss-logmanager : 1.2.0.CR1-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.5.8">org.slf4j : slf4j-api : 1.5.8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logging:jboss-logging:3.0.0.Beta2">org.jboss.logging:jboss-logging:3.0.0.Beta2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.logmanager:jboss-logmanager:1.2.0.CR1-SNAPSHOT">org.jboss.logmanager : jboss-logmanager : 1.2.0.CR1-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.5.8">org.slf4j : slf4j-api : 1.5.8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logging:jboss-logging:3.0.0.Beta3">org.jboss.logging:jboss-logging:3.0.0.Beta3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logmanager:jboss-logmanager:1.2.0.CR1">org.jboss.logmanager : jboss-logmanager : 1.2.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.5.8">org.slf4j : slf4j-api : 1.5.8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logging:jboss-logging:3.0.0.Beta4">org.jboss.logging:jboss-logging:3.0.0.Beta4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logmanager:jboss-logmanager:1.2.0.CR4">org.jboss.logmanager : jboss-logmanager : 1.2.0.CR4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.5.8">org.slf4j : slf4j-api : 1.5.8</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.logging:jboss-logging:3.0.0.Beta5-SNAPSHOT">org.jboss.logging:jboss-logging:3.0.0.Beta5-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.logging:jboss-logging:jar:3.0.0.Beta5-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -2867,8 +6217,323 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.logging:jboss-logging:jar:3.1.4.GA-redhat-1 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logging:jboss-logging-log4j:2.0.5.GA">org.jboss.logging:jboss-logging-log4j:2.0.5.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#apache-log4j:log4j:1.2.14">apache-log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.5.GA">org.jboss : jboss-common-core : 2.2.5.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logging:jboss-logging-log4j:2.0.6.GA">org.jboss.logging:jboss-logging-log4j:2.0.6.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#log4j:log4j:1.2.14">log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.11.GA">org.jboss : jboss-common-core : 2.2.11.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logging:jboss-logging-log4j:2.1.0.GA">org.jboss.logging:jboss-logging-log4j:2.1.0.GA<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#log4j:log4j:1.2.14">log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.11.GA">org.jboss : jboss-common-core : 2.2.11.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.0.GA">org.jboss.logging : jboss-logging-spi : 2.1.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logging:jboss-logging-log4j:2.2.0.CR1">org.jboss.logging:jboss-logging-log4j:2.2.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.2.0.CR1">org.jboss.logging : jboss-logging-spi : 2.2.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.11.GA">org.jboss : jboss-common-core : 2.2.11.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logmanager:jboss-logmanager:1.1.0.CR1">org.jboss.logmanager:jboss-logmanager:1.1.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.5.6">org.slf4j : slf4j-api : 1.5.6</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.0.GA">org.jboss.logging : jboss-logging-spi : 2.1.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logmanager:jboss-logmanager:1.1.0.CR2">org.jboss.logmanager:jboss-logmanager:1.1.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logmanager:jboss-logmanager:1.1.0.CR3">org.jboss.logmanager:jboss-logmanager:1.1.0.CR3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logmanager:jboss-logmanager:1.1.0.CR4">org.jboss.logmanager:jboss-logmanager:1.1.0.CR4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logmanager:jboss-logmanager:1.1.0.CR5">org.jboss.logmanager:jboss-logmanager:1.1.0.CR5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logmanager:jboss-logmanager:1.1.0.CR6">org.jboss.logmanager:jboss-logmanager:1.1.0.CR6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.logmanager:jboss-logmanager:1.1.0.GA">org.jboss.logmanager:jboss-logmanager:1.1.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.14.GA">org.jboss : jboss-common-core : 2.2.14.GA</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.logmanager:jboss-logmanager:1.2.0.CR1-SNAPSHOT">org.jboss.logmanager:jboss-logmanager:1.2.0.CR1-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.logmanager:jboss-logmanager:jar:1.2.0.CR1-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.0.0.CR1">org.jboss.man:jboss-managed:2.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.0.0.CR1">org.jboss.man : jboss-metatype : 2.0.0.CR1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.0.0.CR2">org.jboss.man:jboss-managed:2.0.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.0.0.CR2">org.jboss.man : jboss-metatype : 2.0.0.CR2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.0.0.CR3">org.jboss.man:jboss-managed:2.0.0.CR3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.0.0.CR3">org.jboss.man : jboss-metatype : 2.0.0.CR3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.0.0.CR4">org.jboss.man:jboss-managed:2.0.0.CR4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.0.GA">org.jboss : jboss-mdr : 2.0.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.0.0.CR4">org.jboss.man : jboss-metatype : 2.0.0.CR4</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.0.0.CR5">org.jboss.man:jboss-managed:2.0.0.CR5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.0.GA">org.jboss : jboss-mdr : 2.0.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.0.0.CR5">org.jboss.man : jboss-metatype : 2.0.0.CR5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.0.0.GA">org.jboss.man:jboss-managed:2.0.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.0.0.GA">org.jboss.man : jboss-metatype : 2.0.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.0.CR1">org.jboss.man:jboss-managed:2.1.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.0.CR1">org.jboss.man : jboss-metatype : 2.1.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.0.CR2">org.jboss.man:jboss-managed:2.1.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.0.CR2">org.jboss.man : jboss-metatype : 2.1.0.CR2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.0.CR3">org.jboss.man:jboss-managed:2.1.0.CR3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.0.CR3">org.jboss.man : jboss-metatype : 2.1.0.CR3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.0.CR4">org.jboss.man:jboss-managed:2.1.0.CR4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.0.CR4">org.jboss.man : jboss-metatype : 2.1.0.CR4</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.0.CR5">org.jboss.man:jboss-managed:2.1.0.CR5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.0.CR5">org.jboss.man : jboss-metatype : 2.1.0.CR5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.0.CR6">org.jboss.man:jboss-managed:2.1.0.CR6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.0.CR6">org.jboss.man : jboss-metatype : 2.1.0.CR6</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.0.CR7">org.jboss.man:jboss-managed:2.1.0.CR7<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.0.CR7">org.jboss.man : jboss-metatype : 2.1.0.CR7</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.0.CR8">org.jboss.man:jboss-managed:2.1.0.CR8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.0.CR8">org.jboss.man : jboss-metatype : 2.1.0.CR8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.0.GA">org.jboss.man:jboss-managed:2.1.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.0.GA">org.jboss.man : jboss-metatype : 2.1.0.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.0.SP1">org.jboss.man:jboss-managed:2.1.0.SP1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.0.SP1">org.jboss.man : jboss-metatype : 2.1.0.SP1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.1.Beta1">org.jboss.man:jboss-managed:2.1.1.Beta1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.1.Beta1">org.jboss.man : jboss-metatype : 2.1.1.Beta1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.1.Beta2">org.jboss.man:jboss-managed:2.1.1.Beta2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.1.Beta2">org.jboss.man : jboss-metatype : 2.1.1.Beta2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.1.Beta3">org.jboss.man:jboss-managed:2.1.1.Beta3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.1.Beta3">org.jboss.man : jboss-metatype : 2.1.1.Beta3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.1.GA">org.jboss.man:jboss-managed:2.1.1.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.1.GA">org.jboss : jboss-mdr : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.1.GA">org.jboss.man : jboss-metatype : 2.1.1.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.1.SP1">org.jboss.man:jboss-managed:2.1.1.SP1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.2.GA">org.jboss : jboss-mdr : 2.0.2.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.1.SP1">org.jboss.man : jboss-metatype : 2.1.1.SP1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-managed:2.1.1.SP2">org.jboss.man:jboss-managed:2.1.1.SP2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.man:jboss-metatype:2.1.1.SP2">org.jboss.man : jboss-metatype : 2.1.1.SP2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#sun-jaxb:jaxb-api:2.1.4">sun-jaxb : jaxb-api : 2.1.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.2.GA">org.jboss : jboss-mdr : 2.0.2.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.0.0.CR1">org.jboss.man:jboss-metatype:2.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.CR1">org.jboss : jboss-reflect : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.0.0.CR2">org.jboss.man:jboss-metatype:2.0.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.CR1">org.jboss : jboss-reflect : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.0.0.CR3">org.jboss.man:jboss-metatype:2.0.0.CR3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.CR1">org.jboss : jboss-reflect : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.0.0.CR4">org.jboss.man:jboss-metatype:2.0.0.CR4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.CR1">org.jboss : jboss-reflect : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.0.0.CR5">org.jboss.man:jboss-metatype:2.0.0.CR5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.CR1">org.jboss : jboss-reflect : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.0.0.GA">org.jboss.man:jboss-metatype:2.0.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.1.GA">org.jboss : jboss-reflect : 2.0.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.9.GA">org.jboss : jboss-common-core : 2.2.9.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.0.CR1">org.jboss.man:jboss-metatype:2.1.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.0.CR2">org.jboss.man:jboss-metatype:2.1.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.0.CR3">org.jboss.man:jboss-metatype:2.1.0.CR3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.0.CR4">org.jboss.man:jboss-metatype:2.1.0.CR4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.0.CR5">org.jboss.man:jboss-metatype:2.1.0.CR5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.0.CR6">org.jboss.man:jboss-metatype:2.1.0.CR6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.0.CR7">org.jboss.man:jboss-metatype:2.1.0.CR7<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.0.CR8">org.jboss.man:jboss-metatype:2.1.0.CR8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.0.GA">org.jboss.man:jboss-metatype:2.1.0.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.0.SP1">org.jboss.man:jboss-metatype:2.1.0.SP1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.1.Beta1">org.jboss.man:jboss-metatype:2.1.1.Beta1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.1.Beta2">org.jboss.man:jboss-metatype:2.1.1.Beta2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.1.Beta3">org.jboss.man:jboss-metatype:2.1.1.Beta3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.1.GA">org.jboss.man:jboss-metatype:2.1.1.GA<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.10.GA">org.jboss : jboss-common-core : 2.2.10.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.1.SP1">org.jboss.man:jboss-metatype:2.1.1.SP1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.man:jboss-metatype:2.1.1.SP2">org.jboss.man:jboss-metatype:2.1.1.SP2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.2.GA">org.jboss : jboss-reflect : 2.0.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.managed.beans:managed-beans-metadata:1.0.0-alpha-6">org.jboss.managed.beans:managed-beans-metadata:1.0.0-alpha-6<a></th></tr>
@@ -2993,6 +6658,50 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.metadata:jboss-metadata-war:2.0.0.CR1">org.jboss.metadata:jboss-metadata-war:2.0.0.CR1<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.metadata:jboss-metadata-war:jar:2.0.0.CR1 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.microcontainer:jboss-container:2.0.0.Beta8">org.jboss.microcontainer:jboss-container:2.0.0.Beta8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:javassist:3.6.0.GA">org.jboss : javassist : 3.6.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.3.GA">org.jboss : jboss-common-core : 2.2.3.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jbossxb:2.0.0.CR4">org.jboss : jbossxb : 2.0.0.CR4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-logging-spi:2.0.3.GA">jboss : jboss-logging-spi : 2.0.3.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xml-apis:2.7.1">apache-xerces : xml-apis : 2.7.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.microcontainer:jboss-container:2.0.0.Beta9">org.jboss.microcontainer:jboss-container:2.0.0.Beta9<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:javassist:3.6.0.GA">org.jboss : javassist : 3.6.0.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.3.GA">org.jboss : jboss-common-core : 2.2.3.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jbossxb:2.0.0.CR4">org.jboss : jbossxb : 2.0.0.CR4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-logging-spi:2.0.3.GA">jboss : jboss-logging-spi : 2.0.3.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#apache-xerces:xml-apis:2.7.1">apache-xerces : xml-apis : 2.7.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.microcontainer:jboss-dependency:2.0.0.Beta8">org.jboss.microcontainer:jboss-dependency:2.0.0.Beta8<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.3.GA">org.jboss : jboss-common-core : 2.2.3.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-logging-spi:2.0.3.GA">jboss : jboss-logging-spi : 2.0.3.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.microcontainer:jboss-container:2.0.0.Beta8">org.jboss.microcontainer : jboss-container : 2.0.0.Beta8</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.microcontainer:jboss-dependency:2.0.0.Beta9">org.jboss.microcontainer:jboss-dependency:2.0.0.Beta9<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.3.GA">org.jboss : jboss-common-core : 2.2.3.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#jboss:jboss-logging-spi:2.0.3.GA">jboss : jboss-logging-spi : 2.0.3.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.microcontainer:jboss-container:2.0.0.Beta9">org.jboss.microcontainer : jboss-container : 2.0.0.Beta9</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.microcontainer:jboss-dependency:2.0.0.CR1">org.jboss.microcontainer:jboss-dependency:2.0.0.CR1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.CR1">org.jboss : jboss-reflect : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.0.CR1">org.jboss : jboss-mdr : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jbossxb:2.0.0.CR13">org.jboss : jbossxb : 2.0.0.CR13</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.microcontainer:jboss-dependency:2.0.0.CR2">org.jboss.microcontainer:jboss-dependency:2.0.0.CR2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-mdr:2.0.0.CR3">org.jboss : jboss-mdr : 2.0.0.CR3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-reflect:2.0.0.CR1">org.jboss : jboss-reflect : 2.0.0.CR1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.0.5.GA">org.jboss.logging : jboss-logging-spi : 2.0.5.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jbossxb:2.0.0.CR13">org.jboss : jbossxb : 2.0.0.CR13</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.mx:jboss-j2se:6.0.0.Beta5">org.jboss.mx:jboss-j2se:6.0.0.Beta5<a></th></tr>
@@ -3415,6 +7124,89 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.service.binding:jboss-service-binding-mgmt:1.2.0.Final">org.jboss.service.binding:jboss-service-binding-mgmt:1.2.0.Final<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.service.binding:jboss-service-binding-mgmt:jar:1.2.0.Final in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec:1.0.0.Beta1">org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec:1.0.0.Beta1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.ws.native:jbossws-native-jaxrpc:3.2.2.GA">org.jboss.ws.native : jbossws-native-jaxrpc : 3.2.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.0.Beta1">org.jboss.spec.javax.transaction : jboss-transaction-api_1.1_spec : 1.0.0.Beta1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec:1.0.0.Beta2">org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec:1.0.0.Beta2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.ws.native:jbossws-native-jaxrpc:3.2.2.GA">org.jboss.ws.native : jbossws-native-jaxrpc : 3.2.2.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.0.Beta1">org.jboss.spec.javax.transaction : jboss-transaction-api_1.1_spec : 1.0.0.Beta1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.enterprise.deploy:jboss-jad-api_1.2_spec:1.0.0.Beta1">org.jboss.spec.javax.enterprise.deploy:jboss-jad-api_1.2_spec:1.0.0.Beta1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.enterprise.deploy:jboss-jad-api_1.2_spec:1.0.0.Final">org.jboss.spec.javax.enterprise.deploy:jboss-jad-api_1.2_spec:1.0.0.Final<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.faces:jboss-jsf-api_2.1_spec:2.0.0.Beta1">org.jboss.spec.javax.faces:jboss-jsf-api_2.1_spec:2.0.0.Beta1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.spec.javax.el:jboss-el-api_2.2_spec:1.0.0.Final">org.jboss.spec.javax.el : jboss-el-api_2.2_spec : 1.0.0.Final</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.validation:validation-api:1.0.0.GA">javax.validation : validation-api : 1.0.0.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.servlet.jsp:jboss-jsp-api_2.2_spec:1.0.0.Final">org.jboss.spec.javax.servlet.jsp : jboss-jsp-api_2.2_spec : 1.0.0.Final</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:1.0.1.Final">org.jboss.spec.javax.servlet.jstl : jboss-jstl-api_1.2_spec : 1.0.1.Final</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.faces:jboss-jsf-api_2.1_spec:2.0.0.Final">org.jboss.spec.javax.faces:jboss-jsf-api_2.1_spec:2.0.0.Final<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.spec.javax.el:jboss-el-api_2.2_spec:1.0.0.Final">org.jboss.spec.javax.el : jboss-el-api_2.2_spec : 1.0.0.Final</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.validation:validation-api:1.0.0.GA">javax.validation : validation-api : 1.0.0.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.servlet.jsp:jboss-jsp-api_2.2_spec:1.0.0.Final">org.jboss.spec.javax.servlet.jsp : jboss-jsp-api_2.2_spec : 1.0.0.Final</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:1.0.1.Final">org.jboss.spec.javax.servlet.jstl : jboss-jstl-api_1.2_spec : 1.0.1.Final</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.resource:jboss-connector-api_1.5_spec:1.0.0.Beta1">org.jboss.spec.javax.resource:jboss-connector-api_1.5_spec:1.0.0.Beta1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.8.GA">org.jboss : jboss-common-core : 2.2.8.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.0.Beta1">org.jboss.spec.javax.transaction : jboss-transaction-api_1.1_spec : 1.0.0.Beta1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.resource:jboss-connector-api_1.5_spec:1.0.0.Final">org.jboss.spec.javax.resource:jboss-connector-api_1.5_spec:1.0.0.Final<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.0.Final">org.jboss.spec.javax.transaction : jboss-transaction-api_1.1_spec : 1.0.0.Final</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss:jboss-common-core:2.2.17.GA">org.jboss : jboss-common-core : 2.2.17.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.rmi:jboss-rmi-api_1.0_spec:1.0.0.Final">org.jboss.spec.javax.rmi:jboss-rmi-api_1.0_spec:1.0.0.Final<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#jacorb:jacorb:2.3.1jboss.patch01-brew">jacorb : jacorb : 2.3.1jboss.patch01-brew</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:1.0.0.Final">org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:1.0.0.Final<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.xalan:xalan:2.7.1-1.jbossorg">org.apache.xalan : xalan : 2.7.1-1.jbossorg</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.servlet:jboss-servlet-api_3.0_spec:1.0.0.Final">org.jboss.spec.javax.servlet : jboss-servlet-api_3.0_spec : 1.0.0.Final</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.servlet.jsp:jboss-jsp-api_2.2_spec:1.0.0.Final">org.jboss.spec.javax.servlet.jsp : jboss-jsp-api_2.2_spec : 1.0.0.Final</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:1.0.1.Final">org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:1.0.1.Final<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.apache.xalan:xalan:2.7.1-1.jbossorg">org.apache.xalan : xalan : 2.7.1-1.jbossorg</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.servlet:jboss-servlet-api_3.0_spec:1.0.0.Final">org.jboss.spec.javax.servlet : jboss-servlet-api_3.0_spec : 1.0.0.Final</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.servlet.jsp:jboss-jsp-api_2.2_spec:1.0.0.Final">org.jboss.spec.javax.servlet.jsp : jboss-jsp-api_2.2_spec : 1.0.0.Final</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:1.0.2.Final">org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:1.0.2.Final<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.spec.javax.el:jboss-el-api_2.2_spec:1.0.0.Final">org.jboss.spec.javax.el : jboss-el-api_2.2_spec : 1.0.0.Final</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.servlet:jboss-servlet-api_3.0_spec:1.0.0.Final">org.jboss.spec.javax.servlet : jboss-servlet-api_3.0_spec : 1.0.0.Final</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.servlet.jsp:jboss-jsp-api_2.2_spec:1.0.0.Final">org.jboss.spec.javax.servlet.jsp : jboss-jsp-api_2.2_spec : 1.0.0.Final</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xalan:xalan:2.7.1.jbossorg-2">xalan : xalan : 2.7.1.jbossorg-2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:1.0.4.Beta1">org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:1.0.4.Beta1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.spec.javax.servlet:jboss-servlet-api_3.1_spec:1.0.0.Final">org.jboss.spec.javax.servlet : jboss-servlet-api_3.1_spec : 1.0.0.Final</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.el:jboss-el-api_3.0_spec:1.0.0.Beta1">org.jboss.spec.javax.el : jboss-el-api_3.0_spec : 1.0.0.Beta1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.servlet.jsp:jboss-jsp-api_2.3_spec:1.0.0.Beta1">org.jboss.spec.javax.servlet.jsp : jboss-jsp-api_2.3_spec : 1.0.0.Beta1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xalan:xalan:2.7.1.jbossorg-2">xalan : xalan : 2.7.1.jbossorg-2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:1.0.5.Final">org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:1.0.5.Final<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.jboss.spec.javax.el:jboss-el-api_2.2_spec:1.0.1.Final">org.jboss.spec.javax.el : jboss-el-api_2.2_spec : 1.0.1.Final</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.servlet.jsp:jboss-jsp-api_2.2_spec:1.0.1.Final">org.jboss.spec.javax.servlet.jsp : jboss-jsp-api_2.2_spec : 1.0.1.Final</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.spec.javax.servlet:jboss-servlet-api_3.0_spec:1.0.1.Final">org.jboss.spec.javax.servlet : jboss-servlet-api_3.0_spec : 1.0.1.Final</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xalan:xalan:2.7.1.jbossorg-2">xalan : xalan : 2.7.1.jbossorg-2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.spec.javax.xml.registry:jboss-jaxr-api_1.0_spec:1.0.0.Beta1">org.jboss.spec.javax.xml.registry:jboss-jaxr-api_1.0_spec:1.0.0.Beta1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jboss.switchboard:jboss-switchboard-impl:1.0.0-alpha-15">org.jboss.switchboard:jboss-switchboard-impl:1.0.0-alpha-15<a></th></tr>
@@ -3909,8 +7701,80 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jboss.xnio:xnio-nio:jar:1.3.0.CR1 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jboss.xnio:xnio-nio:3.0.0.Beta1">org.jboss.xnio:xnio-nio:3.0.0.Beta1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.xnio:xnio-api:3.0.0.Beta1">org.xnio : xnio-api : 3.0.0.Beta1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.logging:jboss-logging:3.0.0.Beta3">org.jboss.logging : jboss-logging : 3.0.0.Beta3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jibx:jibx-run:1.2.4">org.jibx:jibx-run:1.2.4<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.jibx:jibx-run:jar:1.2.4</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jibx:jibx-run:1.2.4.1">org.jibx:jibx-run:1.2.4.1<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.jibx:jibx-run:jar:1.2.4.1</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jruby:jruby-core:[1.7.0,1.8.0)">org.jruby:jruby-core:[1.7.0,1.8.0)<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jruby:jruby-core:jar:[1.7.0,1.8.0) in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jruby:jruby-stdlib:9.0.5.0">org.jruby:jruby-stdlib:9.0.5.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#rubygems:jruby-readline:1.0">rubygems : jruby-readline : 1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:psych:2.0.15">rubygems : psych : 2.0.15</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:jar-dependencies:0.2.3">rubygems : jar-dependencies : 0.2.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:power_assert:0.2.3">rubygems : power_assert : 0.2.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:rdoc:4.1.2">rubygems : rdoc : 4.1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:jruby-openssl:0.9.15">rubygems : jruby-openssl : 0.9.15</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:test-unit:3.0.3">rubygems : test-unit : 3.0.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:rake:10.1.0">rubygems : rake : 10.1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:minitest:5.4.1">rubygems : minitest : 5.4.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:racc:1.4.13">rubygems : racc : 1.4.13</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:json:1.8.0">rubygems : json : 1.8.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jruby:jruby-stdlib:9.1.0.0">org.jruby:jruby-stdlib:9.1.0.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#rubygems:jruby-readline:1.0">rubygems : jruby-readline : 1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:jar-dependencies:0.3.2">rubygems : jar-dependencies : 0.3.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:net-telnet:0.1.1">rubygems : net-telnet : 0.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:power_assert:0.2.3">rubygems : power_assert : 0.2.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:test-unit:3.1.1">rubygems : test-unit : 3.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:rake:10.4.2">rubygems : rake : 10.4.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:jruby-openssl:0.9.15">rubygems : jruby-openssl : 0.9.15</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:psych:2.0.17">rubygems : psych : 2.0.17</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:minitest:5.4.1">rubygems : minitest : 5.4.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:json:1.8.3">rubygems : json : 1.8.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:racc:1.4.13">rubygems : racc : 1.4.13</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:rdoc:4.2.0">rubygems : rdoc : 4.2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jruby:jruby-stdlib:9.1.1.0">org.jruby:jruby-stdlib:9.1.1.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#rubygems:jruby-readline:1.0">rubygems : jruby-readline : 1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:jar-dependencies:0.3.2">rubygems : jar-dependencies : 0.3.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:net-telnet:0.1.1">rubygems : net-telnet : 0.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:power_assert:0.2.3">rubygems : power_assert : 0.2.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:test-unit:3.1.1">rubygems : test-unit : 3.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:rake:10.4.2">rubygems : rake : 10.4.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:jruby-openssl:0.9.15">rubygems : jruby-openssl : 0.9.15</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:psych:2.0.17">rubygems : psych : 2.0.17</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:minitest:5.4.1">rubygems : minitest : 5.4.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:json:1.8.3">rubygems : json : 1.8.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:racc:1.4.13">rubygems : racc : 1.4.13</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:rdoc:4.2.0">rubygems : rdoc : 4.2.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jruby:jruby-stdlib:9.1.2.0">org.jruby:jruby-stdlib:9.1.2.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#rubygems:jruby-readline:1.0">rubygems : jruby-readline : 1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:jar-dependencies:0.3.2">rubygems : jar-dependencies : 0.3.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:net-telnet:0.1.1">rubygems : net-telnet : 0.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:power_assert:0.2.3">rubygems : power_assert : 0.2.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:test-unit:3.1.1">rubygems : test-unit : 3.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:rake:10.4.2">rubygems : rake : 10.4.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:jruby-openssl:0.9.15">rubygems : jruby-openssl : 0.9.15</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:psych:2.0.17">rubygems : psych : 2.0.17</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:minitest:5.4.1">rubygems : minitest : 5.4.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:json:1.8.3">rubygems : json : 1.8.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:racc:1.4.13">rubygems : racc : 1.4.13</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#rubygems:rdoc:4.2.0">rubygems : rdoc : 4.2.0</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jruby:openssl:0.9.2">org.jruby:openssl:0.9.2<a></th></tr>
@@ -3933,12 +7797,20 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jruby:readline:jar:1.0-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.jruby:yecht:1.0">org.jruby:yecht:1.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jruby:jruby-core:[1.7.0,1.8.0)">org.jruby : jruby-core : [1.7.0,1.8.0)</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.jruby.joni:joni:2.1.1-SNAPSHOT">org.jruby.joni:joni:2.1.1-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.jruby.joni:joni:jar:2.1.1-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.kohsuke.metainf-services:metainf-services:1.5-jboss-1">org.kohsuke.metainf-services:metainf-services:1.5-jboss-1<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.kohsuke.metainf-services:metainf-services:jar:1.5-jboss-1 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.liquibase:liquibase-core:2.0-rc3">org.liquibase:liquibase-core:2.0-rc3<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.liquibase:liquibase-core:jar:2.0-rc3</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.mongodb:mongo-java-driver:[2.10.1,2.11.2]">org.mongodb:mongo-java-driver:[2.10.1,2.11.2]<a></th></tr>
@@ -3949,16 +7821,302 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.mongodb:mongo-java-driver:jar:[2.10.1,2.12) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.mongodb.morphia:morphia:0.106">org.mongodb.morphia:morphia:0.106<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.mongodb:mongo-java-driver:[2.10.1,2.12)">org.mongodb : mongo-java-driver : [2.10.1,2.12)</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.mongodb.morphia:morphia:0.107">org.mongodb.morphia:morphia:0.107<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.mongodb:mongo-java-driver:[2.10.1,2.12)">org.mongodb : mongo-java-driver : [2.10.1,2.12)</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.olap4j:olap4j:0.9.7.309-JS-3">org.olap4j:olap4j:0.9.7.309-JS-3<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.olap4j:olap4j:jar:0.9.7.309-JS-3 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.openxri:openxri-syntax:1.0.1">org.openxri:openxri-syntax:1.0.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.ibm.icu:icu4j:3.4.1">com.ibm.icu : icu4j : 3.4.1</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.picketbox:acl-spi:4.0.0.Alpha7">org.picketbox:acl-spi:4.0.0.Alpha7<a></th></tr>
 	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.picketbox:acl-spi:jar:4.0.0.Alpha7</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.picketbox:authorization-spi:4.0.0.Alpha7">org.picketbox:authorization-spi:4.0.0.Alpha7<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.picketbox:authorization-spi:jar:4.0.0.Alpha7</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.picketbox:identity-spi:4.0.0.Alpha7">org.picketbox:identity-spi:4.0.0.Alpha7<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.picketbox:identity-spi:jar:4.0.0.Alpha7 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.picketbox:jboss-security-spi:4.0.0.Alpha7">org.picketbox:jboss-security-spi:4.0.0.Alpha7<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.picketbox:jboss-security-spi:jar:4.0.0.Alpha7</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.picketbox:picketbox-bare:3.0.0.Beta1">org.picketbox:picketbox-bare:3.0.0.Beta1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#stax:stax-api:1.0.1">stax : stax-api : 1.0.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.security:jboss-security-spi:3.0.0.Beta1">org.jboss.security : jboss-security-spi : 3.0.0.Beta1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.security:jbosssx:3.0.0.Beta1">org.jboss.security : jbosssx : 3.0.0.Beta1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.1.GA">org.jboss.logging : jboss-logging-spi : 2.1.1.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.picketbox:picketbox-bare:3.0.0.Beta2">org.picketbox:picketbox-bare:3.0.0.Beta2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.security:jbosssx:3.0.0.Beta2">org.jboss.security : jbosssx : 3.0.0.Beta2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.security:jboss-security-spi:3.0.0.Beta2">org.jboss.security : jboss-security-spi : 3.0.0.Beta2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.1.GA">org.jboss.logging : jboss-logging-spi : 2.1.1.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.picketbox:picketbox-bare:3.0.0.Beta3">org.picketbox:picketbox-bare:3.0.0.Beta3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.security:jbosssx:3.0.0.Beta3">org.jboss.security : jbosssx : 3.0.0.Beta3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.security:jboss-security-spi:3.0.0.Beta3">org.jboss.security : jboss-security-spi : 3.0.0.Beta3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.1.GA">org.jboss.logging : jboss-logging-spi : 2.1.1.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.picketbox:picketbox-bare:3.0.0.Beta4">org.picketbox:picketbox-bare:3.0.0.Beta4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.security:jbosssx:3.0.0.Beta4">org.jboss.security : jbosssx : 3.0.0.Beta4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.security:jboss-security-spi:3.0.0.Beta4">org.jboss.security : jboss-security-spi : 3.0.0.Beta4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.1.GA">org.jboss.logging : jboss-logging-spi : 2.1.1.GA</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.picketbox:picketbox-bare:3.0.0.Beta5">org.picketbox:picketbox-bare:3.0.0.Beta5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.jboss.security:jboss-security-spi:3.0.0.Beta5">org.jboss.security : jboss-security-spi : 3.0.0.Beta5</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.jboss.logging:jboss-logging-spi:2.1.1.GA">org.jboss.logging : jboss-logging-spi : 2.1.1.GA</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.security:jbosssx:3.0.0.Beta5">org.jboss.security : jbosssx : 3.0.0.Beta5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.picketbox:picketbox-identity-impl:4.0.0.Alpha7">org.picketbox:picketbox-identity-impl:4.0.0.Alpha7<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.picketbox:identity-spi:4.0.0.Alpha7">org.picketbox : identity-spi : 4.0.0.Alpha7</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.picketbox:picketbox-spi-bare:4.0.0.Alpha7">org.picketbox : picketbox-spi-bare : 4.0.0.Alpha7</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.picketbox:picketbox-spi-bare:4.0.0.Alpha7">org.picketbox:picketbox-spi-bare:4.0.0.Alpha7<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.picketbox:picketbox-spi-bare:jar:4.0.0.Alpha7</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.quartz-scheduler:quartz:1.7.2">org.quartz-scheduler:quartz:1.7.2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#log4j:log4j:1.2.14">log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.mail:mail:1.4.1">javax.mail : mail : 1.4.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.activation:activation:1.1">javax.activation : activation : 1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.servlet:servlet-api:2.5">javax.servlet : servlet-api : 2.5</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-digester:commons-digester:1.8.1">commons-digester : commons-digester : 1.8.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1">commons-logging : commons-logging : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-dbcp:commons-dbcp:1.2.2">commons-dbcp : commons-dbcp : 1.2.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openejb:javaee-api:5.0-2">org.apache.openejb : javaee-api : 5.0-2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-pool:commons-pool:1.3">commons-pool : commons-pool : 1.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-beanutils:commons-beanutils:1.8.2">commons-beanutils : commons-beanutils : 1.8.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-modeler:commons-modeler:2.0.1">commons-modeler : commons-modeler : 2.0.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.transaction:jta:1.0.1B">javax.transaction : jta : 1.0.1B</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-validator:commons-validator:1.3.1">commons-validator : commons-validator : 1.3.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.quartz-scheduler:quartz:1.7.3">org.quartz-scheduler:quartz:1.7.3<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#log4j:log4j:1.2.14">log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.mail:mail:1.4.1">javax.mail : mail : 1.4.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.activation:activation:1.1">javax.activation : activation : 1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.servlet:servlet-api:2.5">javax.servlet : servlet-api : 2.5</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-digester:commons-digester:1.8.1">commons-digester : commons-digester : 1.8.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1">commons-logging : commons-logging : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-dbcp:commons-dbcp:1.2.2">commons-dbcp : commons-dbcp : 1.2.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openejb:javaee-api:5.0-2">org.apache.openejb : javaee-api : 5.0-2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-pool:commons-pool:1.3">commons-pool : commons-pool : 1.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-beanutils:commons-beanutils:1.8.2">commons-beanutils : commons-beanutils : 1.8.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-modeler:commons-modeler:2.0.1">commons-modeler : commons-modeler : 2.0.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.transaction:jta:1.0.1B">javax.transaction : jta : 1.0.1B</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-validator:commons-validator:1.3.1">commons-validator : commons-validator : 1.3.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.quartz-scheduler:quartz:1.8.0">org.quartz-scheduler:quartz:1.8.0<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.slf4j:slf4j-log4j12:1.5.10">org.slf4j : slf4j-log4j12 : 1.5.10</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.14">log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-pool:commons-pool:1.5.4">commons-pool : commons-pool : 1.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openejb:javaee-api:5.0-2">org.apache.openejb : javaee-api : 5.0-2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.mail:mail:1.4.1">javax.mail : mail : 1.4.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.activation:activation:1.1">javax.activation : activation : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-dbcp:commons-dbcp:1.3">commons-dbcp : commons-dbcp : 1.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.5.10">org.slf4j : slf4j-api : 1.5.10</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.transaction:jta:1.1">javax.transaction : jta : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.servlet:servlet-api:2.5">javax.servlet : servlet-api : 2.5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.quartz-scheduler:quartz:1.8.1">org.quartz-scheduler:quartz:1.8.1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.slf4j:slf4j-log4j12:1.5.10">org.slf4j : slf4j-log4j12 : 1.5.10</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.14">log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-pool:commons-pool:1.5.4">commons-pool : commons-pool : 1.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openejb:javaee-api:5.0-2">org.apache.openejb : javaee-api : 5.0-2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.mail:mail:1.4.1">javax.mail : mail : 1.4.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.activation:activation:1.1">javax.activation : activation : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-dbcp:commons-dbcp:1.3">commons-dbcp : commons-dbcp : 1.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.5.10">org.slf4j : slf4j-api : 1.5.10</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.transaction:jta:1.1">javax.transaction : jta : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.servlet:servlet-api:2.5">javax.servlet : servlet-api : 2.5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.quartz-scheduler:quartz:1.8.2">org.quartz-scheduler:quartz:1.8.2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.slf4j:slf4j-log4j12:1.5.10">org.slf4j : slf4j-log4j12 : 1.5.10</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.14">log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-pool:commons-pool:1.5.4">commons-pool : commons-pool : 1.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openejb:javaee-api:5.0-2">org.apache.openejb : javaee-api : 5.0-2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.mail:mail:1.4.1">javax.mail : mail : 1.4.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.activation:activation:1.1">javax.activation : activation : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-dbcp:commons-dbcp:1.3">commons-dbcp : commons-dbcp : 1.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.5.10">org.slf4j : slf4j-api : 1.5.10</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.transaction:jta:1.1">javax.transaction : jta : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.servlet:servlet-api:2.5">javax.servlet : servlet-api : 2.5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.quartz-scheduler:quartz:1.8.3">org.quartz-scheduler:quartz:1.8.3<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.slf4j:slf4j-log4j12:1.5.10">org.slf4j : slf4j-log4j12 : 1.5.10</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.14">log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-pool:commons-pool:1.5.4">commons-pool : commons-pool : 1.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openejb:javaee-api:5.0-2">org.apache.openejb : javaee-api : 5.0-2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.mail:mail:1.4.1">javax.mail : mail : 1.4.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.activation:activation:1.1">javax.activation : activation : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-dbcp:commons-dbcp:1.3">commons-dbcp : commons-dbcp : 1.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.5.10">org.slf4j : slf4j-api : 1.5.10</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.transaction:jta:1.1">javax.transaction : jta : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.servlet:servlet-api:2.5">javax.servlet : servlet-api : 2.5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.quartz-scheduler:quartz:1.8.4">org.quartz-scheduler:quartz:1.8.4<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#log4j:log4j:1.2.14">log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.6.0">org.slf4j : slf4j-api : 1.6.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-pool:commons-pool:1.5.4">commons-pool : commons-pool : 1.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openejb:javaee-api:5.0-2">org.apache.openejb : javaee-api : 5.0-2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.mail:mail:1.4.1">javax.mail : mail : 1.4.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.activation:activation:1.1">javax.activation : activation : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-dbcp:commons-dbcp:1.3">commons-dbcp : commons-dbcp : 1.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-log4j12:1.6.0">org.slf4j : slf4j-log4j12 : 1.6.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.transaction:jta:1.1">javax.transaction : jta : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.servlet:servlet-api:2.5">javax.servlet : servlet-api : 2.5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.quartz-scheduler:quartz:1.8.5">org.quartz-scheduler:quartz:1.8.5<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#log4j:log4j:1.2.14">log4j : log4j : 1.2.14</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.6.0">org.slf4j : slf4j-api : 1.6.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-pool:commons-pool:1.5.4">commons-pool : commons-pool : 1.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.openejb:javaee-api:5.0-2">org.apache.openejb : javaee-api : 5.0-2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.mail:mail:1.4.1">javax.mail : mail : 1.4.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.activation:activation:1.1">javax.activation : activation : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-dbcp:commons-dbcp:1.3">commons-dbcp : commons-dbcp : 1.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.slf4j:slf4j-log4j12:1.6.0">org.slf4j : slf4j-log4j12 : 1.6.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.transaction:jta:1.1">javax.transaction : jta : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.servlet:servlet-api:2.5">javax.servlet : servlet-api : 2.5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.scala-lang:scala-compiler:2.7.2-rc1">org.scala-lang:scala-compiler:2.7.2-rc1<a></th></tr>
+	<tr><td class="vdf" colspan="2">JDeps returned with exit code '1'.
+	 Executed command: /opt/java/jdk1.8.0_91/bin/jdeps -jdkinternals /home/parlog/.m2/repository/org/scala-lang/scala-compiler/2.7.2-rc1/scala-compiler-2.7.2-rc1.jar	 Error output:
+		 Exception in thread "main" java.lang.IllegalStateException: (!<!a:Lscala/tools/nsc/backend/icode/analysis/ProgramPoint<Ta;>;:Lscala/tools/nsc/backend/icode/analysis/ProgramPoint<Ta;>;>Lscala/tools/nsc/backend/icode/analysis/ProgramPoint<Ta;>;)Ljava/lang/Object;
+		 	at com.sun.tools.classfile.Signature.parseTypeSignature(Signature.java:180)
+		 	at com.sun.tools.classfile.Signature.parseTypeSignatures(Signature.java:188)
+		 	at com.sun.tools.classfile.Signature.parse(Signature.java:93)
+		 	at com.sun.tools.classfile.Signature.getType(Signature.java:48)
+		 	at com.sun.tools.classfile.Dependencies$BasicDependencyFinder$Visitor.scan(Dependencies.java:608)
+		 	at com.sun.tools.classfile.Dependencies$BasicDependencyFinder$Visitor.scan(Dependencies.java:590)
+		 	at com.sun.tools.classfile.Dependencies$ClassDependencyFinder.findDependencies(Dependencies.java:483)
+		 	at com.sun.tools.jdeps.JdepsTask.findDependencies(JdepsTask.java:543)
+		 	at com.sun.tools.jdeps.JdepsTask.run(JdepsTask.java:324)
+		 	at com.sun.tools.jdeps.JdepsTask.run(JdepsTask.java:306)
+		 	at com.sun.tools.jdeps.Main.main(Main.java:48)
+</td></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.scala-lang:scala-library:2.7.2-rc1">org.scala-lang : scala-library : 2.7.2-rc1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.scala-lang:scala-compiler:2.7.2-rc2">org.scala-lang:scala-compiler:2.7.2-rc2<a></th></tr>
+	<tr><td class="vdf" colspan="2">JDeps returned with exit code '1'.
+	 Executed command: /opt/java/jdk1.8.0_91/bin/jdeps -jdkinternals /home/parlog/.m2/repository/org/scala-lang/scala-compiler/2.7.2-rc2/scala-compiler-2.7.2-rc2.jar	 Error output:
+		 Exception in thread "main" java.lang.IllegalStateException: (!<!a:Lscala/tools/nsc/backend/icode/analysis/ProgramPoint<Ta;>;:Lscala/tools/nsc/backend/icode/analysis/ProgramPoint<Ta;>;>Lscala/tools/nsc/backend/icode/analysis/ProgramPoint<Ta;>;)Ljava/lang/Object;
+		 	at com.sun.tools.classfile.Signature.parseTypeSignature(Signature.java:180)
+		 	at com.sun.tools.classfile.Signature.parseTypeSignatures(Signature.java:188)
+		 	at com.sun.tools.classfile.Signature.parse(Signature.java:93)
+		 	at com.sun.tools.classfile.Signature.getType(Signature.java:48)
+		 	at com.sun.tools.classfile.Dependencies$BasicDependencyFinder$Visitor.scan(Dependencies.java:608)
+		 	at com.sun.tools.classfile.Dependencies$BasicDependencyFinder$Visitor.scan(Dependencies.java:590)
+		 	at com.sun.tools.classfile.Dependencies$ClassDependencyFinder.findDependencies(Dependencies.java:483)
+		 	at com.sun.tools.jdeps.JdepsTask.findDependencies(JdepsTask.java:543)
+		 	at com.sun.tools.jdeps.JdepsTask.run(JdepsTask.java:324)
+		 	at com.sun.tools.jdeps.JdepsTask.run(JdepsTask.java:306)
+		 	at com.sun.tools.jdeps.Main.main(Main.java:48)
+</td></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.scala-lang:scala-library:2.7.2-rc2">org.scala-lang : scala-library : 2.7.2-rc2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.scala-lang:scala-compiler:2.7.2-rc3">org.scala-lang:scala-compiler:2.7.2-rc3<a></th></tr>
+	<tr><td class="vdf" colspan="2">JDeps returned with exit code '1'.
+	 Executed command: /opt/java/jdk1.8.0_91/bin/jdeps -jdkinternals /home/parlog/.m2/repository/org/scala-lang/scala-compiler/2.7.2-rc3/scala-compiler-2.7.2-rc3.jar	 Error output:
+		 Exception in thread "main" java.lang.IllegalStateException: (!<!a:Lscala/tools/nsc/backend/icode/analysis/ProgramPoint<Ta;>;:Lscala/tools/nsc/backend/icode/analysis/ProgramPoint<Ta;>;>Lscala/tools/nsc/backend/icode/analysis/ProgramPoint<Ta;>;)Ljava/lang/Object;
+		 	at com.sun.tools.classfile.Signature.parseTypeSignature(Signature.java:180)
+		 	at com.sun.tools.classfile.Signature.parseTypeSignatures(Signature.java:188)
+		 	at com.sun.tools.classfile.Signature.parse(Signature.java:93)
+		 	at com.sun.tools.classfile.Signature.getType(Signature.java:48)
+		 	at com.sun.tools.classfile.Dependencies$BasicDependencyFinder$Visitor.scan(Dependencies.java:608)
+		 	at com.sun.tools.classfile.Dependencies$BasicDependencyFinder$Visitor.scan(Dependencies.java:590)
+		 	at com.sun.tools.classfile.Dependencies$ClassDependencyFinder.findDependencies(Dependencies.java:483)
+		 	at com.sun.tools.jdeps.JdepsTask.findDependencies(JdepsTask.java:543)
+		 	at com.sun.tools.jdeps.JdepsTask.run(JdepsTask.java:324)
+		 	at com.sun.tools.jdeps.JdepsTask.run(JdepsTask.java:306)
+		 	at com.sun.tools.jdeps.Main.main(Main.java:48)
+</td></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.scala-lang:scala-library:2.7.2-rc3">org.scala-lang : scala-library : 2.7.2-rc3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.scala-lang:scala-library:2.7.2-rc1">org.scala-lang:scala-library:2.7.2-rc1<a></th></tr>
+	<tr><td class="vdf" colspan="2">JDeps returned with exit code '1'.
+	 Executed command: /opt/java/jdk1.8.0_91/bin/jdeps -jdkinternals /home/parlog/.m2/repository/org/scala-lang/scala-library/2.7.2-rc1/scala-library-2.7.2-rc1.jar	 Error output:
+		 Exception in thread "main" java.lang.IllegalStateException: ()!<!A:Ljava/lang/Object;B:Ljava/lang/Object;>Lscala/collection/immutable/Tree<TA;TB;>;
+		 	at com.sun.tools.classfile.Signature.parseTypeSignature(Signature.java:180)
+		 	at com.sun.tools.classfile.Signature.parse(Signature.java:94)
+		 	at com.sun.tools.classfile.Signature.getType(Signature.java:48)
+		 	at com.sun.tools.classfile.Dependencies$BasicDependencyFinder$Visitor.scan(Dependencies.java:608)
+		 	at com.sun.tools.classfile.Dependencies$BasicDependencyFinder$Visitor.scan(Dependencies.java:590)
+		 	at com.sun.tools.classfile.Dependencies$ClassDependencyFinder.findDependencies(Dependencies.java:483)
+		 	at com.sun.tools.jdeps.JdepsTask.findDependencies(JdepsTask.java:543)
+		 	at com.sun.tools.jdeps.JdepsTask.run(JdepsTask.java:324)
+		 	at com.sun.tools.jdeps.JdepsTask.run(JdepsTask.java:306)
+		 	at com.sun.tools.jdeps.Main.main(Main.java:48)
+</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.scala-lang:scala-library:2.7.2-rc2">org.scala-lang:scala-library:2.7.2-rc2<a></th></tr>
+	<tr><td class="vdf" colspan="2">JDeps returned with exit code '1'.
+	 Executed command: /opt/java/jdk1.8.0_91/bin/jdeps -jdkinternals /home/parlog/.m2/repository/org/scala-lang/scala-library/2.7.2-rc2/scala-library-2.7.2-rc2.jar	 Error output:
+		 Exception in thread "main" java.lang.IllegalStateException: ()!<!A:Ljava/lang/Object;B:Ljava/lang/Object;>Lscala/collection/immutable/Tree<TA;TB;>;
+		 	at com.sun.tools.classfile.Signature.parseTypeSignature(Signature.java:180)
+		 	at com.sun.tools.classfile.Signature.parse(Signature.java:94)
+		 	at com.sun.tools.classfile.Signature.getType(Signature.java:48)
+		 	at com.sun.tools.classfile.Dependencies$BasicDependencyFinder$Visitor.scan(Dependencies.java:608)
+		 	at com.sun.tools.classfile.Dependencies$BasicDependencyFinder$Visitor.scan(Dependencies.java:590)
+		 	at com.sun.tools.classfile.Dependencies$ClassDependencyFinder.findDependencies(Dependencies.java:483)
+		 	at com.sun.tools.jdeps.JdepsTask.findDependencies(JdepsTask.java:543)
+		 	at com.sun.tools.jdeps.JdepsTask.run(JdepsTask.java:324)
+		 	at com.sun.tools.jdeps.JdepsTask.run(JdepsTask.java:306)
+		 	at com.sun.tools.jdeps.Main.main(Main.java:48)
+</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.scala-lang:scala-library:2.7.2-rc3">org.scala-lang:scala-library:2.7.2-rc3<a></th></tr>
+	<tr><td class="vdf" colspan="2">JDeps returned with exit code '1'.
+	 Executed command: /opt/java/jdk1.8.0_91/bin/jdeps -jdkinternals /home/parlog/.m2/repository/org/scala-lang/scala-library/2.7.2-rc3/scala-library-2.7.2-rc3.jar	 Error output:
+		 Exception in thread "main" java.lang.IllegalStateException: ()!<!A:Ljava/lang/Object;B:Ljava/lang/Object;>Lscala/collection/immutable/Tree<TA;TB;>;
+		 	at com.sun.tools.classfile.Signature.parseTypeSignature(Signature.java:180)
+		 	at com.sun.tools.classfile.Signature.parse(Signature.java:94)
+		 	at com.sun.tools.classfile.Signature.getType(Signature.java:48)
+		 	at com.sun.tools.classfile.Dependencies$BasicDependencyFinder$Visitor.scan(Dependencies.java:608)
+		 	at com.sun.tools.classfile.Dependencies$BasicDependencyFinder$Visitor.scan(Dependencies.java:590)
+		 	at com.sun.tools.classfile.Dependencies$ClassDependencyFinder.findDependencies(Dependencies.java:483)
+		 	at com.sun.tools.jdeps.JdepsTask.findDependencies(JdepsTask.java:543)
+		 	at com.sun.tools.jdeps.JdepsTask.run(JdepsTask.java:324)
+		 	at com.sun.tools.jdeps.JdepsTask.run(JdepsTask.java:306)
+		 	at com.sun.tools.jdeps.Main.main(Main.java:48)
+</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.slf4j:com.springsource.slf4j.api:1.5.0">org.slf4j:com.springsource.slf4j.api:1.5.0<a></th></tr>
@@ -3988,6 +8146,85 @@ fa-icon: question
 	<tr><td class="de1 de njd" colspan="2"><a href="#org.slf4j:slf4j-api:1.5.9.RC1">org.slf4j : slf4j-api : 1.5.9.RC1</a></td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.slf4j:log4j-over-slf4j:1.1.0-RC0">org.slf4j:log4j-over-slf4j:1.1.0-RC0<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.slf4j:log4j-over-slf4j:jar:1.1.0-RC0</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.slf4j:nlog4j:1.2.14">org.slf4j:nlog4j:1.2.14<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun.jmx:jmxri:1.2">com.sun.jmx : jmxri : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.sun.jdmk:jmxtools:1.2">com.sun.jdmk : jmxtools : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:2.0.2">xerces : xerces : 2.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.mail:mail:1.3.2">javax.mail : mail : 1.3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#checkstyle:checkstyle:2.2">checkstyle : checkstyle : 2.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.slf4j:nlog4j:1.2.17">org.slf4j:nlog4j:1.2.17<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun.jmx:jmxri:1.2">com.sun.jmx : jmxri : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.sun.jdmk:jmxtools:1.2">com.sun.jdmk : jmxtools : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:2.0.2">xerces : xerces : 2.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.mail:mail:1.3.2">javax.mail : mail : 1.3.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.slf4j:nlog4j:1.2.18">org.slf4j:nlog4j:1.2.18<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun.jmx:jmxri:1.2">com.sun.jmx : jmxri : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.sun.jdmk:jmxtools:1.2">com.sun.jdmk : jmxtools : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:2.0.2">xerces : xerces : 2.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.mail:mail:1.3.2">javax.mail : mail : 1.3.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.slf4j:nlog4j:1.2.19">org.slf4j:nlog4j:1.2.19<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun.jmx:jmxri:1.2">com.sun.jmx : jmxri : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.sun.jdmk:jmxtools:1.2">com.sun.jdmk : jmxtools : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:2.0.2">xerces : xerces : 2.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.mail:mail:1.3.2">javax.mail : mail : 1.3.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.slf4j:nlog4j:1.2.21">org.slf4j:nlog4j:1.2.21<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun.jmx:jmxri:1.2">com.sun.jmx : jmxri : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.sun.jdmk:jmxtools:1.2">com.sun.jdmk : jmxtools : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:2.0.2">xerces : xerces : 2.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.mail:mail:1.3.2">javax.mail : mail : 1.3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#checkstyle:checkstyle:2.2">checkstyle : checkstyle : 2.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.slf4j:nlog4j:1.2.23">org.slf4j:nlog4j:1.2.23<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun.jmx:jmxri:1.2">com.sun.jmx : jmxri : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.sun.jdmk:jmxtools:1.2">com.sun.jdmk : jmxtools : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:2.0.2">xerces : xerces : 2.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.mail:mail:1.3.2">javax.mail : mail : 1.3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#checkstyle:checkstyle:2.2">checkstyle : checkstyle : 2.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.slf4j:nlog4j:1.2.24">org.slf4j:nlog4j:1.2.24<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun.jmx:jmxri:1.2">com.sun.jmx : jmxri : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.sun.jdmk:jmxtools:1.2">com.sun.jdmk : jmxtools : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:2.0.2">xerces : xerces : 2.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.mail:mail:1.3.2">javax.mail : mail : 1.3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#checkstyle:checkstyle:2.2">checkstyle : checkstyle : 2.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.slf4j:nlog4j:1.2.25">org.slf4j:nlog4j:1.2.25<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#com.sun.jmx:jmxri:1.2">com.sun.jmx : jmxri : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#com.sun.jdmk:jmxtools:1.2">com.sun.jdmk : jmxtools : 1.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.activation:activation:1.0.2">javax.activation : activation : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.jms:jms:1.1">javax.jms : jms : 1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.mail:mail:1.3.2">javax.mail : mail : 1.3.2</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.slf4j:slf4j-api:1.1.0-RC0">org.slf4j:slf4j-api:1.1.0-RC0<a></th></tr>
 	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.slf4j:slf4j-api:jar:1.1.0-RC0</td></tr>
 </table>
@@ -4004,8 +8241,24 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.slf4j:slf4j-api:jar:[1.7.5,1.7.6),[1.7.50,1.7.60),[1.7.500,1.7.600),[1.7.5000,1.7.6000),[1.7.50000,1.7.60000) in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.slf4j:slf4j-jcl:1.1.0-RC0">org.slf4j:slf4j-jcl:1.1.0-RC0<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.slf4j:slf4j-jcl:jar:1.1.0-RC0</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.slf4j:slf4j-jdk14:1.1.0-RC0">org.slf4j:slf4j-jdk14:1.1.0-RC0<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.slf4j:slf4j-jdk14:jar:1.1.0-RC0</td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.slf4j:slf4j-log4j12:1.1.0-RC0">org.slf4j:slf4j-log4j12:1.1.0-RC0<a></th></tr>
 	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.slf4j:slf4j-log4j12:jar:1.1.0-RC0</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.slf4j:slf4j-nop:1.1.0-RC0">org.slf4j:slf4j-nop:1.1.0-RC0<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.slf4j:slf4j-nop:jar:1.1.0-RC0</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.slf4j:slf4j-simple:1.1.0-RC0">org.slf4j:slf4j-simple:1.1.0-RC0<a></th></tr>
+	<tr><td class="def" colspan="2">Failed to read artifact descriptor for org.slf4j:slf4j-simple:jar:1.1.0-RC0</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework:org.springframework.aop:2.5.6.A">org.springframework:org.springframework.aop:2.5.6.A<a></th></tr>
@@ -4092,6 +8345,66 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework:spring-beans:jar:1.0.1 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-beans:2.0">org.springframework:spring-beans:2.0<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1">commons-logging : commons-logging : 1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.0">org.springframework : spring-core : 2.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#cglib:cglib-nodep:2.1_3">cglib : cglib-nodep : 2.1_3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-beans:2.0.1">org.springframework:spring-beans:2.0.1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1">commons-logging : commons-logging : 1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.0.1">org.springframework : spring-core : 2.0.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#cglib:cglib-nodep:2.1_3">cglib : cglib-nodep : 2.1_3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-beans:2.0.2">org.springframework:spring-beans:2.0.2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1">commons-logging : commons-logging : 1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.0.2">org.springframework : spring-core : 2.0.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#cglib:cglib-nodep:2.1_3">cglib : cglib-nodep : 2.1_3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-beans:2.0.3">org.springframework:spring-beans:2.0.3<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1">commons-logging : commons-logging : 1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.0.3">org.springframework : spring-core : 2.0.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#cglib:cglib-nodep:2.1_3">cglib : cglib-nodep : 2.1_3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-beans:2.5.4">org.springframework:spring-beans:2.5.4<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.5.4">org.springframework : spring-core : 2.5.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#cglib:cglib-nodep:2.1_3">cglib : cglib-nodep : 2.1_3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-beans:2.5.5">org.springframework:spring-beans:2.5.5<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.5.5">org.springframework : spring-core : 2.5.5</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#cglib:cglib-nodep:2.1_3">cglib : cglib-nodep : 2.1_3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-beans:2.5.6">org.springframework:spring-beans:2.5.6<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.5.6">org.springframework : spring-core : 2.5.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#cglib:cglib-nodep:2.1_3">cglib : cglib-nodep : 2.1_3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-beans:2.5.6.SEC01">org.springframework:spring-beans:2.5.6.SEC01<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.5.6.SEC01">org.springframework : spring-core : 2.5.6.SEC01</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#cglib:cglib-nodep:2.1_3">cglib : cglib-nodep : 2.1_3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-beans:2.5.6.SEC02">org.springframework:spring-beans:2.5.6.SEC02<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.5.6.SEC02">org.springframework : spring-core : 2.5.6.SEC02</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#cglib:cglib-nodep:2.1_3">cglib : cglib-nodep : 2.1_3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-beans:2.5.6.SEC03">org.springframework:spring-beans:2.5.6.SEC03<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#cglib:cglib-nodep:2.1_3">cglib : cglib-nodep : 2.1_3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.5.6.SEC03">org.springframework : spring-core : 2.5.6.SEC03</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-beans:3.0.0.RC1">org.springframework:spring-beans:3.0.0.RC1<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework:spring-beans:jar:3.0.0.RC1 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -4124,12 +8437,220 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework:spring-context-support:jar:3.0.0.RC3 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:2.0">org.springframework:spring-core:2.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#asm:asm-util:2.2.2">asm : asm-util : 2.2.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm:2.2.2">asm : asm : 2.2.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1">commons-logging : commons-logging : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.13">log4j : log4j : 1.2.13</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-commons:2.2.2">asm : asm-commons : 2.2.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:2.0.1">org.springframework:spring-core:2.0.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#asm:asm-util:2.2.2">asm : asm-util : 2.2.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm:2.2.2">asm : asm : 2.2.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1">commons-logging : commons-logging : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.13">log4j : log4j : 1.2.13</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-commons:2.2.2">asm : asm-commons : 2.2.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:2.0.2">org.springframework:spring-core:2.0.2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#asm:asm-util:2.2.2">asm : asm-util : 2.2.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm:2.2.2">asm : asm : 2.2.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1">commons-logging : commons-logging : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.13">log4j : log4j : 1.2.13</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-commons:2.2.2">asm : asm-commons : 2.2.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:2.0.3">org.springframework:spring-core:2.0.3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#asm:asm-util:2.2.2">asm : asm-util : 2.2.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm:2.2.2">asm : asm : 2.2.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1">commons-logging : commons-logging : 1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.13">log4j : log4j : 1.2.13</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-commons:2.2.2">asm : asm-commons : 2.2.2</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:2.5.4">org.springframework:spring-core:2.5.4<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-commons:2.2.3">asm : asm-commons : 2.2.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-util:2.2.3">asm : asm-util : 2.2.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#backport-util-concurrent:backport-util-concurrent:3.0">backport-util-concurrent : backport-util-concurrent : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm:2.2.3">asm : asm : 2.2.3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:2.5.5">org.springframework:spring-core:2.5.5<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-commons:2.2.3">asm : asm-commons : 2.2.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-util:2.2.3">asm : asm-util : 2.2.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#backport-util-concurrent:backport-util-concurrent:3.0">backport-util-concurrent : backport-util-concurrent : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm:2.2.3">asm : asm : 2.2.3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:2.5.6">org.springframework:spring-core:2.5.6<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-commons:2.2.3">asm : asm-commons : 2.2.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-util:2.2.3">asm : asm-util : 2.2.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#backport-util-concurrent:backport-util-concurrent:3.0">backport-util-concurrent : backport-util-concurrent : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm:2.2.3">asm : asm : 2.2.3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:2.5.6.SEC01">org.springframework:spring-core:2.5.6.SEC01<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-commons:2.2.3">asm : asm-commons : 2.2.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-util:2.2.3">asm : asm-util : 2.2.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#backport-util-concurrent:backport-util-concurrent:3.0">backport-util-concurrent : backport-util-concurrent : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm:2.2.3">asm : asm : 2.2.3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:2.5.6.SEC02">org.springframework:spring-core:2.5.6.SEC02<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-commons:2.2.3">asm : asm-commons : 2.2.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-util:2.2.3">asm : asm-util : 2.2.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#backport-util-concurrent:backport-util-concurrent:3.0">backport-util-concurrent : backport-util-concurrent : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm:2.2.3">asm : asm : 2.2.3</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:2.5.6.SEC03">org.springframework:spring-core:2.5.6.SEC03<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-commons:2.2.3">asm : asm-commons : 2.2.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm-util:2.2.3">asm : asm-util : 2.2.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#backport-util-concurrent:backport-util-concurrent:3.0">backport-util-concurrent : backport-util-concurrent : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#asm:asm:2.2.3">asm : asm : 2.2.3</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.0.0.RC1">org.springframework:spring-core:3.0.0.RC1<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework:spring-core:jar:3.0.0.RC1 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.0.0.RC3">org.springframework:spring-core:3.0.0.RC3<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework:spring-core:jar:3.0.0.RC3 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.0.0.RELEASE">org.springframework:spring-core:3.0.0.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.vfs:com.springsource.org.jboss.virtual:2.1.0.GA">org.jboss.vfs : com.springsource.org.jboss.virtual : 2.1.0.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework:spring-asm:3.0.0.RELEASE">org.springframework : spring-asm : 3.0.0.RELEASE</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.aspectj:aspectjweaver:1.6.5">org.aspectj : aspectjweaver : 1.6.5</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.0.1.RELEASE">org.springframework:spring-core:3.0.1.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.vfs:com.springsource.org.jboss.virtual:2.1.0.GA">org.jboss.vfs : com.springsource.org.jboss.virtual : 2.1.0.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.aspectj:aspectjweaver:1.6.8">org.aspectj : aspectjweaver : 1.6.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework:spring-asm:3.0.1.RELEASE">org.springframework : spring-asm : 3.0.1.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.0.2.RELEASE">org.springframework:spring-core:3.0.2.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.jboss.vfs:com.springsource.org.jboss.virtual:2.1.0.GA">org.jboss.vfs : com.springsource.org.jboss.virtual : 2.1.0.GA</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework:spring-asm:3.0.2.RELEASE">org.springframework : spring-asm : 3.0.2.RELEASE</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.aspectj:aspectjweaver:1.6.8">org.aspectj : aspectjweaver : 1.6.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.0.3.RELEASE">org.springframework:spring-core:3.0.3.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.aspectj:aspectjweaver:1.6.8">org.aspectj : aspectjweaver : 1.6.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework:spring-asm:3.0.3.RELEASE">org.springframework : spring-asm : 3.0.3.RELEASE</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.0.4.RELEASE">org.springframework:spring-core:3.0.4.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework:spring-asm:3.0.4.RELEASE">org.springframework : spring-asm : 3.0.4.RELEASE</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.aspectj:aspectjweaver:1.6.8">org.aspectj : aspectjweaver : 1.6.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.0.5.RELEASE">org.springframework:spring-core:3.0.5.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.aspectj:aspectjweaver:1.6.8">org.aspectj : aspectjweaver : 1.6.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework:spring-asm:3.0.5.RELEASE">org.springframework : spring-asm : 3.0.5.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.0.6.RELEASE">org.springframework:spring-core:3.0.6.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework:spring-asm:3.0.6.RELEASE">org.springframework : spring-asm : 3.0.6.RELEASE</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.aspectj:aspectjweaver:1.6.8">org.aspectj : aspectjweaver : 1.6.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.0.7.RELEASE">org.springframework:spring-core:3.0.7.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.aspectj:aspectjweaver:1.6.8">org.aspectj : aspectjweaver : 1.6.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework:spring-asm:3.0.7.RELEASE">org.springframework : spring-asm : 3.0.7.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.1.0.RELEASE">org.springframework:spring-core:3.1.0.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#net.sf.jopt-simple:jopt-simple:3.0">net.sf.jopt-simple : jopt-simple : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework:spring-asm:3.1.0.RELEASE">org.springframework : spring-asm : 3.1.0.RELEASE</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.aspectj:aspectjweaver:1.6.8">org.aspectj : aspectjweaver : 1.6.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.1.1.RELEASE">org.springframework:spring-core:3.1.1.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#net.sf.jopt-simple:jopt-simple:3.0">net.sf.jopt-simple : jopt-simple : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.aspectj:aspectjweaver:1.6.8">org.aspectj : aspectjweaver : 1.6.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework:spring-asm:3.1.1.RELEASE">org.springframework : spring-asm : 3.1.1.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.1.2.RELEASE">org.springframework:spring-core:3.1.2.RELEASE<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#org.springframework:spring-asm:3.1.2.RELEASE">org.springframework : spring-asm : 3.1.2.RELEASE</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#net.sf.jopt-simple:jopt-simple:3.0">net.sf.jopt-simple : jopt-simple : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.aspectj:aspectjweaver:1.6.8">org.aspectj : aspectjweaver : 1.6.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.1.3.RELEASE">org.springframework:spring-core:3.1.3.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#net.sf.jopt-simple:jopt-simple:3.0">net.sf.jopt-simple : jopt-simple : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.aspectj:aspectjweaver:1.6.8">org.aspectj : aspectjweaver : 1.6.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework:spring-asm:3.1.3.RELEASE">org.springframework : spring-asm : 3.1.3.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:3.1.4.RELEASE">org.springframework:spring-core:3.1.4.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#log4j:log4j:1.2.15">log4j : log4j : 1.2.15</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-collections:commons-collections:3.2">commons-collections : commons-collections : 3.2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#net.sf.jopt-simple:jopt-simple:3.0">net.sf.jopt-simple : jopt-simple : 3.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework:spring-asm:3.1.4.RELEASE">org.springframework : spring-asm : 3.1.4.RELEASE</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.aspectj:aspectjweaver:1.6.8">org.aspectj : aspectjweaver : 1.6.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-core:[3.0.7.RELEASE, 4.0.0.RELEASE)">org.springframework:spring-core:[3.0.7.RELEASE, 4.0.0.RELEASE)<a></th></tr>
@@ -4142,6 +8663,58 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.0.0.RC3">org.springframework:spring-expression:3.0.0.RC3<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework:spring-expression:jar:3.0.0.RC3 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.0.0.RELEASE">org.springframework:spring-expression:3.0.0.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.0.0.RELEASE">org.springframework : spring-core : 3.0.0.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.0.1.RELEASE">org.springframework:spring-expression:3.0.1.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.0.1.RELEASE">org.springframework : spring-core : 3.0.1.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.0.2.RELEASE">org.springframework:spring-expression:3.0.2.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.0.2.RELEASE">org.springframework : spring-core : 3.0.2.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.0.3.RELEASE">org.springframework:spring-expression:3.0.3.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.0.3.RELEASE">org.springframework : spring-core : 3.0.3.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.0.4.RELEASE">org.springframework:spring-expression:3.0.4.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.0.4.RELEASE">org.springframework : spring-core : 3.0.4.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.0.5.RELEASE">org.springframework:spring-expression:3.0.5.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.0.5.RELEASE">org.springframework : spring-core : 3.0.5.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.0.6.RELEASE">org.springframework:spring-expression:3.0.6.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.0.6.RELEASE">org.springframework : spring-core : 3.0.6.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.0.7.RELEASE">org.springframework:spring-expression:3.0.7.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.0.7.RELEASE">org.springframework : spring-core : 3.0.7.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.1.0.RELEASE">org.springframework:spring-expression:3.1.0.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.1.0.RELEASE">org.springframework : spring-core : 3.1.0.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.1.1.RELEASE">org.springframework:spring-expression:3.1.1.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.1.1.RELEASE">org.springframework : spring-core : 3.1.1.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.1.2.RELEASE">org.springframework:spring-expression:3.1.2.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.1.2.RELEASE">org.springframework : spring-core : 3.1.2.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.1.3.RELEASE">org.springframework:spring-expression:3.1.3.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.1.3.RELEASE">org.springframework : spring-core : 3.1.3.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:3.1.4.RELEASE">org.springframework:spring-expression:3.1.4.RELEASE<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.1.4.RELEASE">org.springframework : spring-core : 3.1.4.RELEASE</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-expression:[3.0.7.RELEASE, 4.0.0.RELEASE)">org.springframework:spring-expression:[3.0.7.RELEASE, 4.0.0.RELEASE)<a></th></tr>
@@ -4174,6 +8747,14 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-jms:3.0.0.RC3">org.springframework:spring-jms:3.0.0.RC3<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework:spring-jms:jar:3.0.0.RC3 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-mock:2.0-rc3">org.springframework:spring-mock:2.0-rc3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-jdbc:2.0-rc3">org.springframework : spring-jdbc : 2.0-rc3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.servlet:jsp-api:2.0">javax.servlet : jsp-api : 2.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:3.8.1">junit : junit : 3.8.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-webmvc:2.0-rc3">org.springframework : spring-webmvc : 2.0-rc3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.portlet:portlet-api:1.0">javax.portlet : portlet-api : 1.0</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework:spring-orm:3.0.0.RC1">org.springframework:spring-orm:3.0.0.RC1<a></th></tr>
@@ -4252,12 +8833,94 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework.data.build:spring-data-java8-stub:jar:1.4.0.RC1 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.ldap:spring-ldap:1.3.0.RELEASE">org.springframework.ldap:spring-ldap:1.3.0.RELEASE<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework.ldap:spring-ldap:jar:1.3.0.RELEASE in central (http://repo1.maven.org/maven2/)</td></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:2.5.6">org.springframework : spring-core : 2.5.6</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.ldap:spring-ldap:1.3.1.RELEASE">org.springframework.ldap:spring-ldap:1.3.1.RELEASE<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework.ldap:spring-ldap:jar:1.3.1.RELEASE in central (http://repo1.maven.org/maven2/)</td></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:spring-core:3.0.5.RELEASE">org.springframework : spring-core : 3.0.5.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework.osgi:aopalliance.osgi:1.0-SNAPSHOT">org.springframework.osgi:aopalliance.osgi:1.0-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework.osgi:aopalliance.osgi:jar:1.0-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework.osgi:backport-util-concurrent.osgi:3.1-SNAPSHOT">org.springframework.osgi:backport-util-concurrent.osgi:3.1-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework.osgi:backport-util-concurrent.osgi:jar:3.1-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.osgi:spring-osgi-core:1.2.0">org.springframework.osgi:spring-osgi-core:1.2.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:org.springframework.context:2.5.6.A">org.springframework : org.springframework.context : 2.5.6.A</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#edu.emory.mathcs.backport:com.springsource.edu.emory.mathcs.backport:3.1.0">edu.emory.mathcs.backport : com.springsource.edu.emory.mathcs.backport : 3.1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:org.springframework.core:2.5.6.A">org.springframework : org.springframework.core : 2.5.6.A</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:org.springframework.beans:2.5.6.A">org.springframework : org.springframework.beans : 2.5.6.A</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:org.springframework.test:2.5.6.A">org.springframework : org.springframework.test : 2.5.6.A</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:org.springframework.aop:2.5.6.A">org.springframework : org.springframework.aop : 2.5.6.A</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.org.apache.commons.logging:1.5.0">org.slf4j : com.springsource.slf4j.org.apache.commons.logging : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework.osgi:spring-osgi-io:1.2.0">org.springframework.osgi : spring-osgi-io : 1.2.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.osgi:osgi_R4_compendium:1.0">org.osgi : osgi_R4_compendium : 1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.aopalliance:com.springsource.org.aopalliance:1.0.0">org.aopalliance : com.springsource.org.aopalliance : 1.0.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.log4j:1.5.0">org.slf4j : com.springsource.slf4j.log4j : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.api:1.5.0">org.slf4j : com.springsource.slf4j.api : 1.5.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.osgi:spring-osgi-core:1.2.1">org.springframework.osgi:spring-osgi-core:1.2.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#edu.emory.mathcs.backport:com.springsource.edu.emory.mathcs.backport:3.1.0">edu.emory.mathcs.backport : com.springsource.edu.emory.mathcs.backport : 3.1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:org.springframework.aop:2.5.6.SEC01">org.springframework : org.springframework.aop : 2.5.6.SEC01</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:org.springframework.beans:2.5.6.SEC01">org.springframework : org.springframework.beans : 2.5.6.SEC01</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:org.springframework.context:2.5.6.SEC01">org.springframework : org.springframework.context : 2.5.6.SEC01</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:org.springframework.core:2.5.6.SEC01">org.springframework : org.springframework.core : 2.5.6.SEC01</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.org.apache.commons.logging:1.5.0">org.slf4j : com.springsource.slf4j.org.apache.commons.logging : 1.5.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.osgi:osgi_R4_compendium:1.0">org.osgi : osgi_R4_compendium : 1.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.aopalliance:com.springsource.org.aopalliance:1.0.0">org.aopalliance : com.springsource.org.aopalliance : 1.0.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework.osgi:spring-osgi-io:1.2.1">org.springframework.osgi : spring-osgi-io : 1.2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.log4j:1.5.0">org.slf4j : com.springsource.slf4j.log4j : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:org.springframework.test:2.5.6.SEC01">org.springframework : org.springframework.test : 2.5.6.SEC01</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.api:1.5.0">org.slf4j : com.springsource.slf4j.api : 1.5.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.osgi:spring-osgi-io:1.1.0">org.springframework.osgi:spring-osgi-io:1.1.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.org.apache.commons.logging:1.5.0">org.slf4j : com.springsource.slf4j.org.apache.commons.logging : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.5.5">org.springframework : spring-core : 2.5.5</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.log4j:1.5.0">org.slf4j : com.springsource.slf4j.log4j : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.api:1.5.0">org.slf4j : com.springsource.slf4j.api : 1.5.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.osgi:spring-osgi-io:1.1.1">org.springframework.osgi:spring-osgi-io:1.1.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.org.apache.commons.logging:1.5.0">org.slf4j : com.springsource.slf4j.org.apache.commons.logging : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.5.5">org.springframework : spring-core : 2.5.5</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.log4j:1.5.0">org.slf4j : com.springsource.slf4j.log4j : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.api:1.5.0">org.slf4j : com.springsource.slf4j.api : 1.5.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.osgi:spring-osgi-io:1.1.2">org.springframework.osgi:spring-osgi-io:1.1.2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.org.apache.commons.logging:1.5.0">org.slf4j : com.springsource.slf4j.org.apache.commons.logging : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.5.5">org.springframework : spring-core : 2.5.5</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.log4j:1.5.0">org.slf4j : com.springsource.slf4j.log4j : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.api:1.5.0">org.slf4j : com.springsource.slf4j.api : 1.5.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.osgi:spring-osgi-io:1.1.3">org.springframework.osgi:spring-osgi-io:1.1.3<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.org.apache.commons.logging:1.5.0">org.slf4j : com.springsource.slf4j.org.apache.commons.logging : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:2.5.5">org.springframework : spring-core : 2.5.5</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.log4j:1.5.0">org.slf4j : com.springsource.slf4j.log4j : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.api:1.5.0">org.slf4j : com.springsource.slf4j.api : 1.5.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.osgi:spring-osgi-io:1.2.0">org.springframework.osgi:spring-osgi-io:1.2.0<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:org.springframework.core:2.5.6.A">org.springframework : org.springframework.core : 2.5.6.A</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.org.apache.commons.logging:1.5.0">org.slf4j : com.springsource.slf4j.org.apache.commons.logging : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.log4j:1.5.0">org.slf4j : com.springsource.slf4j.log4j : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.api:1.5.0">org.slf4j : com.springsource.slf4j.api : 1.5.0</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.osgi:spring-osgi-io:1.2.1">org.springframework.osgi:spring-osgi-io:1.2.1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#org.springframework:org.springframework.core:2.5.6.SEC01">org.springframework : org.springframework.core : 2.5.6.SEC01</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.org.apache.commons.logging:1.5.0">org.slf4j : com.springsource.slf4j.org.apache.commons.logging : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.log4j:1.5.0">org.slf4j : com.springsource.slf4j.log4j : 1.5.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.slf4j:com.springsource.slf4j.api:1.5.0">org.slf4j : com.springsource.slf4j.api : 1.5.0</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework.roo:org.springframework.roo.addon.configurable:2.0.0.M2">org.springframework.roo:org.springframework.roo.addon.configurable:2.0.0.M2<a></th></tr>
@@ -4290,6 +8953,34 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework.roo:org.springframework.roo.annotations:1.2.3.RELEASE">org.springframework.roo:org.springframework.roo.annotations:1.2.3.RELEASE<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework.roo:org.springframework.roo.annotations:jar:1.2.3.RELEASE in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.roo:org.springframework.roo.uaa:1.3.1.RC1">org.springframework.roo:org.springframework.roo.uaa:1.3.1.RC1<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-io:commons-io:2.4">commons-io : commons-io : 2.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework.roo:org.springframework.roo.shell:1.3.1.RC1">org.springframework.roo : org.springframework.roo.shell : 1.3.1.RC1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework.uaa:org.springframework.uaa.client:1.0.2.RELEASE">org.springframework.uaa : org.springframework.uaa.client : 1.0.2.RELEASE</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-codec:commons-codec:1.8">commons-codec : commons-codec : 1.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.felix:org.apache.felix.scr.annotations:1.9.8">org.apache.felix : org.apache.felix.scr.annotations : 1.9.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework.roo:org.springframework.roo.metadata:1.3.1.RC1">org.springframework.roo : org.springframework.roo.metadata : 1.3.1.RC1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework.roo:org.springframework.roo.support.osgi:1.3.1.RC1">org.springframework.roo : org.springframework.roo.support.osgi : 1.3.1.RC1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.osgi:org.osgi.compendium:5.0.0">org.osgi : org.osgi.compendium : 5.0.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.osgi:org.osgi.core:5.0.0">org.osgi : org.osgi.core : 5.0.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.commons:commons-lang3:3.1">org.apache.commons : commons-lang3 : 3.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework.roo:org.springframework.roo.support:1.3.1.RC1">org.springframework.roo : org.springframework.roo.support : 1.3.1.RC1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.roo:org.springframework.roo.uaa:1.3.1.RC2">org.springframework.roo:org.springframework.roo.uaa:1.3.1.RC2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-io:commons-io:2.4">commons-io : commons-io : 2.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework.uaa:org.springframework.uaa.client:1.0.2.RELEASE">org.springframework.uaa : org.springframework.uaa.client : 1.0.2.RELEASE</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-codec:commons-codec:1.8">commons-codec : commons-codec : 1.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework.roo:org.springframework.roo.metadata:1.3.1.RC2">org.springframework.roo : org.springframework.roo.metadata : 1.3.1.RC2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.felix:org.apache.felix.scr.annotations:1.9.8">org.apache.felix : org.apache.felix.scr.annotations : 1.9.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework.roo:org.springframework.roo.support.osgi:1.3.1.RC2">org.springframework.roo : org.springframework.roo.support.osgi : 1.3.1.RC2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.osgi:org.osgi.compendium:5.0.0">org.osgi : org.osgi.compendium : 5.0.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.osgi:org.osgi.core:5.0.0">org.osgi : org.osgi.core : 5.0.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework.roo:org.springframework.roo.support:1.3.1.RC2">org.springframework.roo : org.springframework.roo.support : 1.3.1.RC2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.apache.commons:commons-lang3:3.1">org.apache.commons : commons-lang3 : 3.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#org.springframework.roo:org.springframework.roo.shell:1.3.1.RC2">org.springframework.roo : org.springframework.roo.shell : 1.3.1.RC2</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework.roo.wrapping:org.springframework.roo.wrapping.antlr4-runtime:4.3.002">org.springframework.roo.wrapping:org.springframework.roo.wrapping.antlr4-runtime:4.3.002<a></th></tr>
@@ -4346,6 +9037,26 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework.roo.wrapping:org.springframework.roo.wrapping.snakeyaml:1.15.001">org.springframework.roo.wrapping:org.springframework.roo.wrapping.snakeyaml:1.15.001<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.springframework.roo.wrapping:org.springframework.roo.wrapping.snakeyaml:jar:1.15.001 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.security:spring-security-crypto:3.1.3.RELEASE">org.springframework.security:spring-security-crypto:3.1.3.RELEASE<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:3.0.7.RELEASE">org.springframework : spring-core : 3.0.7.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.security:spring-security-crypto:3.1.5.RELEASE">org.springframework.security:spring-security-crypto:3.1.5.RELEASE<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:3.0.7.RELEASE">org.springframework : spring-core : 3.0.7.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.security:spring-security-crypto:3.1.6.RELEASE">org.springframework.security:spring-security-crypto:3.1.6.RELEASE<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:3.0.7.RELEASE">org.springframework : spring-core : 3.0.7.RELEASE</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.springframework.security:spring-security-crypto:3.1.7.RELEASE">org.springframework.security:spring-security-crypto:3.1.7.RELEASE<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.1.1">commons-logging : commons-logging : 1.1.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#org.springframework:spring-core:3.0.7.RELEASE">org.springframework : spring-core : 3.0.7.RELEASE</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.springframework.security3:spring-security-core:3.0.0.RELEASE">org.springframework.security3:spring-security-core:3.0.0.RELEASE<a></th></tr>
@@ -4512,6 +9223,11 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact org.testng:guice:jar:2.0 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="org.uncommons.maths:uncommons-maths:1.2.2">org.uncommons.maths:uncommons-maths:1.2.2<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#jfree:jfreechart:1.0.8">jfree : jfreechart : 1.0.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#jfree:jcommon:1.0.12">jfree : jcommon : 1.0.12</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="org.wildfly.security:wildfly-elytron:1.1.0.Beta7-SNAPSHOT">org.wildfly.security:wildfly-elytron:1.1.0.Beta7-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact org.wildfly.security:wildfly-elytron:jar:1.1.0.Beta7-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -4548,8 +9264,55 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact picocontainer:picocontainer-tck:jar:${picocontainer.version} in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="picocontainer:picocontainer-tck:1.2-RC-1">picocontainer:picocontainer-tck:1.2-RC-1<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#picocontainer:picocontainer:${picocontainer.version}">picocontainer : picocontainer : ${picocontainer.version}</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="plexus:plexus:0.14">plexus:plexus:0.14<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#asm:asm:1.3.4">asm : asm : 1.3.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xpp3:xpp3:1.1.3.3">xpp3 : xpp3 : 1.1.3.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#classworlds:classworlds:1.1-SNAPSHOT">classworlds : classworlds : 1.1-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xstream:xstream:1.0-SNAPSHOT">xstream : xstream : 1.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:3.8.1">junit : junit : 3.8.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="plexus:plexus:0.16">plexus:plexus:0.16<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#asm:asm:1.3.4">asm : asm : 1.3.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#maven:wagon-api:1.0-alpha-1-SNAPSHOT">maven : wagon-api : 1.0-alpha-1-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#maven:maven-artifact:2.0-SNAPSHOT">maven : maven-artifact : 2.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xpp3:xpp3:1.1.3.3">xpp3 : xpp3 : 1.1.3.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#classworlds:classworlds:1.1-SNAPSHOT">classworlds : classworlds : 1.1-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xstream:xstream:1.0-SNAPSHOT">xstream : xstream : 1.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:3.8.1">junit : junit : 3.8.1</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="plexus:plexus:0.17">plexus:plexus:0.17<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#asm:asm:1.3.4">asm : asm : 1.3.4</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xpp3:xpp3:1.1.3.3">xpp3 : xpp3 : 1.1.3.3</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#classworlds:classworlds:1.1-SNAPSHOT">classworlds : classworlds : 1.1-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xstream:xstream:1.0-SNAPSHOT">xstream : xstream : 1.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:3.8.1">junit : junit : 3.8.1</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="plexus:plexus:0.17-SNAPSHOT">plexus:plexus:0.17-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact plexus:plexus:jar:0.17-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="plexus:plexus:0.2">plexus:plexus:0.2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#classworlds:classworlds:1.0-beta-1">classworlds : classworlds : 1.0-beta-1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#servletapi:servletapi:2.3">servletapi : servletapi : 2.3</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#excalibur-component:excalibur-component:1.0">excalibur-component : excalibur-component : 1.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xalan:xalan:2.3.1">xalan : xalan : 2.3.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-logging:commons-logging:1.0.2">commons-logging : commons-logging : 1.0.2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#commons-io:commons-io:SNAPSHOT">commons-io : commons-io : SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#commons-lang:commons-lang:SNAPSHOT">commons-lang : commons-lang : SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#junit:junit:3.8">junit : junit : 3.8</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xml-apis:xml-apis:1.0.b2">xml-apis : xml-apis : 1.0.b2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#excalibur-logger:excalibur-logger:1.0">excalibur-logger : excalibur-logger : 1.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#ant:ant:1.5">ant : ant : 1.5</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#avalon-framework:avalon-framework:4.0">avalon-framework : avalon-framework : 4.0</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#log4j:log4j:1.2.6">log4j : log4j : 1.2.6</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xerces:2.0.2">xerces : xerces : 2.0.2</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="plexus:plexus-container-api:1.0-alpha-1-SNAPSHOT">plexus:plexus-container-api:1.0-alpha-1-SNAPSHOT<a></th></tr>
@@ -4562,6 +9325,12 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="plexus:plexus-container-default:1.0-alpha-3-SNAPSHOT">plexus:plexus-container-default:1.0-alpha-3-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact plexus:plexus-container-default:jar:1.0-alpha-3-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="plexus:plexus-marmalade-factory:1.0-alpha-2">plexus:plexus-marmalade-factory:1.0-alpha-2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#plexus:plexus-utils:1.0-alpha-2">plexus : plexus-utils : 1.0-alpha-2</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#plexus:plexus-container-default:1.0-alpha-3-SNAPSHOT">plexus : plexus-container-default : 1.0-alpha-3-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#marmalade:marmalade-core:1.0-alpha2">marmalade : marmalade-core : 1.0-alpha2</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="plexus:plexus-servlet:1.0-beta-2-SNAPSHOT">plexus:plexus-servlet:1.0-beta-2-SNAPSHOT<a></th></tr>
@@ -4582,6 +9351,17 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="qfork:qfork:1.7-SNAPSHOT">qfork:qfork:1.7-SNAPSHOT<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact qfork:qfork:jar:1.7-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="quartz:quartz:1.5.2">quartz:quartz:1.5.2<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#commons-logging:commons-logging:1.0.4">commons-logging : commons-logging : 1.0.4</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.ejb:ejb:2.1">javax.ejb : ejb : 2.1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.mail:mail:1.3.3_01">javax.mail : mail : 1.3.3_01</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-digester:commons-digester:1.7">commons-digester : commons-digester : 1.7</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#commons-dbcp:commons-dbcp:1.2.1">commons-dbcp : commons-dbcp : 1.2.1</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#commons-beanutils:commons-beanutils-bean-collections:1.7.0">commons-beanutils : commons-beanutils-bean-collections : 1.7.0</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#javax.transaction:jta:1.0.1b">javax.transaction : jta : 1.0.1b</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#javax.servlet:servlet-api:2.4">javax.servlet : servlet-api : 2.4</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="quartz:quartz:1.6.0">quartz:quartz:1.6.0<a></th></tr>
@@ -4793,6 +9573,10 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="rubygems:test-unit:3.1.1">rubygems:test-unit:3.1.1<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact rubygems:test-unit:jar:3.1.1 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="sigar:sigar:1.6.4">sigar:sigar:1.6.4<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact sigar:sigar:jar:1.6.4 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="stax:stax:${stax_version}">stax:stax:${stax_version}<a></th></tr>
@@ -5023,6 +9807,11 @@ fa-icon: question
 	<tr><td class="vdf" colspan="2">Could not find artifact xfire:xfire-aegis:jar:1.0-SNAPSHOT in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="xfire:xfire-aegis:20050103.051706">xfire:xfire-aegis:20050103.051706<a></th></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#xfire:xfire-java:1.0-SNAPSHOT">xfire : xfire-java : 1.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#janino:janino:2.0.16">janino : janino : 2.0.16</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="xfire:xfire-annotations:1.0">xfire:xfire-annotations:1.0<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact xfire:xfire-annotations:jar:1.0 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
@@ -5067,8 +9856,42 @@ fa-icon: question
 	<tr><td class="de njd" colspan="2"><a href="#xerces:xercesImpl:2.6.2">xerces : xercesImpl : 2.6.2</a></td></tr>
 </table>
 <table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="xfire:xfire-java:20050103.051645">xfire:xfire-java:20050103.051645<a></th></tr>
+	<tr><td class="de1 de njd" colspan="2"><a href="#ognl:ognl:2.6.5">ognl : ognl : 2.6.5</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xfire:xfire:1.0-SNAPSHOT">xfire : xfire : 1.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xerces:xercesImpl:2.6.2">xerces : xercesImpl : 2.6.2</a></td></tr>
+</table>
+<table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="xfire:xfire-plexus:1.0">xfire:xfire-plexus:1.0<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact xfire:xfire-plexus:jar:1.0 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="xfire:xfire-plexus:20041222.041116">xfire:xfire-plexus:20041222.041116<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact xfire:xfire-plexus:jar:20041222.041116 in central (http://repo1.maven.org/maven2/)</td></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#xfire:xmlbeans:2.0-SNAPSHOT">xfire : xmlbeans : 2.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#plexus:plexus-servlet:1.0-beta-2-SNAPSHOT">plexus : plexus-servlet : 1.0-beta-2-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xfire:xfire-java:1.0-SNAPSHOT">xfire : xfire-java : 1.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xmlbeans:xmlbeans-xmlpublic:2.0-dev-2">xmlbeans : xmlbeans-xmlpublic : 2.0-dev-2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#classworlds:classworlds:1.1-alpha-1">classworlds : classworlds : 1.1-alpha-1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xfire:xfire:1.0-SNAPSHOT">xfire : xfire : 1.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xfire:xfire-xmlbeans:1.0-SNAPSHOT">xfire : xfire-xmlbeans : 1.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#plexus:plexus-utils:1.0-alpha-1-SNAPSHOT">plexus : plexus-utils : 1.0-alpha-1-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#plexus:plexus-container-api:1.0-alpha-1-SNAPSHOT">plexus : plexus-container-api : 1.0-alpha-1-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#plexus:plexus-container-default:1.0-alpha-1-SNAPSHOT">plexus : plexus-container-default : 1.0-alpha-1-SNAPSHOT</a></td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="xfire:xfire-plexus:20041222.042650">xfire:xfire-plexus:20041222.042650<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact xfire:xfire-plexus:jar:20041222.042650 in central (http://repo1.maven.org/maven2/)</td></tr>
+	<tr><td class="de1 de ujd" colspan="2"><a href="#xfire:xmlbeans:2.0-SNAPSHOT">xfire : xmlbeans : 2.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#plexus:plexus-servlet:1.0-beta-2-SNAPSHOT">plexus : plexus-servlet : 1.0-beta-2-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xfire:xfire-java:1.0-SNAPSHOT">xfire : xfire-java : 1.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#xmlbeans:xmlbeans-xmlpublic:2.0-dev-2">xmlbeans : xmlbeans-xmlpublic : 2.0-dev-2</a></td></tr>
+	<tr><td class="de njd" colspan="2"><a href="#classworlds:classworlds:1.1-alpha-1">classworlds : classworlds : 1.1-alpha-1</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xfire:xfire:1.0-SNAPSHOT">xfire : xfire : 1.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#xfire:xfire-xmlbeans:1.0-SNAPSHOT">xfire : xfire-xmlbeans : 1.0-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#plexus:plexus-utils:1.0-alpha-1-SNAPSHOT">plexus : plexus-utils : 1.0-alpha-1-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#plexus:plexus-container-api:1.0-alpha-1-SNAPSHOT">plexus : plexus-container-api : 1.0-alpha-1-SNAPSHOT</a></td></tr>
+	<tr><td class="de ujd" colspan="2"><a href="#plexus:plexus-container-default:1.0-alpha-1-SNAPSHOT">plexus : plexus-container-default : 1.0-alpha-1-SNAPSHOT</a></td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="xfire:xfire-xmlbeans:1.0">xfire:xfire-xmlbeans:1.0<a></th></tr>
@@ -5097,6 +9920,10 @@ fa-icon: question
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="xml-apis:xml-apis:1.2.01">xml-apis:xml-apis:1.2.01<a></th></tr>
 	<tr><td class="vdf" colspan="2">Could not find artifact xml-apis:xml-apis:jar:1.2.01 in central (http://repo1.maven.org/maven2/)</td></tr>
+</table>
+<table class="artifacts">
+	<tr><th class="dt" colspan="2"><a id="xml-apis:xml-apis:1.3.0">xml-apis:xml-apis:1.3.0<a></th></tr>
+	<tr><td class="vdf" colspan="2">Could not find artifact xml-apis:xml-apis:jar:1.3.0 in central (http://repo1.maven.org/maven2/)</td></tr>
 </table>
 <table class="artifacts">
 	<tr><th class="dt" colspan="2"><a id="xml-apis:xml-apis:2.6.2">xml-apis:xml-apis:2.6.2<a></th></tr>
