@@ -18,6 +18,7 @@ import org.codefx.jwos.computation.TaskComputation;
 import org.codefx.jwos.computation.TaskSource;
 import org.codefx.jwos.discovery.ProjectListFile;
 import org.codefx.jwos.file.YamlAnalysisPersistence;
+import org.codefx.jwos.file.WallOfShame;
 import org.codefx.jwos.jdeps.JDeps;
 import org.codefx.jwos.maven.MavenCentral;
 import org.slf4j.Logger;
@@ -86,6 +87,7 @@ public class Main {
 		return Arrays
 				.stream(Util.PROJECT_LIST_FILE_NAMES)
 				.map(fileName -> createComputationToReadProjectFile(fileName, taskManager))
+				// TODO: wait for Java 9 to replace with Optional::stream
 				.filter(Optional::isPresent)
 				.map(Optional::get);
 	}

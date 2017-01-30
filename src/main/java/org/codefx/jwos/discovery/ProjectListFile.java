@@ -15,9 +15,9 @@ import static java.util.Objects.requireNonNull;
  * <p>
  * A project list file must be of the following structure:
  *
- * <comment lines>
- * <empty line>
- * <project lines in the form "groupId:artifactId">
+ * [comment lines]
+ * [empty line]
+ * [project lines in the form "groupId:artifactId"]
  *
  * The empty line is crucial as it is used to determine where the projects start.
  * It even has to be present if the file is uncommented.
